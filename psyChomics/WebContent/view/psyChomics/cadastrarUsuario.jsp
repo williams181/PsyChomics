@@ -11,11 +11,10 @@
 </head>
 <body>
 
-
 	<hr>
 	<h3>Cadastar Usuario</h3>
 	<hr>
-	<form action="cadastroPsyChomics" method="post"
+	<form action="cadastro" method="post"
 		enctype="multipart/form-data">
 		<div class="form-group">
 			<label for="inputEmail">E-mail:</label> <input type="text"
@@ -44,6 +43,8 @@
 				maxlength="100" required="required" />
 		</div>
 		<p>
+			<a href="index.jsp" class="btn btn-danger" role="button">Cancelar</a>
+			&nbsp;
 			<button type="reset" class="btn btn-default">&nbsp; Limpar
 				&nbsp;</button>
 			&nbsp;

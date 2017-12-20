@@ -9,12 +9,12 @@ import br.com.ifpe.psyChomics.model.UsuarioDao;
 @Controller
 public class UsuarioController {
 
-	@RequestMapping("/exibirCadastroPsyChomics")
+	@RequestMapping("/exibirCadastro")
 	public String exibirCadastrarUsuario() {
 		return "psyChomics/cadastrarUsuario";
 	}
 
-	@RequestMapping("cadastroPsyChomics")
+	@RequestMapping("cadastro")
 	public String cadastrarUsuario(Usuario usuario) {
 		UsuarioDao dao = new UsuarioDao();
 		dao.cadastar(usuario);
