@@ -2,7 +2,10 @@ package br.com.ifpe.psyChomics.model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import br.com.ifpe.psyChomics.util.ConnectionFactory;
 
@@ -42,4 +45,27 @@ public class UsuarioDao {
 		}
 	}
 
+	public List<Usuario> listar() {
+		try {
+			List<Usuario> listaUsuario = new ArrayList<Usuario>();
+			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM cadastro_usuario ORDER BY cpf");
+			ResultSet rs = stmt.executeQuery();
+			while (rs.next()) {
+				Usuario usuario = new Usuario();
+				usuario.setId(rs.getInt("id"));
+				usuario.setEmail(rs.getString("email"));
+				usuario.setSenha(rs.getString("senha"));
+				usuario.setNick(rs.getString("nick"));
+				usuario.setNomeUsuario(rs.getString("nome_usuario"));
+				usuario.setCpf(rs.getString("cpf"));
+
+				listaUsuario.add(usuario);
+			}
+			stmt.execute();
+			connection.close();
+			return listaUsuario;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
 }

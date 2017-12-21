@@ -1,13 +1,19 @@
 package br.com.ifpe.psyChomics.model;
 
 public class Usuario {
-
+	private int id;
 	private String email;
 	private String senha;
 	private String nick;
 	private String nomeUsuario;
 	private String cpf;
 	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getEmail() {
 		return email;
 	}
