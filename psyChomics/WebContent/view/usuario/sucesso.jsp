@@ -7,8 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-	<h1>Cadastrado</h1>
-
+<h1>cadastrado</h1>
 </body>
 </html>

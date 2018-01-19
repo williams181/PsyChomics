@@ -11,19 +11,19 @@ public class UsuarioController {
 
 	@RequestMapping("/exibirCadastro")
 	public String exibirCadastrarUsuario() {
-		return "psyChomics/cadastrarUsuario";
+		return "usuario/cadastrarUsuario";
 	}
 
 	@RequestMapping("cadastro")
 	public String cadastrarUsuario(Usuario usuario) {
 		UsuarioDao dao = new UsuarioDao();
 		dao.cadastar(usuario);
-		return "psyChomics/sucesso";
+		return "usuario/sucesso";
 	}
 	
 	@RequestMapping("/exibirlistarUsuario")
 	public String exibirlistarUsuario(Usuario usuario) {
-		return "psyChomics/listarUsuario";
+		return "usuario/listarUsuario";
 	}
 
 }
