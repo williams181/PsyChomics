@@ -1,29 +1,42 @@
 package br.com.ifpe.psyChomics.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
 
 import br.com.ifpe.psyChomics.model.Usuario;
 import br.com.ifpe.psyChomics.model.UsuarioDao;
 
 @Controller
 public class UsuarioController {
-
-	@RequestMapping("/exibirCadastro")
-	public String exibirCadastrarUsuario() {
-		return "usuario/cadastrarUsuario";
+	
+	@RequestMapping("/exibirIndex")
+	public String exibirIndex() {
+		return "psyChomics/index";
 	}
 
-	@RequestMapping("cadastro")
-	public String cadastrarUsuario(Usuario usuario) {
+	@RequestMapping("/exibirLogin")
+	public String exibirLogin() {
+		return "psyChomics/usuario/loginUsuario";
+	}
+	
+	@RequestMapping("/exibirCadastro")
+	public String exibirCadastrarUsuario() {
+		return "psyChomics/usuario/cadastrarUsuario";
+	}
+	
+	@RequestMapping("cadastroUsuario")
+	public String incluirProduto(Usuario usuario, Model model) {
 		UsuarioDao dao = new UsuarioDao();
 		dao.cadastar(usuario);
-		return "usuario/sucesso";
+		model.addAttribute("mensagem", "Usuario Incluído com Sucesso");
+		return "psyChomics/usuario/cadastrarUsuario";
 	}
 	
 	@RequestMapping("/exibirlistarUsuario")
-	public String exibirlistarUsuario(Usuario usuario) {
-		return "usuario/listarUsuario";
+	public String exibirlistarUsuario() {
+		return "psyChomics/usuario/listarUsuario";
 	}
 
 }
