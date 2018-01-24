@@ -15,25 +15,25 @@ CREATE TABLE produto (
 	id INT (6) AUTO_INCREMENT PRIMARY KEY,
 	nome VARCHAR(50) NOT NULL,
 	preco DECIMAL (10,2) NOT NULL,
-	genero VARCHAR(30) NOT NULL,
-	isbn VARCHAR (30) NOT NULL
+	genero VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE carrinho_de_compras (
-	idproduto int (6) not null,
 	idcompra int (6) AUTO_INCREMENT PRIMARY KEY,
+	idproduto int (6) not null,
 	quantidade int not null,
 	FOREIGN KEY (idproduto) REFERENCES produto(id)
 );
 
 CREATE TABLE cadastro_notificacao (
 	id INT(6) AUTO_INCREMENT PRIMARY KEY,
+	nome VARCHAR(50) NOT NULL,
 	email VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE fale_conosco (
 	id INT(6) AUTO_INCREMENT PRIMARY KEY,
-	nome VARCHAR(60) NOT NULL,
+	nome VARCHAR(50) NOT NULL,
 	email VARCHAR(50) NOT NULL,
 	mensagem VARCHAR(MAX)
 );

@@ -50,9 +50,11 @@
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li><a href="exibirLogin">Login</a></li>
-				<li><a href="exibirCadastro">Cadastro</a></li>
-				<li><a href="exibirlistarUsuario">Listagem</a></li>
+				<li><a href="exibirLoginUsuario">Login Usuario</a></li>
+				<li><a href="exibirCadastroUsuario">Cadastro Usuario</a></li>
+				<li><a href="exibirlistarUsuario">Listagem Usuario</a></li>
+				<li><a href="exibirCadastroProduto">Cadastro Produto</a></li>
+				<li><a href="exibirlistarProduto">Listagem Produto</a></li>
 			</ul>
 		</div>
 		<!-- /.navbar-collapse -->

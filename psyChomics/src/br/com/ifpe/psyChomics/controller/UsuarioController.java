@@ -16,18 +16,18 @@ public class UsuarioController {
 		return "psyChomics/index";
 	}
 
-	@RequestMapping("/exibirLogin")
-	public String exibirLogin() {
+	@RequestMapping("/exibirLoginUsuario")
+	public String exibirLoginUsuario() {
 		return "psyChomics/usuario/loginUsuario";
 	}
 	
-	@RequestMapping("/exibirCadastro")
-	public String exibirCadastrarUsuario() {
+	@RequestMapping("/exibirCadastroUsuario")
+	public String exibirCadastroUsuario() {
 		return "psyChomics/usuario/cadastrarUsuario";
 	}
 	
 	@RequestMapping("cadastroUsuario")
-	public String incluirProduto(Usuario usuario, Model model) {
+	public String cadastroUsuario(Usuario usuario, Model model) {
 		UsuarioDao dao = new UsuarioDao();
 		dao.cadastar(usuario);
 		model.addAttribute("mensagem", "Usuario Incluído com Sucesso");

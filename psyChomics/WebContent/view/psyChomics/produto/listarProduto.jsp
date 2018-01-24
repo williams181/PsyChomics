@@ -62,33 +62,29 @@
 	<br>
 
 	<hr>
-	<h3>Listar Usuario</h3>
+	<h3>Listar Produto</h3>
 	<hr>
 
 	<div style="text-align: center; color: red;">${msg}</div><br>
 
-	<jsp:useBean id="dao" class="br.com.ifpe.psyChomics.model.UsuarioDao" />
+	<jsp:useBean id="dao" class="br.com.ifpe.psyChomics.model.ProdutoDao" />
 
 	<table class="table">
 		<tr>
-			<td scope="col">E-mail</td>
-			<td scope="col">Senha</td>
-			<td scope="col">Nick</td>
-			<td scope="col">Nome do Usuario</td>
-			<td scope="col">CPF</td>
+			<td scope="col">Nome</td>
+			<td scope="col">Preço</td>
+			<td scope="col">Genero</td>
 			<td scope="col">Opções</td>
 
 		</tr>
 
-		<c:forEach var="usuario" items="${dao.listar()}">
+		<c:forEach var="produto" items="${dao.listar()}">
 
 			<tr>
-				<th scope="row">${usuario.email}</th>
-				<th>${usuario.senha}</th>
-				<th>${usuario.nick}</th>
-				<th>${usuario.nomeUsuario}</th>
-				<th>${usuario.cpf}</th>
-				<th><a href="removerUsuario?id=${usuario.id}">Remover</a></th>
+				<th scope="row">${produto.nome}</th>
+				<th>${produto.preco}</th>
+				<th>${produto.genero}</th>
+				<th><a href="removerProduto?id=${produto.id}">Remover</a></th>
 
 			</tr>
 

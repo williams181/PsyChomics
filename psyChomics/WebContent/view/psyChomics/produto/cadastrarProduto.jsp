@@ -13,7 +13,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Login</title>
+<title>Cadastro</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -29,7 +29,6 @@
     <![endif]-->
 </head>
 <body>
-
 	<!-- Navigation -->
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 	<div class="container">
@@ -62,27 +61,38 @@
 	<br>
 
 	<hr>
-	<h3>Login</h3>
+	<h3>Cadastro de Produto</h3>
 	<hr>
 
-	<form action="" method="post" enctype="multipart/form-data">
+	<c:import url="/view/comum/menu.jsp" />
+	<div style="text-align: center; color: red;">${mensagem}</div>
+
+	<form action="cadastroProduto" method="post"
+		enctype="multipart/form-data">
 		<div class="form-group">
-			<label for="inputEmail">E-mail:</label> <input type="text"
-				id="inputEmail" class="form-control" name="email"
+			<label for="inputNome">Nome:</label> <input type="text"
+				id="inputNome" class="form-control" name="nome"
 				style="width: 500px;" maxlength="60" required="required" />
 		</div>
 		<div class="form-group">
-			<label for="inputSenha">Senha:</label> <input type="password"
-				id="inputSenha" class="form-control" name="senha"
+			<label for="inputPreco">Preço:</label> <input type="text"
+				id="inputPreco" class="form-control" name="preco"
 				style="width: 500px;" maxlength="16" required="required" />
 		</div>
-			<p class="help-block">para receber notificações</p>
+		<div class="form-group">
+			<label for="inputGenero">Genero:</label> <input type="text"
+				id="inputGenero" class="form-control" name="genero"
+				style="width: 500px;" maxlength="60" required="required" />
 		</div>
-		<div class="checkbox">
-			<label> <input type="checkbox"> click-me
-			</label>
-		</div>
-		<button type="submit" class="btn btn-primary">Submit</button>
+		<p>
+			<a href="index.jsp" class="btn btn-danger" role="button">Cancelar</a>
+			&nbsp;
+			<button type="reset" class="btn btn-default">&nbsp; Limpar
+				&nbsp;</button>
+			&nbsp;
+			<button type="submit" value="cadastar" class="btn btn-primary">&nbsp;
+				Cadastrar &nbsp;</button>
+		</p>
 	</form>
 
 </body>
