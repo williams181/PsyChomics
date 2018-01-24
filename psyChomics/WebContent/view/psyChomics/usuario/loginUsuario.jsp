@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html lang="en">
 <head>
 <link rel="stylesheet" type="text/css"
-	href="view/bootstrap/css/bootstrap.min.css" />
+	href="view/psyChomics/bootstrap/css/bootstrap.min.css" />
 <script type="text/javascript" src="view/bootstrap/js/bootstrap.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta charset="utf-8">
@@ -41,7 +41,7 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="exibirIndex">Start Bootstrap</a>
+			<a class="navbar-brand" href="exibirIndex">PsyChomics</a>
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse"
@@ -55,12 +55,33 @@
 		<!-- /.navbar-collapse -->
 	</div>
 	<!-- /.container --> </nav>
-	
-	 <br><br>
-	
+
+	<br>
+	<br>
+
 	<hr>
 	<h3>Login</h3>
 	<hr>
+
+	<form action="" method="post" enctype="multipart/form-data">
+		<div class="form-group">
+			<label for="inputEmail">E-mail:</label> <input type="text"
+				id="inputEmail" class="form-control" name="email"
+				style="width: 500px;" maxlength="60" required="required" />
+		</div>
+		<div class="form-group">
+			<label for="inputSenha">Senha:</label> <input type="password"
+				id="inputSenha" class="form-control" name="senha"
+				style="width: 500px;" maxlength="16" required="required" />
+		</div>
+			<p class="help-block">para receber notificações</p>
+		</div>
+		<div class="checkbox">
+			<label> <input type="checkbox"> click-me
+			</label>
+		</div>
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
 
 </body>
 </html>

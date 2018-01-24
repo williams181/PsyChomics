@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.ifpe.psyChomics.model.Usuario;
 import br.com.ifpe.psyChomics.util.ConnectionFactory;
 
 public class UsuarioDao {
@@ -64,6 +65,22 @@ public class UsuarioDao {
 			stmt.execute();
 			connection.close();
 			return listaUsuario;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+	
+	public void remover(Usuario usuario) {
+
+		String sql = "DELETE FROM usuario WHERE id = ?";
+		PreparedStatement stmt;
+		try {
+
+			stmt = connection.prepareStatement(sql);
+			stmt.setInt(1, usuario.getId());
+			stmt.execute();
+			connection.close();
+
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}

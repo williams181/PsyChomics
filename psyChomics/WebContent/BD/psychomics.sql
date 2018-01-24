@@ -13,10 +13,10 @@ CREATE TABLE usuario (
 
 CREATE TABLE produto (
 	id INT (6) AUTO_INCREMENT PRIMARY KEY,
-	nome VARCHAR(90) NOT NULL,
+	nome VARCHAR(50) NOT NULL,
 	preco DECIMAL (10,2) NOT NULL,
-	genero VARCHAR(25) NOT NULL,
-	isbn VARCHAR (90) NOT NULL
+	genero VARCHAR(30) NOT NULL,
+	isbn VARCHAR (30) NOT NULL
 );
 
 CREATE TABLE carrinho_de_compras (
