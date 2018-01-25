@@ -1,5 +1,5 @@
-CREATE DATABASE psychomics;
-use psychomics;
+CREATE DATABASE PC;
+use PC;
 
 CREATE TABLE usuario (
 
@@ -13,17 +13,34 @@ CREATE TABLE usuario (
 
 CREATE TABLE produto (
 	id INT (6) AUTO_INCREMENT PRIMARY KEY,
+	idusuario INT (6),
 	nome VARCHAR(50) NOT NULL,
 	preco DECIMAL (10,2) NOT NULL,
-	genero VARCHAR(30) NOT NULL
+	genero VARCHAR(30) NOT NULL,
+	FOREIGN KEY (idusuario) REFERENCES usuario(id)
+);
+
+CREATE TABLE comentarios_produtos (
+	id INT(6) AUTO_INCREMENT PRIMARY KEY,
+	idusuario INT (6),
+	idproduto INT (6),
+	nome VARCHAR(60) NOT NULL,
+	email VARCHAR(50) NOT NULL,
+	comentario VARCHAR(255) NOT NULL,
+	FOREIGN KEY (idusuario) REFERENCES usuario(id),
+	FOREIGN KEY (idproduto) REFERENCES produto(id)	
+
 );
 
 CREATE TABLE carrinho_de_compras (
-	idcompra int (6) AUTO_INCREMENT PRIMARY KEY,
-	idproduto int (6) not null,
-	quantidade int not null,
-	FOREIGN KEY (idproduto) REFERENCES produto(id)
+	id int (6) AUTO_INCREMENT PRIMARY KEY,
+	idusuario int (6),
+	idproduto INT (6),
+	quantidade int (6) not null,
+	FOREIGN KEY (idusuario) REFERENCES usuario(id),
+	FOREIGN KEY (idproduto) REFERENCES produto(id)	
 );
+
 
 CREATE TABLE cadastro_notificacao (
 	id INT(6) AUTO_INCREMENT PRIMARY KEY,
@@ -35,13 +52,8 @@ CREATE TABLE fale_conosco (
 	id INT(6) AUTO_INCREMENT PRIMARY KEY,
 	nome VARCHAR(50) NOT NULL,
 	email VARCHAR(50) NOT NULL,
-	mensagem VARCHAR(MAX)
+	mensagem VARCHAR(255)
 );
 
-CREATE TABLE comentario (
-	id INT(6) AUTO_INCREMENT PRIMARY KEY,
-	nome VARCHAR(60) NOT NULL,
-	email VARCHAR(50) NOT NULL,
-	comentario VARCHAR(MAX)
-);
+
 

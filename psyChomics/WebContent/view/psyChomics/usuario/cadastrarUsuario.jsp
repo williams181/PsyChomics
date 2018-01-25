@@ -70,31 +70,31 @@
 		<div class="form-group">
 			<label for="inputEmail">E-mail:</label> <input type="text"
 				id="inputEmail" class="form-control" name="email"
-				style="width: 500px;" maxlength="60" required="required" />
+				style="width: 500px;" placeholder="E-mail" maxlength="60" required="required" />
 		</div>
 		<div class="form-group">
 			<label for="inputSenha">Senha:</label> <input type="password"
 				id="inputSenha" class="form-control" name="senha"
-				style="width: 500px;" maxlength="16" required="required" />
+				style="width: 500px;" placeholder="Senha" maxlength="16" required="required" />
 		</div>
 		<div class="form-group">
 			<label for="inputNick">Nick:</label> <input type="text"
 				id="inputNick" class="form-control" name="nick"
-				style="width: 500px;" maxlength="60" required="required" />
+				style="width: 500px;" placeholder="Nick" maxlength="60" required="required" />
 		</div>
 		<div class="form-group">
 			<label for="inputNomeUsuario">Nome do Usuario:</label> <input
 				type="text" id="inputNomeUsuario" class="form-control"
-				name="NomeUsuario" style="width: 500px;" maxlength="60"
+				name="NomeUsuario" placeholder="Nome do Usuario" style="width: 500px;" maxlength="60"
 				required="required" />
 		</div>
 		<div class="form-group">
 			<label for="inputCpf">CPF:</label> <input type="text" id="inputCpf"
-				class="form-control" required="required" name="cpf"
-				style="width: 500px;" maxlength="11" required="required" />
+				class="form-control cpf-mask" required="required" name="cpf"
+				style="width: 500px;" placeholder="CPF:EX.: 000.000.000-00" maxlength="11" required="required" />
 		</div>
 		<p>
-			<a href="index.jsp" class="btn btn-danger" role="button">Cancelar</a>
+			<a href="exibirIndex" class="btn btn-danger" role="button">Cancelar</a>
 			&nbsp;
 			<button type="reset" class="btn btn-default">&nbsp; Limpar
 				&nbsp;</button>

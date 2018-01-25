@@ -72,20 +72,20 @@
 		<div class="form-group">
 			<label for="inputNome">Nome:</label> <input type="text"
 				id="inputNome" class="form-control" name="nome"
-				style="width: 500px;" maxlength="60" required="required" />
+				style="width: 500px;" placeholder="Nome" maxlength="60" required="required" />
 		</div>
 		<div class="form-group">
 			<label for="inputPreco">Preço:</label> <input type="text"
 				id="inputPreco" class="form-control" name="preco"
-				style="width: 500px;" maxlength="16" required="required" />
+				style="width: 500px;" placeholder="Preco" maxlength="16" required="required" />
 		</div>
 		<div class="form-group">
 			<label for="inputGenero">Genero:</label> <input type="text"
 				id="inputGenero" class="form-control" name="genero"
-				style="width: 500px;" maxlength="60" required="required" />
+				style="width: 500px;" placeholder="Genero" maxlength="60" required="required" />
 		</div>
 		<p>
-			<a href="index.jsp" class="btn btn-danger" role="button">Cancelar</a>
+			<a href="exibirIndex" class="btn btn-danger" role="button">Cancelar</a>
 			&nbsp;
 			<button type="reset" class="btn btn-default">&nbsp; Limpar
 				&nbsp;</button>
