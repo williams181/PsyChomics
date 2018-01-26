@@ -13,6 +13,12 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
+<style>
+	body{
+		background-image: url(view/psyChomics/imagens/bg.jpg);
+	}
+</style>
+
 
 <title>Index</title>
 

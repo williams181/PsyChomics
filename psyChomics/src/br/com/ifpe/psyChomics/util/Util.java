@@ -15,7 +15,7 @@ public class Util {
 			String nomeArquivo = imagem.getOriginalFilename();
 			try {
 				// Criando o diretório para armazenar o arquivo
-				String workspaceProjeto = "/Users/casa/workspace/PsyChomics/psyChomics";
+				String workspaceProjeto = "/home/aluno/eclipse-workspace/PsyChomics/psyChomics";
 				File dir = new File(workspaceProjeto + "/WebContent/view/psyChomics/imagens");
 				if (!dir.exists()) {
 					dir.mkdirs();

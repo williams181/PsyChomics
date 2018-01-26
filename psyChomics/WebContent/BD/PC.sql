@@ -42,13 +42,6 @@ CREATE TABLE carrinho_de_compras (
 	FOREIGN KEY (idproduto) REFERENCES produto(id)	
 );
 
-
-CREATE TABLE cadastro_notificacao (
-	id INT(6) AUTO_INCREMENT PRIMARY KEY,
-	nome VARCHAR(50) NOT NULL,
-	email VARCHAR(50) NOT NULL
-);
-
 CREATE TABLE fale_conosco (
 	id INT(6) AUTO_INCREMENT PRIMARY KEY,
 	nome VARCHAR(50) NOT NULL,

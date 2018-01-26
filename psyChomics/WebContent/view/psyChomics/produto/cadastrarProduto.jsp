@@ -93,7 +93,7 @@
 			<div class="form-group">
 				<label for="inputImagem">Imagem</label> <input type="file"
 					id="inputImagem" class="form-control" name="file"
-					style="width: 500px;" maxlength="100" required="required" />
+					style="width: 500px;"  maxlength="100" required="required" />
 			</div>
 			<p>
 				<a href="exibirIndex" class="btn btn-danger" role="button">Cancelar</a>

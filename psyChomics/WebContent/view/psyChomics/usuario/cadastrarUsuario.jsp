@@ -83,9 +83,9 @@
 					style="width: 500px;" maxlength="16" required="required" />
 			</div>
 			<div class="form-group">
-				<label for="inputSenha">Confirmar Senha</label> <input type="password"
+				<label >Confirmar Senha</label> <input type="password"
 					placeholder="Confirme Senha" id="confirm_password"
-					class="form-control" name="senha" style="width: 500px;"
+					class="form-control"  style="width: 500px;"
 					maxlength="16" required="required" />
 			</div>
 			<div class="form-group">
