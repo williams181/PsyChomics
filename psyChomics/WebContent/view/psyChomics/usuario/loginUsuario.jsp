@@ -60,13 +60,14 @@
 
 	<br>
 	<br>
-
+	<div class="container" align="center">
 	<hr>
 	<h3>Login</h3>
 	<hr>
-
+	</div>
+	<div class="container" align="center">
 	<form action="" method="post" enctype="multipart/form-data">
-		<div class="form-group">
+		<div class="form-group" >
 			<label for="inputEmail">E-mail:</label> <input type="text"
 				id="inputEmail" class="form-control" name="email"
 				style="width: 500px;" placeholder="E-mail" maxlength="60" required="required" />
@@ -76,13 +77,7 @@
 				id="inputSenha" class="form-control" name="senha"
 				style="width: 500px;" placeholder="Senha" maxlength="16" required="required" />
 		</div>
-			<p class="help-block">para receber notificações</p>
-		</div>
-		<div class="checkbox">
-			<label> <input type="checkbox"> click-me
-			</label>
-		</div>
-		<p>
+		<div class="container" align="center">
 			<a href="exibirIndex" class="btn btn-danger" role="button">Cancelar</a>
 			&nbsp;
 			<button type="reset" class="btn btn-default">&nbsp; Limpar
@@ -90,8 +85,9 @@
 			&nbsp;
 			<button type="submit" value="cadastar" class="btn btn-primary">&nbsp;
 				Cadastrar &nbsp;</button>
-		</p>
+		</div>		
 	</form>
+	</div>
 
 </body>
 </html>

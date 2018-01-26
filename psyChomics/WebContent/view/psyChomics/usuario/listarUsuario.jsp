@@ -60,15 +60,16 @@
 
 	<br>
 	<br>
-
+	<div class="container" align="center">
 	<hr>
 	<h3>Listar Usuario</h3>
 	<hr>
+	</div>
 
-	<div style="text-align: center; color: red;">${msg}</div><br>
+	<div style="text-align: center; color: green;">${msg}</div><br>
 
 	<jsp:useBean id="dao" class="br.com.ifpe.psyChomics.model.UsuarioDao" />
-
+<div class="container" align="center">
 	<table class="table">
 		<tr>
 			<td scope="col">E-mail</td>
@@ -95,6 +96,6 @@
 		</c:forEach>
 
 	</table>
-
+	</div>
 </body>
 </html>

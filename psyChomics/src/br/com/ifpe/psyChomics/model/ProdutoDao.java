@@ -24,7 +24,7 @@ public class ProdutoDao {
 
 	public void cadastar(Produto produto) {
 
-		String sql = "INSERT INTO produto (nome, preco, genero) VALUES (?,?,?)";
+		String sql = "INSERT INTO produto (nome, preco, genero, imagem) VALUES (?,?,?,?)";
 		PreparedStatement stmt;
 
 		try {
@@ -33,6 +33,7 @@ public class ProdutoDao {
 			stmt.setString(1, produto.getNome());
 			stmt.setDouble(2, produto.getPreco());
 			stmt.setString(3, produto.getGenero());
+			stmt.setString(4, produto.getImagem());
 			
 			stmt.execute();
 			stmt.close();
@@ -46,7 +47,7 @@ public class ProdutoDao {
 	public List<Produto> listar() {
 		try {
 			List<Produto> listaProduto = new ArrayList<Produto>();
-			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM produto ORDER BY genero");
+			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM produto ORDER BY nome");
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
 				Produto prouto = new Produto();
@@ -54,6 +55,7 @@ public class ProdutoDao {
 				prouto.setNome(rs.getString("nome"));
 				prouto.setPreco(rs.getDouble("preco"));
 				prouto.setGenero(rs.getString("genero"));
+				prouto.setImagem(rs.getString("imagem"));
 
 
 				listaProduto.add(prouto);

@@ -59,41 +59,52 @@
 
 	<br>
 	<br>
-
-	<hr>
-	<h3>Cadastro de Produto</h3>
-	<hr>
+	<div class="container" align="center">
+		<hr>
+		<h3>Cadastro de Produto</h3>
+		<hr>
+	</div>
 
 	<c:import url="/view/comum/menu.jsp" />
-	<div style="text-align: center; color: red;">${mensagem}</div>
 
-	<form action="cadastroProduto" method="post"
-		enctype="multipart/form-data">
-		<div class="form-group">
-			<label for="inputNome">Nome:</label> <input type="text"
-				id="inputNome" class="form-control" name="nome"
-				style="width: 500px;" placeholder="Nome" maxlength="60" required="required" />
-		</div>
-		<div class="form-group">
-			<label for="inputPreco">Preço:</label> <input type="text"
-				id="inputPreco" class="form-control" name="preco"
-				style="width: 500px;" placeholder="Preco" maxlength="16" required="required" />
-		</div>
-		<div class="form-group">
-			<label for="inputGenero">Genero:</label> <input type="text"
-				id="inputGenero" class="form-control" name="genero"
-				style="width: 500px;" placeholder="Genero" maxlength="60" required="required" />
-		</div>
-		<p>
-			<a href="exibirIndex" class="btn btn-danger" role="button">Cancelar</a>
-			&nbsp;
-			<button type="reset" class="btn btn-default">&nbsp; Limpar
-				&nbsp;</button>
-			&nbsp;
-			<button type="submit" value="cadastar" class="btn btn-primary">&nbsp;
-				Cadastrar &nbsp;</button>
-		</p>
-	</form>
+	<div style="text-align: center; color: green;">${mensagem}</div>
 
+	<div class="container" align="center">
+		<form action="cadastroProduto" method="post"
+			enctype="multipart/form-data">
+			<div class="form-group">
+				<label for="inputNome">Nome:</label> <input type="text"
+					id="inputNome" class="form-control" name="nome"
+					style="width: 500px;" placeholder="Nome" maxlength="60"
+					required="required" />
+			</div>
+			<div class="form-group">
+				<label for="inputPreco">Preço:</label> <input type="text"
+					id="inputPreco" class="form-control" name="preco"
+					style="width: 500px;" placeholder="Preco" maxlength="16"
+					required="required" />
+			</div>
+			<div class="form-group">
+				<label for="inputGenero">Genero:</label> <input type="text"
+					id="inputGenero" class="form-control" name="genero"
+					style="width: 500px;" placeholder="Genero" maxlength="60"
+					required="required" />
+			</div>
+			<div class="form-group">
+				<label for="inputImagem">Imagem</label> <input type="file"
+					id="inputImagem" class="form-control" name="file"
+					style="width: 500px;" maxlength="100" required="required" />
+			</div>
+			<p>
+				<a href="exibirIndex" class="btn btn-danger" role="button">Cancelar</a>
+				&nbsp;
+				<button type="reset" class="btn btn-default">&nbsp; Limpar
+					&nbsp;</button>
+				&nbsp;
+				<button type="submit" value="cadastar" class="btn btn-primary">&nbsp;
+					Cadastrar &nbsp;</button>
+			</p>
+		</form>
+	</div>
 </body>
 </html>

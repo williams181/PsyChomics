@@ -46,11 +46,11 @@
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-				<li><a href="exibirLoginUsuario">Login Usuario</a></li>
-				<li><a href="exibirCadastroUsuario">Cadastro Usuario</a></li>
-				<li><a href="exibirlistarUsuario">Listagem Usuario</a></li>
-				<li><a href="exibirCadastroProduto">Cadastro Produto</a></li>
-				<li><a href="exibirlistarProduto">Listagem Produto</a></li>
+					<li><a href="exibirLoginUsuario">Login Usuario</a></li>
+					<li><a href="exibirCadastroUsuario">Cadastro Usuario</a></li>
+					<li><a href="exibirlistarUsuario">Listagem Usuario</a></li>
+					<li><a href="exibirCadastroProduto">Cadastro Produto</a></li>
+					<li><a href="exibirlistarProduto">Listagem Produto</a></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -60,37 +60,40 @@
 
 	<br>
 	<br>
-
-	<hr>
-	<h3>Listar Produto</h3>
-	<hr>
-
-	<div style="text-align: center; color: red;">${msg}</div><br>
+	<div class="container" align="center">
+		<hr>
+		<h3>Listar Produto</h3>
+		<hr>
+	</div>
+	<div style="text-align: center; color: green;">${msg}</div>
+	<br>
 
 	<jsp:useBean id="dao" class="br.com.ifpe.psyChomics.model.ProdutoDao" />
-
-	<table class="table">
-		<tr>
-			<td scope="col">Nome</td>
-			<td scope="col">Preço</td>
-			<td scope="col">Genero</td>
-			<td scope="col">Opções</td>
-
-		</tr>
-
-		<c:forEach var="produto" items="${dao.listar()}">
-
+	<div class="container" align="center">
+		<table class="table">
 			<tr>
-				<th scope="row">${produto.nome}</th>
-				<th>${produto.preco}</th>
-				<th>${produto.genero}</th>
-				<th><a href="removerProduto?id=${produto.id}">Remover</a></th>
+				<td scope="col">Nome</td>
+				<td scope="col">Preço</td>
+				<td scope="col">Genero</td>
+				<td scope="col">Imagem</td>
+				<td scope="col">Opções</td>
 
 			</tr>
 
-		</c:forEach>
+			<c:forEach var="produto" items="${dao.listar()}">
 
-	</table>
+				<tr>
+					<th scope="row">${produto.nome}</th>
+					<th>${produto.preco}</th>
+					<th>${produto.genero}</th>
+					<th><img src="view/psyChomics/imagens/${produto.imagem}"></th>
+					<th><a href="removerProduto?id=${produto.id}">Remover</a></th>
 
+				</tr>
+
+			</c:forEach>
+
+		</table>
+	</div>
 </body>
 </html>

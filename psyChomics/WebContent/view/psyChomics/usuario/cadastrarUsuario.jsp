@@ -55,54 +55,86 @@
 		</div>
 		<!-- /.navbar-collapse -->
 	</div>
-	<!-- /.container --> </nav> 
-	 
-	 <br><br>
-	 
-	<hr>
-	<h3>Cadastro de Usuario</h3>
-	<hr>
-	
-	 <c:import url="/view/comum/menu.jsp" />
-	<div style="text-align: center; color: red;">${mensagem}</div>
-	
-	<form action="cadastroUsuario" method="post" enctype="multipart/form-data">
-		<div class="form-group">
-			<label for="inputEmail">E-mail:</label> <input type="text"
-				id="inputEmail" class="form-control" name="email"
-				style="width: 500px;" placeholder="E-mail" maxlength="60" required="required" />
-		</div>
-		<div class="form-group">
-			<label for="inputSenha">Senha:</label> <input type="password"
-				id="inputSenha" class="form-control" name="senha"
-				style="width: 500px;" placeholder="Senha" maxlength="16" required="required" />
-		</div>
-		<div class="form-group">
-			<label for="inputNick">Nick:</label> <input type="text"
-				id="inputNick" class="form-control" name="nick"
-				style="width: 500px;" placeholder="Nick" maxlength="60" required="required" />
-		</div>
-		<div class="form-group">
-			<label for="inputNomeUsuario">Nome do Usuario:</label> <input
-				type="text" id="inputNomeUsuario" class="form-control"
-				name="NomeUsuario" placeholder="Nome do Usuario" style="width: 500px;" maxlength="60"
-				required="required" />
-		</div>
-		<div class="form-group">
-			<label for="inputCpf">CPF:</label> <input type="text" id="inputCpf"
-				class="form-control cpf-mask" required="required" name="cpf"
-				style="width: 500px;" placeholder="CPF:EX.: 000.000.000-00" maxlength="11" required="required" />
-		</div>
-		<p>
-			<a href="exibirIndex" class="btn btn-danger" role="button">Cancelar</a>
-			&nbsp;
-			<button type="reset" class="btn btn-default">&nbsp; Limpar
-				&nbsp;</button>
-			&nbsp;
-			<button type="submit" value="cadastar" class="btn btn-primary">&nbsp;
-				Cadastrar &nbsp;</button>
-		</p>
-	</form>
+	<!-- /.container --> </nav>
+
+	<br>
+	<br>
+	<div class="container" align="center">
+		<hr>
+		<h3>Cadastro de Usuario</h3>
+		<hr>
+	</div>
+
+	<c:import url="/view/comum/menu.jsp" />
+	<div style="text-align: center; color: green;">${mensagem}</div>
+
+	<div class="container" align="center">
+		<form action="cadastroUsuario" method="post"
+			enctype="multipart/form-data">
+			<div class="form-group">
+				<label for="inputEmail">E-mail</label> <input type="text"
+					id="inputEmail" class="form-control" name="email"
+					style="width: 500px;" placeholder="E-mail" maxlength="50"
+					required="required" />
+			</div>
+			<div class="form-group">
+				<label for="inputSenha">Senha</label> <input type="password"
+					placeholder="Senha" id="password" class="form-control" name="senha"
+					style="width: 500px;" maxlength="16" required="required" />
+			</div>
+			<div class="form-group">
+				<label for="inputSenha">Confirmar Senha</label> <input type="password"
+					placeholder="Confirme Senha" id="confirm_password"
+					class="form-control" name="senha" style="width: 500px;"
+					maxlength="16" required="required" />
+			</div>
+			<div class="form-group">
+				<label for="inputNick">Nick</label> <input type="text"
+					id="inputNick" class="form-control" name="nick"
+					style="width: 500px;" placeholder="Nick" maxlength="30"
+					required="required" />
+			</div>
+			<div class="form-group">
+				<label for="inputNomeUsuario">Nome do Usuario</label> <input
+					type="text" id="inputNomeUsuario" class="form-control"
+					name="NomeUsuario" placeholder="Nome do Usuario"
+					style="width: 500px;" maxlength="50" required="required" />
+			</div>
+			<div class="form-group">
+				<label for="inputCpf">CPF</label> <input type="text" id="inputCpf"
+					class="form-control cpf-mask" required="required" name="cpf"
+					style="width: 500px;" placeholder="CPF:EX.: 000.000.000-00"
+					maxlength="11" required="required" />
+			</div>
+			<p>
+			<div class="container" align="center">
+				<a href="exibirIndex" class="btn btn-danger" role="button">Cancelar</a>
+				&nbsp;
+				<button type="reset" class="btn btn-default">&nbsp; Limpar
+					&nbsp;</button>
+				&nbsp;
+				<button type="submit" value="cadastar" class="btn btn-primary">&nbsp;
+					Cadastrar &nbsp;</button>
+			</div>
+			</p>
+		</form>
+	</div>
+	<script>
+		var password = document.getElementById("password"), confirm_password = document
+				.getElementById("confirm_password");
+
+		function validatePassword() {
+			if (password.value != confirm_password.value) {
+				confirm_password.setCustomValidity("Senhas diferentes!");
+			} else {
+				confirm_password.setCustomValidity('');
+			}
+		}
+
+		password.onchange = validatePassword;
+		confirm_password.onkeyup = validatePassword;
+	</script>
+
 
 </body>
 </html>

@@ -17,6 +17,7 @@ CREATE TABLE produto (
 	nome VARCHAR(50) NOT NULL,
 	preco DECIMAL (10,2) NOT NULL,
 	genero VARCHAR(30) NOT NULL,
+	imagem VARCHAR(100),
 	FOREIGN KEY (idusuario) REFERENCES usuario(id)
 );
 

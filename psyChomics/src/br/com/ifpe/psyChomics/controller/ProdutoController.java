@@ -1,11 +1,16 @@
 package br.com.ifpe.psyChomics.controller;
 
+import java.util.Calendar;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import br.com.ifpe.psyChomics.model.Produto;
 import br.com.ifpe.psyChomics.model.ProdutoDao;
+import br.com.ifpe.psyChomics.util.Util;
 
 
 @Controller
@@ -17,7 +22,10 @@ public class ProdutoController {
 	}
 	
 	@RequestMapping("cadastroProduto")
-	public String cadastroProduto(Produto produto, Model model) {
+	public String cadastroProduto(Produto produto, @RequestParam("file") MultipartFile imagem, Model model) {
+		if (Util.fazerUploadImagem(imagem)) {
+			produto.setImagem(Calendar.getInstance().getTime() + " - " + imagem.getOriginalFilename());
+		}		
 		ProdutoDao dao = new ProdutoDao();
 		dao.cadastar(produto);
 		model.addAttribute("mensagem", "Produto Incluído com Sucesso");
