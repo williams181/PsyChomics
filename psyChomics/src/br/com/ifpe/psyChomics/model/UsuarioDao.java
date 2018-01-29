@@ -45,7 +45,7 @@ public class UsuarioDao {
 			throw new RuntimeException(e);
 		}
 	}
-	
+
 	public List<Usuario> listar() {
 		try {
 			List<Usuario> listaUsuario = new ArrayList<Usuario>();
@@ -69,7 +69,7 @@ public class UsuarioDao {
 			throw new RuntimeException(e);
 		}
 	}
-	
+
 	public void remover(Usuario usuario) {
 
 		String sql = "DELETE FROM usuario WHERE id = ?";
@@ -78,6 +78,61 @@ public class UsuarioDao {
 
 			stmt = connection.prepareStatement(sql);
 			stmt.setInt(1, usuario.getId());
+			stmt.execute();
+			connection.close();
+
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	public Usuario buscarPorId(int id) {
+
+		try {
+
+			Usuario usuarioCompleto = new Usuario();
+
+			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM usuario WHERE id =  ?");
+			stmt.setInt(1, id);
+			ResultSet rs = stmt.executeQuery();
+
+			while (rs.next()) {
+
+				usuarioCompleto.setId(rs.getInt("id"));
+				usuarioCompleto.setEmail(rs.getString("email"));
+				usuarioCompleto.setSenha(rs.getString("senha"));
+				usuarioCompleto.setNick(rs.getString("nick"));
+				usuarioCompleto.setNomeUsuario(rs.getString("nome_usuario"));
+				usuarioCompleto.setCpf(rs.getString("cpf"));
+
+			}
+
+			rs.close();
+			stmt.close();
+			connection.close();
+
+			return usuarioCompleto;
+
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	public void alterar(Usuario usuario) {
+
+		String sql = "UPDATE usuario SET email = ?, senha = ?, nick = ?, nome_usuario = ?, cpf = ? WHERE id = ?";
+		PreparedStatement stmt;
+		try {
+
+			stmt = connection.prepareStatement(sql);
+
+			stmt.setString(1, usuario.getEmail());
+			stmt.setString(2, usuario.getSenha());
+			stmt.setString(3, usuario.getNick());
+			stmt.setString(4, usuario.getNomeUsuario());
+			stmt.setString(5, usuario.getCpf());
+			stmt.setInt(6, usuario.getId());
+
 			stmt.execute();
 			connection.close();
 

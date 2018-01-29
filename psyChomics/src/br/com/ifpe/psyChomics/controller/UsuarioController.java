@@ -47,4 +47,24 @@ public class UsuarioController {
     	
     	 return "psyChomics/usuario/listarUsuario";
     }
+    
+	@RequestMapping("/exibirAlterarUsuario")
+	public String exibirAlterarUsuario(Usuario usuario, Model model) {
+
+		UsuarioDao dao = new UsuarioDao();
+		Usuario usuarioCompleto = dao.buscarPorId(usuario.getId());
+		model.addAttribute("usuario", usuarioCompleto);
+
+		return "psyChomics/usuario/alterarUsuario";
+	}
+
+	@RequestMapping("alterarUsuario")
+	public String alterarUsuario(Usuario usuario, Model model) {
+
+		UsuarioDao dao = new UsuarioDao();
+		dao.alterar(usuario);
+		model.addAttribute("msg", "Usuario Alterado com Sucesso!");
+
+		return "psyChomics/usuario/listarUsuario";
+	}
 }

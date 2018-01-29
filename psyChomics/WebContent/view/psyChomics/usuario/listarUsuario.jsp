@@ -89,7 +89,8 @@
 				<th>${usuario.nick}</th>
 				<th>${usuario.nomeUsuario}</th>
 				<th>${usuario.cpf}</th>
-				<th><a href="removerUsuario?id=${usuario.id}">Remover</a></th>
+				<th><a href="removerUsuario?id=${usuario.id}">Remover</a>
+				<a href="exibirAlterarUsuario?id=${usuario.id}">Alterar</a></th>
 
 			</tr>
 
