@@ -1,5 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <html lang="en">
 <head>
 <link rel="stylesheet" type="text/css"
@@ -50,7 +52,7 @@
 					<li><a href="exibirCadastroUsuario">Cadastro Usuario</a></li>
 					<li><a href="exibirlistarUsuario">Listagem Usuario</a></li>
 					<li><a href="exibirCadastroProduto">Cadastro Produto</a></li>
-					<li><a href="exibirlistarProduto">Listagem Produto</a></li>
+					<li><a href="listarProduto">Listagem Produto</a></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -70,13 +72,14 @@
 
 	<form action="busca" method="post">
 
-		Nome<input type="text" name="nome"> <input type="submit"
+		Nome<input type="text" name="genero"> <input type="submit"
 			class="btn btn-primary" value="busca">
 
 	</form>
 
 
 	<jsp:useBean id="dao" class="br.com.ifpe.psyChomics.model.ProdutoDao" />
+	
 	<div class="container" align="center">
 		<table class="table">
 			<tr>
@@ -88,7 +91,7 @@
 
 			</tr>
 
-			<c:forEach var="produto" items="${dao.listar()}">
+			<c:forEach var="produto" items="${listaProduto}">
 
 				<tr>
 					<th scope="row">${produto.nome}</th>

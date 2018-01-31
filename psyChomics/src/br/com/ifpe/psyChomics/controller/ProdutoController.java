@@ -28,7 +28,7 @@ public class ProdutoController {
 		}
 		ProdutoDao dao = new ProdutoDao();
 		dao.cadastar(produto);
-		model.addAttribute("mensagem", "Produto Incluído com Sucesso");
+		model.addAttribute("mensagem", "Produto Incluï¿½do com Sucesso");
 		return "psyChomics/produto/cadastrarProduto";
 	}
 
@@ -42,6 +42,7 @@ public class ProdutoController {
 		ProdutoDao dao = new ProdutoDao();
 		List<Produto> listaProduto = dao.listar();
 		model.addAttribute("listaProduto", listaProduto);
+		System.out.println("Exibindo listagem de produto.");
 		return "psyChomics/produto/listarProduto";
 	}
 

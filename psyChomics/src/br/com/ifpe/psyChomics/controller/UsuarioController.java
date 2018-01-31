@@ -1,9 +1,13 @@
 package br.com.ifpe.psyChomics.controller;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import br.com.ifpe.psyChomics.model.Produto;
+import br.com.ifpe.psyChomics.model.ProdutoDao;
 import br.com.ifpe.psyChomics.model.Usuario;
 import br.com.ifpe.psyChomics.model.UsuarioDao;
 
@@ -30,7 +34,7 @@ public class UsuarioController {
 	public String cadastroUsuario(Usuario usuario, Model model) {
 		UsuarioDao dao = new UsuarioDao();
 		dao.cadastar(usuario);
-		model.addAttribute("mensagem", "Usuario Incluído com Sucesso");
+		model.addAttribute("mensagem", "Usuario Incluï¿½do com Sucesso");
 		return "psyChomics/usuario/cadastrarUsuario";
 	}
 	
@@ -39,6 +43,14 @@ public class UsuarioController {
 		return "psyChomics/usuario/listarUsuario";
 	}
 
+	@RequestMapping("/listarUsuario")
+	public String listarUsuario(Model model) {
+		UsuarioDao dao = new UsuarioDao();
+		List<Usuario> listaUsuario = dao.listar();
+		model.addAttribute("listaUsuario", listaUsuario);
+		return "psyChomics/usuario/listarUsuario";
+	}
+	
     @RequestMapping("removerUsuario")
     public String removerUsuario(Usuario usuario, Model model) {
     	UsuarioDao dao = new UsuarioDao();
@@ -67,4 +79,6 @@ public class UsuarioController {
 
 		return "psyChomics/usuario/listarUsuario";
 	}
+	
+	
 }

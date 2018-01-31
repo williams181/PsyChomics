@@ -62,7 +62,7 @@ body {
 				<li><a href="exibirCadastroUsuario">Cadastro Usuario</a></li>
 				<li><a href="exibirlistarUsuario">Listagem Usuario</a></li>
 				<li><a href="exibirCadastroProduto">Cadastro Produto</a></li>
-				<li><a href="exibirlistarProduto">Listagem Produto</a></li>
+				<li><a href="listarProduto">Listagem Produto</a></li>
 			</ul>
 		</div>
 		<!-- /.navbar-collapse -->
@@ -97,15 +97,29 @@ body {
 		<!-- Page Features -->
 		<div class="row text-center">
 
-			<div class="col-md-3 col-sm-6 hero-feature">
+		<div class="col-md-3 col-sm-6 hero-feature">
 				<div class="thumbnail">
-					<img src="http://placehold.it/800x500" alt="">
+					<img src="https://images-na.ssl-images-amazon.com/images/I/51oBQwmEkWL._SX340_BO1,204,203,200_.jpg"  width="525" height="525">
 					<div class="caption">
-						<h3>Feature Label</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+						<h3>GTO vol. 04</h3>
+						<p>R$23,90</p>
 						<p>
-							<a href="#" class="btn btn-primary">Buy Now!</a> <a href="#"
-								class="btn btn-default">More Info</a>
+							<a href="#" class="btn btn-primary">Comprar</a> <a href="#"
+								class="btn btn-default">Saiba Mais</a>
+						</p>
+					</div>
+				</div>
+			</div>
+
+		<div class="col-md-3 col-sm-6 hero-feature">
+				<div class="thumbnail">
+					<img src="https://images-na.ssl-images-amazon.com/images/I/51b9GZFDRwL._SX321_BO1,204,203,200_.jpg" width="525" height="525">
+					<div class="caption">
+						<h3>Re:Zero – Começando uma Vida em Outro Mundo Livro 02</h3>
+						<p>R$24,00</p>
+						<p>
+							<a href="#" class="btn btn-primary">Comprar</a> <a href="#"
+								class="btn btn-default">Saiba Mais</a>
 						</p>
 					</div>
 				</div>
@@ -113,13 +127,13 @@ body {
 
 			<div class="col-md-3 col-sm-6 hero-feature">
 				<div class="thumbnail">
-					<img src="http://placehold.it/800x500" alt="">
+					<img src="https://images-na.ssl-images-amazon.com/images/I/61ArKJb9hVL._SX326_BO1,204,203,200_.jpg" width="525" height="525">
 					<div class="caption">
-						<h3>Feature Label</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+						<h3>Future Quest - Volume 2</h3>
+						<p>R$17,30</p>
 						<p>
-							<a href="#" class="btn btn-primary">Buy Now!</a> <a href="#"
-								class="btn btn-default">More Info</a>
+							<a href="#" class="btn btn-primary">Comprar</a> <a href="#"
+								class="btn btn-default">Saiba Mais</a>
 						</p>
 					</div>
 				</div>
@@ -127,27 +141,13 @@ body {
 
 			<div class="col-md-3 col-sm-6 hero-feature">
 				<div class="thumbnail">
-					<img src="http://placehold.it/800x500" alt="">
+					<img src="https://images-na.ssl-images-amazon.com/images/I/51GL%2B70eyGL._SX328_BO1,204,203,200_.jpg" width="525" height="525">
 					<div class="caption">
-						<h3>Feature Label</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+						<h3>Reino do Amanha - Edição Definitiva</h3>
+						<p>R$56,90</p>
 						<p>
-							<a href="#" class="btn btn-primary">Buy Now!</a> <a href="#"
-								class="btn btn-default">More Info</a>
-						</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-3 col-sm-6 hero-feature">
-				<div class="thumbnail">
-					<img src="http://placehold.it/800x500" alt="">
-					<div class="caption">
-						<h3>Feature Label</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-						<p>
-							<a href="#" class="btn btn-primary">Buy Now!</a> <a href="#"
-								class="btn btn-default">More Info</a>
+							<a href="#" class="btn btn-primary">Comprar</a> <a href="#"
+								class="btn btn-default">Saiba Mais</a>
 						</p>
 					</div>
 				</div>
@@ -161,13 +161,13 @@ body {
 
 			<div class="col-md-3 col-sm-6 hero-feature">
 				<div class="thumbnail">
-					<img src="http://placehold.it/800x500" alt="">
+					<img src="https://images-na.ssl-images-amazon.com/images/I/51-KVUy6iXL._SX325_BO1,204,203,200_.jpg" width="525" height="525">
 					<div class="caption">
-						<h3>Feature Label</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+						<h3>Your Name - Volume 1</h3>
+						<p>R$12,90</p>
 						<p>
-							<a href="#" class="btn btn-primary">Buy Now!</a> <a href="#"
-								class="btn btn-default">More Info</a>
+							<a href="#" class="btn btn-primary">Comprar</a> <a href="#"
+								class="btn btn-default">Saiba Mais</a>
 						</p>
 					</div>
 				</div>
@@ -175,13 +175,13 @@ body {
 
 			<div class="col-md-3 col-sm-6 hero-feature">
 				<div class="thumbnail">
-					<img src="http://placehold.it/800x500" alt="">
+					<img src="https://images-na.ssl-images-amazon.com/images/I/61IAn1rPCdL._SX369_BO1,204,203,200_.jpg" width="525" height="525">
 					<div class="caption">
-						<h3>Feature Label</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+						<h3>Um Pequeno Assassinato</h3>
+						<p>R$39,90</p>
 						<p>
-							<a href="#" class="btn btn-primary">Buy Now!</a> <a href="#"
-								class="btn btn-default">More Info</a>
+							<a href="#" class="btn btn-primary">Comprar</a> <a href="#"
+								class="btn btn-default">Saiba Mais</a>
 						</p>
 					</div>
 				</div>
@@ -189,13 +189,13 @@ body {
 
 			<div class="col-md-3 col-sm-6 hero-feature">
 				<div class="thumbnail">
-					<img src="http://placehold.it/800x500" alt="">
+					<img src="https://images-na.ssl-images-amazon.com/images/I/61LRZJrG2eL._SX325_BO1,204,203,200_.jpg" width="525" height="525">
 					<div class="caption">
-						<h3>Feature Label</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+						<h3>HellBlazer - Histórias Raras</h3>
+						<p>R$24,50</p>
 						<p>
-							<a href="#" class="btn btn-primary">Buy Now!</a> <a href="#"
-								class="btn btn-default">More Info</a>
+							<a href="#" class="btn btn-primary">Comprar</a> <a href="#"
+								class="btn btn-default">Saiba Mais</a>
 						</p>
 					</div>
 				</div>
@@ -203,13 +203,13 @@ body {
 
 			<div class="col-md-3 col-sm-6 hero-feature">
 				<div class="thumbnail">
-					<img src="http://placehold.it/800x500" alt="">
+					<img src="https://images-na.ssl-images-amazon.com/images/I/51ycfdlFhWL._SX335_BO1,204,203,200_.jpg" width="525" height="525">
 					<div class="caption">
-						<h3>Feature Label</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+						<h3>Superman - Entre a Foice e o Martelo.</h3>
+						<p>R$30,74</p>
 						<p>
-							<a href="#" class="btn btn-primary">Buy Now!</a> <a href="#"
-								class="btn btn-default">More Info</a>
+							<a href="#" class="btn btn-primary">Comprar</a> <a href="#"
+								class="btn btn-default">Saiba Mais</a>
 						</p>
 					</div>
 				</div>

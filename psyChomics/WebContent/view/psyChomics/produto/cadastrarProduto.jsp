@@ -50,7 +50,7 @@
 				<li><a href="exibirCadastroUsuario">Cadastro Usuario</a></li>
 				<li><a href="exibirlistarUsuario">Listagem Usuario</a></li>
 				<li><a href="exibirCadastroProduto">Cadastro Produto</a></li>
-				<li><a href="exibirlistarProduto">Listagem Produto</a></li>
+				<li><a href="listarProduto">Listagem Produto</a></li>
 			</ul>
 		</div>
 		<!-- /.navbar-collapse -->

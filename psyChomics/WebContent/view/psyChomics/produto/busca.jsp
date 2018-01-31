@@ -50,7 +50,7 @@
 					<li><a href="exibirCadastroUsuario">Cadastro Usuario</a></li>
 					<li><a href="exibirlistarUsuario">Listagem Usuario</a></li>
 					<li><a href="exibirCadastroProduto">Cadastro Produto</a></li>
-					<li><a href="exibirlistarProduto">Listagem Produto</a></li>
+					<li><a href="listarProduto">Listagem Produto</a></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -70,12 +70,13 @@
 
 		<form action="busca" method="post">
 		
-			Nome<input type="text" name="nome">
+			Nome<input type="text" name="genero">
 			<input type="submit" class="btn btn-primary" value="busca">
 		
 		</form>
 
 	<jsp:useBean id="dao" class="br.com.ifpe.psyChomics.model.ProdutoDao" />
+	
 	<div class="container" align="center">
 		<table class="table">
 			<tr>
@@ -87,7 +88,7 @@
 
 			</tr>
 
-			<c:forEach var="produto" items="${dao.buscar()}">
+			<c:forEach var="produto" items="${buscarProduto}">
 
 				<tr>
 					<th scope="row">${produto.nome}</th>
