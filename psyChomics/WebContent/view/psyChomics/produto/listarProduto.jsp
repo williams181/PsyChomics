@@ -68,6 +68,14 @@
 	<div style="text-align: center; color: green;">${msg}</div>
 	<br>
 
+	<form action="busca" method="post">
+
+		Nome<input type="text" name="nome"> <input type="submit"
+			class="btn btn-primary" value="busca">
+
+	</form>
+
+
 	<jsp:useBean id="dao" class="br.com.ifpe.psyChomics.model.ProdutoDao" />
 	<div class="container" align="center">
 		<table class="table">
@@ -86,19 +94,17 @@
 					<th scope="row">${produto.nome}</th>
 					<th>${produto.preco}</th>
 					<th>${produto.genero}</th>
-					<th>
-					<c:choose>
-						<c:when test="${not empty produto.imagem}">
-							<img src="view/psyChomics/img/${produto.imagem}">
-						</c:when>
-						<c:otherwise>
+					<th><c:choose>
+							<c:when test="${not empty produto.imagem}">
+								<img src="view/psyChomics/img/${produto.imagem}">
+							</c:when>
+							<c:otherwise>
 							A imagem não foi carregada.
 						</c:otherwise>
-					</c:choose>
-					</th>
+						</c:choose></th>
 
-					<th><a href="removerProduto?id=${produto.id}">Remover</a> 
-					<a href="exibirAlterarProduto?id=${produto.id}">Alterar</a></th>
+					<th><a href="removerProduto?id=${produto.id}">Remover</a> <a
+						href="exibirAlterarProduto?id=${produto.id}">Alterar</a></th>
 
 
 				</tr>

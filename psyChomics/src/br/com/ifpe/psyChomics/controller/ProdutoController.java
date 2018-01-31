@@ -1,6 +1,7 @@
 package br.com.ifpe.psyChomics.controller;
 
 import java.util.Calendar;
+import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -35,6 +36,14 @@ public class ProdutoController {
 	public String exibirlistarProduto() {
 		return "psyChomics/produto/listarProduto";
 	}
+	
+	@RequestMapping("/listarProduto")
+	public String listarProduto(Model model) {
+		ProdutoDao dao = new ProdutoDao();
+		List<Produto> listaProduto = dao.listar();
+		model.addAttribute("listaProduto", listaProduto);
+		return "psyChomics/produto/listarProduto";
+	}
 
 	@RequestMapping("removerProduto")
 	public String removerProduto(Produto produto, Model model) {
@@ -63,5 +72,14 @@ public class ProdutoController {
 		model.addAttribute("msg", "Produto Alterado com Sucesso!");
 
 		return "psyChomics/produto/listarProduto";
+	}
+	
+	@RequestMapping("/busca")
+	public String busca(Produto produto, Model model) {
+		ProdutoDao dao = new ProdutoDao();
+		List<Produto> buscarProduto = dao.buscar(produto);
+		model.addAttribute("listaProduto", buscarProduto);
+		return "psyChomics/produto/listarProduto";
+
 	}
 }

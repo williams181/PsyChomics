@@ -138,6 +138,39 @@ public class ProdutoDao {
 		}
 	}
 	
+	public List<Produto> buscar(Produto prod) {
+
+		try {
+			List<Produto> buscarProduto = new ArrayList<Produto>();
+			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM produto WHERE nome like ?");
+			stmt.setString(1, "%"+prod.getNome()+"%");
+			ResultSet rs = stmt.executeQuery();
+
+			while (rs.next()) {
+
+				Produto produto = new Produto();
+
+				produto.setId(rs.getInt("id"));
+				produto.setNome(rs.getString("nome"));
+				produto.setPreco(rs.getDouble("preco"));
+				produto.setGenero(rs.getString("genero"));
+				produto.setImagem(rs.getString("imagem"));
+
+
+
+				buscarProduto.add(produto);
+			}
+
+			rs.close();
+			stmt.close();
+			connection.close();
+
+			return buscarProduto;
+
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
 
 
 }
