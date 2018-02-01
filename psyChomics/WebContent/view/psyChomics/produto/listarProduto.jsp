@@ -115,7 +115,7 @@
 					<th>${produto.genero}</th>
 					<th><c:choose>
 							<c:when test="${not empty produto.imagem}">
-								<img src="view/psyChomics/img/${produto.imagem}">
+								<img src="view/psyChomics/img/" width="525" height="525"${produto.imagem}">
 							</c:when>
 							<c:otherwise>
 							A imagem não foi carregada.

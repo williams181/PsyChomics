@@ -26,7 +26,8 @@
 
 <style>
 body {
-	background-image: url(view/psyChomics/imagens/bgpreto.jpg);
+	background-color: #EEE9E9;
+	background-image: url();
 }
 
 /* 
@@ -111,7 +112,8 @@ footer {
 	<div class="container">
 
 
-
+	<br>
+	<br>
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
 			<!-- Indicadores -->
 			<ol class="carousel-indicators">
@@ -122,9 +124,9 @@ footer {
 			<!-- Quebra para Slides -->
 			<div class="carousel-inner" role="listbox">
 				<div class="item active">
-					<img src="view/psyChomics/imagens/pain.jpg" alt="Image" width="525" height="525">
+					<img src="view/psyChomics/imagens/bg.jpg" alt="Image" width="525" height="525">
 					<div class="carousel-caption">
-						<div>
+						<div>	
 							<h3>
 								Os melhores mangás
 								<!-- aqui entra um codigo PHP-->
@@ -135,7 +137,7 @@ footer {
 				</div>
 
 				<div class="item">
-					<img src="view/psyChomics/imagens/pain.jpg" width="525" height="525">
+					<img src="view/psyChomics/imagens/bg.jpg" width="525" height="525">
 					<div class="carousel-caption">
 
 						<div>
@@ -175,7 +177,7 @@ footer {
 			<c:forEach var="produto" items="${listaProdutoIndex}">
 				<div class="col-md-3 col-sm-6 hero-feature">
 					<div class="thumbnail">
-						<img src="view/psyChomics/img/" width="525" height="525"${produto.imagem}">
+						<img src="view/psyChomics/img/${produto.imagem}" width="525" height="525">
 						<div class="caption">
 							<h3>${produto.nome}</h3>
 							<p>${produto.preco}</p>
