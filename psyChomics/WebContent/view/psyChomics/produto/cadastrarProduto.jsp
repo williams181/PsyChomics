@@ -40,7 +40,7 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="exibirIndex">PsyChomics</a>
+			<a class="navbar-brand" href="listarProdutoIndex">PsyChomics</a>
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse"
@@ -48,7 +48,7 @@
 			<ul class="nav navbar-nav">
 				<li><a href="exibirLoginUsuario">Login Usuario</a></li>
 				<li><a href="exibirCadastroUsuario">Cadastro Usuario</a></li>
-				<li><a href="exibirlistarUsuario">Listagem Usuario</a></li>
+				<li><a href="listarUsuario">Listagem Usuario</a></li>
 				<li><a href="exibirCadastroProduto">Cadastro Produto</a></li>
 				<li><a href="listarProduto">Listagem Produto</a></li>
 			</ul>
@@ -73,21 +73,21 @@
 		<form action="cadastroProduto" method="post"
 			enctype="multipart/form-data">
 			<div class="form-group">
-				<label for="inputNome">Nome:</label> <input type="text"
+				<label for="inputNome">Nome</label> <input type="text"
 					id="inputNome" class="form-control" name="nome"
-					style="width: 500px;" placeholder="Nome" maxlength="60"
+					style="width: 500px;" placeholder="Nome" minlength="3" maxlength="60"
 					required="required" />
 			</div>
 			<div class="form-group">
-				<label for="inputPreco">Preço:</label> <input type="text"
+				<label for="inputPreco">Preço</label> <input type="text"
 					id="inputPreco" class="form-control" name="preco"
-					style="width: 500px;" placeholder="Preco" maxlength="16"
+					style="width: 500px;" placeholder="Preco" minlength=1" maxlength="16"
 					required="required" />
 			</div>
 			<div class="form-group">
-				<label for="inputGenero">Genero:</label> <input type="text"
+				<label for="inputGenero">Genero</label> <input type="text"
 					id="inputGenero" class="form-control" name="genero"
-					style="width: 500px;" placeholder="Genero" maxlength="60"
+					style="width: 500px;" placeholder="Genero" minlength="3" maxlength="60"
 					required="required" />
 			</div>
 			<div class="form-group">

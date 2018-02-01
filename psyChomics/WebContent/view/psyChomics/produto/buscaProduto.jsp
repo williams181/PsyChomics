@@ -40,7 +40,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="exibirIndex">PsyChomics</a>
+				<a class="navbar-brand" href="listarProdutoIndex">PsyChomics</a>
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse"
@@ -48,7 +48,7 @@
 				<ul class="nav navbar-nav">
 					<li><a href="exibirLoginUsuario">Login Usuario</a></li>
 					<li><a href="exibirCadastroUsuario">Cadastro Usuario</a></li>
-					<li><a href="exibirlistarUsuario">Listagem Usuario</a></li>
+					<li><a href="listarUsuario">Listagem Usuario</a></li>
 					<li><a href="exibirCadastroProduto">Cadastro Produto</a></li>
 					<li><a href="listarProduto">Listagem Produto</a></li>
 				</ul>
@@ -68,15 +68,28 @@
 	<div style="text-align: center; color: green;">${msg}</div>
 	<br>
 
-		<form action="busca" method="post">
-		
-			Nome<input type="text" name="genero">
-			<input type="submit" class="btn btn-primary" value="busca">
-		
+	<div class="container" align="center">
+
+		<form action="buscaProduto" method="post">
+			<div class="form-group">
+				<label for="inputGenero">Genero</label> <input type="text"
+					id="inputGenero" class="form-control" name="genero"
+					style="width: 500px;" placeholder="genero" maxlength="20" />
+				<p>
+					<a href="exibirIndex" class="btn btn-danger" role="button">Cancelar</a>
+					&nbsp;
+					<button type="reset" class="btn btn-default">&nbsp; Limpar
+						&nbsp;</button>
+					&nbsp;
+					<button type="submit" value="busca" class="btn btn-primary">&nbsp;
+						buscar &nbsp;</button>	
+				</p>
+			</div>
 		</form>
+	</div>
 
 	<jsp:useBean id="dao" class="br.com.ifpe.psyChomics.model.ProdutoDao" />
-	
+
 	<div class="container" align="center">
 		<table class="table">
 			<tr>

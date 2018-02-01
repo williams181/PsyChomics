@@ -75,12 +75,26 @@ public class ProdutoController {
 		return "psyChomics/produto/listarProduto";
 	}
 	
-	@RequestMapping("/busca")
-	public String busca(Produto produto, Model model) {
+	@RequestMapping("/buscaProduto")
+	public String buscaProduto(Produto produto, Model model) {
 		ProdutoDao dao = new ProdutoDao();
 		List<Produto> buscarProduto = dao.buscar(produto);
 		model.addAttribute("listaProduto", buscarProduto);
 		return "psyChomics/produto/listarProduto";
 
+	}
+	
+	@RequestMapping("/exibirlistarProdutoIndex")
+	public String exibirlistarProdutoIndex() {
+		return "psyChomics/index";
+	}
+	
+	@RequestMapping("/listarProdutoIndex")
+	public String listarProdutoIndex(Model model) {
+		ProdutoDao dao = new ProdutoDao();
+		List<Produto> listaProdutoIndex = dao.listarIndex();
+		model.addAttribute("listaProdutoIndex", listaProdutoIndex);
+		System.out.println("Exibindo listagem de produto no index.");
+		return "psyChomics/index";
 	}
 }

@@ -52,7 +52,7 @@ body {
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="exibirIndex">PsyChomics</a>
+			<a class="navbar-brand" href="listarProdutoIndex">PsyChomics</a>
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse"
@@ -60,7 +60,7 @@ body {
 			<ul class="nav navbar-nav">
 				<li><a href="exibirLoginUsuario">Login Usuario</a></li>
 				<li><a href="exibirCadastroUsuario">Cadastro Usuario</a></li>
-				<li><a href="exibirlistarUsuario">Listagem Usuario</a></li>
+				<li><a href="listarUsuario">Listagem Usuario</a></li>
 				<li><a href="exibirCadastroProduto">Cadastro Produto</a></li>
 				<li><a href="listarProduto">Listagem Produto</a></li>
 			</ul>
@@ -72,15 +72,13 @@ body {
 	<!-- Page Content -->
 	<div class="container">
 
+
 		<!-- Jumbotron Header -->
 		<header class="jumbotron hero-spacer">
-		<h1>Welcome to PsyChomics!</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa,
-			ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid
-			similique quaerat nam nobis illo aspernatur vitae fugiat numquam
-			repellat.</p>
+		<h1>Bem Vindo!</h1>
+		<p>Identifique-se para fazer pedidos</p>
 		<p>
-			<a class="btn btn-primary btn-large">Call to action!</a>
+			<a class="btn btn-primary btn-large">Entrar</a>
 		</p>
 		</header>
 
@@ -89,131 +87,30 @@ body {
 		<!-- Title -->
 		<div class="row">
 			<div class="col-lg-12">
-				<h3>Latest Features</h3>
+				<h3 style="text-align: center; color: red;">Novos Produtos</h3>
 			</div>
 		</div>
 		<!-- /.row -->
+		<jsp:useBean id="dao" class="br.com.ifpe.psyChomics.model.ProdutoDao" />
 
 		<!-- Page Features -->
 		<div class="row text-center">
-
-		<div class="col-md-3 col-sm-6 hero-feature">
-				<div class="thumbnail">
-					<img src="https://images-na.ssl-images-amazon.com/images/I/51oBQwmEkWL._SX340_BO1,204,203,200_.jpg"  width="525" height="525">
-					<div class="caption">
-						<h3>GTO vol. 04</h3>
-						<p>R$23,90</p>
-						<p>
-							<a href="#" class="btn btn-primary">Comprar</a> <a href="#"
-								class="btn btn-default">Saiba Mais</a>
-						</p>
+		
+			<c:forEach var="produto" items="${listaProdutoIndex}">
+				<div class="col-md-3 col-sm-6 hero-feature">
+					<div class="thumbnail">
+						<img src="view/psyChomics/img/" width="525" height="525"${produto.imagem}">
+						<div class="caption">
+							<h3>${produto.nome}</h3>
+							<p>${produto.preco}</p>
+							<p>
+								<a href="#" class="btn btn-primary">Comprar</a> <a href="#"
+									class="btn btn-default">Saiba Mais</a>
+							</p>
+						</div>
 					</div>
 				</div>
-			</div>
-
-		<div class="col-md-3 col-sm-6 hero-feature">
-				<div class="thumbnail">
-					<img src="https://images-na.ssl-images-amazon.com/images/I/51b9GZFDRwL._SX321_BO1,204,203,200_.jpg" width="525" height="525">
-					<div class="caption">
-						<h3>Re:Zero – Começando uma Vida em Outro Mundo Livro 02</h3>
-						<p>R$24,00</p>
-						<p>
-							<a href="#" class="btn btn-primary">Comprar</a> <a href="#"
-								class="btn btn-default">Saiba Mais</a>
-						</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-3 col-sm-6 hero-feature">
-				<div class="thumbnail">
-					<img src="https://images-na.ssl-images-amazon.com/images/I/61ArKJb9hVL._SX326_BO1,204,203,200_.jpg" width="525" height="525">
-					<div class="caption">
-						<h3>Future Quest - Volume 2</h3>
-						<p>R$17,30</p>
-						<p>
-							<a href="#" class="btn btn-primary">Comprar</a> <a href="#"
-								class="btn btn-default">Saiba Mais</a>
-						</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-3 col-sm-6 hero-feature">
-				<div class="thumbnail">
-					<img src="https://images-na.ssl-images-amazon.com/images/I/51GL%2B70eyGL._SX328_BO1,204,203,200_.jpg" width="525" height="525">
-					<div class="caption">
-						<h3>Reino do Amanha - Edição Definitiva</h3>
-						<p>R$56,90</p>
-						<p>
-							<a href="#" class="btn btn-primary">Comprar</a> <a href="#"
-								class="btn btn-default">Saiba Mais</a>
-						</p>
-					</div>
-				</div>
-			</div>
-
-		</div>
-		<!-- /.row -->
-
-		<!-- Page Features2 -->
-		<div class="row text-center">
-
-			<div class="col-md-3 col-sm-6 hero-feature">
-				<div class="thumbnail">
-					<img src="https://images-na.ssl-images-amazon.com/images/I/51-KVUy6iXL._SX325_BO1,204,203,200_.jpg" width="525" height="525">
-					<div class="caption">
-						<h3>Your Name - Volume 1</h3>
-						<p>R$12,90</p>
-						<p>
-							<a href="#" class="btn btn-primary">Comprar</a> <a href="#"
-								class="btn btn-default">Saiba Mais</a>
-						</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-3 col-sm-6 hero-feature">
-				<div class="thumbnail">
-					<img src="https://images-na.ssl-images-amazon.com/images/I/61IAn1rPCdL._SX369_BO1,204,203,200_.jpg" width="525" height="525">
-					<div class="caption">
-						<h3>Um Pequeno Assassinato</h3>
-						<p>R$39,90</p>
-						<p>
-							<a href="#" class="btn btn-primary">Comprar</a> <a href="#"
-								class="btn btn-default">Saiba Mais</a>
-						</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-3 col-sm-6 hero-feature">
-				<div class="thumbnail">
-					<img src="https://images-na.ssl-images-amazon.com/images/I/61LRZJrG2eL._SX325_BO1,204,203,200_.jpg" width="525" height="525">
-					<div class="caption">
-						<h3>HellBlazer - Histórias Raras</h3>
-						<p>R$24,50</p>
-						<p>
-							<a href="#" class="btn btn-primary">Comprar</a> <a href="#"
-								class="btn btn-default">Saiba Mais</a>
-						</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-3 col-sm-6 hero-feature">
-				<div class="thumbnail">
-					<img src="https://images-na.ssl-images-amazon.com/images/I/51ycfdlFhWL._SX335_BO1,204,203,200_.jpg" width="525" height="525">
-					<div class="caption">
-						<h3>Superman - Entre a Foice e o Martelo.</h3>
-						<p>R$30,74</p>
-						<p>
-							<a href="#" class="btn btn-primary">Comprar</a> <a href="#"
-								class="btn btn-default">Saiba Mais</a>
-						</p>
-					</div>
-				</div>
-			</div>
+			</c:forEach>
 
 		</div>
 		<!-- /.row -->
@@ -224,7 +121,8 @@ body {
 		<footer>
 		<div class="row text-center">
 			<div class="col-lg-12">
-				<p>Copyright &copy; BY WILLIAM ROBERTO</p>
+				<p style="text-align: center; color: red;">Copyright &copy; BY
+					WILLIAM ROBERTO</p>
 			</div>
 		</div>
 		</footer>

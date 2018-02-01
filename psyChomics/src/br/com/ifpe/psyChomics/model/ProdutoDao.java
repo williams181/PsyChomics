@@ -173,4 +173,26 @@ public class ProdutoDao {
 	}
 
 
+	public List<Produto> listarIndex() {
+		try {
+			List<Produto> listaProdutoIndex = new ArrayList<Produto>();
+			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM produto ORDER BY nome");
+			ResultSet rs = stmt.executeQuery();
+			while (rs.next()) {
+				Produto prouto = new Produto();
+				prouto.setId(rs.getInt("id"));
+				prouto.setNome(rs.getString("nome"));
+				prouto.setPreco(rs.getDouble("preco"));
+				prouto.setGenero(rs.getString("genero"));
+				prouto.setImagem(rs.getString("imagem"));
+
+				listaProdutoIndex.add(prouto);
+			}
+			stmt.execute();
+			connection.close();
+			return listaProdutoIndex;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
 }

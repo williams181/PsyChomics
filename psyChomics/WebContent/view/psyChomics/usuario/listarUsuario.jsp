@@ -1,5 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <html lang="en">
 <head>
 <link rel="stylesheet" type="text/css"
@@ -40,17 +42,17 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="exibirIndex">PsyChomics</a>
+				<a class="navbar-brand" href="listarProdutoIndex">PsyChomics</a>
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-				<li><a href="exibirLoginUsuario">Login Usuario</a></li>
-				<li><a href="exibirCadastroUsuario">Cadastro Usuario</a></li>
-				<li><a href="exibirlistarUsuario">Listagem Usuario</a></li>
-				<li><a href="exibirCadastroProduto">Cadastro Produto</a></li>
-				<li><a href="exibirlistarProduto">Listagem Produto</a></li>
+					<li><a href="exibirLoginUsuario">Login Usuario</a></li>
+					<li><a href="exibirCadastroUsuario">Cadastro Usuario</a></li>
+					<li><a href="listarUsuario">Listagem Usuario</a></li>
+					<li><a href="exibirCadastroProduto">Cadastro Produto</a></li>
+					<li><a href="listarProduto">Listagem Produto</a></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -61,42 +63,64 @@
 	<br>
 	<br>
 	<div class="container" align="center">
-	<hr>
-	<h3>Listar Usuario</h3>
-	<hr>
+		<hr>
+		<h3>Listar Usuario</h3>
+		<hr>
 	</div>
 
-	<div style="text-align: center; color: green;">${msg}</div><br>
+	<div style="text-align: center; color: green;">${msg}</div>
+	<br>
+
+	<div class="container" align="center">
+
+		<form action="busca" method="post">
+			<div class="form-group">
+				<label for="inputNomeUsuario">Nome do Usuario</label> <input
+					type="text" id="inputNomeUsuario" class="form-control"
+					name="nomeUsuario" style="width: 500px;"
+					placeholder="Nome do Usuario" maxlength="50" />
+				<p>
+					<a href="exibirIndex" class="btn btn-danger" role="button">Cancelar</a>
+					&nbsp;
+					<button type="reset" class="btn btn-default">&nbsp; Limpar
+						&nbsp;</button>
+					&nbsp;
+					<button type="submit" value="busca" class="btn btn-primary">&nbsp;
+						buscar &nbsp;</button>
+				</p>
+			</div>
+		</form>
+	</div>
 
 	<jsp:useBean id="dao" class="br.com.ifpe.psyChomics.model.UsuarioDao" />
-<div class="container" align="center">
-	<table class="table">
-		<tr>
-			<td scope="col">E-mail</td>
-			<td scope="col">Senha</td>
-			<td scope="col">Nick</td>
-			<td scope="col">Nome do Usuario</td>
-			<td scope="col">CPF</td>
-			<td scope="col">Opções</td>
-
-		</tr>
-
-		<c:forEach var="usuario" items="${dao.listar()}">
-
+	<div class="container" align="center">
+		<table class="table">
 			<tr>
-				<th scope="row">${usuario.email}</th>
-				<th>${usuario.senha}</th>
-				<th>${usuario.nick}</th>
-				<th>${usuario.nomeUsuario}</th>
-				<th>${usuario.cpf}</th>
-				<th><a href="removerUsuario?id=${usuario.id}">Remover</a>
-				<a href="exibirAlterarUsuario?id=${usuario.id}">Alterar</a></th>
+				<td scope="col">E-mail</td>
+				<td scope="col">Senha</td>
+				<td scope="col">Nick</td>
+				<td scope="col">Nome do Usuario</td>
+				<td scope="col">CPF</td>
+				<td scope="col">Opções</td>
 
 			</tr>
 
-		</c:forEach>
+			<c:forEach var="usuario" items="${listaUsuario}">
 
-	</table>
+				<tr>
+					<th scope="row">${usuario.email}</th>
+					<th>${usuario.senha}</th>
+					<th>${usuario.nick}</th>
+					<th>${usuario.nomeUsuario}</th>
+					<th>${usuario.cpf}</th>
+					<th><a href="removerUsuario?id=${usuario.id}">Remover</a> <a
+						href="exibirAlterarUsuario?id=${usuario.id}">Alterar</a></th>
+
+				</tr>
+
+			</c:forEach>
+
+		</table>
 	</div>
 </body>
 </html>

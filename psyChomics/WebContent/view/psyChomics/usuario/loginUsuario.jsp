@@ -41,7 +41,7 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="exibirIndex">PsyChomics</a>
+			<a class="navbar-brand" href="listarProdutoIndex">PsyChomics</a>
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse"
@@ -49,9 +49,9 @@
 			<ul class="nav navbar-nav">
 				<li><a href="exibirLoginUsuario">Login Usuario</a></li>
 				<li><a href="exibirCadastroUsuario">Cadastro Usuario</a></li>
-				<li><a href="exibirlistarUsuario">Listagem Usuario</a></li>
+				<li><a href="listarUsuario">Listagem Usuario</a></li>
 				<li><a href="exibirCadastroProduto">Cadastro Produto</a></li>
-				<li><a href="exibirlistarProduto">Listagem Produto</a></li>
+				<li><a href="listarProduto">Listagem Produto</a></li>
 			</ul>
 		</div>
 		<!-- /.navbar-collapse -->

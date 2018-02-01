@@ -6,15 +6,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import br.com.ifpe.psyChomics.model.Produto;
-import br.com.ifpe.psyChomics.model.ProdutoDao;
+
 import br.com.ifpe.psyChomics.model.Usuario;
 import br.com.ifpe.psyChomics.model.UsuarioDao;
 
-
 @Controller
 public class UsuarioController {
-	
+
 	@RequestMapping("/exibirIndex")
 	public String exibirIndex() {
 		return "psyChomics/index";
@@ -24,12 +22,12 @@ public class UsuarioController {
 	public String exibirLoginUsuario() {
 		return "psyChomics/usuario/loginUsuario";
 	}
-	
+
 	@RequestMapping("/exibirCadastroUsuario")
 	public String exibirCadastroUsuario() {
 		return "psyChomics/usuario/cadastrarUsuario";
 	}
-	
+
 	@RequestMapping("cadastroUsuario")
 	public String cadastroUsuario(Usuario usuario, Model model) {
 		UsuarioDao dao = new UsuarioDao();
@@ -37,7 +35,7 @@ public class UsuarioController {
 		model.addAttribute("mensagem", "Usuario Inclu�do com Sucesso");
 		return "psyChomics/usuario/cadastrarUsuario";
 	}
-	
+
 	@RequestMapping("/exibirlistarUsuario")
 	public String exibirlistarUsuario() {
 		return "psyChomics/usuario/listarUsuario";
@@ -48,18 +46,19 @@ public class UsuarioController {
 		UsuarioDao dao = new UsuarioDao();
 		List<Usuario> listaUsuario = dao.listar();
 		model.addAttribute("listaUsuario", listaUsuario);
+		System.out.println("Exibindo listagem de Usuario.");
 		return "psyChomics/usuario/listarUsuario";
 	}
-	
-    @RequestMapping("removerUsuario")
-    public String removerUsuario(Usuario usuario, Model model) {
-    	UsuarioDao dao = new UsuarioDao();
-    	dao.remover(usuario);
-    	model.addAttribute("msg", "Usuario removido com sucesso!");
-    	
-    	 return "psyChomics/usuario/listarUsuario";
-    }
-    
+
+	@RequestMapping("removerUsuario")
+	public String removerUsuario(Usuario usuario, Model model) {
+		UsuarioDao dao = new UsuarioDao();
+		dao.remover(usuario);
+		model.addAttribute("msg", "Usuario removido com sucesso!");
+
+		return "psyChomics/usuario/listarUsuario";
+	}
+
 	@RequestMapping("/exibirAlterarUsuario")
 	public String exibirAlterarUsuario(Usuario usuario, Model model) {
 
@@ -79,6 +78,14 @@ public class UsuarioController {
 
 		return "psyChomics/usuario/listarUsuario";
 	}
-	
-	
+
+	@RequestMapping("/busca")
+	public String busca(Usuario usuario, Model model) {
+		UsuarioDao dao = new UsuarioDao();
+		List<Usuario> buscarUsuario = dao.buscar(usuario);
+		model.addAttribute("listaUsuario", buscarUsuario);
+		return "psyChomics/usuario/listarUsuario";
+
+	}
+
 }

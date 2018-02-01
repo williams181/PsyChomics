@@ -40,7 +40,7 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="exibirIndex">PsyChomics</a>
+			<a class="navbar-brand" href="listarProdutoIndex">PsyChomics</a>
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse"
@@ -48,9 +48,9 @@
 			<ul class="nav navbar-nav">
 				<li><a href="exibirLoginUsuario">Login Usuario</a></li>
 				<li><a href="exibirCadastroUsuario">Cadastro Usuario</a></li>
-				<li><a href="exibirlistarUsuario">Listagem Usuario</a></li>
+				<li><a href="listarUsuario">Listagem Usuario</a></li>
 				<li><a href="exibirCadastroProduto">Cadastro Produto</a></li>
-				<li><a href="exibirlistarProduto">Listagem Produto</a></li>
+				<li><a href="listarProduto">Listagem Produto</a></li>
 			</ul>
 		</div>
 		<!-- /.navbar-collapse -->
@@ -74,36 +74,36 @@
 			<div class="form-group">
 				<label for="inputEmail">E-mail</label> <input type="text"
 					id="inputEmail" class="form-control" name="email"
-					style="width: 500px;" placeholder="E-mail" maxlength="50"
+					style="width: 500px;" minlength="13" placeholder="E-mail" maxlength="50"
 					required="required" />
 			</div>
 			<div class="form-group">
 				<label for="inputSenha">Senha</label> <input type="password"
 					placeholder="Senha" id="password" class="form-control" name="senha"
-					style="width: 500px;" maxlength="16" required="required" />
+					style="width: 500px;" maxlength="16" minlength="8" required="required" />
 			</div>
 			<div class="form-group">
 				<label >Confirmar Senha</label> <input type="password"
 					placeholder="Confirme Senha" id="confirm_password"
 					class="form-control"  style="width: 500px;"
-					maxlength="16" required="required" />
+					maxlength="16" minlength="8" required="required" />
 			</div>
 			<div class="form-group">
 				<label for="inputNick">Nick</label> <input type="text"
 					id="inputNick" class="form-control" name="nick"
-					style="width: 500px;" placeholder="Nick" maxlength="30"
+					style="width: 500px;" minlength="4" placeholder="Nick" maxlength="30"
 					required="required" />
 			</div>
 			<div class="form-group">
 				<label for="inputNomeUsuario">Nome do Usuario</label> <input
 					type="text" id="inputNomeUsuario" class="form-control"
 					name="NomeUsuario" placeholder="Nome do Usuario"
-					style="width: 500px;" maxlength="50" required="required" />
+					style="width: 500px;" maxlength="50" minlength="18" required="required" />
 			</div>
 			<div class="form-group">
 				<label for="inputCpf">CPF</label> <input type="text" id="inputCpf"
 					class="form-control cpf-mask" required="required" name="cpf"
-					style="width: 500px;" placeholder="CPF:EX.: 000.000.000-00"
+					style="width: 500px;" minlength="9" placeholder="CPF:EX.: 000.000.000-00"
 					maxlength="11" required="required" />
 			</div>
 			<p>

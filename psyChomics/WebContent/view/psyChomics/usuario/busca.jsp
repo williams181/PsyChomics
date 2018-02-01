@@ -1,5 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <html lang="en">
 <head>
 <link rel="stylesheet" type="text/css"
@@ -12,7 +14,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Alterar</title>
+<title>Listagem</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -62,7 +64,7 @@
 	<br>
 	<div class="container" align="center">
 		<hr>
-		<h3>aletar Usuario</h3>
+		<h3>Listar Usuario</h3>
 		<hr>
 	</div>
 
@@ -70,49 +72,55 @@
 	<br>
 
 	<div class="container" align="center">
-		<jsp:useBean id="dao" class="br.com.ifpe.psyChomics.model.UsuarioDao" />
-		<form action="alterarUsuario" method="post" enctype="multipart/form-data">
 
+		<form action="busca" method="post">
 			<div class="form-group">
-				<label for="inputEmail">Email</label> <input type="text"
-					id="inputEmail" class="form-control" name="email"
-					value="${usuario.email}" style="width: 500px;" maxlength="50"
-					required="required" /> 
-				<input type="hidden" name="id" value="${usuario.id}"/>
+				<label for="inputNomeUsuario">Nome do Usuario</label> <input
+					type="text" id="inputNomeUsuario" class="form-control"
+					name="nomeUsuario" style="width: 500px;"
+					placeholder="Nome do Usuario" maxlength="50" />
+				<p>
+					<a href="exibirIndex" class="btn btn-danger" role="button">Cancelar</a>
+					&nbsp;
+					<button type="reset" class="btn btn-default">&nbsp; Limpar
+						&nbsp;</button>
+					&nbsp;
+					<button type="submit" value="busca" class="btn btn-primary">&nbsp;
+						buscar &nbsp;</button>
+				</p>
 			</div>
-
-			<div class="form-group">
-				<label for="inputSenha">Senha</label> <input type="password"
-					id="inputSenha" class="form-control" name="senha"
-					value="${usuario.senha}" style="width: 500px;" maxlength="100"
-					required="required" />
-			</div>
-
-			<div class="form-group">
-				<label for="inputNick">Nick</label> <input type="text"
-					id="inputNick" class="form-control" name="nick"
-					value="${usuario.nick}" style="width: 500px;" maxlength="30"
-					required="required" />
-			</div>
-						<div class="form-group">
-				<label for="inputNomeUsuario">Nome do usuario</label> <input type="text"
-					id="inputNomeUsuario" class="form-control" name="nomeUsuario"
-					value="${usuario.nomeUsuario}" style="width: 500px;" maxlength="30"
-					required="required" />
-			</div>
-						<div class="form-group">
-				<label for="inputCpf">CPF</label> <input type="text"
-					id="inputCpf" class="form-control" name="cpf"
-					value="${usuario.cpf}" style="width: 500px;" maxlength="30"
-					required="required" />
-			</div>
-			<p>
-				<input type="submit" class="btn btn-primary" value="alterar">
-			</p>
 		</form>
-
-
 	</div>
 
+	<jsp:useBean id="dao" class="br.com.ifpe.psyChomics.model.UsuarioDao" />
+	<div class="container" align="center">
+		<table class="table">
+			<tr>
+				<td scope="col">E-mail</td>
+				<td scope="col">Senha</td>
+				<td scope="col">Nick</td>
+				<td scope="col">Nome do Usuario</td>
+				<td scope="col">CPF</td>
+				<td scope="col">Opções</td>
+
+			</tr>
+
+			<c:forEach var="usuario" items="${buscarUsuario}">
+
+				<tr>
+					<th scope="row">${usuario.email}</th>
+					<th>${usuario.senha}</th>
+					<th>${usuario.nick}</th>
+					<th>${usuario.nomeUsuario}</th>
+					<th>${usuario.cpf}</th>
+					<th><a href="removerUsuario?id=${usuario.id}">Remover</a> <a
+						href="exibirAlterarUsuario?id=${usuario.id}">Alterar</a></th>
+
+				</tr>
+
+			</c:forEach>
+
+		</table>
+	</div>
 </body>
 </html>

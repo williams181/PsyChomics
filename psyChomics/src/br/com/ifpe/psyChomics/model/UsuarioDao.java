@@ -141,4 +141,41 @@ public class UsuarioDao {
 		}
 	}
 
+
+	public List<Usuario> buscar(Usuario prod) {
+
+		try {
+			List<Usuario> buscarUsuario = new ArrayList<Usuario>();
+			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM usuario WHERE nome_usuario like ?");
+			stmt.setString(1, "%"+prod.getNomeUsuario()+"%");
+			ResultSet rs = stmt.executeQuery();
+
+			while (rs.next()) {
+
+				Usuario usuario = new Usuario();
+
+				usuario.setId(rs.getInt("id"));
+				usuario.setEmail(rs.getString("email"));
+				usuario.setSenha(rs.getString("senha"));
+				usuario.setNick(rs.getString("nick"));
+				usuario.setNomeUsuario(rs.getString("nome_usuario"));
+				usuario.setCpf(rs.getString("cpf"));
+
+
+
+				buscarUsuario.add(usuario);
+			}
+
+			rs.close();
+			stmt.close();
+			connection.close();
+
+			return buscarUsuario;
+
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+
 }

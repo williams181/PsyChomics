@@ -42,12 +42,31 @@ CREATE TABLE carrinho_de_compras (
 	FOREIGN KEY (idproduto) REFERENCES produto(id)	
 );
 
+CREATE TABLE compra(
+	id int(6) AUTO_INCREMENT PRIMARY KEY,
+	idcliente int(6),
+	valor_total int(6) not null,
+	data_compra date not null,
+	FOREIGN KEY (idcliente) REFERENCES usuario(id)
+);
+
+CREATE TABLE item_compra (
+	id int(6) AUTO_INCREMENT PRIMARY KEY,
+	idcompra int(6),
+	idproduto int(6),
+	quantidade int(6) not null,
+	FOREIGN KEY (idproduto) REFERENCES produto(id),
+	FOREIGN KEY (idcompra) REFERENCES compra(id)
+);
+
 CREATE TABLE fale_conosco (
 	id INT(6) AUTO_INCREMENT PRIMARY KEY,
 	nome VARCHAR(50) NOT NULL,
 	email VARCHAR(50) NOT NULL,
 	mensagem VARCHAR(255)
 );
+
+
 
 
 
