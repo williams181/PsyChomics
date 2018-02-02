@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<html lang="en">
+<html lang="pt-br">
 <head>
 <link rel="stylesheet" type="text/css"
 	href="view/psyChomics/bootstrap/css/bootstrap.min.css" />
@@ -115,7 +115,7 @@
 					<th>${produto.genero}</th>
 					<th><c:choose>
 							<c:when test="${not empty produto.imagem}">
-								<img src="view/psyChomics/img/" width="525" height="525"${produto.imagem}">
+								<img src="view/psyChomics/img/" width="150" height="150"${produto.imagem}>
 							</c:when>
 							<c:otherwise>
 							A imagem não foi carregada.

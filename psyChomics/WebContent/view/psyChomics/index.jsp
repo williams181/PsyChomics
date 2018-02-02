@@ -177,7 +177,7 @@ footer {
 			<c:forEach var="produto" items="${listaProdutoIndex}">
 				<div class="col-md-3 col-sm-6 hero-feature">
 					<div class="thumbnail">
-						<img src="view/psyChomics/img/${produto.imagem}" width="525" height="525">
+						<img src="view/psyChomics/img/" width="150" height="150"${produto.imagem}>
 						<div class="caption">
 							<h3>${produto.nome}</h3>
 							<p>${produto.preco}</p>
