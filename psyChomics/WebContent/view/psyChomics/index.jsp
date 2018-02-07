@@ -22,7 +22,8 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style>
 body {
@@ -58,6 +59,97 @@ footer {
 		display: none;
 	}
 }
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+* {box-sizing: border-box;}
+
+body {
+  margin: 0;
+  font-family: Arial;
+}
+ /*SEARCH*/
+ body {
+    font-family: Arial;
+}
+
+* {
+    box-sizing: border-box;
+}
+form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+}
+
+form.example button {
+    float: left;
+    width: 20%;
+    padding: 13px;
+    background: #6a6f72;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+}
+
+form.example button:hover {
+    background: #e00000;
+}
+
+form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+}
 </style>
 
 
@@ -92,6 +184,28 @@ footer {
 					class="icon-bar"></span>
 			</button>
 			<a class="navbar-brand" href="listarProdutoIndex">PsyChomics</a>
+	<div class="dropdown">
+    <button class="dropbtn">Mang·s 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <ul class="dropdown-content">
+      <li><a href="#">NARUTO</a></li>
+      <li><a href="#">DRAGON BALL</a></li>
+      <li><a href="#">CAVALEIROS DO ZODI¡CO</a></li>
+      <li><a href="#">ONE PUNCH MAN</a></li>
+    </ul>
+  </div> 
+  <div class="dropdown">
+   <button class="dropbtn">Quadrinhos
+      <i class="fa fa-caret-down"></i>
+   </button>
+    <ul class="dropdown-content">
+      <li><a href="#">MARVEL</a></li>
+      <li><a href="#">DC Comics</a></li>
+      <li><a href="#">VERTIGO</a></li>
+      <li><a href="#">DEVIR</a></li>
+    </ul>
+  </div> 
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse"
@@ -104,9 +218,16 @@ footer {
 				<li><a href="listarProduto">Listagem Produto</a></li>
 			</ul>
 		</div>
+
+<form class="example" action="/action_page.php">
+  <input type="text" placeholder="Procurar.." name="search">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+    
 		<!-- /.navbar-collapse -->
 	</div>
-	<!-- /.container --> </nav>
+	<!-- /.container --> 
+	</nav>
 
 	<!-- Page Content -->
 	<div class="container">
@@ -128,7 +249,7 @@ footer {
 					<div class="carousel-caption">
 						<div>	
 							<h3>
-								Os melhores mang√°s
+								Os melhores mang·s
 								<!-- aqui entra um codigo PHP-->
 							</h3>
 						</div>
@@ -141,7 +262,7 @@ footer {
 					<div class="carousel-caption">
 
 						<div>
-							<h3>Uma grande cole√ß√£o de Quadrinhos</h3>
+							<h3>Uma grande coleÁ„o de Quadrinhos</h3>
 						</div>
 
 					</div>

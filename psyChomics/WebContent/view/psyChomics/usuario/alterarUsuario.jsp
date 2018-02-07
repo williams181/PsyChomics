@@ -62,7 +62,7 @@
 	<br>
 	<div class="container" align="center">
 		<hr>
-		<h3>aletar Usuario</h3>
+		<h3>Alterar Usuário</h3>
 		<hr>
 	</div>
 
@@ -95,7 +95,7 @@
 					required="required" />
 			</div>
 						<div class="form-group">
-				<label for="inputNomeUsuario">Nome do usuario</label> <input type="text"
+				<label for="inputNomeUsuario">Nome do usuário</label> <input type="text"
 					id="inputNomeUsuario" class="form-control" name="nomeUsuario"
 					value="${usuario.nomeUsuario}" style="width: 500px;" maxlength="30"
 					required="required" />
@@ -108,6 +108,7 @@
 			</div>
 			<p>
 				<input type="submit" class="btn btn-primary" value="alterar">
+				<a href="exibirIndex" class="btn btn-danger" role="button">Cancelar</a>
 			</p>
 		</form>
 

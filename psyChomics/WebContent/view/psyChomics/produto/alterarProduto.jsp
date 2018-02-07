@@ -62,7 +62,7 @@
 	<br>
 	<div class="container" align="center">
 		<hr>
-		<h3>aletar Produto</h3>
+		<h3>Alterar Produto</h3>
 		<hr>
 	</div>
 
@@ -96,6 +96,7 @@
 			</div>
 			<p>
 				<input type="submit" class="btn btn-primary" value="alterar">
+				<a href="exibirIndex" class="btn btn-danger" role="button">Cancelar</a>
 			</p>
 		</form>
 

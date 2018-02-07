@@ -85,7 +85,7 @@
 					required="required" />
 			</div>
 			<div class="form-group">
-				<label for="inputGenero">Genero</label> <input type="text"
+				<label for="inputGenero">Gênero</label> <input type="text"
 					id="inputGenero" class="form-control" name="genero"
 					style="width: 500px;" placeholder="Genero" minlength="3" maxlength="60"
 					required="required" />
