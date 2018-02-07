@@ -21,12 +21,10 @@ CREATE TABLE produto (
 	FOREIGN KEY (idusuario) REFERENCES usuario(id)
 );
 
-CREATE TABLE comentarios_produtos (
+CREATE TABLE comentario_produto (
 	id INT(6) AUTO_INCREMENT PRIMARY KEY,
 	idusuario INT (6),
 	idproduto INT (6),
-	nome VARCHAR(60) NOT NULL,
-	email VARCHAR(50) NOT NULL,
 	comentario VARCHAR(255) NOT NULL,
 	FOREIGN KEY (idusuario) REFERENCES usuario(id),
 	FOREIGN KEY (idproduto) REFERENCES produto(id)	

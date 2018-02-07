@@ -3,11 +3,20 @@ package br.com.ifpe.psyChomics.model;
 public class Produto {
 	
 	private int id;
+	private ComentarioProduto comentarioProduto;
 	private String nome;
 	private double preco;
 	private String genero;
 	private String imagem;
 	
+	
+	
+	public ComentarioProduto getComentarioProduto() {
+		return comentarioProduto;
+	}
+	public void setComentarioProduto(ComentarioProduto comentarioProduto) {
+		this.comentarioProduto = comentarioProduto;
+	}
 	public String getImagem() {
 		return imagem;
 	}
