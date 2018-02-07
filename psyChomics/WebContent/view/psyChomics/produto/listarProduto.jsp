@@ -104,26 +104,30 @@
 				<td scope="col">Genero</td>
 				<td scope="col">Imagem</td>
 				<td scope="col">Opções</td>
+				<td scope="col">Comentario</td>
 
 			</tr>
 
-			<c:forEach var="produto" items="${listaProduto}">
+			<c:forEach var="p" items="${listaProduto}">
 
 				<tr>
-					<th scope="row">${produto.nome}</th>
-					<th>${produto.preco}</th>
-					<th>${produto.genero}</th>
+					<th scope="row">${p.nome}</th>
+					<th>${p.preco}</th>
+					<th>${p.genero}</th>
 					<th><c:choose>
-							<c:when test="${not empty produto.imagem}">
-								<img src="view/psyChomics/img/" width="150" height="150"${produto.imagem}>
+							<c:when test="${not empty p.imagem}">
+								<img src="view/psyChomics/img/" width="150" height="150"${p.imagem}>
 							</c:when>
 							<c:otherwise>
 							A imagem não foi carregada.
 						</c:otherwise>
 						</c:choose></th>
 
-					<th><a href="removerProduto?id=${produto.id}">Remover</a> <a
-						href="exibirAlterarProduto?id=${produto.id}">Alterar</a></th>
+					<th><a href="removerProduto?id=${p.id}">Remover</a> <a
+						href="exibirAlterarProduto?id=${p.id}">Alterar</a>
+					<th>
+					  
+					</th>
 
 
 				</tr>

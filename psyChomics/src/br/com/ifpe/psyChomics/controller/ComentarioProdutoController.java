@@ -1,5 +1,7 @@
 package br.com.ifpe.psyChomics.controller;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +24,20 @@ public class ComentarioProdutoController {
 		dao.cadastar(comentarioProduto);
 		model.addAttribute("mensagem", "Comentario do Produto Incluido com Sucesso");
 		return "psyChomics/produto/cadastrarComentarioProduto";
+	}
+
+	@RequestMapping("/exibirlistarComentarioProduto")
+	public String exibirlistarComentarioProduto() {
+		return "psyChomics/produto/listarComentarioProduto";
+	}
+
+	@RequestMapping("/listarComentarioProduto")
+	public String listarComentarioProduto(Model model) {
+		ComentarioProdutoDao dao = new ComentarioProdutoDao();
+		List<ComentarioProduto> listaComentarioProduto = dao.listar();
+		model.addAttribute("listaComentarioProduto", listaComentarioProduto);
+		System.out.println("Exibindo listagem de categoria de produto.");
+		return "psyChomics/produto/listarComentarioProduto";
 	}
 
 }
