@@ -27,14 +27,19 @@ public class ComentarioProdutoController {
 	}
 
 	@RequestMapping("/exibirlistarComentarioProduto")
-	public String exibirlistarComentarioProduto() {
-		return "psyChomics/produto/listarComentarioProduto";
+	public String exibirlistarComentarioProduto(Model model) {
+		//Código para popular o combo de comentario de produto
+		ComentarioProdutoDao dao2 = new ComentarioProdutoDao();
+		List<ComentarioProduto> listaComentarioProduto = dao2.listar();
+		model.addAttribute("listaComentarioProduto", listaComentarioProduto);
+
+		return "psyChomics/produto/listarProduto";
 	}
 
 	@RequestMapping("/listarComentarioProduto")
 	public String listarComentarioProduto(Model model) {
-		ComentarioProdutoDao dao = new ComentarioProdutoDao();
-		List<ComentarioProduto> listaComentarioProduto = dao.listar();
+		ComentarioProdutoDao dao3 = new ComentarioProdutoDao();
+		List<ComentarioProduto> listaComentarioProduto = dao3.listar();
 		model.addAttribute("listaComentarioProduto", listaComentarioProduto);
 		System.out.println("Exibindo listagem de categoria de produto.");
 		return "psyChomics/produto/listarComentarioProduto";

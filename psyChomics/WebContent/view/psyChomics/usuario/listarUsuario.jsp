@@ -1,7 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="pt-br">
 <head>
@@ -21,9 +20,10 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style>
 body {
@@ -61,99 +61,101 @@ footer {
 }
 
 .dropdown {
-    float: left;
-    overflow: hidden;
+	float: left;
+	overflow: hidden;
 }
 
 .dropdown .dropbtn {
-    font-size: 16px;    
-    border: none;
-    outline: none;
-    color: white;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0;
+	font-size: 16px;
+	border: none;
+	outline: none;
+	color: white;
+	padding: 14px 16px;
+	background-color: inherit;
+	font-family: inherit;
+	margin: 0;
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: red;
+	background-color: red;
 }
 
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
 }
 
 .dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
+	float: none;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
 }
 
 .dropdown-content a:hover {
-    background-color: #ddd;
+	background-color: #ddd;
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
-}
-
-* {box-sizing: border-box;}
-
-body {
-  margin: 0;
-  font-family: Arial;
-}
- /*SEARCH*/
- body {
-    font-family: Arial;
+	display: block;
 }
 
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
+
+body {
+	margin: 0;
+	font-family: Arial;
+}
+/*SEARCH*/
+body {
+	font-family: Arial;
+}
+
+* {
+	box-sizing: border-box;
+}
+
 form.example input[type=text] {
-    padding: 10px;
-    font-size: 17px;
-    border: 1px solid grey;
-    float: left;
-    width: 80%;
-    background: #f1f1f1;
+	padding: 10px;
+	font-size: 17px;
+	border: 1px solid grey;
+	float: left;
+	width: 80%;
+	background: #f1f1f1;
 }
 
 form.example button {
-    float: left;
-    width: 20%;
-    padding: 13px;
-    background: #6a6f72;
-    color: white;
-    font-size: 17px;
-    border: 1px solid grey;
-    border-left: none;
-    cursor: pointer;
+	float: left;
+	width: 20%;
+	padding: 13px;
+	background: #6a6f72;
+	color: white;
+	font-size: 17px;
+	border: 1px solid grey;
+	border-left: none;
+	cursor: pointer;
 }
 
 form.example button:hover {
-    background: #e00000;
+	background: #e00000;
 }
 
 form.example::after {
-    content: "";
-    clear: both;
-    display: table;
+	content: "";
+	clear: both;
+	display: table;
 }
 </style>
 
-
-<title>Index</title>
+<title>listar Usuario</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -184,28 +186,28 @@ form.example::after {
 					class="icon-bar"></span>
 			</button>
 			<a class="navbar-brand" href="listarProdutoIndex">PsyChomics</a>
-	<div class="dropdown">
-    <button class="dropbtn">Mangás 
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <ul class="dropdown-content">
-      <li><a href="#">NARUTO</a></li>
-      <li><a href="#">DRAGON BALL</a></li>
-      <li><a href="#">CAVALEIROS DO ZODIÁCO</a></li>
-      <li><a href="#">ONE PUNCH MAN</a></li>
-    </ul>
-  </div> 
-  <div class="dropdown">
-   <button class="dropbtn">Quadrinhos
-      <i class="fa fa-caret-down"></i>
-   </button>
-    <ul class="dropdown-content">
-      <li><a href="#">MARVEL</a></li>
-      <li><a href="#">DC Comics</a></li>
-      <li><a href="#">VERTIGO</a></li>
-      <li><a href="#">DEVIR</a></li>
-    </ul>
-  </div> 
+			<div class="dropdown">
+				<button class="dropbtn">
+					Mangas <i class="fa fa-caret-down"></i>
+				</button>
+				<ul class="dropdown-content">
+					<li><a href="#">NARUTO</a></li>
+					<li><a href="#">DRAGON BALL</a></li>
+					<li><a href="#">CAVALEIROS DO ZODIï¿½CO</a></li>
+					<li><a href="#">ONE PUNCH MAN</a></li>
+				</ul>
+			</div>
+			<div class="dropdown">
+				<button class="dropbtn">
+					Quadrinhos <i class="fa fa-caret-down"></i>
+				</button>
+				<ul class="dropdown-content">
+					<li><a href="#">MARVEL</a></li>
+					<li><a href="#">DC Comics</a></li>
+					<li><a href="#">VERTIGO</a></li>
+					<li><a href="#">DEVIR</a></li>
+				</ul>
+			</div>
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse"
@@ -219,19 +221,21 @@ form.example::after {
 			</ul>
 		</div>
 
-<form class="example" action="/action_page.php">
-  <input type="text" placeholder="Procurar.." name="search">
-  <button type="submit"><i class="fa fa-search"></i></button>
-</form>
-    
+		<form class="example" action="/action_page.php">
+			<input type="text" placeholder="Procurar.." name="search">
+			<button type="submit">
+				<i class="fa fa-search"></i>
+			</button>
+		</form>
+
 		<!-- /.navbar-collapse -->
 	</div>
-	<!-- /.container --> 
-	</nav>
+	<!-- /.container --> </nav>
 
 	<br>
 	<br>
 	<div class="container" align="center">
+		<br> <br>
 		<hr>
 		<h3>Listar Usuario</h3>
 		<hr>
@@ -241,26 +245,26 @@ form.example::after {
 	<br>
 
 	<div class="container" align="center">
-
 		<form action="busca" method="post">
 			<div class="form-group">
-				<label for="inputNomeUsuario">Nome do Usuário</label> <input
+			
+				<label for="inputNomeUsuario">Nome do UsuÃ¡rio</label> <input
 					type="text" id="inputNomeUsuario" class="form-control"
 					name="nomeUsuario" style="width: 500px;"
 					placeholder="Nome do Usuario" maxlength="50" />
-				<p>
+				</div>
+				<div class="container" align="center">
 					<a href="exibirIndex" class="btn btn-danger" role="button">Cancelar</a>
 					&nbsp;
 					<button type="reset" class="btn btn-default">&nbsp; Limpar
 						&nbsp;</button>
 					&nbsp;
-					<button type="submit" value="busca" class="btn btn-primary">&nbsp;
-						buscar &nbsp;</button>
-				</p>
+					<button type="submit" value="cadastar" class="btn btn-primary">&nbsp;
+						Cadastrar &nbsp;</button>
 			</div>
 		</form>
 	</div>
-
+<br><br>
 	<jsp:useBean id="dao" class="br.com.ifpe.psyChomics.model.UsuarioDao" />
 	<div class="container" align="center">
 		<table class="table">
@@ -270,7 +274,7 @@ form.example::after {
 				<td scope="col">Nick</td>
 				<td scope="col">Nome do Usuario</td>
 				<td scope="col">CPF</td>
-				<td scope="col">Opções</td>
+				<td scope="col">OpÃ§Ãµes</td>
 
 			</tr>
 

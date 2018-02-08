@@ -11,7 +11,6 @@ import br.com.ifpe.psyChomics.util.ConnectionFactory;
 
 public class ComentarioProdutoDao {
 
-	
 	private Connection connection;
 
 	public ComentarioProdutoDao() {
@@ -33,7 +32,6 @@ public class ComentarioProdutoDao {
 
 			stmt.setString(1, comentarioProduto.getComentario());
 
-
 			stmt.execute();
 			stmt.close();
 			connection.close();
@@ -46,7 +44,8 @@ public class ComentarioProdutoDao {
 	public List<ComentarioProduto> listar() {
 		try {
 			List<ComentarioProduto> listaComentarioProduto = new ArrayList<ComentarioProduto>();
-			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM comentario_produto ORDER BY comentario");
+			PreparedStatement stmt = this.connection
+					.prepareStatement("SELECT * FROM comentario_produto ORDER BY comentario");
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
 				ComentarioProduto comentarioProduto = new ComentarioProduto();
@@ -63,5 +62,30 @@ public class ComentarioProdutoDao {
 		}
 	}
 
-	
+	public ComentarioProduto buscarPorId(int id) {
+
+		try {
+
+			ComentarioProduto ComentarioProdutoCompleto = new ComentarioProduto();
+
+			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM comentario_produto WHERE id =  ?");
+			stmt.setInt(1, id);
+			ResultSet rs = stmt.executeQuery();
+
+			while (rs.next()) {
+
+				ComentarioProdutoCompleto.setId(rs.getInt("id"));
+				ComentarioProdutoCompleto.setComentario(rs.getString("comentario"));
+			}
+
+			rs.close();
+			stmt.close();
+			connection.close();
+
+			return ComentarioProdutoCompleto;
+
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
 }

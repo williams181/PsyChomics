@@ -1,7 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="pt-br">
 <head>
@@ -22,6 +21,9 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -152,8 +154,7 @@ form.example::after {
 }
 </style>
 
-
-<title>Index</title>
+<title>login do usuario</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -185,13 +186,13 @@ form.example::after {
 			</button>
 			<a class="navbar-brand" href="listarProdutoIndex">PsyChomics</a>
 	<div class="dropdown">
-    <button class="dropbtn">Mangás 
+    <button class="dropbtn">Mangas 
       <i class="fa fa-caret-down"></i>
     </button>
     <ul class="dropdown-content">
       <li><a href="#">NARUTO</a></li>
       <li><a href="#">DRAGON BALL</a></li>
-      <li><a href="#">CAVALEIROS DO ZODIÁCO</a></li>
+      <li><a href="#">CAVALEIROS DO ZODIï¿½CO</a></li>
       <li><a href="#">ONE PUNCH MAN</a></li>
     </ul>
   </div> 
@@ -223,6 +224,7 @@ form.example::after {
   <input type="text" placeholder="Procurar.." name="search">
   <button type="submit"><i class="fa fa-search"></i></button>
 </form>
+
     
 		<!-- /.navbar-collapse -->
 	</div>
@@ -232,6 +234,8 @@ form.example::after {
 	<br>
 	<br>
 	<div class="container" align="center">
+	<br>
+	<br>
 	<hr>
 	<h3>Login</h3>
 	<hr>
