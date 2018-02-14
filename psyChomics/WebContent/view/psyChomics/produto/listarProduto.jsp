@@ -190,24 +190,21 @@ form.example::after {
 			<a class="navbar-brand" href="listarProdutoIndex">PsyChomics</a>
 			<div class="dropdown">
 				<button class="dropbtn">
-					Mangas <i class="fa fa-caret-down"></i>
+					Usuario <i class="fa fa-caret-down"></i>
 				</button>
 				<ul class="dropdown-content">
-					<li><a href="#">NARUTO</a></li>
-					<li><a href="#">DRAGON BALL</a></li>
-					<li><a href="#">CAVALEIROS DO ZODI�CO</a></li>
-					<li><a href="#">ONE PUNCH MAN</a></li>
+					<li><a href="exibirLoginUsuario">Login Usuario</a></li>
+					<li><a href="exibirCadastroUsuario">Cadastro Usuario</a></li>
+					<li><a href="listarUsuario">Listagem Usuario</a></li>
 				</ul>
 			</div>
 			<div class="dropdown">
 				<button class="dropbtn">
-					Quadrinhos <i class="fa fa-caret-down"></i>
+					Produto <i class="fa fa-caret-down"></i>
 				</button>
 				<ul class="dropdown-content">
-					<li><a href="#">MARVEL</a></li>
-					<li><a href="#">DC Comics</a></li>
-					<li><a href="#">VERTIGO</a></li>
-					<li><a href="#">DEVIR</a></li>
+					<li><a href="exibirCadastroProduto">Cadastro Produto</a></li>
+					<li><a href="listarProduto">Listagem Produto</a></li>
 				</ul>
 			</div>
 		</div>
@@ -223,9 +220,10 @@ form.example::after {
 			</ul>
 		</div>
 
-		<form class="example" action="/action_page.php">
-			<input type="text" placeholder="Procurar.." name="search">
-			<button type="submit">
+		<form action="buscaProduto" class="example" method="post">
+			<input type="text" placeholder="Procurar.." for="inputNome"
+				id="inputNome" name="nome">
+			<button type="submit" value="buscar">
 				<i class="fa fa-search"></i>
 			</button>
 		</form>
@@ -236,43 +234,18 @@ form.example::after {
 
 	<br>
 	<br>
+	
 	<div class="container" align="center">
 		<br> <br>
 		<hr>
 		<h3>Listar Produto</h3>
 		<hr>
 	</div>
-
-	<div style="text-align: center; color: green;">${msg}</div>
-
-	<br>
-
-	<div class="container" align="center">
-
-		<form action="buscaProduto" method="post">
-			<div class="form-group">
-				<label for="inputGenero">Genero</label> <input type="text"
-					id="inputGenero" class="form-control" name="genero"
-					style="width: 500px;" placeholder="genero" maxlength="20" />
-				<p>
-				<div class="container" align="center">
-					<a href="exibirIndex" class="btn btn-danger" role="button">Cancelar</a>
-					&nbsp;
-					<button type="reset" class="btn btn-default">&nbsp; Limpar
-						&nbsp;</button>
-					&nbsp;
-					<button type="submit" value="busca" class="btn btn-primary">&nbsp;
-						buscar &nbsp;</button>
-				</div>
-				</p>
-			</div>
-		</form>
-	</div>
+	
 	<br>
 	<br>
 
 	<jsp:useBean id="dao" class="br.com.ifpe.psyChomics.model.ProdutoDao" />
-	<jsp:useBean id="dao2" class="br.com.ifpe.psyChomics.model.ComentarioProdutoDao" />
 	<div class="container" align="center">
 		<table class="table">
 			<tr>
@@ -281,11 +254,10 @@ form.example::after {
 				<td scope="col">Genero</td>
 				<td scope="col">Imagem</td>
 				<td scope="col">Opções</td>
-				<td scope="col">Comentario</td>
 
 			</tr>
 
-			<c:forEach var="p" items="${listaProduto}">
+			<c:forEach var="p" items="${listaProduto}">	
 
 				<tr>
 					<th scope="row">${p.nome}</th>
@@ -301,20 +273,14 @@ form.example::after {
 						</c:otherwise>
 						</c:choose></th>
 
-					<th><a href="exibirCadastroComentarioProduto?id=${c.id}" value="${c.id}">criar comentario</a>|
-					<a href="removerProduto?id=${p.id}" onclick="myFunction()">Remover</a>|
-						<a href="exibirAlterarProduto?id=${p.id}">Alterar</a>
-					<th><c:forEach var="c" items="${dao2.listar()}">${c.comentario}</c:forEach></th>
-
+					<th><a href="removerProduto?id=${p.id}" onclick="myFunction()">Remover</a>|
+						<a href="exibirAlterarProduto?id=${p.id}">Alterar</a> | <a href="exibirCadastroComentarioProduto">cadastrar comentario</a>
 				</tr>
 
 			</c:forEach>
 
 		</table>
 	</div>
-
-
-
 
 	<script>
 		function myFunction() {

@@ -44,8 +44,7 @@ public class ComentarioProdutoDao {
 	public List<ComentarioProduto> listar() {
 		try {
 			List<ComentarioProduto> listaComentarioProduto = new ArrayList<ComentarioProduto>();
-			PreparedStatement stmt = this.connection
-					.prepareStatement("SELECT * FROM comentario_produto ORDER BY comentario");
+			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM comentario_produto ORDER BY comentario");
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
 				ComentarioProduto comentarioProduto = new ComentarioProduto();

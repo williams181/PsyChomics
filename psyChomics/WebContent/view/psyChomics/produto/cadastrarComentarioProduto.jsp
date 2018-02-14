@@ -189,24 +189,21 @@ form.example::after {
 			<a class="navbar-brand" href="listarProdutoIndex">PsyChomics</a>
 			<div class="dropdown">
 				<button class="dropbtn">
-					Mangas <i class="fa fa-caret-down"></i>
+					Usuario <i class="fa fa-caret-down"></i>
 				</button>
 				<ul class="dropdown-content">
-					<li><a href="#">NARUTO</a></li>
-					<li><a href="#">DRAGON BALL</a></li>
-					<li><a href="#">CAVALEIROS DO ZODI�CO</a></li>
-					<li><a href="#">ONE PUNCH MAN</a></li>
+					<li><a href="exibirLoginUsuario">Login Usuario</a></li>
+					<li><a href="exibirCadastroUsuario">Cadastro Usuario</a></li>
+					<li><a href="listarUsuario">Listagem Usuario</a></li>
 				</ul>
 			</div>
 			<div class="dropdown">
 				<button class="dropbtn">
-					Quadrinhos <i class="fa fa-caret-down"></i>
+					Produto <i class="fa fa-caret-down"></i>
 				</button>
 				<ul class="dropdown-content">
-					<li><a href="#">MARVEL</a></li>
-					<li><a href="#">DC Comics</a></li>
-					<li><a href="#">VERTIGO</a></li>
-					<li><a href="#">DEVIR</a></li>
+					<li><a href="exibirCadastroProduto">Cadastro Produto</a></li>
+					<li><a href="listarProduto">Listagem Produto</a></li>
 				</ul>
 			</div>
 		</div>
@@ -222,12 +219,14 @@ form.example::after {
 			</ul>
 		</div>
 
-		<form class="example" action="/action_page.php">
-			<input type="text" placeholder="Procurar.." name="search">
-			<button type="submit">
+		<form action="buscaProduto" class="example" method="post">
+			<input type="text" placeholder="Procurar.." for="inputNome"
+				id="inputNome" name="nome">
+			<button type="submit" value="buscar">
 				<i class="fa fa-search"></i>
 			</button>
 		</form>
+
 
 		<!-- /.navbar-collapse -->
 	</div>

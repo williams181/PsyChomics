@@ -189,24 +189,21 @@ form.example::after {
 			<a class="navbar-brand" href="listarProdutoIndex">PsyChomics</a>
 			<div class="dropdown">
 				<button class="dropbtn">
-					Mangas <i class="fa fa-caret-down"></i>
+					Usuario <i class="fa fa-caret-down"></i>
 				</button>
 				<ul class="dropdown-content">
-					<li><a href="#">NARUTO</a></li>
-					<li><a href="#">DRAGON BALL</a></li>
-					<li><a href="#">CAVALEIROS DO ZODI�CO</a></li>
-					<li><a href="#">ONE PUNCH MAN</a></li>
+					<li><a href="exibirLoginUsuario">Login Usuario</a></li>
+					<li><a href="exibirCadastroUsuario">Cadastro Usuario</a></li>
+					<li><a href="listarUsuario">Listagem Usuario</a></li>
 				</ul>
 			</div>
 			<div class="dropdown">
 				<button class="dropbtn">
-					Quadrinhos <i class="fa fa-caret-down"></i>
+					Produto <i class="fa fa-caret-down"></i>
 				</button>
 				<ul class="dropdown-content">
-					<li><a href="#">MARVEL</a></li>
-					<li><a href="#">DC Comics</a></li>
-					<li><a href="#">VERTIGO</a></li>
-					<li><a href="#">DEVIR</a></li>
+					<li><a href="exibirCadastroProduto">Cadastro Produto</a></li>
+					<li><a href="listarProduto">Listagem Produto</a></li>
 				</ul>
 			</div>
 		</div>
@@ -222,9 +219,10 @@ form.example::after {
 			</ul>
 		</div>
 
-		<form class="example" action="/action_page.php">
-			<input type="text" placeholder="Procurar.." name="search">
-			<button type="submit">
+		<form action="busca" class="example" method="post">
+			<input for="inputNomeUsuario" type="text" placeholder="Procurar Usuario"
+				id="inputNomeUsuario" name="nomeUsuario">
+			<button type="submit" value="buscar">
 				<i class="fa fa-search"></i>
 			</button>
 		</form>
@@ -235,35 +233,12 @@ form.example::after {
 
 	<br>
 	<br>
+	
 	<div class="container" align="center">
 		<br> <br>
 		<hr>
 		<h3>Listar Usuario</h3>
 		<hr>
-	</div>
-
-	<div style="text-align: center; color: green;">${msg}</div>
-	<br>
-
-	<div class="container" align="center">
-
-		<form action="busca" method="post">
-			<div class="form-group">
-				<label for="inputNomeUsuario">Nome do Usuario</label> <input
-					type="text" id="inputNomeUsuario" class="form-control"
-					name="nomeUsuario" style="width: 500px;"
-					placeholder="Nome do Usuario" maxlength="50" />
-				<p>
-					<a href="exibirIndex" class="btn btn-danger" role="button">Cancelar</a>
-					&nbsp;
-					<button type="reset" class="btn btn-default">&nbsp; Limpar
-						&nbsp;</button>
-					&nbsp;
-					<button type="submit" value="busca" class="btn btn-primary">&nbsp;
-						buscar &nbsp;</button>
-				</p>
-			</div>
-		</form>
 	</div>
 
 	<jsp:useBean id="dao" class="br.com.ifpe.psyChomics.model.UsuarioDao" />
@@ -289,7 +264,6 @@ form.example::after {
 					<th>${usuario.cpf}</th>
 					<th><a href="removerUsuario?id=${usuario.id}">Remover</a> <a
 						href="exibirAlterarUsuario?id=${usuario.id}">Alterar</a></th>
-
 				</tr>
 
 			</c:forEach>

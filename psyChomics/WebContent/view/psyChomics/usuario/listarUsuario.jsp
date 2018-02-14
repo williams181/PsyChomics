@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="pt-br">
 <head>
@@ -188,27 +189,24 @@ form.example::after {
 			<a class="navbar-brand" href="listarProdutoIndex">PsyChomics</a>
 			<div class="dropdown">
 				<button class="dropbtn">
-					Mangas <i class="fa fa-caret-down"></i>
+					Usuario <i class="fa fa-caret-down"></i>
 				</button>
 				<ul class="dropdown-content">
-					<li><a href="#">NARUTO</a></li>
-					<li><a href="#">DRAGON BALL</a></li>
-					<li><a href="#">CAVALEIROS DO ZODI�CO</a></li>
-					<li><a href="#">ONE PUNCH MAN</a></li>
+					<li><a href="exibirLoginUsuario">Login Usuario</a></li>
+					<li><a href="exibirCadastroUsuario">Cadastro Usuario</a></li>
+					<li><a href="listarUsuario">Listagem Usuario</a></li>
 				</ul>
 			</div>
 			<div class="dropdown">
 				<button class="dropbtn">
-					Quadrinhos <i class="fa fa-caret-down"></i>
+					Produto <i class="fa fa-caret-down"></i>
 				</button>
 				<ul class="dropdown-content">
-					<li><a href="#">MARVEL</a></li>
-					<li><a href="#">DC Comics</a></li>
-					<li><a href="#">VERTIGO</a></li>
-					<li><a href="#">DEVIR</a></li>
+					<li><a href="exibirCadastroProduto">Cadastro Produto</a></li>
+					<li><a href="listarProduto">Listagem Produto</a></li>
 				</ul>
 			</div>
-		</div>
+		</div>	
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
@@ -221,12 +219,14 @@ form.example::after {
 			</ul>
 		</div>
 
-		<form class="example" action="/action_page.php">
-			<input type="text" placeholder="Procurar.." name="search">
-			<button type="submit">
+		<form action="busca" class="example" method="post">
+			<input for="inputNomeUsuario" type="text" placeholder="Procurar Usuario"
+				id="inputNomeUsuario" name="nomeUsuario">
+			<button type="submit" value="buscar">
 				<i class="fa fa-search"></i>
 			</button>
 		</form>
+
 
 		<!-- /.navbar-collapse -->
 	</div>
@@ -241,30 +241,8 @@ form.example::after {
 		<hr>
 	</div>
 
-	<div style="text-align: center; color: green;">${msg}</div>
 	<br>
-
-	<div class="container" align="center">
-		<form action="busca" method="post">
-			<div class="form-group">
-			
-				<label for="inputNomeUsuario">Nome do Usuário</label> <input
-					type="text" id="inputNomeUsuario" class="form-control"
-					name="nomeUsuario" style="width: 500px;"
-					placeholder="Nome do Usuario" maxlength="50" />
-				</div>
-				<div class="container" align="center">
-					<a href="exibirIndex" class="btn btn-danger" role="button">Cancelar</a>
-					&nbsp;
-					<button type="reset" class="btn btn-default">&nbsp; Limpar
-						&nbsp;</button>
-					&nbsp;
-					<button type="submit" value="cadastar" class="btn btn-primary">&nbsp;
-						Cadastrar &nbsp;</button>
-			</div>
-		</form>
-	</div>
-<br><br>
+	<br>
 	<jsp:useBean id="dao" class="br.com.ifpe.psyChomics.model.UsuarioDao" />
 	<div class="container" align="center">
 		<table class="table">

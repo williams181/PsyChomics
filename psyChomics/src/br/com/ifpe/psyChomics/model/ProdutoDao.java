@@ -142,8 +142,8 @@ public class ProdutoDao {
 
 		try {
 			List<Produto> buscarProduto = new ArrayList<Produto>();
-			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM produto WHERE genero like ?");
-			stmt.setString(1, "%"+prod.getGenero()+"%");
+			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM produto WHERE nome like ?");
+			stmt.setString(1, "%"+prod.getNome()+"%");
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {

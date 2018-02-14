@@ -18,6 +18,7 @@ public class ProdutoController {
 
 	@RequestMapping("/exibirCadastroProduto")
 	public String exibirCadastroProduto() {
+		System.out.println("Exibindo cadastar Produto");
 		return "psyChomics/produto/cadastrarProduto";
 	}
 
@@ -28,12 +29,14 @@ public class ProdutoController {
 		}
 		ProdutoDao dao = new ProdutoDao();
 		dao.cadastar(produto);
-		model.addAttribute("mensagem", "Produto Inclu�do com Sucesso");
+		model.addAttribute("mensagem", "Produto Incluido com Sucesso");
+		System.out.println("cadastro de produto");
 		return "psyChomics/produto/cadastrarProduto";
 	}
 
 	@RequestMapping("/exibirlistarProduto")
 	public String exibirlistarProduto() {
+		System.out.println("Exibindo lista de produto");
 		return "psyChomics/produto/listarProduto";
 	}
 	
@@ -42,7 +45,7 @@ public class ProdutoController {
 		ProdutoDao dao = new ProdutoDao();
 		List<Produto> listaProduto = dao.listar();
 		model.addAttribute("listaProduto", listaProduto);
-		System.out.println("Exibindo listagem de produto.");
+		System.out.println("lista de produto");
 		return "psyChomics/produto/listarProduto";
 	}
 
@@ -51,7 +54,7 @@ public class ProdutoController {
 		ProdutoDao dao = new ProdutoDao();
 		dao.remover(produto);
 		model.addAttribute("msg", "Produto removido com sucesso!");
-
+		System.out.println("remover produto");
 		return "psyChomics/produto/listarProduto";
 	}
 
@@ -61,7 +64,7 @@ public class ProdutoController {
 		ProdutoDao dao = new ProdutoDao();
 		Produto produtoCompleto = dao.buscarPorId(produto.getId());
 		model.addAttribute("produto", produtoCompleto);
-
+		System.out.println("Exibindo alterar produto");
 		return "psyChomics/produto/alterarProduto";
 	}
 
@@ -71,7 +74,7 @@ public class ProdutoController {
 		ProdutoDao dao = new ProdutoDao();
 		dao.alterar(produto);
 		model.addAttribute("msg", "Produto Alterado com Sucesso!");
-
+		System.out.println("alterar produto");
 		return "psyChomics/produto/listarProduto";
 	}
 	
@@ -79,13 +82,15 @@ public class ProdutoController {
 	public String buscaProduto(Produto produto, Model model) {
 		ProdutoDao dao = new ProdutoDao();
 		List<Produto> buscarProduto = dao.buscar(produto);
-		model.addAttribute("listaProduto", buscarProduto);
-		return "psyChomics/produto/listarProduto";
+		model.addAttribute("buscarProduto", buscarProduto);
+		System.out.println("busca produto");
+		return "psyChomics/produto/buscaProduto";
 
 	}
 	
 	@RequestMapping("/exibirlistarProdutoIndex")
 	public String exibirlistarProdutoIndex() {
+		System.out.println("exibir listar de produto no index");
 		return "psyChomics/index";
 	}
 	
@@ -94,7 +99,7 @@ public class ProdutoController {
 		ProdutoDao dao = new ProdutoDao();
 		List<Produto> listaProdutoIndex = dao.listarIndex();
 		model.addAttribute("listaProdutoIndex", listaProdutoIndex);
-		System.out.println("Exibindo listagem de produto no index.");
+		System.out.println("listagem de produto no index.");
 		return "psyChomics/index";
 	}
 }

@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="pt-br">
@@ -190,24 +191,21 @@ form.example::after {
 			<a class="navbar-brand" href="listarProdutoIndex">PsyChomics</a>
 			<div class="dropdown">
 				<button class="dropbtn">
-					Mangas <i class="fa fa-caret-down"></i>
+					Usuario <i class="fa fa-caret-down"></i>
 				</button>
 				<ul class="dropdown-content">
-					<li><a href="#">NARUTO</a></li>
-					<li><a href="#">DRAGON BALL</a></li>
-					<li><a href="#">CAVALEIROS DO ZODI�CO</a></li>
-					<li><a href="#">ONE PUNCH MAN</a></li>
+					<li><a href="exibirLoginUsuario">Login Usuario</a></li>
+					<li><a href="exibirCadastroUsuario">Cadastro Usuario</a></li>
+					<li><a href="listarUsuario">Listagem Usuario</a></li>
 				</ul>
 			</div>
 			<div class="dropdown">
 				<button class="dropbtn">
-					Quadrinhos <i class="fa fa-caret-down"></i>
+					Produto <i class="fa fa-caret-down"></i>
 				</button>
 				<ul class="dropdown-content">
-					<li><a href="#">MARVEL</a></li>
-					<li><a href="#">DC Comics</a></li>
-					<li><a href="#">VERTIGO</a></li>
-					<li><a href="#">DEVIR</a></li>
+					<li><a href="exibirCadastroProduto">Cadastro Produto</a></li>
+					<li><a href="listarProduto">Listagem Produto</a></li>
 				</ul>
 			</div>
 		</div>
@@ -223,13 +221,14 @@ form.example::after {
 			</ul>
 		</div>
 
-		<form class="example" placeholder="genero" method="post" action="buscaProduto">
-			<input type="text" placeholder="Procurar.." name="search" id="inputGenero" name="genero">
-			<button type="submit">
+		<form action="buscaProduto" class="example" method="post">
+			<input type="text" placeholder="Procurar.." for="inputNome"
+				id="inputNome" name="nome">
+			<button type="submit" value="buscar">
 				<i class="fa fa-search"></i>
 			</button>
 		</form>
-		
+
 
 		<!-- /.navbar-collapse -->
 	</div>
@@ -239,8 +238,8 @@ form.example::after {
 	<div class="container">
 
 
-		 <br><br> <br><br> <br><br>
-		
+		<br> <br> <br> <br> <br> <br>
+
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
 			<!-- Indicadores -->
 			<ol class="carousel-indicators">
@@ -251,7 +250,7 @@ form.example::after {
 			<!-- Quebra para Slides -->
 			<div class="carousel-inner" role="listbox">
 				<div class="item active">
-					<img src="view/psyChomics/imagens/bg.jpg" alt="Image" width="600"
+					<img src="view/psyChomics/imagens/carousel.jpg" alt="Image" width="500"
 						height="525">
 					<div class="carousel-caption">
 						<div>
@@ -265,7 +264,7 @@ form.example::after {
 				</div>
 
 				<div class="item">
-					<img src="view/psyChomics/imagens/bg.jpg" width="525" height="525">
+					<img src="view/psyChomics/imagens/carousel.jpg" width="525" height="525">
 					<div class="carousel-caption">
 
 						<div>
@@ -287,18 +286,16 @@ form.example::after {
 				<span class="sr-only">Next</span>
 			</a>
 		</div>
-
-		<hr>
-
+		
 		<!-- Title -->
 		<div class="row">
 			<div class="col-lg-12">
-			<hr>
+				
 				<h3 style="text-align: center; color: black;">Produtos</h3>
-			<hr>
+				
 			</div>
 		</div>
-		<br><br>
+		
 		<!-- /.row -->
 		<jsp:useBean id="dao" class="br.com.ifpe.psyChomics.model.ProdutoDao" />
 
@@ -308,12 +305,12 @@ form.example::after {
 			<c:forEach var="p" items="${listaProdutoIndex}">
 				<div class="col-md-3 col-sm-6 hero-feature">
 					<div class="thumbnail">
-						<img src="view/psyChomics/img/"${p.imagem}>
+						<img src="view/psyChomics/img/${p.imagem}" alt="Image" width="150" height="150">
 						<div class="caption">
 							<h3>${p.nome}</h3>
 							<p>${p.preco}</p>
 							<p>
-								<a href="#" class="btn btn-primary">Comprar</a> <a href="#"
+								<a href="#" class="btn btn-primary">Comprar</a> <a href="exibirlistarComentarioProduto"
 									class="btn btn-default">Saiba Mais</a>
 							</p>
 						</div>
