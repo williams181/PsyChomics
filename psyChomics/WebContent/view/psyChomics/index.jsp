@@ -291,7 +291,7 @@ form.example::after {
 		<div class="row">
 			<div class="col-lg-12">
 				
-				<h3 style="text-align: center; color: black;">Produtos</h3>
+				<h3 style="text-align: center; color: black;">Principais Produtos</h3>
 				
 			</div>
 		</div>
