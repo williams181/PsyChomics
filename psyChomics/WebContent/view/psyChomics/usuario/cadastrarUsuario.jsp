@@ -237,7 +237,7 @@ form.example::after {
 	<div class="container" align="center">
 		<br> <br>
 		<hr>
-		<h3>Cadastro de Usuario</h3>
+		<h3>Cadastro de Usuário</h3>
 		<hr>
 	</div>
 
