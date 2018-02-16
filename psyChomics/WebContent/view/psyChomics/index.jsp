@@ -264,7 +264,7 @@ form.example::after {
 				</div>
 
 				<div class="item">
-					<img src="view/psyChomics/imagens/carousel.jpg" width="525" height="525">
+					<img src="view/psyChomics/imagens/carouselPretoBranco.jpg" width="525" height="525">
 					<div class="carousel-caption">
 
 						<div>
@@ -305,7 +305,7 @@ form.example::after {
 			<c:forEach var="p" items="${listaProdutoIndex}">
 				<div class="col-md-3 col-sm-6 hero-feature">
 					<div class="thumbnail">
-						<img src="view/psyChomics/img/${p.imagem}" alt="Image" width="150" height="150">
+						<img src="view/psyChomics/imagens/1.jpg">
 						<div class="caption">
 							<h3>${p.nome}</h3>
 							<p>${p.preco}</p>

@@ -13,6 +13,7 @@ CREATE TABLE usuario (
 
 CREATE TABLE receber_notificacao (
 	id INT (6) AUTO_INCREMENT PRIMARY KEY,
+	idusuario INT (6),
 	notificar TINYINT(1),
 	FOREIGN KEY (idusuario) REFERENCES usuario(id)	
 );
@@ -21,7 +22,8 @@ CREATE TABLE produto (
 	id INT (6) AUTO_INCREMENT PRIMARY KEY,
 	nome VARCHAR (50) NOT NULL,
 	preco DECIMAL (10,2) NOT NULL,
-	imagem VARCHAR (200) not null
+	imagem VARCHAR (200) NOT NULL,
+	genero VARCHAR (30) NOT NULL
 );
 
 CREATE TABLE genero_produto (
