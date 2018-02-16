@@ -8,7 +8,7 @@ import br.com.ifpe.psyChomics.model.ComentarioProdutoDao;
 public class ComentarioProdutoConverter implements Converter<String, ComentarioProduto> {
 
 	public ComentarioProduto convert(String id) {
-		ComentarioProdutoDao dao2 = new ComentarioProdutoDao();
-		return dao2.buscarPorId(Integer.valueOf(id));
+		ComentarioProdutoDao dao = new ComentarioProdutoDao();
+		return dao.buscarPorId(Integer.valueOf(id));
 	}
 }
