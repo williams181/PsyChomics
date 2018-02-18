@@ -305,7 +305,7 @@ form.example::after {
 			<c:forEach var="p" items="${listaProdutoIndex}">
 				<div class="col-md-3 col-sm-6 hero-feature">
 					<div class="thumbnail">
-						<img src="view/psyChomics/imagens/1.jpg">
+						<img src="view/psyChomics/img/${p.imagem}">
 						<div class="caption">
 							<h3>${p.nome}</h3>
 							<p>${p.preco}</p>

@@ -26,6 +26,7 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+
 <style>
 body {
 	background-color: #EEE9E9;
@@ -156,7 +157,7 @@ form.example::after {
 }
 </style>
 
-<title>Buscar Produto</title>
+<title>lista de produtos</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -233,36 +234,61 @@ form.example::after {
 
 	<br>
 	<br>
+	
 	<div class="container" align="center">
 		<br> <br>
 		<hr>
-		<h3>Produtos</h3>
+		<h3>Listar genero de produto</h3>
 		<hr>
 	</div>
-	<div class="container" align="center">
-		<jsp:useBean id="dao" class="br.com.ifpe.psyChomics.model.ProdutoDao" />
+	
+	<br>
+	<br>
 
-		<!-- Page Features -->
-		<div class="row text-center">
-
-			<c:forEach var="produto" items="${buscarProduto}">
-				<div class="col-md-3 col-sm-6 hero-feature">
-					<div class="thumbnail">
-						<img src="view/psyChomics/img/${produto.imagem}">
-						<div class="caption">
-							<h3>${produto.nome}</h3>
-							<p>${produto.preco}</p>
-							<p>
-								<a href="#" class="btn btn-primary">Comprar</a> <a href="#"
-									class="btn btn-default">Saiba Mais</a>
-							</p>
-						</div>
-					</div>
+	<div align="center">
+	
+		<div align="left" style="color: #6E6E6E; width: 70%;">
+		
+			<c:if test="${msg ne null}">
+				<div class="alert alert-success" style="width: 100%;">
+					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+					${msg}
 				</div>
-			</c:forEach>
-
+			</c:if>
+			
+			<hr />
+			
+			<p>
+				<table style="width: 100%">
+					<tr>
+						<td style="float: left; font-size: 24px;"> Listagem de <strong>Categoria de Produto</strong> </td>
+						<td style="float: right;"> <a href="exibirIncluirCategoriaProduto" class="btn btn-primary" role="button">Novo</a> </td>
+					</tr>
+				</table>
+			</p>
+			
+			<hr />
+			
+			<table class="table table-striped table-bordered">
+				<thead>
+					<tr>
+						<th style="width: 10%; vertical-align: middle; text-align: center;">Genero</th>
+						<th style="width: 20%; vertical-align: middle; text-align: center;">Ações</th>
+					</tr>
+				</thead>
+				<c:forEach items="${listarGeneroProduto}" var="gp">
+					<tr>
+						<td style="vertical-align: middle; text-align: center;">${gp.genero}</td>
+						<td style="vertical-align: middle; text-align: center;">
+							<a href="exibirAlterarCategoriaProduto?id=${gp.id}" class="btn btn-warning" role="button">E</a> &nbsp;
+							<a href="removerCategoriaProduto?id=${gp.id}" class="btn btn-danger" role="button">R</a>
+						</td>
+					</tr>
+				</c:forEach>
+			</table>
 		</div>
-		<!-- /.row -->
+			
 	</div>
+	
 </body>
 </html>

@@ -3,24 +3,17 @@ package br.com.ifpe.psyChomics.model;
 public class Produto {
 	
 	private int id;
-	private ComentarioProduto comentarioProduto;
-	private GeneroProduto generoProduto;
 	private String nome;
+	private GeneroProduto generoProduto;
 	private double preco;
 	private String genero;
 	private String imagem;
-
+	
 	public GeneroProduto getGeneroProduto() {
 		return generoProduto;
 	}
 	public void setGeneroProduto(GeneroProduto generoProduto) {
 		this.generoProduto = generoProduto;
-	}
-	public ComentarioProduto getComentarioProduto() {
-		return comentarioProduto;
-	}
-	public void setComentarioProduto(ComentarioProduto comentarioProduto) {
-		this.comentarioProduto = comentarioProduto;
 	}
 	public String getImagem() {
 		return imagem;

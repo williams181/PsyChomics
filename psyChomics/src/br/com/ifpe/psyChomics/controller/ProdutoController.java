@@ -1,6 +1,5 @@
 package br.com.ifpe.psyChomics.controller;
 
-import java.util.Calendar;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -9,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import br.com.ifpe.psyChomics.model.GeneroProduto;
+import br.com.ifpe.psyChomics.model.GeneroProdutoDao;
 import br.com.ifpe.psyChomics.model.Produto;
 import br.com.ifpe.psyChomics.model.ProdutoDao;
 import br.com.ifpe.psyChomics.util.Util;
@@ -17,7 +18,12 @@ import br.com.ifpe.psyChomics.util.Util;
 public class ProdutoController {
 
 	@RequestMapping("/exibirCadastroProduto")
-	public String exibirCadastroProduto() {
+	public String exibirCadastroProduto(Model model) {
+		// Código para popular o combo de genero de produto
+		GeneroProdutoDao dao = new GeneroProdutoDao();
+		List<GeneroProduto> listarGeneroProduto = dao.listar();
+		model.addAttribute("listarGeneroProduto", listarGeneroProduto);
+
 		System.out.println("Exibindo cadastar Produto");
 		return "psyChomics/produto/cadastrarProduto";
 	}
@@ -25,8 +31,9 @@ public class ProdutoController {
 	@RequestMapping("cadastroProduto")
 	public String cadastroProduto(Produto produto, @RequestParam("file") MultipartFile imagem, Model model) {
 		if (Util.fazerUploadImagem(imagem)) {
-			produto.setImagem(Calendar.getInstance().getTime() + " - " + imagem.getOriginalFilename());
+		    produto.setImagem(Util.obterMomentoAtual() + " - " + imagem.getOriginalFilename());
 		}
+
 		ProdutoDao dao = new ProdutoDao();
 		dao.cadastar(produto);
 		model.addAttribute("mensagem", "Produto Incluido com Sucesso");
@@ -39,7 +46,7 @@ public class ProdutoController {
 		System.out.println("Exibindo lista de produto");
 		return "psyChomics/produto/listarProduto";
 	}
-	
+
 	@RequestMapping("/listarProduto")
 	public String listarProduto(Model model) {
 		ProdutoDao dao = new ProdutoDao();
@@ -77,7 +84,7 @@ public class ProdutoController {
 		System.out.println("alterar produto");
 		return "psyChomics/produto/listarProduto";
 	}
-	
+
 	@RequestMapping("/buscaProduto")
 	public String buscaProduto(Produto produto, Model model) {
 		ProdutoDao dao = new ProdutoDao();
@@ -87,13 +94,13 @@ public class ProdutoController {
 		return "psyChomics/produto/buscaProduto";
 
 	}
-	
+
 	@RequestMapping("/exibirlistarProdutoIndex")
 	public String exibirlistarProdutoIndex() {
 		System.out.println("exibir listar de produto no index");
 		return "psyChomics/index";
 	}
-	
+
 	@RequestMapping("/listarProdutoIndex")
 	public String listarProdutoIndex(Model model) {
 		ProdutoDao dao = new ProdutoDao();

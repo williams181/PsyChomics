@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.ifpe.psyChomics.model.Produto;
 import br.com.ifpe.psyChomics.util.ConnectionFactory;
 
 public class ProdutoDao {
@@ -25,7 +24,7 @@ public class ProdutoDao {
 
 	public void cadastar(Produto produto) {
 
-		String sql = "INSERT INTO produto (nome, preco, genero, imagem) VALUES (?,?,?,?)";
+		String sql = "INSERT INTO produto (nome, preco, genero, imagem, idgenero) VALUES (?,?,?,?,?)";
 		PreparedStatement stmt;
 
 		try {
@@ -35,6 +34,7 @@ public class ProdutoDao {
 			stmt.setDouble(2, produto.getPreco());
 			stmt.setString(3, produto.getGenero());
 			stmt.setString(4, produto.getImagem());
+			stmt.setInt(5, produto.getGeneroProduto().getId());
 
 			stmt.execute();
 			stmt.close();
@@ -51,9 +51,17 @@ public class ProdutoDao {
 			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM produto ORDER BY nome");
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
+				
 				Produto prouto = new Produto();
+				
 				prouto.setId(rs.getInt("id"));
 				prouto.setNome(rs.getString("nome"));
+				
+				int idGenero = rs.getInt("idgenero");
+				GeneroProdutoDao dao = new GeneroProdutoDao();
+				GeneroProduto cp = dao.buscarPorId(idGenero);
+				prouto.setGeneroProduto(cp);
+				
 				prouto.setPreco(rs.getDouble("preco"));
 				prouto.setGenero(rs.getString("genero"));
 				prouto.setImagem(rs.getString("imagem"));
@@ -100,6 +108,13 @@ public class ProdutoDao {
 
 				produtoCompleto.setId(rs.getInt("id"));
 				produtoCompleto.setNome(rs.getString("nome"));
+				
+				int idGenero = rs.getInt("idgenero");
+				GeneroProdutoDao dao = new GeneroProdutoDao();
+				GeneroProduto gp = dao.buscarPorId(idGenero);
+				produtoCompleto.setGeneroProduto(gp);
+				
+				
 				produtoCompleto.setPreco(rs.getDouble("preco"));
 				produtoCompleto.setGenero(rs.getString("genero"));
 				produtoCompleto.setImagem(rs.getString("imagem"));
@@ -152,6 +167,13 @@ public class ProdutoDao {
 
 				produto.setId(rs.getInt("id"));
 				produto.setNome(rs.getString("nome"));
+				
+				int idGenero = rs.getInt("idgenero");
+				GeneroProdutoDao dao = new GeneroProdutoDao();
+				GeneroProduto cp = dao.buscarPorId(idGenero);
+				produto.setGeneroProduto(cp);
+				
+				
 				produto.setPreco(rs.getDouble("preco"));
 				produto.setGenero(rs.getString("genero"));
 				produto.setImagem(rs.getString("imagem"));

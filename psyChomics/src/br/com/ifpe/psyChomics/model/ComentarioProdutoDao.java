@@ -22,15 +22,14 @@ public class ComentarioProdutoDao {
 		}
 	}
 
-	public void cadastar(ComentarioProduto comentarioProduto) {
+	public void cadastrar(ComentarioProduto comentarioProduto) {
 
-		String sql = "INSERT INTO comentario_produto (comentario) VALUES (?)";
+		String sql = "INSERT INTO comentario_produto (idproduto, comentario) VALUES (?,?)";
 		PreparedStatement stmt;
 
 		try {
 			stmt = connection.prepareStatement(sql);
-
-			stmt.setString(1, comentarioProduto.getComentario());
+			stmt.setString(2, comentarioProduto.getComentario());
 
 			stmt.execute();
 			stmt.close();

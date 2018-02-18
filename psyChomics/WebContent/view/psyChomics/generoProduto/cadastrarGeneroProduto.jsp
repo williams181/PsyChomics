@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="pt-br">
 <head>
@@ -25,6 +25,7 @@
 
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 <style>
 body {
@@ -156,7 +157,7 @@ form.example::after {
 }
 </style>
 
-<title>Buscar Produto</title>
+<title>cadastrar produto</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -227,6 +228,7 @@ form.example::after {
 			</button>
 		</form>
 
+
 		<!-- /.navbar-collapse -->
 	</div>
 	<!-- /.container --> </nav>
@@ -236,33 +238,33 @@ form.example::after {
 	<div class="container" align="center">
 		<br> <br>
 		<hr>
-		<h3>Produtos</h3>
+		<h3>Cadastro de Genero de produto</h3>
 		<hr>
 	</div>
+
+
+
+	<div style="text-align: center; color: green;">${msg}</div>
+
 	<div class="container" align="center">
-		<jsp:useBean id="dao" class="br.com.ifpe.psyChomics.model.ProdutoDao" />
-
-		<!-- Page Features -->
-		<div class="row text-center">
-
-			<c:forEach var="produto" items="${buscarProduto}">
-				<div class="col-md-3 col-sm-6 hero-feature">
-					<div class="thumbnail">
-						<img src="view/psyChomics/img/${produto.imagem}">
-						<div class="caption">
-							<h3>${produto.nome}</h3>
-							<p>${produto.preco}</p>
-							<p>
-								<a href="#" class="btn btn-primary">Comprar</a> <a href="#"
-									class="btn btn-default">Saiba Mais</a>
-							</p>
-						</div>
-					</div>
-				</div>
-			</c:forEach>
-
-		</div>
-		<!-- /.row -->
+		<form action="cadastrarGeneroProduto" method="post"
+			enctype="multipart/form-data">
+			<div class="form-group">
+				<label for="inputGenero">genero</label> <input type="text"
+					id="inputGenero" class="form-control" name="genero"
+					style="width: 500px;" placeholder="genero" minlength="3"
+					maxlength="30" required="required" />
+			</div>
+			<p>
+				<a href="exibirIndex" class="btn btn-danger" role="button">Cancelar</a>
+				&nbsp;
+				<button type="reset" class="btn btn-default">&nbsp; Limpar
+					&nbsp;</button>
+				&nbsp;
+				<button type="submit" value="cadastar" class="btn btn-primary">&nbsp;
+					Cadastrar &nbsp;</button>
+			</p>
+		</form>
 	</div>
 </body>
 </html>

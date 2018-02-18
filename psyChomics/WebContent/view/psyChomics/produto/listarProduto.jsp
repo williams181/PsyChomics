@@ -252,8 +252,10 @@ form.example::after {
 				<td scope="col">Nome</td>
 				<td scope="col">Preço</td>
 				<td scope="col">Genero</td>
+				<td scope="col">generoteste</td>
 				<td scope="col">Imagem</td>
 				<td scope="col">Opções</td>
+				
 
 			</tr>
 
@@ -263,16 +265,8 @@ form.example::after {
 					<th scope="row">${p.nome}</th>
 					<th>${p.preco}</th>
 					<th>${p.genero}</th>
-					<th><c:choose>
-							<c:when test="${not empty p.imagem}">
-								<img src="view/psyChomics/img/" width="150" height="150"
-									${p.imagem}>
-							</c:when>
-							<c:otherwise>
-							A imagem não foi carregada.
-						</c:otherwise>
-						</c:choose></th>
-
+					<th>${p.generoProduto.genero}</th>
+					<th><img src="view/psyChomics/img/${p.imagem}"></th>
 					<th><a href="removerProduto?id=${p.id}" onclick="myFunction()">Remover</a>|
 						<a href="exibirAlterarProduto?id=${p.id}">Alterar</a> | <a href="exibirCadastroComentarioProduto">cadastrar comentario</a>
 				</tr>

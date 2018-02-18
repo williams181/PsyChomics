@@ -3,7 +3,6 @@ package br.com.ifpe.psyChomics.model;
 public class Usuario {
 	
 	private int id;
-	private ReceberNotificacao receberNotificacao;
 	private ComentarioProduto comentarioProduto;
 	private Carrinho carrinho;
 	private FaleConosco faleConosco;
@@ -31,12 +30,6 @@ public class Usuario {
 	}
 	public void setComentarioProduto(ComentarioProduto comentarioProduto) {
 		this.comentarioProduto = comentarioProduto;
-	}
-	public ReceberNotificacao getReceberNotificacao() {
-		return receberNotificacao;
-	}
-	public void setReceberNotificacao(ReceberNotificacao receberNotificacao) {
-		this.receberNotificacao = receberNotificacao;
 	}
 	public int getId() {
 		return id;
