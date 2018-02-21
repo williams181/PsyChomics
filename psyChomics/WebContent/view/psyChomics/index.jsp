@@ -1,3 +1,4 @@
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -32,28 +33,24 @@ body {
 	background-color: #EEE9E9;
 	background-image: url();
 }
-
 /* 
        Remover a margem padrão da barra de navegação - bordas inferior e arredondadas */
 .navbar {
 	margin-bottom: 0;
 	border-radius: 0;
 }
-
 /* 
         Adiciona uma cor de fundo cinza e algum preenchimento ao rodapé */
 footer {
 	background-color: #f2f2f2;
 	padding: 25px;
 }
-
 .carousel-inner img {
 	width: 100%; /*
                       Defina largura para 100% */
 	margin: auto;
 	min-height: 200px;
 }
-
 /* 
       Oculta o texto do carrossel quando a tela tiver menos de 600 pixels de largura */
 @media ( max-width : 600px) {
@@ -61,12 +58,10 @@ footer {
 		display: none;
 	}
 }
-
 .dropdown {
 	float: left;
 	overflow: hidden;
 }
-
 .dropdown .dropbtn {
 	font-size: 16px;
 	border: none;
@@ -77,11 +72,9 @@ footer {
 	font-family: inherit;
 	margin: 0;
 }
-
 .navbar a:hover, .dropdown:hover .dropbtn {
 	background-color: red;
 }
-
 .dropdown-content {
 	display: none;
 	position: absolute;
@@ -90,7 +83,6 @@ footer {
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 	z-index: 1;
 }
-
 .dropdown-content a {
 	float: none;
 	color: black;
@@ -99,19 +91,15 @@ footer {
 	display: block;
 	text-align: left;
 }
-
 .dropdown-content a:hover {
 	background-color: #ddd;
 }
-
 .dropdown:hover .dropdown-content {
 	display: block;
 }
-
 * {
 	box-sizing: border-box;
 }
-
 body {
 	margin: 0;
 	font-family: Arial;
@@ -120,11 +108,9 @@ body {
 body {
 	font-family: Arial;
 }
-
 * {
 	box-sizing: border-box;
 }
-
 form.example input[type=text] {
 	padding: 10px;
 	font-size: 17px;
@@ -133,7 +119,6 @@ form.example input[type=text] {
 	width: 80%;
 	background: #f1f1f1;
 }
-
 form.example button {
 	float: left;
 	width: 20%;
@@ -145,11 +130,9 @@ form.example button {
 	border-left: none;
 	cursor: pointer;
 }
-
 form.example button:hover {
 	background: #e00000;
 }
-
 form.example::after {
 	content: "";
 	clear: both;
@@ -310,7 +293,7 @@ form.example::after {
 							<h3>${p.nome}</h3>
 							<p>${p.preco}</p>
 							<p>
-								<a href="#" class="btn btn-primary">Comprar</a> <a href="exibirlistarComentarioProduto"
+								<a href="#" class="btn btn-primary">Comprar</a> <a href="exibirDescricaoProduto?id=${p.id}"
 									class="btn btn-default">Saiba Mais</a>
 							</p>
 						</div>

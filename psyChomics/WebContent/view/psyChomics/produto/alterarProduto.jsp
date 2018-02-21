@@ -264,13 +264,6 @@ form.example::after {
 					value="${produto.preco}" style="width: 500px;" maxlength="100"
 					required="required" />
 			</div>
-
-			<div class="form-group">
-				<label for="inputGenero">Genero</label> <input type="text"
-					id="inputGenero" class="form-control" name="genero"
-					value="${produto.genero}" style="width: 500px;" maxlength="30"
-					required="required" />
-			</div>
 			<p>
 				<input type="submit" class="btn btn-primary" value="alterar">
 				<a href="exibirIndex" class="btn btn-danger" role="button">Cancelar</a>

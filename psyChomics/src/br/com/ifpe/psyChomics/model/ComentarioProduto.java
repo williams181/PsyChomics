@@ -1,11 +1,27 @@
 package br.com.ifpe.psyChomics.model;
 
+import java.util.Date;
+
 public class ComentarioProduto {
 
 	private int id;
 	private Produto produto;
+	private Usuario usuario;
+	private Date data;
 	private String comentario;
 	
+	public Date getData() {
+		return data;
+	}
+	public void setData(Date data) {
+		this.data = data;
+	}
+	public Usuario getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
 	public Produto getProduto() {
 		return produto;
 	}

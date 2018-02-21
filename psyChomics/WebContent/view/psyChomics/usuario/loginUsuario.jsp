@@ -248,13 +248,13 @@ form.example::after {
 	<div class="container" align="center">
 		<form action="" method="post" enctype="multipart/form-data">
 			<div class="form-group">
-				<label for="inputEmail">E-mail:</label> <input type="text"
+				<label for="inputEmail">E-mail</label> <input type="text"
 					id="inputEmail" class="form-control" name="email"
-					style="width: 500px;" placeholder="E-mail" maxlength="60"
+					style="width: 500px;" placeholder="E-mail" maxlength="50"
 					required="required" />
 			</div>
 			<div class="form-group">
-				<label for="inputSenha">Senha:</label> <input type="password"
+				<label for="inputSenha">Senha</label> <input type="password"
 					id="inputSenha" class="form-control" name="senha"
 					style="width: 500px;" placeholder="Senha" maxlength="16"
 					required="required" />

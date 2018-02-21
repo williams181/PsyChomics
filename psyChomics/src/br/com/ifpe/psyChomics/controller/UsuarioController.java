@@ -13,11 +13,6 @@ import br.com.ifpe.psyChomics.model.UsuarioDao;
 @Controller
 public class UsuarioController {
 
-	@RequestMapping("/exibirIndex")
-	public String exibirIndex() {
-		return "psyChomics/index";
-	}
-
 	@RequestMapping("/exibirLoginUsuario")
 	public String exibirLoginUsuario() {
 		return "psyChomics/usuario/loginUsuario";

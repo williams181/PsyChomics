@@ -26,6 +26,7 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+
 <style>
 body {
 	background-color: #EEE9E9;
@@ -156,7 +157,7 @@ form.example::after {
 }
 </style>
 
-<title>Buscar Produto</title>
+<title>descricao do produto</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -227,6 +228,7 @@ form.example::after {
 			</button>
 		</form>
 
+
 		<!-- /.navbar-collapse -->
 	</div>
 	<!-- /.container --> </nav>
@@ -236,33 +238,22 @@ form.example::after {
 	<div class="container" align="center">
 		<br> <br>
 		<hr>
-		<h3>Produtos</h3>
+		<h3>Detalhes do produto</h3>
 		<hr>
 	</div>
-	<div class="container" align="center">
-		<jsp:useBean id="dao" class="br.com.ifpe.psyChomics.model.ProdutoDao" />
 
-		<!-- Page Features -->
-		<div class="row text-center">
+	<c:forEach var="p" items="${listaDescricaoProduto}">
+		<div class="container" align="center">
+			<div class="col-md-3 col-sm-6 hero-feature">
+				<div class="thumbnail">
+					<img src="view/psyChomics/img/${p.imagem}">
+					<div class="caption">
+						<p><h2>${p.descricao}</h2></p>
 
-			<c:forEach var="produto" items="${buscarProduto}">
-				<div class="col-md-3 col-sm-6 hero-feature">
-					<div class="thumbnail">
-						<img src="view/psyChomics/img/${produto.imagem}">
-						<div class="caption">
-							<h3>${produto.nome}</h3>
-							<p>${produto.generoProduto.genero}</p>
-							<p>
-								<a href="#" class="btn btn-primary">Comprar</a> <a href="#"
-									class="btn btn-default">Saiba Mais</a>
-							</p>
-						</div>
 					</div>
 				</div>
-			</c:forEach>
-
+			</div>
 		</div>
-		<!-- /.row -->
-	</div>
+	</c:forEach>
 </body>
 </html>

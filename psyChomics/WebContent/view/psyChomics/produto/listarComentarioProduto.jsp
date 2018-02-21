@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="pt-br">
 <head>
@@ -24,6 +25,7 @@
 
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 <style>
 body {
@@ -155,7 +157,7 @@ form.example::after {
 }
 </style>
 
-<title>lista de comentarios dos produtos</title>
+<title>lista de produtos</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -226,38 +228,52 @@ form.example::after {
 			</button>
 		</form>
 
-
 		<!-- /.navbar-collapse -->
 	</div>
 	<!-- /.container --> </nav>
 
-	<br><br><br>
+	<br>
+	<br>
+	
 	<div class="container" align="center">
 		<br> <br>
 		<hr>
-		<h3>Lista de comentarios de Produto</h3>
+		<h3>Listar comentarios dos produtos</h3>
 		<hr>
 	</div>
+	
+	<br>
+	<br>
 
 	<jsp:useBean id="dao" class="br.com.ifpe.psyChomics.model.ComentarioProdutoDao" />
-
 	<div class="container" align="center">
 		<table class="table">
 			<tr>
+				<td scope="col">produto</td>
 				<td scope="col">comentario</td>
+				<td scope="col">Opções</td>
+				
 
 			</tr>
 
-			<c:forEach var="c" items="${dao.listar()}">
+			<c:forEach var="cp" items="${listaComentarioProduto}">	
 
 				<tr>
-					<th scope="row">${c.comentario}</th>
-
+					<th scope="row">${cp.produto.id}</th>
+					<th scope="row">${cp.comentario}</th>
+					<th><a href="removerProduto?id=${p.id}" onclick="myFunction()">Remover</a> |
+						<a href="exibirAlterarProduto?id=${p.id}">Alterar</a>
 				</tr>
-
+				
 			</c:forEach>
 
 		</table>
 	</div>
+
+	<script>
+		function myFunction() {
+			alert("deseja deletar o produto?");
+		}
+	</script>
 </body>
 </html>

@@ -262,12 +262,6 @@ form.example::after {
 					" maxlength="16" required="required" />
 			</div>
 			<div class="form-group">
-				<label for="inputGenero">Gênero</label> <input type="text"
-					id="inputGenero" class="form-control" name="genero"
-					style="width: 500px;" placeholder="Genero" minlength="3"
-					maxlength="60" required="required" />
-			</div>
-			<div class="form-group">
 				<label for="inputImagem">Imagem</label> <input type="file"
 					id="inputImagem" class="form-control" name="file"
 					style="width: 500px;" maxlength="100" />

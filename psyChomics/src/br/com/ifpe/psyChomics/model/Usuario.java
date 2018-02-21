@@ -3,33 +3,18 @@ package br.com.ifpe.psyChomics.model;
 public class Usuario {
 	
 	private int id;
-	private ComentarioProduto comentarioProduto;
-	private Carrinho carrinho;
-	private FaleConosco faleConosco;
 	private String email;
 	private String senha;
 	private String nick;
 	private String nomeUsuario;
 	private String cpf;
-	
-	
-	public Carrinho getCarrinho() {
-		return carrinho;
+	private String notificacao;
+
+	public String getNotificacao() {
+		return notificacao;
 	}
-	public void setCarrinho(Carrinho carrinho) {
-		this.carrinho = carrinho;
-	}
-	public FaleConosco getFaleConosco() {
-		return faleConosco;
-	}
-	public void setFaleConosco(FaleConosco faleConosco) {
-		this.faleConosco = faleConosco;
-	}
-	public ComentarioProduto getComentarioProduto() {
-		return comentarioProduto;
-	}
-	public void setComentarioProduto(ComentarioProduto comentarioProduto) {
-		this.comentarioProduto = comentarioProduto;
+	public void setNotificacao(String notificacao) {
+		this.notificacao = notificacao;
 	}
 	public int getId() {
 		return id;

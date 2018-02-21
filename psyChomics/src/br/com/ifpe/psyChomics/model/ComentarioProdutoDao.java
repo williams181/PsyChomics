@@ -24,12 +24,16 @@ public class ComentarioProdutoDao {
 
 	public void cadastrar(ComentarioProduto comentarioProduto) {
 
-		String sql = "INSERT INTO comentario_produto (idproduto, comentario) VALUES (?,?)";
+		String sql = "INSERT INTO comentario_produto (idproduto, data, comentario) VALUES (?,?,?)";
 		PreparedStatement stmt;
 
 		try {
 			stmt = connection.prepareStatement(sql);
-			stmt.setString(2, comentarioProduto.getComentario());
+			
+			
+			stmt.setInt(1, comentarioProduto.getProduto().getId());
+			stmt.setDate(2, new java.sql.Date(comentarioProduto.getData().getTime()));
+			stmt.setString(3, comentarioProduto.getComentario());
 
 			stmt.execute();
 			stmt.close();
@@ -49,6 +53,18 @@ public class ComentarioProdutoDao {
 				ComentarioProduto comentarioProduto = new ComentarioProduto();
 				comentarioProduto.setId(rs.getInt("id"));
 				comentarioProduto.setComentario(rs.getString("comentario"));
+				
+				int idUsuario = rs.getInt("iduauario");
+				UsuarioDao dao = new UsuarioDao();
+				Usuario cp = dao.buscarPorId(idUsuario);
+				comentarioProduto.setUsuario(cp);
+				
+				int idProduto = rs.getInt("idproduto");
+				ProdutoDao dao2 = new ProdutoDao();
+				Produto cp2 = dao2.buscarPorId(idProduto);
+				comentarioProduto.setProduto(cp2);
+				
+				comentarioProduto.setData(rs.getDate("data"));
 
 				listaComentarioProduto.add(comentarioProduto);
 			}
@@ -74,6 +90,19 @@ public class ComentarioProdutoDao {
 
 				ComentarioProdutoCompleto.setId(rs.getInt("id"));
 				ComentarioProdutoCompleto.setComentario(rs.getString("comentario"));
+				
+				int idUsuario = rs.getInt("idusuario");
+				UsuarioDao dao = new UsuarioDao();
+				Usuario cp = dao.buscarPorId(idUsuario);
+				ComentarioProdutoCompleto.setUsuario(cp);
+				
+				int idProduto = rs.getInt("idproduto");
+				ProdutoDao dao2 = new ProdutoDao();
+				Produto cp2 = dao2.buscarPorId(idProduto);
+				ComentarioProdutoCompleto.setProduto(cp2);
+				
+				ComentarioProdutoCompleto.setData(rs.getDate("data"));
+
 			}
 
 			rs.close();

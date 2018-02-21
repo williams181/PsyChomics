@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="pt-br">
 <head>
@@ -250,7 +251,7 @@ form.example::after {
 			<div class="form-group">
 				<label for="inputEmail">E-mail</label> <input type="text"
 					id="inputEmail" class="form-control" name="email"
-					style="width: 500px;" minlength="13" placeholder="E-mail"
+					style="width: 500px;" minlength="7" placeholder="E-mail"
 					maxlength="50" required="required" />
 			</div>
 			<div class="form-group">
@@ -268,15 +269,14 @@ form.example::after {
 			<div class="form-group">
 				<label for="inputNick">Nick</label> <input type="text"
 					id="inputNick" class="form-control" name="nick"
-					style="width: 500px;" minlength="4" placeholder="Nick"
-					maxlength="30" required="required" />
+					style="width: 500px;" placeholder="Nick" maxlength="15"
+					required="required" />
 			</div>
 			<div class="form-group">
 				<label for="inputNomeUsuario">Nome do Usuario</label> <input
 					type="text" id="inputNomeUsuario" class="form-control"
 					name="NomeUsuario" placeholder="Nome do Usuario"
-					style="width: 500px;" maxlength="50" minlength="18"
-					required="required" />
+					style="width: 500px;" maxlength="50" required="required" />
 			</div>
 			<div class="form-group">
 				<label for="inputCpf">CPF</label> <input type="text" id="inputCpf"
@@ -284,6 +284,11 @@ form.example::after {
 					style="width: 500px;" minlength="9"
 					placeholder="CPF:EX.: 000.000.000-00" maxlength="11"
 					required="required" />
+			</div>
+			<div class="form-group">
+				<input class="form-check-input" type="checkbox" name="notificacao"
+					value="sim" id="inputNotificacao"> <label for="inputCpf"
+					class="form-check-label"> Receber notificacões</label>
 			</div>
 			<p>
 			<div class="container" align="center">

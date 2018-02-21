@@ -25,7 +25,7 @@ public class UsuarioDao {
 
 	public void cadastar(Usuario usuario) {
 
-		String sql = "INSERT INTO usuario (email, senha, nick, nome_usuario, cpf) VALUES (?,?,?,?,?)";
+		String sql = "INSERT INTO usuario (email, senha, nick, nome_usuario, cpf, notificacao) VALUES (?,?,?,?,?,?)";
 		PreparedStatement stmt;
 
 		try {
@@ -36,6 +36,8 @@ public class UsuarioDao {
 			stmt.setString(3, usuario.getNick());
 			stmt.setString(4, usuario.getNomeUsuario());
 			stmt.setString(5, usuario.getCpf());
+			stmt.setString(6, usuario.getNotificacao());
+			
 
 			stmt.execute();
 			stmt.close();
@@ -59,6 +61,7 @@ public class UsuarioDao {
 				usuario.setSenha(rs.getString("senha"));
 				usuario.setNomeUsuario(rs.getString("nome_usuario"));
 				usuario.setCpf(rs.getString("cpf"));
+				usuario.setNotificacao(rs.getString("notificacao"));
 
 				listaUsuario.add(usuario);
 			}
@@ -104,6 +107,7 @@ public class UsuarioDao {
 				usuarioCompleto.setNick(rs.getString("nick"));
 				usuarioCompleto.setNomeUsuario(rs.getString("nome_usuario"));
 				usuarioCompleto.setCpf(rs.getString("cpf"));
+				usuarioCompleto.setNotificacao(rs.getString("notificacao"));
 
 			}
 
@@ -120,7 +124,7 @@ public class UsuarioDao {
 
 	public void alterar(Usuario usuario) {
 
-		String sql = "UPDATE usuario SET email = ?, senha = ?, nick = ?, nome_usuario = ?, cpf = ? WHERE id = ?";
+		String sql = "UPDATE usuario SET email = ?, senha = ?, nick = ?, nome_usuario = ?, cpf = ? notificacao = ? WHERE id = ?";
 		PreparedStatement stmt;
 		try {
 
@@ -131,7 +135,8 @@ public class UsuarioDao {
 			stmt.setString(3, usuario.getNick());
 			stmt.setString(4, usuario.getNomeUsuario());
 			stmt.setString(5, usuario.getCpf());
-			stmt.setInt(6, usuario.getId());
+			stmt.setString(6, usuario.getNotificacao());
+			stmt.setInt(7, usuario.getId());
 
 			stmt.execute();
 			connection.close();
@@ -160,6 +165,7 @@ public class UsuarioDao {
 				usuario.setNick(rs.getString("nick"));
 				usuario.setNomeUsuario(rs.getString("nome_usuario"));
 				usuario.setCpf(rs.getString("cpf"));
+				usuario.setNotificacao(rs.getString("notificacao"));
 
 
 

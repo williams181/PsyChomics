@@ -249,11 +249,12 @@ form.example::after {
 	<div class="container" align="center">
 		<table class="table">
 			<tr>
+				<td scope="col">Codigo</td>
 				<td scope="col">Nome</td>
 				<td scope="col">Preço</td>
-				<td scope="col">Genero</td>
-				<td scope="col">generoteste</td>
 				<td scope="col">Imagem</td>
+				<td scope="col">Descrição</td>
+				<td scope="col">Genero</td>
 				<td scope="col">Opções</td>
 				
 
@@ -262,13 +263,14 @@ form.example::after {
 			<c:forEach var="p" items="${listaProduto}">	
 
 				<tr>
+					<th scope="row">${p.codigo}</th>
 					<th scope="row">${p.nome}</th>
-					<th>${p.preco}</th>
-					<th>${p.genero}</th>
+					<th scope="row">${p.preco}</th>
+					<th scope="row"><img src="view/psyChomics/img/${p.imagem}"></th>
+					<th>${p.descricao}</th>
 					<th>${p.generoProduto.genero}</th>
-					<th><img src="view/psyChomics/img/${p.imagem}"></th>
-					<th><a href="removerProduto?id=${p.id}" onclick="myFunction()">Remover</a>|
-						<a href="exibirAlterarProduto?id=${p.id}">Alterar</a> | <a href="exibirCadastroComentarioProduto">cadastrar comentario</a>
+					<th><a href="removerProduto?id=${p.id}" onclick="myFunction()">Remover</a> |
+						<a href="exibirAlterarProduto?id=${p.id}">Alterar</a>
 				</tr>
 
 			</c:forEach>

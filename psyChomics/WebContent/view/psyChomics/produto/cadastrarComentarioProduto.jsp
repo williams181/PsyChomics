@@ -156,7 +156,7 @@ form.example::after {
 }
 </style>
 
-<title>Cadastar comentario Produto</title>
+<title>cadastrar comentario produto</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -237,23 +237,32 @@ form.example::after {
 	<div class="container" align="center">
 		<br> <br>
 		<hr>
-		<h3>Cadastro de comentario do Produto</h3>
+		<h3>Cadastro de Produto</h3>
 		<hr>
 	</div>
 
+	<jsp:useBean id="dao" class="br.com.ifpe.psyChomics.model.ProdutoDao" />
 
-
-	<div style="text-align: center; color: green;">${mensagem}</div>
+	<div style="text-align: center; color: green;">${msg}</div>
 
 	<div class="container" align="center">
-		<form action="CadastroComentarioProduto" method="post"
+		<form action="cadastrarComentarioProduto" method="post"
 			enctype="multipart/form-data">
-
 			<div class="form-group">
-				<label for="inputComentario">Comentario</label>
-				<textarea class="form-control" id="inputComentario"
-					name="comentario" placeholder="Comentario" minlength="10"
-					maxlength="200" required="required" rows="3"></textarea>
+				<label for="inputComentario">Comentario</label> <input type="text"
+					id="inputComentario" class="form-control" name="comentario"
+					style="width: 500px;" placeholder="comentario" 
+					maxlength="255"/>
+			</div>
+			<div class="form-group">
+				Produto: <br /> <select name="produto">
+					<option value="">Selecione</option>
+					<c:forEach items="${listaProduto}" var="obj">
+						<option value="${obj.id}"
+							<c:if test="${obj.id eq cp.produto.id}">selected="selected"</c:if>>
+							${obj.nome}</option>
+					</c:forEach>
+				</select>
 			</div>
 			<p>
 				<a href="exibirIndex" class="btn btn-danger" role="button">Cancelar</a>

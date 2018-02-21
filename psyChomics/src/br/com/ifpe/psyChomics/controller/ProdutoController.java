@@ -31,7 +31,7 @@ public class ProdutoController {
 	@RequestMapping("cadastroProduto")
 	public String cadastroProduto(Produto produto, @RequestParam("file") MultipartFile imagem, Model model) {
 		if (Util.fazerUploadImagem(imagem)) {
-		    produto.setImagem(Util.obterMomentoAtual() + " - " + imagem.getOriginalFilename());
+			produto.setImagem(Util.obterMomentoAtual() + " - " + imagem.getOriginalFilename());
 		}
 
 		ProdutoDao dao = new ProdutoDao();
@@ -109,4 +109,20 @@ public class ProdutoController {
 		System.out.println("listagem de produto no index.");
 		return "psyChomics/index";
 	}
+	
+	@RequestMapping("/exibirDescricaoProduto")
+	public String exibirDescricaoProduto() {
+		System.out.println("exibir descrição do produto");
+		return "psyChomics/produto/descricaoProduto";
+	}
+	
+	@RequestMapping("/listaDescricaoProduto")
+	public String listaDescricaoProduto(Model model) {
+		ProdutoDao dao = new ProdutoDao();
+		List<Produto> listaDescricaoProduto = dao.listarDescricaoProduto();
+		model.addAttribute("listaDescricaoProduto", listaDescricaoProduto);
+		System.out.println("listagem de descricao do produto");
+		return "psyChomics/produto/descricaoProduto";
+	}
+	
 }
