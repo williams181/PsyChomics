@@ -250,6 +250,12 @@ form.example::after {
 		<form action="cadastroProduto" method="post"
 			enctype="multipart/form-data">
 			<div class="form-group">
+				<label for="inputCodigo">Código</label> <input type="text"
+					class="form-control" id="inputCodigo" name="codigo"
+					style="width: 110px;" maxlength="5" required="required">
+			</div>
+
+			<div class="form-group">
 				<label for="inputNome">Nome</label> <input type="text"
 					id="inputNome" class="form-control" name="nome"
 					style="width: 500px;" placeholder="Nome" minlength="3"
@@ -265,6 +271,12 @@ form.example::after {
 				<label for="inputImagem">Imagem</label> <input type="file"
 					id="inputImagem" class="form-control" name="file"
 					style="width: 500px;" maxlength="100" />
+			</div>
+			<div class="form-group">
+			<label for="inputDescricao">Descrição</label>
+				<textarea  for="inputDescricao" id="inputDescricao" class="form-control" name="descricao"
+					style="width: 500px;" maxlength="155" ></textarea>
+
 			</div>
 			<p>
 				Genero: <br /> <select name="generoProduto">

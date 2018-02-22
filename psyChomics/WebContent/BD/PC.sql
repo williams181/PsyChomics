@@ -18,23 +18,33 @@ CREATE TABLE genero_produto (
 	genero VARCHAR (30)
 );
 
+CREATE TABLE tipo_produto (
+	id INT(6) AUTO_INCREMENT PRIMARY KEY,
+	tipo VARCHAR (15)
+	
+);
+
 CREATE TABLE produto (
 	id INT (6) AUTO_INCREMENT PRIMARY KEY,
 	idgenero INT(6),
+	idtipo_produto
 	codigo VARCHAR (5),
 	nome VARCHAR (50),
 	preco DECIMAL (10,2),
 	imagem VARCHAR (255),
 	descricao VARCHAR (255),
-	FOREIGN KEY (idgenero) REFERENCES genero_produto(id)
+	FOREIGN KEY (idgenero) REFERENCES genero_produto(id),
+	FOREIGN KEY (idtipo_produto) REFERENCES tipo_produto(id)
 );
 
 CREATE TABLE comentario_produto (
 	id INT(6) AUTO_INCREMENT PRIMARY KEY,
+	idusuario INT (6),
 	idproduto INT (6),
 	data date,
 	comentario VARCHAR(255),
-	FOREIGN KEY (idproduto) REFERENCES produto(id)	
+	FOREIGN KEY (idproduto) REFERENCES produto(id),	
+	FOREIGN KEY (idusuario) REFERENCES usuario(id)	
 );
 
 CREATE TABLE carrinho (

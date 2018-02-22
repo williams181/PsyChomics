@@ -241,19 +241,27 @@ form.example::after {
 		<h3>Detalhes do produto</h3>
 		<hr>
 	</div>
+	
 
-	<c:forEach var="p" items="${listaDescricaoProduto}">
-		<div class="container" align="center">
-			<div class="col-md-3 col-sm-6 hero-feature">
-				<div class="thumbnail">
-					<img src="view/psyChomics/img/${p.imagem}">
-					<div class="caption">
-						<p><h2>${p.descricao}</h2></p>
+		<!-- /.row -->
+		<jsp:useBean id="dao" class="br.com.ifpe.psyChomics.model.ProdutoDao" />
 
+		<!-- Page Features -->
+		<div class="row text-center">
+
+			<c:forEach var="dp" items="${listaDescricaoProduto}">
+				<div class="col-md-3 col-sm-6 hero-feature">
+					<div class="thumbnail">
+						<img src="view/psyChomics/img/${dp.imagem}">
+						<div class="caption">
+							<h3>${dp.nome}</h3>
+							<p>${dp.descricao}</p>
+
+						</div>
 					</div>
 				</div>
-			</div>
+			</c:forEach>
+
 		</div>
-	</c:forEach>
 </body>
 </html>

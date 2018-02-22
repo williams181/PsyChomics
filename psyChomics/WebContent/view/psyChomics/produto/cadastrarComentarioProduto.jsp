@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="pt-br">
 <head>
@@ -249,13 +250,17 @@ form.example::after {
 		<form action="cadastrarComentarioProduto" method="post"
 			enctype="multipart/form-data">
 			<div class="form-group">
-				<label for="inputComentario">Comentario</label> <input type="text"
-					id="inputComentario" class="form-control" name="comentario"
-					style="width: 500px;" placeholder="comentario" 
-					maxlength="255"/>
+				Usuario: <br /> <select class="form-control" style="width: 200px;" name="usuario">
+					<option value="">Selecione</option>
+					<c:forEach items="${listaUsuario}" var="obj">
+						<option value="${obj.id}"
+							<c:if test="${obj.id eq u.usuario.id}">selected="selected"</c:if>>
+							${obj.nomeUsuario}</option>
+					</c:forEach>
+				</select>
 			</div>
 			<div class="form-group">
-				Produto: <br /> <select name="produto">
+				Produto: <br /> <select class="form-control"  style="width: 200px;" name="produto">
 					<option value="">Selecione</option>
 					<c:forEach items="${listaProduto}" var="obj">
 						<option value="${obj.id}"
@@ -263,6 +268,17 @@ form.example::after {
 							${obj.nome}</option>
 					</c:forEach>
 				</select>
+			</div>
+			<div class="form-group">
+				<label for="inputData">data</label> <input type="text"
+					id="inputData" class="form-control" id="inputData" name="data"
+					style="width: 200px;" required="required" placeholder="dd/mm/aaaa" />
+			</div>
+			<div class="form-group">
+			<label for="inputComentario">Comentario</label>
+				<textarea  for="inputComentario" id="inputComentario" class="form-control" name="comentario"
+					style="width: 500px;" maxlength="255" ></textarea>
+
 			</div>
 			<p>
 				<a href="exibirIndex" class="btn btn-danger" role="button">Cancelar</a>

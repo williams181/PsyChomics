@@ -201,6 +201,8 @@ form.example::after {
 				<li><a href="listarUsuario">Listagem Usuario</a></li>
 				<li><a href="exibirCadastroProduto">Cadastro Produto</a></li>
 				<li><a href="listarProduto">Listagem Produto</a></li>
+				<li><a href="exibircadastrarGeneroProduto">Cadastrar Genero</a></li>
+				<li><a href="exibircadastrarComentarioProduto">Cadastrar Comentario</a></li>
 			</ul>
 		</div>
 

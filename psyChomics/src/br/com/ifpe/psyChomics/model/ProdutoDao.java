@@ -24,7 +24,7 @@ public class ProdutoDao {
 
 	public void cadastar(Produto produto) {
 
-		String sql = "INSERT INTO produto (codigo, nome, preco, imagem, descricao, idgenero) VALUES (?,?,?,?,?,?)";
+		String sql = "INSERT INTO produto (codigo, nome, preco, imagem, descricao, idgenero, idtipo_produto) VALUES (?,?,?,?,?,?,?)";
 		PreparedStatement stmt;
 
 		try {
@@ -36,6 +36,7 @@ public class ProdutoDao {
 			stmt.setString(4, produto.getImagem());
 			stmt.setString(5, produto.getDescricao());
 			stmt.setInt(6, produto.getGeneroProduto().getId());
+			stmt.setInt(7, produto.getTipoProduto().getId());
 
 			stmt.execute();
 			stmt.close();
@@ -64,6 +65,11 @@ public class ProdutoDao {
 				GeneroProdutoDao dao = new GeneroProdutoDao();
 				GeneroProduto cp = dao.buscarPorId(idGenero);
 				prouto.setGeneroProduto(cp);
+				
+				int idTipoProduto = rs.getInt("idtipo_produto");
+				TipoProdutoDao dao2 = new TipoProdutoDao();
+				TipoProduto cp2 = dao2.buscarPorId(idTipoProduto);
+				prouto.setTipoProduto(cp2);
 				
 				prouto.setPreco(rs.getDouble("preco"));
 				prouto.setImagem(rs.getString("imagem"));
@@ -145,10 +151,10 @@ public class ProdutoDao {
 			stmt = connection.prepareStatement(sql);
 
 			stmt.setString(1, produto.getCodigo());
-			stmt.setString(1, produto.getNome());
-			stmt.setDouble(2, produto.getPreco());
-			stmt.setString(1, produto.getDescricao());
-			stmt.setInt(3, produto.getId());
+			stmt.setString(2, produto.getNome());
+			stmt.setDouble(3, produto.getPreco());
+			stmt.setString(4, produto.getDescricao());
+			stmt.setInt(5, produto.getId());
 
 			stmt.execute();
 			connection.close();

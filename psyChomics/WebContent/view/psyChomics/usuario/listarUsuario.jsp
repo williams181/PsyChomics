@@ -256,16 +256,16 @@ form.example::after {
 
 			</tr>
 
-			<c:forEach var="usuario" items="${listaUsuario}">
+			<c:forEach var="u" items="${listaUsuario}">
 
 				<tr>
 					<th scope="row">${usuario.email}</th>
-					<th>${usuario.senha}</th>
-					<th>${usuario.nick}</th>
-					<th>${usuario.nomeUsuario}</th>
-					<th>${usuario.cpf}</th>
-					<th><a href="removerUsuario?id=${usuario.id}">Remover</a> <a
-						href="exibirAlterarUsuario?id=${usuario.id}">Alterar</a></th>
+					<th>${u.senha}</th>
+					<th>${u.nick}</th>
+					<th>${u.nomeUsuario}</th>
+					<th>${u.cpf}</th>
+					<th><a href="removerUsuario?id=${u.id}">Remover</a> <a
+						href="exibirAlterarUsuario?id=${u.id}">Alterar</a></th>
 
 				</tr>
 

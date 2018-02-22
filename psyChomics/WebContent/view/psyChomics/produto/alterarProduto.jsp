@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="pt-br">
 <head>
@@ -249,13 +250,17 @@ form.example::after {
 		<jsp:useBean id="dao" class="br.com.ifpe.psyChomics.model.ProdutoDao" />
 		<form action="alterarProduto" method="post"
 			enctype="multipart/form-data">
+			<div class="form-group">
+				<label for="inputCodigo">Código</label> <input type="text"
+					class="form-control" id="inputCodigo" value=""${produto.codigo}" name="codigo"
+					style="width: 110px;" maxlength="5" required="required">
+			</div>
 
 			<div class="form-group">
 				<label for="inputNome">Nome</label> <input type="text"
-					id="inputNome" class="form-control" name="Nome"
+					id="inputNome" class="form-control" name="nome"
 					value="${produto.nome}" style="width: 500px;" maxlength="50"
-					required="required" /> <input type="hidden" name="id"
-					value="${produto.id}" />
+					required="required" /> 
 			</div>
 
 			<div class="form-group">
@@ -264,6 +269,15 @@ form.example::after {
 					value="${produto.preco}" style="width: 500px;" maxlength="100"
 					required="required" />
 			</div>
+			<div class="form-group">
+				<label for="inputDescricao">Descrição</label>
+				<textarea for="inputDescricao" value=""${produto.descricao}" id="inputDescricao"
+					class="form-control" name="descricao" style="width: 500px;"
+					maxlength="155"></textarea><input type="hidden" name="id"
+					value="${produto.id}" />
+
+			</div>
+
 			<p>
 				<input type="submit" class="btn btn-primary" value="alterar">
 				<a href="exibirIndex" class="btn btn-danger" role="button">Cancelar</a>

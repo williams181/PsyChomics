@@ -10,6 +10,8 @@ import br.com.ifpe.psyChomics.model.ComentarioProduto;
 import br.com.ifpe.psyChomics.model.ComentarioProdutoDao;
 import br.com.ifpe.psyChomics.model.Produto;
 import br.com.ifpe.psyChomics.model.ProdutoDao;
+import br.com.ifpe.psyChomics.model.Usuario;
+import br.com.ifpe.psyChomics.model.UsuarioDao;
 
 
 @Controller
@@ -21,6 +23,11 @@ public class ComentarioProdutoController {
 		ProdutoDao dao = new ProdutoDao();
 		List<Produto> listaProduto = dao.listar();
 		model.addAttribute("listaProduto", listaProduto);
+		
+		// Código para popular o combo de usuario
+		UsuarioDao dao2 = new UsuarioDao();
+		List<Usuario> listaUsuario = dao2.listar();
+		model.addAttribute("listaUsuario", listaUsuario);
 		System.out.println("Exibindo cadastrar comentario do produto");
 		return "psyChomics/produto/cadastrarComentarioProduto";
 	}

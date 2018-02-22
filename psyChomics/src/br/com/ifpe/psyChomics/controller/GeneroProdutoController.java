@@ -36,4 +36,6 @@ public class GeneroProdutoController {
 
 	return "psyChomics/generoProduto/listarGeneroProduto";
     }
+	
+	
 }

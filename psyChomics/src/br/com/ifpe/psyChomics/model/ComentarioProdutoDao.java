@@ -24,16 +24,16 @@ public class ComentarioProdutoDao {
 
 	public void cadastrar(ComentarioProduto comentarioProduto) {
 
-		String sql = "INSERT INTO comentario_produto (idproduto, data, comentario) VALUES (?,?,?)";
+		String sql = "INSERT INTO comentario_produto (idusuario, idproduto, data, comentario) VALUES (?,?,?,?)";
 		PreparedStatement stmt;
 
 		try {
 			stmt = connection.prepareStatement(sql);
 			
-			
-			stmt.setInt(1, comentarioProduto.getProduto().getId());
-			stmt.setDate(2, new java.sql.Date(comentarioProduto.getData().getTime()));
-			stmt.setString(3, comentarioProduto.getComentario());
+			stmt.setInt(1, comentarioProduto.getUsuario().getId());
+			stmt.setInt(2, comentarioProduto.getProduto().getId());
+			stmt.setDate(3, new java.sql.Date(comentarioProduto.getData().getTime()));
+			stmt.setString(4, comentarioProduto.getComentario());
 
 			stmt.execute();
 			stmt.close();
@@ -54,7 +54,7 @@ public class ComentarioProdutoDao {
 				comentarioProduto.setId(rs.getInt("id"));
 				comentarioProduto.setComentario(rs.getString("comentario"));
 				
-				int idUsuario = rs.getInt("iduauario");
+				int idUsuario = rs.getInt("idusuario");
 				UsuarioDao dao = new UsuarioDao();
 				Usuario cp = dao.buscarPorId(idUsuario);
 				comentarioProduto.setUsuario(cp);

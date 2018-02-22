@@ -117,7 +117,7 @@ public class ProdutoController {
 	}
 	
 	@RequestMapping("/listaDescricaoProduto")
-	public String listaDescricaoProduto(Model model) {
+	public String listaDescricaoProduto(Produto produto, Model model) {
 		ProdutoDao dao = new ProdutoDao();
 		List<Produto> listaDescricaoProduto = dao.listarDescricaoProduto();
 		model.addAttribute("listaDescricaoProduto", listaDescricaoProduto);
