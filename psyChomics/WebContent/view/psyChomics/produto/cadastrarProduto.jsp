@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -46,11 +46,11 @@
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li><a href="exibirLoginUsuario">Login Usuario</a></li>
-				<li><a href="exibirCadastroUsuario">Cadastro Usuario</a></li>
-				<li><a href="listarUsuario">Listagem Usuario</a></li>
-				<li><a href="exibirCadastroProduto">Cadastro Produto</a></li>
-				<li><a href="listarProduto">Listagem Produto</a></li>
+				<li><a href="exibirLoginUsuario">Login de Usuário</a></li>
+				<li><a href="exibirCadastroUsuario">Cadastro de Usuário</a></li>
+				<li><a href="listarUsuario">Listagem de Usuário</a></li>
+				<li><a href="exibirCadastroProduto">Cadastro de Produto</a></li>
+				<li><a href="listarProduto">Listagem de Produto</a></li>
 			</ul>
 		</div>
 		<!-- /.navbar-collapse -->
@@ -79,13 +79,13 @@
 					required="required" />
 			</div>
 			<div class="form-group">
-				<label for="inputPreco">Pre�o</label> <input type="text"
+				<label for="inputPreco">Preço</label> <input type="text"
 					id="inputPreco" class="form-control" name="preco"
 					style="width: 500px;" placeholder="Preco" minlength=1" maxlength="16"
 					required="required" />
 			</div>
 			<div class="form-group">
-				<label for="inputGenero">G�nero</label> <input type="text"
+				<label for="inputGenero">Gênero</label> <input type="text"
 					id="inputGenero" class="form-control" name="genero"
 					style="width: 500px;" placeholder="Genero" minlength="3" maxlength="60"
 					required="required" />

@@ -1,9 +1,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <html lang="pt-br">
 <head>
+<?xml version="1.0" encoding="utf-8"?>
 <link rel="stylesheet" type="text/css"
 	href="view/psyChomics/bootstrap/css/bootstrap.min.css" />
 <script type="text/javascript" src="view/bootstrap/js/bootstrap.min.js"></script>
@@ -14,7 +15,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Listagem</title>
+<title>Listar Produtos</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -48,11 +49,11 @@
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="exibirLoginUsuario">Login Usuario</a></li>
-					<li><a href="exibirCadastroUsuario">Cadastro Usuario</a></li>
-					<li><a href="listarUsuario">Listagem Usuario</a></li>
-					<li><a href="exibirCadastroProduto">Cadastro Produto</a></li>
-					<li><a href="listarProduto">Listagem Produto</a></li>
+				<li><a href="exibirLoginUsuario">Login de Usuário</a></li>
+				<li><a href="exibirCadastroUsuario">Cadastro de Usuário</a></li>
+				<li><a href="listarUsuario">Listagem de Usuário</a></li>
+				<li><a href="exibirCadastroProduto">Cadastro de Produto</a></li>
+				<li><a href="listarProduto">Listagem de Produto</a></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -76,7 +77,7 @@
 
 		<form action="buscaProduto" method="post">
 			<div class="form-group">
-				<label for="inputGenero">Genero</label> <input type="text"
+				<label for="inputGenero">Gênero</label> <input type="text"
 					id="inputGenero" class="form-control" name="genero"
 					style="width: 500px;" placeholder="genero" maxlength="20" />
 				<p>
@@ -86,7 +87,7 @@
 						&nbsp;</button>
 					&nbsp;
 					<button type="submit" value="busca" class="btn btn-primary">&nbsp;
-						buscar &nbsp;</button>
+						Buscar &nbsp;</button>
 				</p>
 			</div>
 		</form>
@@ -100,10 +101,10 @@
 		<table class="table">
 			<tr>
 				<td scope="col">Nome</td>
-				<td scope="col">Pre�o</td>
-				<td scope="col">Genero</td>
+				<td scope="col">Preço</td>
+				<td scope="col">Gênero</td>
 				<td scope="col">Imagem</td>
-				<td scope="col">Op��es</td>
+				<td scope="col">Opções</td>
 
 			</tr>
 
@@ -118,7 +119,7 @@
 								<img src="view/psyChomics/img/" width="150" height="150"${produto.imagem}>
 							</c:when>
 							<c:otherwise>
-							A imagem n�o foi carregada.
+							A imagem não foi carregada.
 						</c:otherwise>
 						</c:choose></th>
 

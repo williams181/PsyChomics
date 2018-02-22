@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="pt-br">
 <head>
@@ -32,14 +32,14 @@ body {
 }
 
 /* 
-       Remover a margem padrão da barra de navegação - bordas inferior e arredondadas */
+       Remover a margem padrÃ£o da barra de navegaÃ§Ã£o - bordas inferior e arredondadas */
 .navbar {
 	margin-bottom: 0;
 	border-radius: 0;
 }
 
 /* 
-        Adiciona uma cor de fundo cinza e algum preenchimento ao rodapé */
+        Adiciona uma cor de fundo cinza e algum preenchimento ao rodapÃ© */
 footer {
 	background-color: #f2f2f2;
 	padding: 25px;
@@ -185,13 +185,13 @@ form.example::after {
 			</button>
 			<a class="navbar-brand" href="listarProdutoIndex">PsyChomics</a>
 	<div class="dropdown">
-    <button class="dropbtn">Mang�s 
+    <button class="dropbtn">Mangás 
       <i class="fa fa-caret-down"></i>
     </button>
     <ul class="dropdown-content">
       <li><a href="#">NARUTO</a></li>
       <li><a href="#">DRAGON BALL</a></li>
-      <li><a href="#">CAVALEIROS DO ZODI�CO</a></li>
+      <li><a href="#">CAVALEIROS DO ZODIÁCO</a></li>
       <li><a href="#">ONE PUNCH MAN</a></li>
     </ul>
   </div> 
@@ -211,11 +211,11 @@ form.example::after {
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li><a href="exibirLoginUsuario">Login Usuario</a></li>
-				<li><a href="exibirCadastroUsuario">Cadastro Usuario</a></li>
-				<li><a href="listarUsuario">Listagem Usuario</a></li>
-				<li><a href="exibirCadastroProduto">Cadastro Produto</a></li>
-				<li><a href="listarProduto">Listagem Produto</a></li>
+				<li><a href="exibirLoginUsuario">Login de Usuário</a></li>
+				<li><a href="exibirCadastroUsuario">Cadastro de Usuário</a></li>
+				<li><a href="listarUsuario">Listagem de Usuário</a></li>
+				<li><a href="exibirCadastroProduto">Cadastro de Produto</a></li>
+				<li><a href="listarProduto">Listagem de Produto</a></li>
 			</ul>
 		</div>
 

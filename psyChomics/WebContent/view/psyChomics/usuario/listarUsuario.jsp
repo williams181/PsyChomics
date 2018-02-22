@@ -1,10 +1,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="pt-br">
 <head>
+<?xml version="1.0" encoding="utf-8"?>
 <link rel="stylesheet" type="text/css"
 	href="view/psyChomics/bootstrap/css/bootstrap.min.css" />
 <script type="text/javascript" src="view/bootstrap/js/bootstrap.min.js"></script>
@@ -32,14 +33,14 @@ body {
 }
 
 /* 
-       Remover a margem padrão da barra de navegação - bordas inferior e arredondadas */
+       Remover a margem padrÃ£o da barra de navegaÃ§Ã£o - bordas inferior e arredondadas */
 .navbar {
 	margin-bottom: 0;
 	border-radius: 0;
 }
 
 /* 
-        Adiciona uma cor de fundo cinza e algum preenchimento ao rodapé */
+        Adiciona uma cor de fundo cinza e algum preenchimento ao rodapÃ© */
 footer {
 	background-color: #f2f2f2;
 	padding: 25px;
@@ -185,13 +186,13 @@ form.example::after {
 			</button>
 			<a class="navbar-brand" href="listarProdutoIndex">PsyChomics</a>
 	<div class="dropdown">
-    <button class="dropbtn">Mang�s 
+    <button class="dropbtn">Mangás 
       <i class="fa fa-caret-down"></i>
     </button>
     <ul class="dropdown-content">
       <li><a href="#">NARUTO</a></li>
       <li><a href="#">DRAGON BALL</a></li>
-      <li><a href="#">CAVALEIROS DO ZODI�CO</a></li>
+      <li><a href="#">CAVALEIROS DO ZODIÁCO</a></li>
       <li><a href="#">ONE PUNCH MAN</a></li>
     </ul>
   </div> 
@@ -211,11 +212,11 @@ form.example::after {
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li><a href="exibirLoginUsuario">Login Usuario</a></li>
-				<li><a href="exibirCadastroUsuario">Cadastro Usuario</a></li>
-				<li><a href="listarUsuario">Listagem Usuario</a></li>
-				<li><a href="exibirCadastroProduto">Cadastro Produto</a></li>
-				<li><a href="listarProduto">Listagem Produto</a></li>
+				<li><a href="exibirLoginUsuario">Login de Usuário</a></li>
+				<li><a href="exibirCadastroUsuario">Cadastro de Usuário</a></li>
+				<li><a href="listarUsuario">Listagem de Usuário</a></li>
+				<li><a href="exibirCadastroProduto">Cadastro de Produto</a></li>
+				<li><a href="listarProduto">Listagem de Produto</a></li>
 			</ul>
 		</div>
 
@@ -244,7 +245,7 @@ form.example::after {
 
 		<form action="busca" method="post">
 			<div class="form-group">
-				<label for="inputNomeUsuario">Nome do Usu�rio</label> <input
+				<label for="inputNomeUsuario">Nome do Usuário</label> <input
 					type="text" id="inputNomeUsuario" class="form-control"
 					name="nomeUsuario" style="width: 500px;"
 					placeholder="Nome do Usuario" maxlength="50" />
@@ -268,9 +269,9 @@ form.example::after {
 				<td scope="col">E-mail</td>
 				<td scope="col">Senha</td>
 				<td scope="col">Nick</td>
-				<td scope="col">Nome do Usuario</td>
+				<td scope="col">Nome do Usuário</td>
 				<td scope="col">CPF</td>
-				<td scope="col">Op��es</td>
+				<td scope="col">Opções</td>
 
 			</tr>
 

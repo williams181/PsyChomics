@@ -1,5 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <html lang="en">
 <head>
 <link rel="stylesheet" type="text/css"
@@ -46,11 +48,11 @@
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="exibirLoginUsuario">Login Usuario</a></li>
-					<li><a href="exibirCadastroUsuario">Cadastro Usuario</a></li>
-					<li><a href="listarUsuario">Listagem Usuario</a></li>
-					<li><a href="exibirCadastroProduto">Cadastro Produto</a></li>
-					<li><a href="listarProduto">Listagem Produto</a></li>
+				<li><a href="exibirLoginUsuario">Login de Usuário</a></li>
+				<li><a href="exibirCadastroUsuario">Cadastro de Usuário</a></li>
+				<li><a href="listarUsuario">Listagem de Usuário</a></li>
+				<li><a href="exibirCadastroProduto">Cadastro de Produto</a></li>
+				<li><a href="listarProduto">Listagem de Produto</a></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -82,14 +84,14 @@
 			</div>
 
 			<div class="form-group">
-				<label for="inputPreco">Pre�o</label> <input type="text"
+				<label for="inputPreco">Preço</label> <input type="text"
 					id="inputPreco" class="form-control" name="preco"
 					value="${produto.preco}" style="width: 500px;" maxlength="100"
 					required="required" />
 			</div>
 
 			<div class="form-group">
-				<label for="inputGenero">Genero</label> <input type="text"
+				<label for="inputGenero">Gênero</label> <input type="text"
 					id="inputGenero" class="form-control" name="genero"
 					value="${produto.genero}" style="width: 500px;" maxlength="30"
 					required="required" />
