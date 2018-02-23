@@ -32,7 +32,7 @@ public class UsuarioController {
 	public String cadastroUsuario(Usuario usuario, Model model) {
 		UsuarioDao dao = new UsuarioDao();
 		dao.cadastar(usuario);
-		model.addAttribute("mensagem", "Usuario Inclu�do com Sucesso");
+		model.addAttribute("mensagem", "Usuario Incluido com Sucesso");
 		return "psyChomics/usuario/cadastrarUsuario";
 	}
 

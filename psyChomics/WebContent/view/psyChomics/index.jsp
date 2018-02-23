@@ -9,7 +9,6 @@
 <link rel="stylesheet" type="text/css"
 	href="view/psyChomics/bootstrap/css/bootstrap.min.css" />
 <script type="text/javascript" src="view/bootstrap/js/bootstrap.min.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -264,7 +263,7 @@ form.example::after {
 				</div>
 
 				<div class="item">
-					<img src="view/psyChomics/imagens/carousel.jpg" width="525" height="525">
+					<img src="view/psyChomics/imagens/carouselPretoBranco.jpg" width="525" height="525">
 					<div class="carousel-caption">
 
 						<div>
@@ -305,7 +304,7 @@ form.example::after {
 			<c:forEach var="p" items="${listaProdutoIndex}">
 				<div class="col-md-3 col-sm-6 hero-feature">
 					<div class="thumbnail">
-						<img src="view/psyChomics/img/${p.imagem}" alt="Image" width="150" height="150">
+						<img src="view/psyChomics/imagens/1.jpg">
 						<div class="caption">
 							<h3>${p.nome}</h3>
 							<p>${p.preco}</p>
