@@ -259,7 +259,7 @@ form.example::after {
 			<c:forEach var="u" items="${listaUsuario}">
 
 				<tr>
-					<th scope="row">${usuario.email}</th>
+					<th scope="row">${u.email}</th>
 					<th>${u.senha}</th>
 					<th>${u.nick}</th>
 					<th>${u.nomeUsuario}</th>

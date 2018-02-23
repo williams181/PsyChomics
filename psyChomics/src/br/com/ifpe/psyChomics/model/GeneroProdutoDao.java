@@ -47,6 +47,7 @@ public class GeneroProdutoDao {
 			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM genero_produto ORDER BY genero");
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
+				
 				GeneroProduto generoProduto = new GeneroProduto();
 				generoProduto.setId(rs.getInt("id"));
 				generoProduto.setGenero(rs.getString("genero"));
@@ -83,30 +84,20 @@ public class GeneroProdutoDao {
 			PreparedStatement stmt = connection.prepareStatement("SELECT * FROM genero_produto WHERE id = ?");
 			stmt.setInt(1, id);
 			ResultSet rs = stmt.executeQuery();
-
-			GeneroProduto generoProduto = null;
-			if (rs.next()) {
-				generoProduto = montarObjeto(rs);
-			}
-
+			
+			GeneroProduto generoProdutoCompleto = new GeneroProduto();
+			generoProdutoCompleto.setId(rs.getInt("id"));
+			generoProdutoCompleto.setGenero(rs.getString("genero"));
 			rs.close();
 			stmt.close();
 			connection.close();
-			return generoProduto;
+			return generoProdutoCompleto;
 
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
 	}
 
-	private GeneroProduto montarObjeto(ResultSet rs) throws SQLException {
-
-		GeneroProduto generoProduto = new GeneroProduto();
-		generoProduto.setId(rs.getInt("id"));
-		generoProduto.setGenero(rs.getString("genero"));
-
-		return generoProduto;
-	}
 
 	public void alterar(GeneroProduto generoProduto) {
 

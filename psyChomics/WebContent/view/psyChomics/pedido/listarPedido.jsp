@@ -157,7 +157,7 @@ form.example::after {
 }
 </style>
 
-<title>cadastrar comentario produto</title>
+<title>lista de produtos</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -228,68 +228,66 @@ form.example::after {
 			</button>
 		</form>
 
-
 		<!-- /.navbar-collapse -->
 	</div>
 	<!-- /.container --> </nav>
 
 	<br>
 	<br>
+	
 	<div class="container" align="center">
 		<br> <br>
 		<hr>
-		<h3>Cadastro de Produto</h3>
+		<h3>Listar de pedidos</h3>
 		<hr>
 	</div>
+	
+	<br>
+	<br>
 
-	<jsp:useBean id="dao" class="br.com.ifpe.psyChomics.model.ProdutoDao" />
-
-	<div style="text-align: center; color: green;">${msg}</div>
-
-	<div class="container" align="center">
-		<form action="cadastrarComentarioProduto" method="post"
-			enctype="multipart/form-data">
-			<div class="form-group">
-				Usuario: <br /> <select class="form-control" style="width: 200px;" name="usuario">
-					<option value="">Selecione</option>
-					<c:forEach items="${listaUsuario}" var="obj">
-						<option value="${obj.id}"
-							<c:if test="${obj.id eq u.usuario.id}">selected="selected"</c:if>>
-							${obj.nomeUsuario}</option>
-					</c:forEach>
-				</select>
-			</div>
-			<div class="form-group">
-				Produto: <br /> <select class="form-control"  style="width: 200px;" name="produto">
-					<option value="">Selecione</option>
-					<c:forEach items="${listaProduto}" var="obj">
-						<option value="${obj.id}"
-							<c:if test="${obj.id eq cp.produto.id}">selected="selected"</c:if>>
-							${obj.nome}</option>
-					</c:forEach>
-				</select>
-			</div>
-			<div class="form-group">
-				<label for="inputData">data</label> <input type="text"
-					id="inputData" class="form-control" id="inputData" name="data"
-					style="width: 200px;" required="required" placeholder="dd/mm/aaaa" />
-			</div>
-			<div class="form-group">
-			<label for="inputComentario">Comentario</label>
-				<textarea  for="inputComentario" id="inputComentario" class="form-control" name="comentario"
-					style="width: 500px;" maxlength="255" ></textarea>
-
-			</div>
+	<div align="center">
+	
+		<div align="left" style="color: #6E6E6E; width: 70%;">
+		
+			<c:if test="${msg ne null}">
+				<div class="alert alert-success" style="width: 100%;">
+					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+					${msg}
+				</div>
+			</c:if>
+			
+			<hr />
+			
 			<p>
-				<a href="exibirIndex" class="btn btn-danger" role="button">Cancelar</a>
-				&nbsp;
-				<button type="reset" class="btn btn-default">&nbsp; Limpar
-					&nbsp;</button>
-				&nbsp;
-				<button type="submit" value="cadastar" class="btn btn-primary">&nbsp;
-					Cadastrar &nbsp;</button>
+				<table style="width: 100%">
+					<tr>
+						<td style="float: left; font-size: 24px;"> Listagem de <strong>Pedidos</strong> </td>
+						<td style="float: right;"> <a href="exibircadastrarPedido" class="btn btn-primary" role="button">Novo</a> </td>
+					</tr>
+				</table>
 			</p>
-		</form>
+			
+			<hr />
+			
+			<table class="table table-striped table-bordered">
+				<thead>
+					<tr>
+						<th style="width: 10%; vertical-align: middle; text-align: center;">Descrição</th>
+						<th style="width: 20%; vertical-align: middle; text-align: center;">Ações</th>
+					</tr>
+				</thead>
+				<c:forEach items="${listaPedido}" var="p">
+					<tr>
+						<td style="vertical-align: middle; text-align: center;">${p.descricao}</td>
+						<td style="vertical-align: middle; text-align: center;">
+							<a href="removerPedido?id=${g.id}" class="btn btn-danger" role="button">R</a>
+						</td>
+					</tr>
+				</c:forEach>
+			</table>
+		</div>
+			
 	</div>
+	
 </body>
 </html>

@@ -157,7 +157,7 @@ form.example::after {
 }
 </style>
 
-<title>lista de produtos</title>
+<title>alterar Produto</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -228,52 +228,40 @@ form.example::after {
 			</button>
 		</form>
 
+
+
 		<!-- /.navbar-collapse -->
 	</div>
 	<!-- /.container --> </nav>
 
 	<br>
 	<br>
-	
 	<div class="container" align="center">
 		<br> <br>
 		<hr>
-		<h3>Listar comentarios dos produtos</h3>
+		<h3>Alterar Produto</h3>
 		<hr>
 	</div>
-	
-	<br>
+
+	<div style="text-align: center; color: green;">${msg}</div>
 	<br>
 
-	<jsp:useBean id="dao" class="br.com.ifpe.psyChomics.model.ComentarioProdutoDao" />
 	<div class="container" align="center">
-		<table class="table">
-			<tr>
-				<td scope="col">produto</td>
-				<td scope="col">comentario</td>
-				<td scope="col">Opções</td>
-				
+		<form action="alterarGeneroProduto" method="post"
+			enctype="multipart/form-data">
+			<div class="form-group">
+				<label for="inputGenero">Genero do produto</label> <input type="text"
+					class="form-control" id="inputGenero" value=""${generoProduto.genero}" name="genero"
+					style="width: 300px;" maxlength="5" required="required">
+			</div>
+			<p>
+				<input type="submit" class="btn btn-primary" value="alterar">
+				<a href="exibirIndex" class="btn btn-danger" role="button">Cancelar</a>
+			</p>
+		</form>
 
-			</tr>
 
-			<c:forEach var="cp" items="${listaComentarioProduto}">	
-
-				<tr>
-					<th scope="row">${cp.produto.id}</th>
-					<th scope="row">${cp.comentario}</th>
-					<th><a href="removerProduto?id=${p.id}" onclick="myFunction()">Remover</a> |
-						<a href="exibirAlterarProduto?id=${p.id}">Alterar</a>
-				</tr>
-				
-			</c:forEach>
-
-		</table>
 	</div>
 
-	<script>
-		function myFunction() {
-			alert("deseja deletar o produto?");
-		}
-	</script>
 </body>
 </html>

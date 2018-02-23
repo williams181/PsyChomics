@@ -32,28 +32,24 @@ body {
 	background-color: #EEE9E9;
 	background-image: url();
 }
-
 /* 
        Remover a margem padrão da barra de navegação - bordas inferior e arredondadas */
 .navbar {
 	margin-bottom: 0;
 	border-radius: 0;
 }
-
 /* 
         Adiciona uma cor de fundo cinza e algum preenchimento ao rodapé */
 footer {
 	background-color: #f2f2f2;
 	padding: 25px;
 }
-
 .carousel-inner img {
 	width: 100%; /*
                       Defina largura para 100% */
 	margin: auto;
 	min-height: 200px;
 }
-
 /* 
       Oculta o texto do carrossel quando a tela tiver menos de 600 pixels de largura */
 @media ( max-width : 600px) {
@@ -61,12 +57,10 @@ footer {
 		display: none;
 	}
 }
-
 .dropdown {
 	float: left;
 	overflow: hidden;
 }
-
 .dropdown .dropbtn {
 	font-size: 16px;
 	border: none;
@@ -77,11 +71,9 @@ footer {
 	font-family: inherit;
 	margin: 0;
 }
-
 .navbar a:hover, .dropdown:hover .dropbtn {
 	background-color: red;
 }
-
 .dropdown-content {
 	display: none;
 	position: absolute;
@@ -90,7 +82,6 @@ footer {
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 	z-index: 1;
 }
-
 .dropdown-content a {
 	float: none;
 	color: black;
@@ -99,19 +90,15 @@ footer {
 	display: block;
 	text-align: left;
 }
-
 .dropdown-content a:hover {
 	background-color: #ddd;
 }
-
 .dropdown:hover .dropdown-content {
 	display: block;
 }
-
 * {
 	box-sizing: border-box;
 }
-
 body {
 	margin: 0;
 	font-family: Arial;
@@ -120,11 +107,9 @@ body {
 body {
 	font-family: Arial;
 }
-
 * {
 	box-sizing: border-box;
 }
-
 form.example input[type=text] {
 	padding: 10px;
 	font-size: 17px;
@@ -133,7 +118,6 @@ form.example input[type=text] {
 	width: 80%;
 	background: #f1f1f1;
 }
-
 form.example button {
 	float: left;
 	width: 20%;
@@ -145,11 +129,9 @@ form.example button {
 	border-left: none;
 	cursor: pointer;
 }
-
 form.example button:hover {
 	background: #e00000;
 }
-
 form.example::after {
 	content: "";
 	clear: both;
@@ -157,7 +139,7 @@ form.example::after {
 }
 </style>
 
-<title>lista de produtos</title>
+<title>cadastrar comentario produto</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -228,67 +210,68 @@ form.example::after {
 			</button>
 		</form>
 
+
 		<!-- /.navbar-collapse -->
 	</div>
 	<!-- /.container --> </nav>
 
 	<br>
 	<br>
-	
 	<div class="container" align="center">
 		<br> <br>
 		<hr>
-		<h3>Listar genero de produto</h3>
+		<h3>Cadastro de comentario do produto</h3>
 		<hr>
 	</div>
-	
-	<br>
-	<br>
 
-	<div align="center">
-	
-		<div align="left" style="color: #6E6E6E; width: 70%;">
-		
-			<c:if test="${msg ne null}">
-				<div class="alert alert-success" style="width: 100%;">
-					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-					${msg}
-				</div>
-			</c:if>
-			
-			<hr />
-			
+	<jsp:useBean id="dao" class="br.com.ifpe.psyChomics.model.ProdutoDao" />
+
+	<div style="text-align: center; color: green;">${msg}</div>
+
+	<div class="container" align="center">
+		<form action="cadastrarComentarioProduto" method="post"
+			enctype="multipart/form-data">
+			<div class="form-group">
+				Usuario: <br /> <select class="form-control" style="width: 200px;" name="usuario">
+					<option value="">Selecione</option>
+					<c:forEach items="${listaUsuario}" var="obj">
+						<option value="${obj.id}"
+							<c:if test="${obj.id eq u.usuario.id}">selected="selected"</c:if>>
+							${obj.nomeUsuario}</option>
+					</c:forEach>
+				</select>
+			</div>
+			<div class="form-group">
+				Produto: <br /> <select class="form-control"  style="width: 200px;" name="produto">
+					<option value="">Selecione</option>
+					<c:forEach items="${listaProduto}" var="obj">
+						<option value="${obj.id}"
+							<c:if test="${obj.id eq cp.produto.id}">selected="selected"</c:if>>
+							${obj.nome}</option>
+					</c:forEach>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="inputData">data</label> <input type="text"
+					id="inputData" class="form-control" id="inputData" name="data"
+					style="width: 200px;" required="required" placeholder="dd/mm/aaaa" />
+			</div>
+			<div class="form-group">
+			<label for="inputComentario">Comentario</label>
+				<textarea  for="inputComentario" id="inputComentario" class="form-control" name="comentario"
+					style="width: 500px;" maxlength="255" ></textarea>
+
+			</div>
 			<p>
-				<table style="width: 100%">
-					<tr>
-						<td style="float: left; font-size: 24px;"> Listagem de <strong>Genero de produto</strong> </td>
-						<td style="float: right;"> <a href="exibircadastrarGeneroProduto" class="btn btn-primary" role="button">Novo</a> </td>
-					</tr>
-				</table>
+				<a href="exibirIndex" class="btn btn-danger" role="button">Cancelar</a>
+				&nbsp;
+				<button type="reset" class="btn btn-default">&nbsp; Limpar
+					&nbsp;</button>
+				&nbsp;
+				<button type="submit" value="cadastar" class="btn btn-primary">&nbsp;
+					Cadastrar &nbsp;</button>
 			</p>
-			
-			<hr />
-			
-			<table class="table table-striped table-bordered">
-				<thead>
-					<tr>
-						<th style="width: 10%; vertical-align: middle; text-align: center;">Genero</th>
-						<th style="width: 20%; vertical-align: middle; text-align: center;">Ações</th>
-					</tr>
-				</thead>
-				<c:forEach items="${listarGeneroProduto}" var="g">
-					<tr>
-						<td style="vertical-align: middle; text-align: center;">${g.genero}</td>
-						<td style="vertical-align: middle; text-align: center;">
-							<a href="exibirAlterarGeneroProduto?id=${g.id}" class="btn btn-warning" role="button">E</a> &nbsp;
-							<a href="removerGeneroProduto?id=${g.id}" class="btn btn-danger" role="button">R</a>
-						</td>
-					</tr>
-				</c:forEach>
-			</table>
-		</div>
-			
+		</form>
 	</div>
-	
 </body>
 </html>

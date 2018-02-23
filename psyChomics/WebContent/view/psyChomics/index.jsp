@@ -1,4 +1,3 @@
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -202,7 +201,13 @@ form.example::after {
 				<li><a href="exibirCadastroProduto">Cadastro Produto</a></li>
 				<li><a href="listarProduto">Listagem Produto</a></li>
 				<li><a href="exibircadastrarGeneroProduto">Cadastrar Genero</a></li>
+				<li><a href="exibirlistarGeneroProduto">listagem de genero</a></li>
 				<li><a href="exibircadastrarComentarioProduto">Cadastrar Comentario</a></li>
+				<li><a href="exibirlistarComentarioProduto">listagem de comentario</a></li>
+				<li><a href="exibircadastrarPedido">Cadastrar Pedido</a></li>
+				<li><a href="exibirlistarPedido">listagem de pedido</a></li>
+				<li><a href="exibircadastrarTipoProduto">Cadastrar Tipo de produto/Null</a></li>
+				<li><a href="exibirlistarTipoProduto">listagem de tipo/Null</a></li>
 			</ul>
 		</div>
 

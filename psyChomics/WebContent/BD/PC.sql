@@ -27,14 +27,13 @@ CREATE TABLE tipo_produto (
 CREATE TABLE produto (
 	id INT (6) AUTO_INCREMENT PRIMARY KEY,
 	idgenero INT(6),
-	idtipo_produto
 	codigo VARCHAR (5),
 	nome VARCHAR (50),
 	preco DECIMAL (10,2),
 	imagem VARCHAR (255),
 	descricao VARCHAR (255),
-	FOREIGN KEY (idgenero) REFERENCES genero_produto(id),
-	FOREIGN KEY (idtipo_produto) REFERENCES tipo_produto(id)
+	FOREIGN KEY (idgenero) REFERENCES genero_produto(id)
+
 );
 
 CREATE TABLE comentario_produto (
@@ -47,29 +46,27 @@ CREATE TABLE comentario_produto (
 	FOREIGN KEY (idusuario) REFERENCES usuario(id)	
 );
 
+CREATE TABLE item (
+	id INT(6) AUTO_INCREMENT PRIMARY KEY,
+	idproduto INT(6),
+	quantidade INT(6),
+	FOREIGN KEY (idproduto) REFERENCES produto(id)
+);
+
 CREATE TABLE carrinho (
 	id INT (6) AUTO_INCREMENT PRIMARY KEY,
 	idusuario INT (6),
 	idproduto INT (6),
+	iditem INT (6),
 	total DOUBLE,
 	FOREIGN KEY (idusuario) REFERENCES usuario(id),
-	FOREIGN KEY (idproduto) REFERENCES produto(id)	
-);
-
-CREATE TABLE item (
-	id INT(6) AUTO_INCREMENT PRIMARY KEY,
-	idcarrinho INT(6),
-	idproduto INT(6),
-	quantidade INT(6),
-	FOREIGN KEY (idproduto) REFERENCES produto(id),
-	FOREIGN KEY (idcarrinho) REFERENCES carrinho(id)
+	FOREIGN KEY (idproduto) REFERENCES produto(id),	
+	FOREIGN KEY (iditem) REFERENCES item(id)	
 );
 
 CREATE TABLE fale_conosco (
 	id INT(6) AUTO_INCREMENT PRIMARY KEY,
 	idusuario INT(6),
-	nome VARCHAR(50) NOT NULL,
-	email VARCHAR(50) NOT NULL,
 	mensagem VARCHAR(255),
 	FOREIGN KEY (idusuario) REFERENCES usuario(id)
 );
@@ -77,8 +74,6 @@ CREATE TABLE fale_conosco (
 CREATE TABLE pedido (
 	id INT(6) AUTO_INCREMENT PRIMARY KEY,
 	idusuario INT(6),
-	nome VARCHAR(50) NOT NULL,
-	email VARCHAR(50) NOT NULL,
 	descricao VARCHAR(255),
 	FOREIGN KEY (idusuario) REFERENCES usuario(id)
 );

@@ -24,7 +24,7 @@ public class ProdutoDao {
 
 	public void cadastar(Produto produto) {
 
-		String sql = "INSERT INTO produto (codigo, nome, preco, imagem, descricao, idgenero, idtipo_produto) VALUES (?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO produto (codigo, nome, preco, imagem, descricao, idgenero) VALUES (?,?,?,?,?,?)";
 		PreparedStatement stmt;
 
 		try {
@@ -36,7 +36,6 @@ public class ProdutoDao {
 			stmt.setString(4, produto.getImagem());
 			stmt.setString(5, produto.getDescricao());
 			stmt.setInt(6, produto.getGeneroProduto().getId());
-			stmt.setInt(7, produto.getTipoProduto().getId());
 
 			stmt.execute();
 			stmt.close();
@@ -54,28 +53,28 @@ public class ProdutoDao {
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
 				
-				Produto prouto = new Produto();
+				Produto produto = new Produto();
 				
 				
-				prouto.setId(rs.getInt("id"));
-				prouto.setCodigo(rs.getString("codigo"));
-				prouto.setNome(rs.getString("nome"));
+				produto.setId(rs.getInt("id"));
+				produto.setCodigo(rs.getString("codigo"));
+				produto.setNome(rs.getString("nome"));
 				
 				int idGenero = rs.getInt("idgenero");
 				GeneroProdutoDao dao = new GeneroProdutoDao();
 				GeneroProduto cp = dao.buscarPorId(idGenero);
-				prouto.setGeneroProduto(cp);
+				produto.setGeneroProduto(cp);
 				
 				int idTipoProduto = rs.getInt("idtipo_produto");
 				TipoProdutoDao dao2 = new TipoProdutoDao();
 				TipoProduto cp2 = dao2.buscarPorId(idTipoProduto);
-				prouto.setTipoProduto(cp2);
+				produto.setTipoProduto(cp2);
 				
-				prouto.setPreco(rs.getDouble("preco"));
-				prouto.setImagem(rs.getString("imagem"));
-				prouto.setDescricao(rs.getString("descricao"));
+				produto.setPreco(rs.getDouble("preco"));
+				produto.setImagem(rs.getString("imagem"));
+				produto.setDescricao(rs.getString("descricao"));
 
-				listaProduto.add(prouto);
+				listaProduto.add(produto);
 			}
 			stmt.execute();
 			connection.close();
@@ -114,9 +113,8 @@ public class ProdutoDao {
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {
-
-				produtoCompleto.setCodigo(rs.getString("codigo"));
 				produtoCompleto.setId(rs.getInt("id"));
+				produtoCompleto.setCodigo(rs.getString("codigo"));
 				produtoCompleto.setNome(rs.getString("nome"));
 				
 				int idGenero = rs.getInt("idgenero");
@@ -128,7 +126,6 @@ public class ProdutoDao {
 				produtoCompleto.setPreco(rs.getDouble("preco"));;
 				produtoCompleto.setImagem(rs.getString("imagem"));
 				produtoCompleto.setDescricao(rs.getString("descricao"));
-
 			}
 
 			rs.close();
@@ -246,21 +243,21 @@ public class ProdutoDao {
 			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM produto ORDER BY nome");
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
-				Produto prouto = new Produto();
+				Produto produto = new Produto();
 				
-				prouto.setId(rs.getInt("id"));
-				prouto.setCodigo(rs.getString("codigo"));
-				prouto.setNome(rs.getString("nome"));
+				produto.setId(rs.getInt("id"));
+				produto.setCodigo(rs.getString("codigo"));
+				produto.setNome(rs.getString("nome"));
 				
 				int idGenero = rs.getInt("idgenero");
 				GeneroProdutoDao dao = new GeneroProdutoDao();
 				GeneroProduto cp = dao.buscarPorId(idGenero);
-				prouto.setGeneroProduto(cp);
+				produto.setGeneroProduto(cp);
 				
-				prouto.setImagem(rs.getString("imagem"));
-				prouto.setDescricao(rs.getString("descricao"));
+				produto.setImagem(rs.getString("imagem"));
+				produto.setDescricao(rs.getString("descricao"));
 
-				listaDescricaoProduto.add(prouto);
+				listaDescricaoProduto.add(produto);
 			}
 			stmt.execute();
 			connection.close();

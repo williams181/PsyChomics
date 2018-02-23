@@ -238,57 +238,43 @@ form.example::after {
 	<div class="container" align="center">
 		<br> <br>
 		<hr>
-		<h3>Listar genero de produto</h3>
+		<h3>Listar comentarios dos produtos</h3>
 		<hr>
 	</div>
 	
 	<br>
 	<br>
+	
+		<div style="text-align: center; color: green;">${msg}</div>
 
-	<div align="center">
-	
-		<div align="left" style="color: #6E6E6E; width: 70%;">
-		
-			<c:if test="${msg ne null}">
-				<div class="alert alert-success" style="width: 100%;">
-					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-					${msg}
-				</div>
-			</c:if>
-			
-			<hr />
-			
-			<p>
-				<table style="width: 100%">
-					<tr>
-						<td style="float: left; font-size: 24px;"> Listagem de <strong>Genero de produto</strong> </td>
-						<td style="float: right;"> <a href="exibircadastrarGeneroProduto" class="btn btn-primary" role="button">Novo</a> </td>
-					</tr>
-				</table>
-			</p>
-			
-			<hr />
-			
-			<table class="table table-striped table-bordered">
-				<thead>
-					<tr>
-						<th style="width: 10%; vertical-align: middle; text-align: center;">Genero</th>
-						<th style="width: 20%; vertical-align: middle; text-align: center;">Ações</th>
-					</tr>
-				</thead>
-				<c:forEach items="${listarGeneroProduto}" var="g">
-					<tr>
-						<td style="vertical-align: middle; text-align: center;">${g.genero}</td>
-						<td style="vertical-align: middle; text-align: center;">
-							<a href="exibirAlterarGeneroProduto?id=${g.id}" class="btn btn-warning" role="button">E</a> &nbsp;
-							<a href="removerGeneroProduto?id=${g.id}" class="btn btn-danger" role="button">R</a>
-						</td>
-					</tr>
-				</c:forEach>
-			</table>
-		</div>
-			
+	<jsp:useBean id="dao" class="br.com.ifpe.psyChomics.model.ComentarioProdutoDao" />
+	<div class="container" align="center">
+		<table class="table">
+			<tr>
+				<td scope="col">produto</td>
+				<td scope="col">comentario</td>
+				<td scope="col">Opções</td>
+				
+
+			</tr>
+
+			<c:forEach var="cp" items="${listaComentarioProduto}">	
+
+				<tr>
+					<th scope="row">${cp.produto.id}</th>
+					<th scope="row">${cp.comentario}</th>
+					<th><a href="removerComentarioProduto?id=${p.id}" onclick="myFunction()">Remover</a>
+				</tr>
+				
+			</c:forEach>
+
+		</table>
 	</div>
-	
+
+	<script>
+		function myFunction() {
+			alert("deseja deletar o comentario do produto ?");
+		}
+	</script>
 </body>
 </html>

@@ -29,7 +29,7 @@ public class ComentarioProdutoController {
 		List<Usuario> listaUsuario = dao2.listar();
 		model.addAttribute("listaUsuario", listaUsuario);
 		System.out.println("Exibindo cadastrar comentario do produto");
-		return "psyChomics/produto/cadastrarComentarioProduto";
+		return "psyChomics/comentarioProduto/cadastrarComentarioProduto";
 	}
 
 	@RequestMapping("cadastrarComentarioProduto")
@@ -37,15 +37,15 @@ public class ComentarioProdutoController {
 
 		ComentarioProdutoDao dao = new ComentarioProdutoDao();
 		dao.cadastrar(comentarioProduto);
-		model.addAttribute("msg", "O comentario " + comentarioProduto.getComentario() + " foi Inserido com Sucesso !");
+		model.addAttribute("msg", "O comentario foi Inserido com Sucesso !");
 		System.out.println("cadastro de comentario de produto");
-		return "psyChomics/produto/cadastrarComentarioProduto";
+		return "psyChomics/comentarioProduto/cadastrarComentarioProduto";
 	}
 
 	@RequestMapping("/exibirListarComentarioProduto")
 	public String exibirListarComentarioProduto() {
 		System.out.println("exibir listar de comentarios dos produtos");
-		return "psyChomics/produto/listarComentarioProduto";
+		return "psyChomics/comentarioProduto/listarComentarioProduto";
 	}
 
 	@RequestMapping("/listarComentarioProduto")
@@ -55,6 +55,18 @@ public class ComentarioProdutoController {
 		List<ComentarioProduto> listaComentarioProduto = dao.listar();
 		model.addAttribute("listaComentarioProduto", listaComentarioProduto);
 
-		return "psyChomics/produto/listarComentarioProduto";
+		return "psyChomics/comentarioProduto/listarComentarioProduto";
 	}
+	
+	@RequestMapping("removerComentarioProduto")
+	public String removerComentarioProduto(ComentarioProduto comentarioProduto, Model model) {
+		ComentarioProdutoDao dao = new ComentarioProdutoDao();
+		dao.remover(comentarioProduto);
+		model.addAttribute("msg", "O comentario do produto foi removido com sucesso!");
+		System.out.println("remover comentario do produto");
+		return "psyChomics/comentarioProduto/listarComentarioProduto";
+	}
+
+	
+	
 }

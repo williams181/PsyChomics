@@ -72,7 +72,7 @@ public class ProdutoController {
 		Produto produtoCompleto = dao.buscarPorId(produto.getId());
 		model.addAttribute("produto", produtoCompleto);
 		System.out.println("Exibindo alterar produto");
-		return "psyChomics/produto/alterarProduto";
+		return "psyChomics/produto/listarProduto";
 	}
 
 	@RequestMapping("alterarProduto")

@@ -115,4 +115,20 @@ public class ComentarioProdutoDao {
 			throw new RuntimeException(e);
 		}
 	}
+	
+	public void remover(ComentarioProduto comentarioProduto) {
+
+		String sql = "DELETE FROM comentario_produto WHERE id = ?";
+		PreparedStatement stmt;
+		try {
+
+			stmt = connection.prepareStatement(sql);
+			stmt.setInt(1, comentarioProduto.getId());
+			stmt.execute();
+			connection.close();
+
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
 }
