@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>8859-1"%>
+=======
+
+>>>>>>> versao-1602-gabriel
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="pt-br">
 <head>
@@ -12,6 +16,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
+<<<<<<< HEAD
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -274,6 +279,9 @@ form.example::after {
 </style>
 
 <title>cadastrar produto</title>
+=======
+
+>>>>>>> versao-1602-gabriel
 
 <!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -328,11 +336,11 @@ form.example::after {
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li><a href="exibirLoginUsuario">Login Usuario</a></li>
-				<li><a href="exibirCadastroUsuario">Cadastro Usuario</a></li>
-				<li><a href="listarUsuario">Listagem Usuario</a></li>
-				<li><a href="exibirCadastroProduto">Cadastro Produto</a></li>
-				<li><a href="listarProduto">Listagem Produto</a></li>
+				<li><a href="exibirLoginUsuario">Login de Usuário</a></li>
+				<li><a href="exibirCadastroUsuario">Cadastro de Usuário</a></li>
+				<li><a href="listarUsuario">Listagem de Usuário</a></li>
+				<li><a href="exibirCadastroProduto">Cadastro de Produto</a></li>
+				<li><a href="listarProduto">Listagem de Produto</a></li>
 			</ul>
 		</div>
 
@@ -372,16 +380,21 @@ form.example::after {
 					maxlength="60" required="required" />
 			</div>
 			<div class="form-group">
-			<label for="inputPreco">Preço</label> 
-			<input type="Text" id="inputPreco" class="form-control" name="preco"
-			style="width: 500px;" placeholder="Preço" size="10" maxlength="10" 
-			onkeydown="FormataMoeda(this,10,event)" onkeypress="return maskKeyPress(event)" />
+<<<<<<< HEAD
+
+=======
+				<label for="inputPreco">Preço</label>
+					<input type="Text"id="inputPreco" class="form-control" name="preco"
+					style="width: 500px;" placeholder="Preco" size="10"
+					 maxlength="10" onkeydown="FormataMoeda(this,10,event)" onkeypress="return maskKeyPress(event)" />
+					
 			</div>
 			<div class="form-group">
-				<label for="inputGenero">Gênero</label> <input type="text"
-					id="inputGenero" class="form-control" name="genero"
-					style="width: 500px;" placeholder="Genero" minlength="3"
-					maxlength="60" required="required" />
+				<label for="inputGenero">Gênero</label> 
+				<input type="text" id="inputGenero" class="form-control" name="genero"
+					style="width: 500px;" placeholder="Genero" minlength="3" maxlength="60"
+					required="required"/>
+>>>>>>> versao-1602-gabriel
 			</div>
 			<div class="form-group">
 				<label for="inputImagem">Imagem</label> <input type="file"

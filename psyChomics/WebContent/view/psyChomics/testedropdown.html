@@ -1,0 +1,291 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css"
+    href="view/psyChomics/bootstrap/css/bootstrap.min.css" />
+<script type="text/javascript" src="view/bootstrap/js/bootstrap.min.js"></script>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/font.css">
+
+
+
+
+<style>
+
+h1.testHeader {
+    font-family: 'BADABB';
+    font-size: 36px;
+    display: block;
+    color: #222;
+    margin-bottom: 0.5em;
+    margin-top: 0;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 0;
+	border-radius: 0;
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+ /*SEARCH*/
+ body {
+    font-family: Arial;
+}
+
+* {
+    box-sizing: border-box;
+}
+form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+}
+
+form.example button {
+    float: left;
+    width: 20%;
+    padding: 13px;
+    background: #6a6f72;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+}
+
+form.example button:hover {
+    background: #e00000;
+}
+
+form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+</style>
+</head>
+<body>
+<h1 class="fontsforweb_fontid_305"><img src="imagens\logo.png" width="9%">O Seu Site de Quadrinhos!</h1>
+<div class="navbar">
+	<div class="container">
+	<br><form class="example" action="/action_page.php">
+  <input type="text" placeholder="Procurar.." name="search">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+
+  <a href="#home">Início</a>
+  <div class="dropdown">
+    <button class="dropbtn">Mangás
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">NARUTO</a>
+      <a href="#">DRAGON BALL</a>
+	  <a href="#">CAVALEIROS DO ZODIÁCO</a>
+      <a href="#">ONE PUNCH MAN</a>
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">Quadrinhos
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">MARVEL</a>
+      <a href="#">DC Comics</a>
+      <a href="#">VERTIGO</a>
+      <a href="#">DEVIR</a>
+    </div>
+  </div> 
+ 	<a href="exibirLoginUsuario">Login</a>
+ 	<a href="exibirCadastroUsuario">Cadastro de Usuário</a>
+	<a href="listarUsuario">Listagem de Usuário</a>
+	<a href="exibirCadastroProduto">Cadastro de Produto</a>
+	<a href="listarProduto">Listagem de Produto</a>
+</div>
+</div>
+
+<!-- Page Content -->
+
+	<div class="container">
+
+
+	<br>
+	<br>
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			<!-- Indicadores -->
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+			</ol>
+
+			<!-- Quebra para Slides -->
+			<div class="carousel-inner" role="listbox">
+				<div class="item active">
+					<img src="view/psyChomics/imagens/bg.jpg" alt="Image" width="525" height="525">
+					<div class="carousel-caption">
+						<div>	
+							<h3>
+								Os Melhores Mangás!
+								<!-- aqui entra um codigo PHP-->
+							</h3>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="item">
+					<img src="view/psyChomics/imagens/bg.jpg" width="525" height="525">
+					<div class="carousel-caption">
+
+						<div>
+							<h3>Uma Grande Coleção de Quadrinhos e Mangás!</h3>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<!-- Controles esquerdo e direito -->
+			<a class="left carousel-control" href="#myCarousel" role="button"
+				data-slide="prev"> <span
+				class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a> <a class="right carousel-control" href="#myCarousel" role="button"
+				data-slide="next"> <span
+				class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				<span class="sr-only">Próximo</span>
+			</a>
+		</div>
+
+		<hr>
+
+		<!-- Title -->
+		<div class="row">
+			<div class="col-lg-12">
+				<h3 style="text-align: center; color: black;">Novos Produtos!</h3>
+			</div>
+		</div>
+		<!-- /.row -->
+		<jsp:useBean id="dao" class="br.com.ifpe.psyChomics.model.ProdutoDao" />
+
+		<!-- Page Features -->
+		<div class="row text-center">
+
+			<c:forEach var="produto" items="${listaProdutoIndex}">
+				<div class="col-md-3 col-sm-6 hero-feature">
+					<div class="thumbnail">
+						<img src="view/psyChomics/img/" width="150" height="150"${produto.imagem}>
+						<div class="caption">
+							<h3>${produto.nome}</h3>
+							<p>${produto.preco}</p>
+							<p>
+								<a href="#" class="btn btn-primary">Comprar</a> <a href="#"
+									class="btn btn-default">Saiba Mais</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</c:forEach>
+
+		</div>
+		<!-- /.row -->
+<!-- teste -->
+		<hr>
+
+		<!-- Footer -->
+		<footer>
+		<div class="row text-center">
+			<div class="col-lg-12">
+				<p style="text-align: center; color: black;">Copyright &copy; BY
+					William Roberto</p>
+			</div>
+		</div>
+		</footer>
+
+	</div>
+	<!-- /.container -->
+
+	<!-- jQuery -->
+	<script src="js/jquery.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

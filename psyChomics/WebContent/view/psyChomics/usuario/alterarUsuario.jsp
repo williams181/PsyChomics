@@ -1,8 +1,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<<<<<<< HEAD
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="pt-br">
+=======
+
+>>>>>>> versao-1602-gabriel
 <head>
 <link rel="stylesheet" type="text/css"
 	href="view/psyChomics/bootstrap/css/bootstrap.min.css" />
@@ -190,6 +194,7 @@ form.example::after {
 				<button class="dropbtn">
 					Usuario <i class="fa fa-caret-down"></i>
 				</button>
+<<<<<<< HEAD
 				<ul class="dropdown-content">
 					<li><a href="exibirLoginUsuario">Login Usuario</a></li>
 					<li><a href="exibirCadastroUsuario">Cadastro Usuario</a></li>
@@ -203,6 +208,9 @@ form.example::after {
 				<ul class="dropdown-content">
 					<li><a href="exibirCadastroProduto">Cadastro Produto</a></li>
 					<li><a href="listarProduto">Listagem Produto</a></li>
+=======
+
+>>>>>>> versao-1602-gabriel
 				</ul>
 			</div>
 		</div>
@@ -269,11 +277,15 @@ form.example::after {
 					value="${usuario.nick}" style="width: 500px;" maxlength="30"
 					required="required" />
 			</div>
-			<div class="form-group">
-				<label for="inputNomeUsuario">Nome do usuário</label> <input
-					type="text" id="inputNomeUsuario" class="form-control"
-					name="nomeUsuario" value="${usuario.nomeUsuario}"
-					style="width: 500px;" maxlength="30" required="required" />
+<<<<<<< HEAD
+
+=======
+						<div class="form-group">
+				<label for="inputNomeUsuario">Nome do Usuário</label> <input type="text"
+					id="inputNomeUsuario" class="form-control" name="nomeUsuario"
+					value="${usuario.nomeUsuario}" style="width: 500px;" maxlength="30"
+					required="required" />
+>>>>>>> versao-1602-gabriel
 			</div>
 			<div class="form-group">
 				<label for="inputCpf">CPF</label> <input type="text" id="inputCpf"

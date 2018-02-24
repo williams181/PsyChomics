@@ -1,8 +1,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="pt-br">
+<<<<<<< HEAD
+
+=======
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<html lang="en">
+>>>>>>> versao-1602-gabriel
 <head>
 <link rel="stylesheet" type="text/css"
 	href="view/psyChomics/bootstrap/css/bootstrap.min.css" />
@@ -190,19 +194,21 @@ form.example::after {
 				<button class="dropbtn">
 					Usuario <i class="fa fa-caret-down"></i>
 				</button>
-				<ul class="dropdown-content">
-					<li><a href="exibirLoginUsuario">Login Usuario</a></li>
-					<li><a href="exibirCadastroUsuario">Cadastro Usuario</a></li>
-					<li><a href="listarUsuario">Listagem Usuario</a></li>
-				</ul>
+<<<<<<< HEAD
+
+=======
+				<a class="navbar-brand" href="listarProdutoIndex">PsyChomics</a>
 			</div>
-			<div class="dropdown">
-				<button class="dropbtn">
-					Produto <i class="fa fa-caret-down"></i>
-				</button>
-				<ul class="dropdown-content">
-					<li><a href="exibirCadastroProduto">Cadastro Produto</a></li>
-					<li><a href="listarProduto">Listagem Produto</a></li>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+				<li><a href="exibirLoginUsuario">Login de Usuário</a></li>
+				<li><a href="exibirCadastroUsuario">Cadastro de Usuário</a></li>
+				<li><a href="listarUsuario">Listagem de Usuário</a></li>
+				<li><a href="exibirCadastroProduto">Cadastro de Produto</a></li>
+				<li><a href="listarProduto">Listagem de Produto</a></li>
+>>>>>>> versao-1602-gabriel
 				</ul>
 			</div>
 		</div>
@@ -265,7 +271,7 @@ form.example::after {
 			</div>
 
 			<div class="form-group">
-				<label for="inputGenero">Genero</label> <input type="text"
+				<label for="inputGenero">Gênero</label> <input type="text"
 					id="inputGenero" class="form-control" name="genero"
 					value="${produto.genero}" style="width: 500px;" maxlength="30"
 					required="required" />

@@ -2,9 +2,13 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<<<<<<< HEAD
+
+=======
+>>>>>>> versao-1602-gabriel
 <html lang="pt-br">
 <head>
+<?xml version="1.0" encoding="utf-8"?>
 <link rel="stylesheet" type="text/css"
 	href="view/psyChomics/bootstrap/css/bootstrap.min.css" />
 <script type="text/javascript" src="view/bootstrap/js/bootstrap.min.js"></script>
@@ -81,6 +85,7 @@ footer {
 	background-color: red;
 }
 
+<<<<<<< HEAD
 .dropdown-content {
 	display: none;
 	position: absolute;
@@ -157,6 +162,9 @@ form.example::after {
 </style>
 
 <title>lista de produtos</title>
+=======
+
+>>>>>>> versao-1602-gabriel
 
 <!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -191,19 +199,21 @@ form.example::after {
 				<button class="dropbtn">
 					Usuario <i class="fa fa-caret-down"></i>
 				</button>
-				<ul class="dropdown-content">
-					<li><a href="exibirLoginUsuario">Login Usuario</a></li>
-					<li><a href="exibirCadastroUsuario">Cadastro Usuario</a></li>
-					<li><a href="listarUsuario">Listagem Usuario</a></li>
-				</ul>
+<<<<<<< HEAD
+
+=======
+				<a class="navbar-brand" href="listarProdutoIndex">PsyChomics</a>
 			</div>
-			<div class="dropdown">
-				<button class="dropbtn">
-					Produto <i class="fa fa-caret-down"></i>
-				</button>
-				<ul class="dropdown-content">
-					<li><a href="exibirCadastroProduto">Cadastro Produto</a></li>
-					<li><a href="listarProduto">Listagem Produto</a></li>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+				<li><a href="exibirLoginUsuario">Login de Usuário</a></li>
+				<li><a href="exibirCadastroUsuario">Cadastro de Usuário</a></li>
+				<li><a href="listarUsuario">Listagem de Usuário</a></li>
+				<li><a href="exibirCadastroProduto">Cadastro de Produto</a></li>
+				<li><a href="listarProduto">Listagem de Produto</a></li>
+>>>>>>> versao-1602-gabriel
 				</ul>
 			</div>
 		</div>
@@ -240,7 +250,34 @@ form.example::after {
 		<h3>Listar Produto</h3>
 		<hr>
 	</div>
+<<<<<<< HEAD
 	
+=======
+
+	<div style="text-align: center; color: green;">${msg}</div>
+
+	<br>
+
+	<div class="container" align="center">
+
+		<form action="buscaProduto" method="post">
+			<div class="form-group">
+				<label for="inputGenero">Gênero</label> <input type="text"
+					id="inputGenero" class="form-control" name="genero"
+					style="width: 500px;" placeholder="genero" maxlength="20" />
+				<p>
+					<a href="exibirIndex" class="btn btn-danger" role="button">Cancelar</a>
+					&nbsp;
+					<button type="reset" class="btn btn-default">&nbsp; Limpar
+						&nbsp;</button>
+					&nbsp;
+					<button type="submit" value="busca" class="btn btn-primary">&nbsp;
+						Buscar &nbsp;</button>
+				</p>
+			</div>
+		</form>
+	</div>
+>>>>>>> versao-1602-gabriel
 	<br>
 	<br>
 
@@ -250,7 +287,11 @@ form.example::after {
 			<tr>
 				<td scope="col">Nome</td>
 				<td scope="col">Preço</td>
-				<td scope="col">Genero</td>
+<<<<<<< HEAD
+
+=======
+				<td scope="col">Gênero</td>
+>>>>>>> versao-1602-gabriel
 				<td scope="col">Imagem</td>
 				<td scope="col">Opções</td>
 

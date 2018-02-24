@@ -1,13 +1,22 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<<<<<<< HEAD
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="pt-br">
+=======
+
+>>>>>>> versao-1602-gabriel
 <head>
 <link rel="stylesheet" type="text/css"
 	href="view/psyChomics/bootstrap/css/bootstrap.min.css" />
 <script type="text/javascript" src="view/bootstrap/js/bootstrap.min.js"></script>
-<meta charset="utf-8">
+<<<<<<< HEAD
+
+=======
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta charset="UTF-8">
+>>>>>>> versao-1602-gabriel
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
@@ -148,6 +157,7 @@ form.example button:hover {
 	background: #e00000;
 }
 
+<<<<<<< HEAD
 form.example::after {
 	content: "";
 	clear: both;
@@ -156,6 +166,9 @@ form.example::after {
 </style>
 
 <title>busca</title>
+=======
+
+>>>>>>> versao-1602-gabriel
 
 <!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -190,6 +203,7 @@ form.example::after {
 				<button class="dropbtn">
 					Usuario <i class="fa fa-caret-down"></i>
 				</button>
+<<<<<<< HEAD
 				<ul class="dropdown-content">
 					<li><a href="exibirLoginUsuario">Login Usuario</a></li>
 					<li><a href="exibirCadastroUsuario">Cadastro Usuario</a></li>
@@ -203,6 +217,9 @@ form.example::after {
 				<ul class="dropdown-content">
 					<li><a href="exibirCadastroProduto">Cadastro Produto</a></li>
 					<li><a href="listarProduto">Listagem Produto</a></li>
+=======
+
+>>>>>>> versao-1602-gabriel
 				</ul>
 			</div>
 		</div>
@@ -236,10 +253,37 @@ form.example::after {
 	<div class="container" align="center">
 		<br> <br>
 		<hr>
-		<h3>Listar Usuario</h3>
+		<h3>Listar Usuário</h3>
 		<hr>
 	</div>
 
+<<<<<<< HEAD
+=======
+	<div style="text-align: center; color: green;">${msg}</div>
+	<br>
+
+	<div class="container" align="center">
+
+		<form action="busca" method="post">
+			<div class="form-group">
+				<label for="inputNomeUsuario">Nome do Usuário</label> <input
+					type="text" id="inputNomeUsuario" class="form-control"
+					name="nomeUsuario" style="width: 500px;"
+					placeholder="Nome do Usuario" maxlength="50" />
+				<p>
+					<a href="exibirIndex" class="btn btn-danger" role="button">Cancelar</a>
+					&nbsp;
+					<button type="reset" class="btn btn-default">&nbsp; Limpar
+						&nbsp;</button>
+					&nbsp;
+					<button type="submit" value="busca" class="btn btn-primary">&nbsp;
+						buscar &nbsp;</button>
+				</p>
+			</div>
+		</form>
+	</div>
+
+>>>>>>> versao-1602-gabriel
 	<jsp:useBean id="dao" class="br.com.ifpe.psyChomics.model.UsuarioDao" />
 	<div class="container" align="center">
 		<table class="table">
@@ -247,7 +291,7 @@ form.example::after {
 				<td scope="col">E-mail</td>
 				<td scope="col">Senha</td>
 				<td scope="col">Nick</td>
-				<td scope="col">Nome do Usuario</td>
+				<td scope="col">Nome do Usuário</td>
 				<td scope="col">CPF</td>
 				<td scope="col">Opções</td>
 

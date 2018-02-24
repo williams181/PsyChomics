@@ -36,14 +36,14 @@ body {
 }
 
 /* 
-       Remover a margem padrão da barra de navegação - bordas inferior e arredondadas */
+       Remover a margem padrÃ£o da barra de navegaÃ§Ã£o - bordas inferior e arredondadas */
 .navbar {
 	margin-bottom: 0;
 	border-radius: 0;
 }
 
 /* 
-        Adiciona uma cor de fundo cinza e algum preenchimento ao rodapé */
+        Adiciona uma cor de fundo cinza e algum preenchimento ao rodapÃ© */
 footer {
 	background-color: #f2f2f2;
 	padding: 25px;
@@ -190,35 +190,42 @@ form.example::after {
 					class="icon-bar"></span>
 			</button>
 			<a class="navbar-brand" href="listarProdutoIndex">PsyChomics</a>
-			<div class="dropdown">
-				<button class="dropbtn">
-					Usuario <i class="fa fa-caret-down"></i>
-				</button>
-				<ul class="dropdown-content">
-					<li><a href="exibirLoginUsuario">Login Usuario</a></li>
-					<li><a href="exibirCadastroUsuario">Cadastro Usuario</a></li>
-					<li><a href="listarUsuario">Listagem Usuario</a></li>
-				</ul>
-			</div>
-			<div class="dropdown">
-				<button class="dropbtn">
-					Produto <i class="fa fa-caret-down"></i>
-				</button>
-				<ul class="dropdown-content">
-					<li><a href="exibirCadastroProduto">Cadastro Produto</a></li>
-					<li><a href="listarProduto">Listagem Produto</a></li>
-				</ul>
-			</div>
+<<<<<<< HEAD
+
+=======
+	<div class="dropdown">
+    <button class="dropbtn">Mangás 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <ul class="dropdown-content">
+      <li><a href="#">NARUTO</a></li>
+      <li><a href="#">DRAGON BALL</a></li>
+      <li><a href="#">CAVALEIROS DO ZODIÁCO</a></li>
+      <li><a href="#">ONE PUNCH MAN</a></li>
+    </ul>
+  </div> 
+  <div class="dropdown">
+   <button class="dropbtn">Quadrinhos
+      <i class="fa fa-caret-down"></i>
+   </button>
+    <ul class="dropdown-content">
+      <li><a href="#">MARVEL</a></li>
+      <li><a href="#">DC Comics</a></li>
+      <li><a href="#">VERTIGO</a></li>
+      <li><a href="#">DEVIR</a></li>
+    </ul>
+  </div> 
+>>>>>>> versao-1602-gabriel
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li><a href="exibirLoginUsuario">Login Usuario</a></li>
-				<li><a href="exibirCadastroUsuario">Cadastro Usuario</a></li>
-				<li><a href="listarUsuario">Listagem Usuario</a></li>
-				<li><a href="exibirCadastroProduto">Cadastro Produto</a></li>
-				<li><a href="listarProduto">Listagem Produto</a></li>
+				<li><a href="exibirLoginUsuario">Login de Usuário</a></li>
+				<li><a href="exibirCadastroUsuario">Cadastro de Usuário</a></li>
+				<li><a href="listarUsuario">Listagem de Usuário</a></li>
+				<li><a href="exibirCadastroProduto">Cadastro de Produto</a></li>
+				<li><a href="listarProduto">Listagem de Produto</a></li>
 			</ul>
 		</div>
 
