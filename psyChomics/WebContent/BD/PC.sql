@@ -2,7 +2,6 @@ CREATE DATABASE PC;
 USE PC;
 
 CREATE TABLE usuario (
-
 	id INT (6) AUTO_INCREMENT PRIMARY KEY,
 	email VARCHAR (50),
 	senha VARCHAR (16),
@@ -10,18 +9,21 @@ CREATE TABLE usuario (
 	nome_usuario VARCHAR (50),
 	cpf VARCHAR (11),
 	notificacao VARCHAR (3)
-	
 );
 
 CREATE TABLE genero_produto (
 	id INT (6) AUTO_INCREMENT PRIMARY KEY,
-	genero VARCHAR (30)
+	genero VARCHAR (20)
 );
 
 CREATE TABLE tipo_produto (
 	id INT(6) AUTO_INCREMENT PRIMARY KEY,
-	tipo VARCHAR (15)
-	
+	tipo VARCHAR (20)
+);
+
+CREATE TABLE categoria_produto (
+	id INT(6) AUTO_INCREMENT PRIMARY KEY,
+	categoria VARCHAR (20)
 );
 
 CREATE TABLE produto (
@@ -33,7 +35,6 @@ CREATE TABLE produto (
 	imagem VARCHAR (255),
 	descricao VARCHAR (255),
 	FOREIGN KEY (idgenero) REFERENCES genero_produto(id)
-
 );
 
 CREATE TABLE comentario_produto (
@@ -46,29 +47,20 @@ CREATE TABLE comentario_produto (
 	FOREIGN KEY (idusuario) REFERENCES usuario(id)	
 );
 
-CREATE TABLE item (
-	id INT(6) AUTO_INCREMENT PRIMARY KEY,
-	idproduto INT(6),
-	quantidade INT(6),
-	FOREIGN KEY (idproduto) REFERENCES produto(id)
-);
-
 CREATE TABLE carrinho (
 	id INT (6) AUTO_INCREMENT PRIMARY KEY,
 	idusuario INT (6),
-	idproduto INT (6),
-	iditem INT (6),
 	total DOUBLE,
-	FOREIGN KEY (idusuario) REFERENCES usuario(id),
-	FOREIGN KEY (idproduto) REFERENCES produto(id),	
-	FOREIGN KEY (iditem) REFERENCES item(id)	
+	FOREIGN KEY (idusuario) REFERENCES usuario(id)
 );
 
-CREATE TABLE fale_conosco (
+CREATE TABLE item (
 	id INT(6) AUTO_INCREMENT PRIMARY KEY,
-	idusuario INT(6),
-	mensagem VARCHAR(255),
-	FOREIGN KEY (idusuario) REFERENCES usuario(id)
+	idproduto INT(6),
+	idcarrinho INT(6),
+	quantidade INT(6),
+	FOREIGN KEY (idproduto) REFERENCES produto(id),
+	FOREIGN KEY (idcarrinho) REFERENCES carrinho(id)
 );
 
 CREATE TABLE pedido (
@@ -76,6 +68,13 @@ CREATE TABLE pedido (
 	idusuario INT(6),
 	descricao VARCHAR(255),
 	FOREIGN KEY (idusuario) REFERENCES usuario(id)
+);
+
+CREATE TABLE fale_conosco (
+	id INT(6) AUTO_INCREMENT PRIMARY KEY,
+	nome_usuario INT(6),
+	email VARCHAR(50),
+	mensagen VARCHAR(255)
 );
 
 

@@ -6,12 +6,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import br.com.ifpe.psyChomics.dao.ComentarioProdutoDao;
+import br.com.ifpe.psyChomics.dao.ProdutoDao;
+import br.com.ifpe.psyChomics.dao.UsuarioDao;
 import br.com.ifpe.psyChomics.model.ComentarioProduto;
-import br.com.ifpe.psyChomics.model.ComentarioProdutoDao;
 import br.com.ifpe.psyChomics.model.Produto;
-import br.com.ifpe.psyChomics.model.ProdutoDao;
 import br.com.ifpe.psyChomics.model.Usuario;
-import br.com.ifpe.psyChomics.model.UsuarioDao;
 
 
 @Controller
@@ -29,7 +29,7 @@ public class ComentarioProdutoController {
 		List<Usuario> listaUsuario = dao2.listar();
 		model.addAttribute("listaUsuario", listaUsuario);
 		System.out.println("Exibindo cadastrar comentario do produto");
-		return "psyChomics/comentarioProduto/cadastrarComentarioProduto";
+		return "comentarioProduto/cadastrarComentarioProduto";
 	}
 
 	@RequestMapping("cadastrarComentarioProduto")
@@ -39,23 +39,23 @@ public class ComentarioProdutoController {
 		dao.cadastrar(comentarioProduto);
 		model.addAttribute("msg", "O comentario foi Inserido com Sucesso !");
 		System.out.println("cadastro de comentario de produto");
-		return "psyChomics/comentarioProduto/cadastrarComentarioProduto";
+		return "comentarioProduto/cadastrarComentarioProduto";
 	}
 
 	@RequestMapping("/exibirListarComentarioProduto")
 	public String exibirListarComentarioProduto() {
 		System.out.println("exibir listar de comentarios dos produtos");
-		return "psyChomics/comentarioProduto/listarComentarioProduto";
+		return "comentarioProduto/listarComentarioProduto";
 	}
 
 	@RequestMapping("/listarComentarioProduto")
 	public String listarComentarioProduto(Model model) {
 
 		ComentarioProdutoDao dao = new ComentarioProdutoDao();
-		List<ComentarioProduto> listaComentarioProduto = dao.listar();
-		model.addAttribute("listaComentarioProduto", listaComentarioProduto);
+		List<ComentarioProduto> listarComentarioProduto = dao.listar();
+		model.addAttribute("listarComentarioProduto", listarComentarioProduto);
 
-		return "psyChomics/comentarioProduto/listarComentarioProduto";
+		return "comentarioProduto/listarComentarioProduto";
 	}
 	
 	@RequestMapping("removerComentarioProduto")
@@ -64,7 +64,7 @@ public class ComentarioProdutoController {
 		dao.remover(comentarioProduto);
 		model.addAttribute("msg", "O comentario do produto foi removido com sucesso!");
 		System.out.println("remover comentario do produto");
-		return "psyChomics/comentarioProduto/listarComentarioProduto";
+		return "comentarioProduto/listarComentarioProduto";
 	}
 
 	

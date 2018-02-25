@@ -6,18 +6,11 @@ public class Produto {
 	private int id;
 	private String codigo;
 	private String nome;
-	private TipoProduto tipoProduto;
 	private GeneroProduto generoProduto;
 	private double preco;
 	private String imagem;
 	private String descricao;
 	
-	public TipoProduto getTipoProduto() {
-		return tipoProduto;
-	}
-	public void setTipoProduto(TipoProduto tipoProduto) {
-		this.tipoProduto = tipoProduto;
-	}
 	public String getCodigo() {
 		return codigo;
 	}

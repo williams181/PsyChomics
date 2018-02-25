@@ -6,8 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import br.com.ifpe.psyChomics.dao.PedidoDao;
 import br.com.ifpe.psyChomics.model.Pedido;
-import br.com.ifpe.psyChomics.model.PedidoDao;
 
 @Controller
 public class PedidoController  {
@@ -15,7 +15,7 @@ public class PedidoController  {
 	@RequestMapping("/exibircadastrarPedido")
 	public String exibircadastrarPedido() {
 		System.out.println("Exibindo cadastrar pedido");
-		return "psyChomics/pedido/cadastrarPedido";
+		return "pedido/cadastrarPedido";
 	}
 
 	@RequestMapping("cadastrarPedido")
@@ -25,13 +25,13 @@ public class PedidoController  {
 		dao.cadastrar(pedido);
 		model.addAttribute("msg", "O pedido foi Inserido com Sucesso !");
 		System.out.println("cadastro de pedido");
-		return "psyChomics/pedido/cadastrarPedido";
+		return "pedido/cadastrarPedido";
 	}
 
 	@RequestMapping("/exibirListarPedido")
 	public String exibirListarPedido() {
 		System.out.println("exibir lista de pedidos dos produtos");
-		return "psyChomics/pedido/listarPedido";
+		return "pedido/listarPedido";
 	}
 
 	@RequestMapping("/listarPedido")
@@ -41,7 +41,7 @@ public class PedidoController  {
 		List<Pedido> listaPedido = dao.listar();
 		model.addAttribute("listaPedido", listaPedido);
 
-		return "psyChomics/pedido/listarPedido";
+		return "pedido/listarPedido";
 	}
 	
 	@RequestMapping("removerPedido")
@@ -50,6 +50,6 @@ public class PedidoController  {
 		dao.remover(pedido);
 		model.addAttribute("msg", "O pedido do produto foi removido com sucesso!");
 		System.out.println("remover pedido do produto");
-		return "psyChomics/pedido/listarPedido";
+		return "pedido/listarPedido";
 	}
 }
