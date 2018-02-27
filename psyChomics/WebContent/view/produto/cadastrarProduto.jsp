@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>8859-1"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="pt-br">
 <head>
@@ -241,11 +241,11 @@ form.example::after {
 		<h3>Cadastro de Produto</h3>
 		<hr>
 	</div>
-	
+
 	<div style="text-align: center; color: green;">${mensagem}</div>
 
 	<div class="container" align="center">
-		<form action="cadastroProduto" method="post"
+		<form action="cadastrarProduto" method="post"
 			enctype="multipart/form-data">
 			<div class="form-group">
 				<label for="inputCodigo">Código</label> <input type="text"
@@ -262,7 +262,7 @@ form.example::after {
 			<div class="form-group">
 				<label for="inputPreco">Preço</label> <input type="text"
 					id="inputPreco" class="form-control" name="preco"
-					style="width: 500px;" placeholder="Preco" " maxlength="16"
+					style="width: 500px;" placeholder="Preco" maxlength="16"
 					required="required" />
 			</div>
 			<div class="form-group">
@@ -276,16 +276,26 @@ form.example::after {
 					class="form-control" name="descricao" style="width: 500px;"
 					maxlength="255"></textarea>
 			</div>
-			<p>
-				Genero: <br /> <select name="generoProduto">
+			<div class="form-group">
+				Categoria: <br /> <select id="categoriaProduto"
+					name="categoriaProduto"
+					style="width: 200px; height: 30px; border: 1px solid #BDC7D8; color: #000000; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;">
 					<option value="">Selecione</option>
-					<c:forEach items="${listarGeneroProduto}" var="obj">
-						<option value="${obj.id}"
-							<c:if test="${obj.id eq p.generoProduto.id}">selected="selected"</c:if>>
-							${obj.genero}</option>
+					<c:forEach items="${listarCategoriaProduto}" var="obj">
+						<option value="${obj.id}">${obj.codigo}- ${obj.descricao}</option>
 					</c:forEach>
 				</select>
-			</p>
+			</div>
+			<div class="form-group">
+				Genero: <br /> <select id="generoProduto"
+					name="generoProduto"
+					style="width: 200px; height: 30px; border: 1px solid #BDC7D8; color: #000000; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;">
+					<option value="">Selecione</option>
+					<c:forEach items="${listarGeneroProduto}" var="obj">
+						<option value="${obj.id}">${obj.codigo}- ${obj.descricao}</option>
+					</c:forEach>
+				</select>
+			</div>
 			<p>
 				<a href="exibirListarIndex" class="btn btn-danger" role="button">Cancelar</a>
 				&nbsp;

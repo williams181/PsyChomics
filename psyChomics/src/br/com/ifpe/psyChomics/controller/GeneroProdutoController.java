@@ -9,62 +9,63 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import br.com.ifpe.psyChomics.dao.GeneroProdutoDao;
 import br.com.ifpe.psyChomics.model.GeneroProduto;
 
-
 @Controller
 public class GeneroProdutoController {
 
-	@RequestMapping("/exibircadastrarGeneroProduto")
-	public String exibircadastrarGeneroProduto() {
-		System.out.println("Exibindo cadastrar genero de Produto");
-		return "generoProduto/cadastrarGeneroProduto";
+	@RequestMapping("/exibirIncluirGeneroProduto")
+	public String exibirIncluirGeneroProduto() {
+
+		return "generoProduto/incluirGeneroProduto";
 	}
 
-	@RequestMapping("cadastrarGeneroProduto")
-	public String cadastrarGeneroProduto(GeneroProduto generoProduto, Model model) {
+	@RequestMapping("incluirGeneroProduto")
+	public String incluirGeneroProduto(GeneroProduto generoProduto, Model model) {
+
 		GeneroProdutoDao dao = new GeneroProdutoDao();
-		dao.cadastrar(generoProduto);
-		model.addAttribute("msg", "O genero " + generoProduto.getGenero() + " foi Inserido com Sucesso !");
-		System.out.println("cadastro de genero de produto");
-		return "generoProduto/cadastrarGeneroProduto";
-	}
+		dao.salvar(generoProduto);
+		model.addAttribute("msg", "O Genero " + generoProduto.getCodigo() + " foi Inserido com Sucesso !");
 
-	@RequestMapping("/exibirlistarGeneroProduto")
-	public String exibirlistarGeneroProduto() {
-		System.out.println("Exibindo lista de genero de produto");
-		return "generoProduto/listarGeneroProduto";
+		return "forward:listarGeneroProduto";
 	}
 
 	@RequestMapping("/listarGeneroProduto")
 	public String listarGeneroProduto(Model model) {
+
 		GeneroProdutoDao dao = new GeneroProdutoDao();
 		List<GeneroProduto> listarGeneroProduto = dao.listar();
 		model.addAttribute("listarGeneroProduto", listarGeneroProduto);
-		System.out.println("lista de genero de produto");
-		return "generoProduto/listarGeneroProduto";
+
+		return "generoProduto/pesquisarGeneroProduto";
 	}
 
 	@RequestMapping("removerGeneroProduto")
 	public String removerGeneroProduto(GeneroProduto generoProduto, Model model) {
+
 		GeneroProdutoDao dao = new GeneroProdutoDao();
 		dao.remover(generoProduto);
-		model.addAttribute("msg", "Produto removido com sucesso!");
-		System.out.println("remover genero do produto");
-		return "generoProduto/listarGeneroProduto";
+		model.addAttribute("msg", "Genero Removido com Sucesso !");
+
+		return "forward:listarCategoriaProduto";
 	}
 
-	@RequestMapping("/exibirAlterarGeneroProduto")
-	public String exibirAlterarGeneroProduto() {
-		System.out.println("Exibindo alterar genero do produtoproduto");
+	@RequestMapping("exibirAlterarGeneroProduto")
+	public String exibirAlterarGeneroProduto(GeneroProduto generoProduto, Model model) {
+
+		GeneroProdutoDao dao = new GeneroProdutoDao();
+		GeneroProduto generoProdutoPreenchida = dao.buscarPorId(generoProduto.getId());
+		model.addAttribute("generoProduto", generoProdutoPreenchida);
+
 		return "generoProduto/alterarGeneroProduto";
 	}
 
 	@RequestMapping("alterarGeneroProduto")
 	public String alterarGeneroProduto(GeneroProduto generoProduto, Model model) {
+
 		GeneroProdutoDao dao = new GeneroProdutoDao();
-		GeneroProduto generoProdutoCompleto = dao.buscarPorId(generoProduto.getId());
-		model.addAttribute("generoProduto", generoProdutoCompleto);
-		System.out.println("alterar genero do produto");
-		return "generoProduto/listarGeneroProduto";
+		dao.alterar(generoProduto);
+		model.addAttribute("msg", "Genero do Produto Alterado com Sucesso !");
+
+		return "forward:listarGeneroProduto";
 	}
 
 }

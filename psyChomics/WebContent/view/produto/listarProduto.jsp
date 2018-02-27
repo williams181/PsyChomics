@@ -234,14 +234,68 @@ form.example::after {
 
 	<br>
 	<br>
-	
+
+
+	<div align="center">
+
+		<div align="left" style="color: #6E6E6E; width: 70%;">
+
+			<c:if test="${msg ne null}">
+				<div class="alert alert-success" style="width: 100%;">
+					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+					${msg}
+				</div>
+			</c:if>
+
+			<div class="panel-group">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" href="#collapse1">Clique <strong>aqui</strong>
+								para exibir os campos de pesquisa de <strong>Produtos</strong></a>
+						</h4>
+					</div>
+					<div id="collapse1" class="panel-collapse collapse">
+						<div class="panel-body">
+							<form action="pesquisarProduto">
+								<div class="form-group" style="text-align: left;">
+									<label for="descricao">Descrição:</label> <input type="text"
+										class="form-control" id="descricao" name="descricao">
+								</div>
+
+								<div class="form-group" style="text-align: left;">
+									<label for="categoriaProduto">Categoria:</label> <br /> <select
+										id="categoriaProduto" name="categoriaProduto"
+										style="width: 200px; height: 30px; border: 1px solid #BDC7D8; color: #000000; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;">
+										<option value="">Selecione</option>
+										<c:forEach items="${listarCategoriaProduto}" var="obj">
+											<option value="${obj.id}"
+												<c:if test="${obj.id eq produto.categoriaProduto.id}">selected="selected"</c:if>>
+												${obj.descricao}</option>
+										</c:forEach>
+									</select>
+								</div>
+								<button type="reset" class="btn btn-default">&nbsp;
+									Limpar &nbsp;</button>
+								&nbsp;
+								<button type="submit" class="btn btn-primary">&nbsp;
+									Filtrar &nbsp;</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
 	<div class="container" align="center">
 		<br> <br>
 		<hr>
 		<h3>Listar Produto</h3>
 		<hr>
 	</div>
-	
+
 	<br>
 	<br>
 	<div class="container" align="center">
@@ -251,24 +305,24 @@ form.example::after {
 				<td scope="col">Nome</td>
 				<td scope="col">Preço</td>
 				<td scope="col">Imagem</td>
+				<td scope="col">Categoria</td>
 				<td scope="col">Descrição</td>
-				<td scope="col">Genero</td>
+				<td style="float: right;"> <a href="exibirIncluirCategoriaProduto" class="btn btn-primary" role="button">Novo</a> </td>
 				<td scope="col">Opções</td>
-				
 
 			</tr>
 
-			<c:forEach var="p" items="${listaRProduto}">	
+			<c:forEach items="${listarProduto}" var="p">
 
 				<tr>
 					<th scope="row">${p.codigo}</th>
 					<th scope="row">${p.nome}</th>
 					<th scope="row">${p.preco}</th>
-					<th scope="row"><img src="view/psyChomics/img/${p.imagem}"></th>
+					<th scope="row"><img src="view/img/${p.imagem}"></th>
+					<th scope="row">${p.categoriaProduto.descricao}</th>
 					<th>${p.descricao}</th>
-					<th>${p.generoProduto.genero}</th>
-					<th><a href="removerProduto?id=${p.id}" onclick="myFunction()">Remover</a> |
-						<a href="exibirAlterarProduto?id=${p.id}">Alterar</a>
+					<th><a href="removerProduto?id=${p.id}" onclick="myFunction()">Remover</a>
+						| <a href="exibirAlterarProduto?id=${p.id}">Alterar</a>
 				</tr>
 
 			</c:forEach>

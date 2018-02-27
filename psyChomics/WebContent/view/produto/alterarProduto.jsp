@@ -251,15 +251,16 @@ form.example::after {
 			enctype="multipart/form-data">
 			<div class="form-group">
 				<label for="inputCodigo">Código</label> <input type="text"
-					class="form-control" id="inputCodigo" value=""${produto.codigo}" name="codigo"
-					style="width: 110px;" maxlength="5" required="required">
+					class="form-control" id="inputCodigo" value="${produto.codigo}"
+					name="codigo" style="width: 110px;" maxlength="5"
+					required="required">
 			</div>
 
 			<div class="form-group">
 				<label for="inputNome">Nome</label> <input type="text"
 					id="inputNome" class="form-control" name="nome"
 					value="${produto.nome}" style="width: 500px;" maxlength="50"
-					required="required" /> 
+					required="required" />
 			</div>
 
 			<div class="form-group">
@@ -270,10 +271,22 @@ form.example::after {
 			</div>
 			<div class="form-group">
 				<label for="inputDescricao">Descrição</label>
-				<textarea for="inputDescricao" value=""${produto.descricao}" id="inputDescricao"
-					class="form-control" name="descricao" style="width: 500px;"
-					maxlength="155"></textarea><input type="hidden" name="id"
-					value="${produto.id}" />
+				<textarea value="${produto.descricao}" id="inputDescricao"
+					class="form-control" type="text" name="descricao"
+					style="width: 500px;" maxlength="155"></textarea>
+				<input type="hidden" name="id" value="${produto.id}" />
+			</div>
+			<div class="form-group">
+				<label for="categoriaProduto">Categoria</label> <br /> <select
+					id="categoriaProduto" name="categoriaProduto"
+					style="width: 200px; height: 30px; border: 1px solid #BDC7D8; color: #000000; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;">
+					<option value="">Selecione</option>
+					<c:forEach items="${listarCategoriaProduto}" var="obj">
+						<option value="${obj.id}"
+							<c:if test="${obj.id eq p.categoriaProduto.id}">selected="selected"</c:if>>
+							${obj.descricao}</option>
+					</c:forEach>
+				</select>
 			</div>
 
 			<p>

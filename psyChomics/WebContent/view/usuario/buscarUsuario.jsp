@@ -231,38 +231,105 @@ form.example::after {
 	</div>
 	<!-- /.container --> </nav>
 
-	<br>
-	<br>
 	<div class="container" align="center">
 		<br> <br>
 		<hr>
-		<h3>Produtos</h3>
+		<h3>Listar Produto</h3>
 		<hr>
 	</div>
-	<div class="container" align="center">
-		<jsp:useBean id="dao" class="br.com.ifpe.psyChomics.model.ProdutoDao" />
 
-		<!-- Page Features -->
-		<div class="row text-center">
+	<br>
+	<br>
 
-			<c:forEach var="produto" items="${buscarProduto}">
-				<div class="col-md-3 col-sm-6 hero-feature">
-					<div class="thumbnail">
-						<img src="view/psyChomics/img/${produto.imagem}">
-						<div class="caption">
-							<h3>${produto.nome}</h3>
-							<p>${produto.generoProduto.genero}</p>
-							<p>
-								<a href="#" class="btn btn-primary">Comprar</a> <a href="#"
-									class="btn btn-default">Saiba Mais</a>
-							</p>
+	<div align="center">
+
+		<div align="left" style="color: #6E6E6E; width: 70%;">
+
+			<c:if test="${msg ne null}">
+				<div class="alert alert-success" style="width: 100%;">
+					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+					${msg}
+				</div>
+			</c:if>
+
+			<div class="panel-group">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" href="#collapse1">Clique <strong>aqui</strong>
+								para exibir os campos de pesquisa de <strong>Produtos</strong></a>
+						</h4>
+					</div>
+					<div id="collapse1" class="panel-collapse collapse">
+						<div class="panel-body">
+							<form action="pesquisarProduto">
+								<div class="form-group" style="text-align: left;">
+									<label for="descricao">Descrição:</label> <input type="text"
+										class="form-control" id="descricao" name="descricao">
+								</div>
+
+								<div class="form-group" style="text-align: left;">
+									<label for="categoriaProduto">Categoria:</label> <br /> <select
+										id="categoriaProduto" name="categoriaProduto"
+										style="width: 200px; height: 30px; border: 1px solid #BDC7D8; color: #000000; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;">
+										<option value="">Selecione</option>
+										<c:forEach items="${listarCategoriaProduto}" var="obj">
+											<option value="${obj.id}"
+												<c:if test="${obj.id eq produto.categoriaProduto.id}">selected="selected"</c:if>>
+												${obj.descricao}</option>
+										</c:forEach>
+									</select>
+								</div>
+								<button type="reset" class="btn btn-default">&nbsp;
+									Limpar &nbsp;</button>
+								&nbsp;
+								<button type="submit" class="btn btn-primary">&nbsp;
+									Filtrar &nbsp;</button>
+							</form>
 						</div>
 					</div>
 				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="container" align="center">
+		<table class="table">
+			<tr>
+				<td scope="col">Codigo</td>
+				<td scope="col">Nome</td>
+				<td scope="col">Preço</td>
+				<td scope="col">Imagem</td>
+				<td scope="col">Categoria</td>
+				<td scope="col">Descrição</td>
+				<td style="float: right;"> <a href="exibirIncluirCategoriaProduto" class="btn btn-primary" role="button">Novo</a> </td>
+				<td scope="col">Opções</td>
+
+			</tr>
+
+			<c:forEach items="${listarProduto}" var="p">
+
+				<tr>
+					<th scope="row">${p.codigo}</th>
+					<th scope="row">${p.nome}</th>
+					<th scope="row">${p.preco}</th>
+					<th scope="row"><img src="view/img/${p.imagem}"></th>
+					<th scope="row">${p.categoriaProduto.descricao}</th>
+					<th>${p.descricao}</th>
+					<th><a href="removerProduto?id=${p.id}" onclick="myFunction()">Remover</a>
+						| <a href="exibirAlterarProduto?id=${p.id}">Alterar</a>
+				</tr>
+
 			</c:forEach>
 
-		</div>
-		<!-- /.row -->
+		</table>
 	</div>
+
+	<script>
+		function myFunction() {
+			alert("deseja deletar o produto?");
+		}
+	</script>
 </body>
 </html>

@@ -5,263 +5,143 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="pt-br">
 <head>
-<link rel="stylesheet" type="text/css"
-	href="view/psyChomics/bootstrap/css/bootstrap.min.css" />
-<script type="text/javascript" src="view/bootstrap/js/bootstrap.min.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="author" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
-<style>
-body {
-	background-color: #EEE9E9;
-	background-image: url();
-}
-
-/* 
-       Remover a margem padrão da barra de navegação - bordas inferior e arredondadas */
-.navbar {
-	margin-bottom: 0;
-	border-radius: 0;
-}
-
-/* 
-        Adiciona uma cor de fundo cinza e algum preenchimento ao rodapé */
-footer {
-	background-color: #f2f2f2;
-	padding: 25px;
-}
-
-.carousel-inner img {
-	width: 100%; /*
-                      Defina largura para 100% */
-	margin: auto;
-	min-height: 200px;
-}
-
-/* 
-      Oculta o texto do carrossel quando a tela tiver menos de 600 pixels de largura */
-@media ( max-width : 600px) {
-	.carousel-caption {
-		display: none;
-	}
-}
-
-.dropdown {
-	float: left;
-	overflow: hidden;
-}
-
-.dropdown .dropbtn {
-	font-size: 16px;
-	border: none;
-	outline: none;
-	color: white;
-	padding: 14px 16px;
-	background-color: inherit;
-	font-family: inherit;
-	margin: 0;
-}
-
-.navbar a:hover, .dropdown:hover .dropbtn {
-	background-color: red;
-}
-
-.dropdown-content {
-	display: none;
-	position: absolute;
-	background-color: #f9f9f9;
-	min-width: 160px;
-	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-	z-index: 1;
-}
-
-.dropdown-content a {
-	float: none;
-	color: black;
-	padding: 12px 16px;
-	text-decoration: none;
-	display: block;
-	text-align: left;
-}
-
-.dropdown-content a:hover {
-	background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-	display: block;
-}
-
-* {
-	box-sizing: border-box;
-}
-
-body {
-	margin: 0;
-	font-family: Arial;
-}
-/*SEARCH*/
-body {
-	font-family: Arial;
-}
-
-* {
-	box-sizing: border-box;
-}
-
-form.example input[type=text] {
-	padding: 10px;
-	font-size: 17px;
-	border: 1px solid grey;
-	float: left;
-	width: 80%;
-	background: #f1f1f1;
-}
-
-form.example button {
-	float: left;
-	width: 20%;
-	padding: 13px;
-	background: #6a6f72;
-	color: white;
-	font-size: 17px;
-	border: 1px solid grey;
-	border-left: none;
-	cursor: pointer;
-}
-
-form.example button:hover {
-	background: #e00000;
-}
-
-form.example::after {
-	content: "";
-	clear: both;
-	display: table;
-}
-</style>
-
-<title>descricao do produto</title>
-
-<!-- Bootstrap Core CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Custom CSS -->
-<link href="css/heroic-features.css" rel="stylesheet">
-
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Detalhes do Produto</title>
 </head>
-
 <body>
 
-	<!-- Navigation -->
-	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-	<div class="container">
-		<!-- Brand and toggle get grouped for better mobile display -->
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse"
-				data-target="#bs-example-navbar-collapse-1">
-				<span class="sr-only">Toggle navigation</span> <span
-					class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="listarProdutoIndex">PsyChomics</a>
-			<div class="dropdown">
-				<button class="dropbtn">
-					Usuario <i class="fa fa-caret-down"></i>
-				</button>
-				<ul class="dropdown-content">
-					<li><a href="exibirLoginUsuario">Login Usuario</a></li>
-					<li><a href="exibirCadastroUsuario">Cadastro Usuario</a></li>
-					<li><a href="listarUsuario">Listagem Usuario</a></li>
-				</ul>
-			</div>
-			<div class="dropdown">
-				<button class="dropbtn">
-					Produto <i class="fa fa-caret-down"></i>
-				</button>
-				<ul class="dropdown-content">
-					<li><a href="exibirCadastroProduto">Cadastro Produto</a></li>
-					<li><a href="listarProduto">Listagem Produto</a></li>
-				</ul>
-			</div>
-		</div>
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse"
-			id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav">
-				<li><a href="exibirLoginUsuario">Login Usuario</a></li>
-				<li><a href="exibirCadastroUsuario">Cadastro Usuario</a></li>
-				<li><a href="listarUsuario">Listagem Usuario</a></li>
-				<li><a href="exibirCadastroProduto">Cadastro Produto</a></li>
-				<li><a href="listarProduto">Listagem Produto</a></li>
-			</ul>
-		</div>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
+		class="navbar-brand" href="exibirlistarProdutoIndex">PsyChomics</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse"
+		data-target="#navbarSupportedContent"
+		aria-controls="navbarSupportedContent" aria-expanded="false"
+		aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
 
-		<form action="buscaProduto" class="example" method="post">
-			<input type="text" placeholder="Procurar.." for="inputNome"
-				id="inputNome" name="nome">
-			<button type="submit" value="buscar">
-				<i class="fa fa-search"></i>
-			</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item active"><a class="nav-link"
+				href="exibirlistarProdutoIndex">Home <span class="sr-only">(current)</span>
+			</a></li>
+			<li class="nav-item"><a class="nav-link" href="exibirQuemSomos">Quem
+					somos</a></li>
+			<li class="nav-item dropdown"><a
+				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+				role="button" data-toggle="dropdown" aria-haspopup="true"
+				aria-expanded="false"> Produtos </a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="exibirCadastrarProduto">Cadastro
+						de produtos</a> <a class="dropdown-item" href="listarProduto">Lista
+						de Produtos</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="exibirIncluirCategoriaProduto">Cadastro
+						de categorias</a> <a class="dropdown-item"
+						href="listarCategoriaProduto">Lista de categorias</a>
+				</div></li>
+			<li class="nav-item dropdown"><a
+				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+				role="button" data-toggle="dropdown" aria-haspopup="true"
+				aria-expanded="false"> Usuarios </a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="exibirCadastrarUsuario">Cadastro
+						de Usuarios</a> <a class="dropdown-item" href="listarUsuario">Lista
+						de Usuarios</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#">Something else here</a>
+				</div></li>
+			<li class="nav-item"><a class="nav-link"
+				href="exibirLoginUsuario">Login</a></li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="buscarProduto">
+			<input class="form-control mr-sm-2" type="text"
+				pplaceholder="Procurar.." id="inputNome" name="nome" for="inputNome"
+				aria-label="Search">
+			<button class="btn btn-outline-success my-2 my-sm-0" value="buscar"
+				type="submit">Search</button>
 		</form>
-
-
-		<!-- /.navbar-collapse -->
 	</div>
-	<!-- /.container --> </nav>
 
-	<br>
-	<br>
-	<div class="container" align="center">
-		<br> <br>
-		<hr>
-		<h3>Detalhes do produto</h3>
-		<hr>
-	</div>
-	
-
-		<!-- /.row -->
-		<jsp:useBean id="dao" class="br.com.ifpe.psyChomics.model.ProdutoDao" />
-
-		<!-- Page Features -->
-		<div class="row text-center">
-
-			<c:forEach var="dp" items="${listaDescricaoProduto}">
-				<div class="col-md-3 col-sm-6 hero-feature">
-					<div class="thumbnail">
-						<img src="view/psyChomics/img/${dp.imagem}">
-						<div class="caption">
-							<h3>${dp.nome}</h3>
-							<p>${dp.descricao}</p>
-
-						</div>
-					</div>
-				</div>
-			</c:forEach>
-
+	</nav>
+	<div id="carouselExampleIndicators" class="carousel slide"
+		data-ride="carousel">
+		<ol class="carousel-indicators">
+			<li data-target="#carouselExampleIndicators" data-slide-to="0"
+				class="active"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+		</ol>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img class="d-block w-100" src="view/imagens/bg2.png"
+					alt="First slide">
+			</div>
+			<div class="carousel-item">
+				<img class="d-block w-100" src="view/imagens/bg3.png"
+					alt="Second slide">
+			</div>
 		</div>
+		<a class="carousel-control-prev" href="#carouselExampleIndicators"
+			role="button" data-slide="prev"> <span
+			class="carousel-control-prev-icon" aria-hidden="true"></span> <span
+			class="sr-only">Previous</span>
+		</a> <a class="carousel-control-next" href="#carouselExampleIndicators"
+			role="button" data-slide="next"> <span
+			class="carousel-control-next-icon" aria-hidden="true"></span> <span
+			class="sr-only">Next</span>
+		</a>
+	</div>
+
+	<div class="card">
+		<div class="card-body">This is some text within a card body.</div>
+	</div>
+
+
+	<div class="card" style="width: 18rem;">
+		<c:forEach var="p" items="${listarDescricaoProduto}">
+			<img class="card-img-top" src="view/img/${p.imagem}"
+				alt="Card image cap">
+			<div class="card-body">
+				<h5 class="card-title">${p.nome}</h5>
+				<p class="card-text">${p.descricao}</p>
+			</div>
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item">${p.preco}</li>
+				<li class="list-group-item">${p.categoriaProduto.descricao}</li>
+			</ul>
+			<div class="card-body">
+				<a href="#" class="card-link">Card link</a> <a href="#"
+					class="card-link">Another link</a>
+			</div>
+		</c:forEach>
+	</div>
+
+	<div class="card">
+		<div class="card-header">Featured</div>
+		<div class="card-body">
+			<h5 class="card-title">Special title treatment</h5>
+			<p class="card-text">With supporting text below as a natural
+				lead-in to additional content.</p>
+			<a href="#" class="btn btn-primary">Go somewhere</a>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
 </body>
+
 </html>

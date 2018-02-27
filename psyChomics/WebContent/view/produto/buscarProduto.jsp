@@ -26,7 +26,6 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
 <style>
 body {
 	background-color: #EEE9E9;
@@ -157,7 +156,7 @@ form.example::after {
 }
 </style>
 
-<title>alterar Usuario</title>
+<title>Buscar Produto</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -228,68 +227,109 @@ form.example::after {
 			</button>
 		</form>
 
-
 		<!-- /.navbar-collapse -->
 	</div>
 	<!-- /.container --> </nav>
 
-	<br>
-	<br>
 	<div class="container" align="center">
 		<br> <br>
 		<hr>
-		<h3>Alterar Usuário</h3>
+		<h3>Listar Produto</h3>
 		<hr>
 	</div>
 
-	<div style="text-align: center; color: green;">${msg}</div>
+	<br>
 	<br>
 
-	<div class="container" align="center">
-		<form action="alterarUsuario" method="post"
-			enctype="multipart/form-data">
+	<div align="center">
 
-			<div class="form-group">
-				<label for="inputEmail">Email</label> <input type="text"
-					id="inputEmail" class="form-control" name="email"
-					value="${usuario.email}" style="width: 500px;" maxlength="50"
-					required="required" /> <input type="hidden" name="id"
-					value="${usuario.id}" />
+		<div align="left" style="color: #6E6E6E; width: 70%;">
+
+			<c:if test="${msg ne null}">
+				<div class="alert alert-success" style="width: 100%;">
+					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+					${msg}
+				</div>
+			</c:if>
+
+			<div class="panel-group">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" href="#collapse1">Clique <strong>aqui</strong>
+								para exibir os campos de pesquisa de <strong>Produtos</strong></a>
+						</h4>
+					</div>
+					<div id="collapse1" class="panel-collapse collapse">
+						<div class="panel-body">
+							<form action="pesquisarProduto">
+								<div class="form-group" style="text-align: left;">
+									<label for="descricao">Descrição:</label> <input type="text"
+										class="form-control" id="descricao" name="descricao">
+								</div>
+
+								<div class="form-group" style="text-align: left;">
+									<label for="categoriaProduto">Categoria:</label> <br /> <select
+										id="categoriaProduto" name="categoriaProduto"
+										style="width: 200px; height: 30px; border: 1px solid #BDC7D8; color: #000000; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;">
+										<option value="">Selecione</option>
+										<c:forEach items="${listarCategoriaProduto}" var="obj">
+											<option value="${obj.id}"
+												<c:if test="${obj.id eq produto.categoriaProduto.id}">selected="selected"</c:if>>
+												${obj.descricao}</option>
+										</c:forEach>
+									</select>
+								</div>
+								<button type="reset" class="btn btn-default">&nbsp;
+									Limpar &nbsp;</button>
+								&nbsp;
+								<button type="submit" class="btn btn-primary">&nbsp;
+									Filtrar &nbsp;</button>
+							</form>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="form-group">
-				<label for="inputSenha">Senha</label> <input type="password"
-					id="inputSenha" class="form-control" name="senha"
-					value="${usuario.senha}" style="width: 500px;" maxlength="100"
-					required="required" />
-			</div>
-			<div class="form-group">
-				<label for="inputNick">Nick</label> <input type="text"
-					id="inputNick" class="form-control" name="nick"
-					value="${usuario.nick}" style="width: 500px;" maxlength="30"
-					required="required" />
-			</div>
-			<div class="form-group">
-				<label for="inputNomeUsuario">Nome do usuário</label> <input
-					type="text" id="inputNomeUsuario" class="form-control"
-					name="nomeUsuario" value="${usuario.nomeUsuario}"
-					style="width: 500px;" maxlength="30" required="required" />
-			</div>
-			<div class="form-group">
-				<label for="inputCpf">CPF</label> <input type="text" id="inputCpf"
-					class="form-control" name="cpf" value="${usuario.cpf}"
-					style="width: 500px;" maxlength="30" required="required" />
-			</div>
-			<div class="form-group">
-				<input class="form-check-input" type="checkbox" value="${usuario.notificacao}" name="notificacao"
-					value="sim" id="inputNotificacao"> <label for="inputCpf"
-					class="form-check-label"> Receber notificações</label>
-			</div>
-			<p>
-				<input type="submit" class="btn btn-primary" value="alterar">
-				<a href="exibirIndex" class="btn btn-danger" role="button">Cancelar</a>
-			</p>
-		</form>
+		</div>
 	</div>
 
+
+	<div class="container" align="center">
+		<table class="table">
+			<tr>
+				<td scope="col">Codigo</td>
+				<td scope="col">Nome</td>
+				<td scope="col">Preço</td>
+				<td scope="col">Imagem</td>
+				<td scope="col">Categoria</td>
+				<td scope="col">Descrição</td>
+				<td style="float: right;"> <a href="exibirIncluirCategoriaProduto" class="btn btn-primary" role="button">Novo</a> </td>
+				<td scope="col">Opções</td>
+
+			</tr>
+
+			<c:forEach items="${listarProduto}" var="p">
+
+				<tr>
+					<th scope="row">${p.codigo}</th>
+					<th scope="row">${p.nome}</th>
+					<th scope="row">${p.preco}</th>
+					<th scope="row"><img src="view/img/${p.imagem}"></th>
+					<th scope="row">${p.categoriaProduto.descricao}</th>
+					<th>${p.descricao}</th>
+					<th><a href="removerProduto?id=${p.id}" onclick="myFunction()">Remover</a>
+						| <a href="exibirAlterarProduto?id=${p.id}">Alterar</a>
+				</tr>
+
+			</c:forEach>
+
+		</table>
+	</div>
+
+	<script>
+		function myFunction() {
+			alert("deseja deletar o produto?");
+		}
+	</script>
 </body>
 </html>

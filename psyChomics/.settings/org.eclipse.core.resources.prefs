@@ -1,11 +1,6 @@
 eclipse.preferences.version=1
 encoding//WebContent/view/index.jsp=UTF-8
 encoding//WebContent/view/produto/alterarProduto.jsp=UTF-8
-encoding//WebContent/view/produto/buscaProduto.jsp=UTF-8
+encoding//WebContent/view/produto/buscarProduto.jsp=UTF-8
 encoding//WebContent/view/produto/cadastrarProduto.jsp=UTF-8
 encoding//WebContent/view/produto/listarProduto.jsp=UTF-8
-encoding//WebContent/view/usuario/alterarUsuario.jsp=UTF-8
-encoding//WebContent/view/usuario/busca.jsp=UTF-8
-encoding//WebContent/view/usuario/cadastrarUsuario.jsp=UTF-8
-encoding//WebContent/view/usuario/listarUsuario.jsp=UTF-8
-encoding//WebContent/view/usuario/loginUsuario.jsp=UTF-8

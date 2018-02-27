@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.ifpe.psyChomics.model.CategoriaProduto;
 import br.com.ifpe.psyChomics.model.GeneroProduto;
 import br.com.ifpe.psyChomics.model.Produto;
 import br.com.ifpe.psyChomics.util.ConnectionFactory;
@@ -24,16 +25,17 @@ public class ProdutoDao {
 	}
 
 	public void cadastrar(Produto produto) {
-		String sql = "INSERT INTO produto (codigo, nome, preco, imagem, descricao, idgenero) VALUES (?,?,?,?,?,?)";
+		String sql = "INSERT INTO produto (codigo, nome, preco, imagem, descricao, categoria_id, genero_id) VALUES (?,?,?,?,?,?,?)";
 		PreparedStatement stmt;
 		try {
-			stmt = connection.prepareStatement(sql);		
+			stmt = connection.prepareStatement(sql);
 			stmt.setString(1, produto.getCodigo());
 			stmt.setString(2, produto.getNome());
 			stmt.setDouble(3, produto.getPreco());
 			stmt.setString(4, produto.getImagem());
 			stmt.setString(5, produto.getDescricao());
-			stmt.setInt(6, produto.getGeneroProduto().getId());
+			stmt.setInt(6, produto.getCategoriaProduto().getId());
+			stmt.setInt(7, produto.getGeneroProduto().getId());
 			stmt.execute();
 			stmt.close();
 			connection.close();
@@ -47,17 +49,22 @@ public class ProdutoDao {
 			List<Produto> listarProduto = new ArrayList<Produto>();
 			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM produto ORDER BY nome");
 			ResultSet rs = stmt.executeQuery();
-			while (rs.next()) {			
-				Produto produto = new Produto();			
+			while (rs.next()) {
+				Produto produto = new Produto();
 				produto.setId(rs.getInt("id"));
 				produto.setCodigo(rs.getString("codigo"));
+
+				int idCategoria = rs.getInt("categoria_id");
+				CategoriaProdutoDao dao = new CategoriaProdutoDao();
+				CategoriaProduto cp = dao.buscarPorId(idCategoria);
+				produto.setCategoriaProduto(cp);
+				
+				int idGenero = rs.getInt("genero_id");
+				GeneroProdutoDao dao2 = new GeneroProdutoDao();
+				GeneroProduto cp2 = dao2.buscarPorId(idGenero);
+				produto.setGeneroProduto(cp2);
+		
 				produto.setNome(rs.getString("nome"));
-				
-				int idGenero = rs.getInt("idgenero");
-				GeneroProdutoDao dao = new GeneroProdutoDao();
-				GeneroProduto cp = dao.buscarPorId(idGenero);
-				produto.setGeneroProduto(cp);
-				
 				produto.setPreco(rs.getDouble("preco"));
 				produto.setImagem(rs.getString("imagem"));
 				produto.setDescricao(rs.getString("descricao"));
@@ -83,7 +90,7 @@ public class ProdutoDao {
 			throw new RuntimeException(e);
 		}
 	}
-	
+
 	public Produto buscarPorId(int id) {
 		try {
 			Produto produtoCompleto = new Produto();
@@ -93,14 +100,20 @@ public class ProdutoDao {
 			while (rs.next()) {
 				produtoCompleto.setId(rs.getInt("id"));
 				produtoCompleto.setCodigo(rs.getString("codigo"));
+
+				int idCategoria = rs.getInt("categoria_id");
+				CategoriaProdutoDao dao = new CategoriaProdutoDao();
+				CategoriaProduto cp = dao.buscarPorId(idCategoria);
+				produtoCompleto.setCategoriaProduto(cp);
+				
+				int idGenero = rs.getInt("genero_id");
+				GeneroProdutoDao dao2 = new GeneroProdutoDao();
+				GeneroProduto cp2 = dao2.buscarPorId(idGenero);
+				produtoCompleto.setGeneroProduto(cp2);
+
 				produtoCompleto.setNome(rs.getString("nome"));
-				
-				int idGenero = rs.getInt("idgenero");
-				GeneroProdutoDao dao = new GeneroProdutoDao();
-				GeneroProduto gp = dao.buscarPorId(idGenero);
-				produtoCompleto.setGeneroProduto(gp);
-				
-				produtoCompleto.setPreco(rs.getDouble("preco"));;
+				produtoCompleto.setPreco(rs.getDouble("preco"));
+				;
 				produtoCompleto.setImagem(rs.getString("imagem"));
 				produtoCompleto.setDescricao(rs.getString("descricao"));
 			}
@@ -112,7 +125,7 @@ public class ProdutoDao {
 			throw new RuntimeException(e);
 		}
 	}
-	
+
 	public void alterar(Produto produto) {
 		String sql = "UPDATE produto SET codigo = ?, nome = ?, preco = ?, descricao = ? WHERE id = ?";
 		PreparedStatement stmt;
@@ -129,33 +142,68 @@ public class ProdutoDao {
 			throw new RuntimeException(e);
 		}
 	}
-	
-	public List<Produto> buscar(Produto prod) {
+
+	public List<Produto> buscar(Produto p) {
 		try {
-			List<Produto> buscarProduto = new ArrayList<Produto>();
-			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM produto WHERE nome like ?");
-			stmt.setString(1, "%"+prod.getNome()+"%");
+			List<Produto> listarProduto = new ArrayList<Produto>();
+			PreparedStatement stmt;
+			String sql;
+
+			if ((p.getDescricao() != null && !p.getDescricao().equals("")) && (p.getCategoriaProduto() == null)) {
+
+				sql = "SELECT * FROM produto WHERE descricao like ? ORDER BY descricao";
+				stmt = this.connection.prepareStatement(sql);
+				stmt.setString(1, "%" + p.getDescricao() + "%");
+
+			} else if ((p.getDescricao() == null || p.getDescricao().equals("")) && (p.getCategoriaProduto() != null)) {
+
+				sql = "SELECT * FROM produto WHERE categoria_id = ? ORDER BY descricao";
+				stmt = this.connection.prepareStatement(sql);
+				stmt.setInt(1, p.getCategoriaProduto().getId());
+
+			} else if ((p.getDescricao() != null && !p.getDescricao().equals(""))
+					&& (p.getCategoriaProduto() != null)) {
+
+				sql = "SELECT * FROM produto WHERE descricao like ? AND categoria_id = ? ORDER BY descricao";
+				stmt = this.connection.prepareStatement(sql);
+				stmt.setString(1, "%" + p.getDescricao() + "%");
+				stmt.setInt(2, p.getCategoriaProduto().getId());
+
+			} else {
+
+				sql = "SELECT * FROM produto ORDER BY descricao";
+				stmt = this.connection.prepareStatement(sql);
+			}
+
 			ResultSet rs = stmt.executeQuery();
+
 			while (rs.next()) {
+
 				Produto produto = new Produto();
-				produto.setCodigo(rs.getString("codigo"));
 				produto.setId(rs.getInt("id"));
+				produto.setCodigo(rs.getString("codigo"));
+
+				int idCategoria = rs.getInt("categoria_id");
+				CategoriaProdutoDao dao = new CategoriaProdutoDao();
+				CategoriaProduto cp = dao.buscarPorId(idCategoria);
+				produto.setCategoriaProduto(cp);
+				
+				int idGenero = rs.getInt("genero_id");
+				GeneroProdutoDao dao2 = new GeneroProdutoDao();
+				GeneroProduto cp2 = dao2.buscarPorId(idGenero);
+				produto.setGeneroProduto(cp2);
+
 				produto.setNome(rs.getString("nome"));
-				
-				int idGenero = rs.getInt("idgenero");
-				GeneroProdutoDao dao = new GeneroProdutoDao();
-				GeneroProduto cp = dao.buscarPorId(idGenero);
-				produto.setGeneroProduto(cp);
-				
 				produto.setPreco(rs.getDouble("preco"));
 				produto.setImagem(rs.getString("imagem"));
 				produto.setDescricao(rs.getString("descricao"));
-				buscarProduto.add(produto);
+
+				listarProduto.add(produto);
 			}
 			rs.close();
 			stmt.close();
 			connection.close();
-			return buscarProduto;
+			return listarProduto;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
@@ -171,12 +219,6 @@ public class ProdutoDao {
 				prouto.setCodigo(rs.getString("codigo"));
 				prouto.setId(rs.getInt("id"));
 				prouto.setNome(rs.getString("nome"));
-				
-				int idGenero = rs.getInt("idgenero");
-				GeneroProdutoDao dao = new GeneroProdutoDao();
-				GeneroProduto cp = dao.buscarPorId(idGenero);
-				prouto.setGeneroProduto(cp);
-				
 				prouto.setPreco(rs.getDouble("preco"));
 				prouto.setImagem(rs.getString("imagem"));
 				prouto.setDescricao(rs.getString("descricao"));
@@ -189,34 +231,31 @@ public class ProdutoDao {
 			throw new RuntimeException(e);
 		}
 	}
-	
-	
-	
-	public List<Produto> listarDescricaoProduto() {
+
+	public List<Produto> listarDescricao() {
 		try {
-			List<Produto> listaDescricaoProduto = new ArrayList<Produto>();
-			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM produto ORDER BY nome");
+			List<Produto> listarDescricaoProduto = new ArrayList<Produto>();
+			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM produto ORDER BY descricao");
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
 				Produto produto = new Produto();
-				
 				produto.setId(rs.getInt("id"));
 				produto.setCodigo(rs.getString("codigo"));
+
+				int idCategoria = rs.getInt("categoria_id");
+				CategoriaProdutoDao dao = new CategoriaProdutoDao();
+				CategoriaProduto cp = dao.buscarPorId(idCategoria);
+				produto.setCategoriaProduto(cp);
+
 				produto.setNome(rs.getString("nome"));
-				
-				int idGenero = rs.getInt("idgenero");
-				GeneroProdutoDao dao = new GeneroProdutoDao();
-				GeneroProduto cp = dao.buscarPorId(idGenero);
-				produto.setGeneroProduto(cp);
-				
+				produto.setPreco(rs.getDouble("preco"));
 				produto.setImagem(rs.getString("imagem"));
 				produto.setDescricao(rs.getString("descricao"));
-
-				listaDescricaoProduto.add(produto);
+				listarDescricaoProduto.add(produto);
 			}
 			stmt.execute();
 			connection.close();
-			return listaDescricaoProduto;
+			return listarDescricaoProduto;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}

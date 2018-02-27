@@ -8,14 +8,7 @@ public class Usuario {
 	private String nick;
 	private String nomeUsuario;
 	private String cpf;
-	private String notificacao;
-
-	public String getNotificacao() {
-		return notificacao;
-	}
-	public void setNotificacao(String notificacao) {
-		this.notificacao = notificacao;
-	}
+	
 	public int getId() {
 		return id;
 	}
@@ -54,5 +47,5 @@ public class Usuario {
 	}
 	
 	
-}
 
+}

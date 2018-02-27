@@ -16,7 +16,6 @@
   
 <script type="text/javascript" src="view/js/jquery-2.1.4.js"></script>
 <script type="text/javascript" src="view/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="view/js/maskedinput.js"></script>
 
 </head>
 
@@ -39,27 +38,25 @@
 			<p>
 				<table style="width: 100%">
 					<tr>
-						<td style="float: left; font-size: 24px;">Alterar <strong>Genero de Produto</strong> </td>
-						<td style="float: right; text-align: right;"> <img src="view/img/editar.jpg" style="width: 20%;">  </td>
+						<td style="float: left; font-size: 24px;">Incluir <strong>Genero de Produto</strong> </td>
+						<td style="float: right; text-align: right;"> <img src="view/img/salvar.jpg" style="width: 14%;">  </td>
 					</tr>
 				</table>
 			</p>
 			
 			<hr />
 			
-			<form action="alterarGeneroProduto" method="post">
-			
-				<input type="hidden" name="id" value="${generoProduto.id}">
+			<form action="incluirGeneroProduto" method="post">
 				
 				<div class="form-group">
     				<label for="inputCodigo">Código</label>
-    				<input type="text" class="form-control" id="inputCodigo" name="codigo" style="width: 110px;" maxlength="5" required="required" value="${generoProduto.codigo}"> &nbsp;
+    				<input type="text" class="form-control" id="inputCodigo" name="codigo" style="width: 110px;" maxlength="5" required="required" value="${categoriaProduto.codigo}"> &nbsp;
     				<form:errors path="categoriaProduto.codigo" cssStyle="color:red" /> <br />
   				</div>
   				
   				<div class="form-group">
 					<label for="inputDescricao">Descrição</label>
-					<input type="text" id="inputDescricao" class="form-control" name="descricao" style="width: 500px;" maxlength="100" required="required" value="${generoProduto.descricao}" /> &nbsp;
+					<input type="text" id="inputDescricao" class="form-control" name="descricao" style="width: 500px;" maxlength="100" required="required" value="${categoriaProduto.descricao}" /> &nbsp;
 					<form:errors path="categoriaProduto.descricao" cssStyle="color:red" />
 				</div>
 
@@ -67,7 +64,7 @@
   				
   				<a href="listarGeneroProduto" class="btn btn-danger" role="button">Cancelar</a> &nbsp;
   				<button type="reset" class="btn btn-default"> &nbsp; Limpar &nbsp; </button> &nbsp;
-  				<button type="submit" class="btn btn-warning"> &nbsp; Alterar &nbsp; </button>
+  				<button type="submit" class="btn btn-primary"> &nbsp; Inserir &nbsp; </button>
   				
 			</form>
 		</div>
@@ -78,6 +75,7 @@
 	
 	<hr class="linhaSeparador">
 	
+
 
 </body>
 </html>

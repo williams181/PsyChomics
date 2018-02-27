@@ -7,34 +7,38 @@ CREATE TABLE usuario (
 	senha VARCHAR (16),
 	nick VARCHAR (15),
 	nome_usuario VARCHAR (50),
-	cpf VARCHAR (11),
-	notificacao VARCHAR (3)
+	cpf VARCHAR (11)
 );
 
 CREATE TABLE genero_produto (
 	id INT (6) AUTO_INCREMENT PRIMARY KEY,
-	genero VARCHAR (20)
+	codigo VARCHAR (5),
+	descricao VARCHAR (30)
 );
 
 CREATE TABLE tipo_produto (
 	id INT(6) AUTO_INCREMENT PRIMARY KEY,
-	tipo VARCHAR (20)
+	codigo VARCHAR (5),
+	descricao VARCHAR (30)
 );
 
 CREATE TABLE categoria_produto (
 	id INT(6) AUTO_INCREMENT PRIMARY KEY,
-	categoria VARCHAR (20)
+	codigo VARCHAR (5),
+	descricao VARCHAR (30)
 );
 
 CREATE TABLE produto (
 	id INT (6) AUTO_INCREMENT PRIMARY KEY,
-	idgenero INT(6),
+	categoria_id INT,
+	genero_id INT,
 	codigo VARCHAR (5),
 	nome VARCHAR (50),
 	preco DECIMAL (10,2),
 	imagem VARCHAR (255),
 	descricao VARCHAR (255),
-	FOREIGN KEY (idgenero) REFERENCES genero_produto(id)
+	FOREIGN KEY (categoria_id) REFERENCES categoria_produto(id),
+	FOREIGN KEY (genero_id) REFERENCES genero_produto(id)
 );
 
 CREATE TABLE comentario_produto (

@@ -11,28 +11,27 @@ import br.com.ifpe.psyChomics.model.Usuario;
 
 @Controller
 public class UsuarioController {
-
-	@RequestMapping("/exibirLoginUsuario")
+	
+	@RequestMapping("exibirLoginUsuario")
 	public String exibirLoginUsuario() {
+		System.out.println("Exibindo login do Usuario");
 		return "usuario/loginUsuario";
 	}
 
-	@RequestMapping("/exibirCadastroUsuario")
-	public String exibirCadastroUsuario() {
+	@RequestMapping("exibirCadastrarUsuario")
+	public String exibirCadastrarUsuario() {
+		System.out.println("Exibindo cadastar Usuario");
 		return "usuario/cadastrarUsuario";
 	}
 
-	@RequestMapping("cadastroUsuario")
-	public String cadastroUsuario(Usuario usuario, Model model) {
+	@RequestMapping("cadastrarUsuario")
+	public String cadastrarUsuario(Usuario usuario, Model model) {
+
 		UsuarioDao dao = new UsuarioDao();
-		dao.cadastar(usuario);
-		model.addAttribute("mensagem", "Usuario Incluido com Sucesso");
+		dao.cadastrar(usuario);
+		model.addAttribute("msg", "Usuario Incluido com Sucesso");
+		System.out.println("cadastro de Usuario");
 		return "usuario/cadastrarUsuario";
-	}
-
-	@RequestMapping("/exibirlistarUsuario")
-	public String exibirlistarUsuario() {
-		return "usuario/listarUsuario";
 	}
 
 	@RequestMapping("/listarUsuario")
@@ -40,42 +39,26 @@ public class UsuarioController {
 		UsuarioDao dao = new UsuarioDao();
 		List<Usuario> listarUsuario = dao.listar();
 		model.addAttribute("listarUsuario", listarUsuario);
-		System.out.println("Exibindo listagem de Usuario.");
-		return "usuario/listarUsuario";
+		System.out.println("lista de produto");
+		return "usuario/buscaUsuario";
 	}
 
 	@RequestMapping("removerUsuario")
 	public String removerUsuario(Usuario usuario, Model model) {
 		UsuarioDao dao = new UsuarioDao();
 		dao.remover(usuario);
-		model.addAttribute("msg", "Usuario removido com sucesso!");
-
-		return "usuario/listarUsuario";
+		model.addAttribute("msg", "Usuário removido com sucesso!");
+		System.out.println("remover usuario");
+		return "forward:listarUsuario";
 	}
 
-	@RequestMapping("/exibirAlterarUsuario")
-	public String exibirAlterarUsuario(Usuario usuario, Model model) {
+	@RequestMapping("/buscarUsuario")
+	public String buscarUsuario(Usuario usuario, Model model) {
 		UsuarioDao dao = new UsuarioDao();
-		Usuario usuarioCompleto = dao.buscarPorId(usuario.getId());
-		model.addAttribute("usuario", usuarioCompleto);
-		return "usuario/alterarUsuario";
+		List<Usuario> listarUsuario = dao.buscar(usuario);
+		model.addAttribute("listarUsuario", listarUsuario);
+
+		System.out.println("busca Usuario");
+		return "usuario/buscarUsuario";
 	}
-
-	@RequestMapping("alterarUsuario")
-	public String alterarUsuario(Usuario usuario, Model model) {
-		UsuarioDao dao = new UsuarioDao();
-		dao.alterar(usuario);
-		model.addAttribute("msg", "Usuario Alterado com Sucesso!");
-		return "usuario/listarUsuario";
-	}
-
-	@RequestMapping("/busca")
-	public String busca(Usuario usuario, Model model) {
-		UsuarioDao dao = new UsuarioDao();
-		List<Usuario> buscarUsuario = dao.buscar(usuario);
-		model.addAttribute("listaUsuario", buscarUsuario);
-		return "usuario/listarUsuario";
-
-	}
-
 }

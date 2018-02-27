@@ -26,6 +26,7 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+
 <style>
 body {
 	background-color: #EEE9E9;
@@ -156,7 +157,7 @@ form.example::after {
 }
 </style>
 
-<title>listar Usuario</title>
+<title>lista de produtos</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -206,7 +207,7 @@ form.example::after {
 					<li><a href="listarProduto">Listagem Produto</a></li>
 				</ul>
 			</div>
-		</div>	
+		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
@@ -219,14 +220,13 @@ form.example::after {
 			</ul>
 		</div>
 
-		<form action="busca" class="example" method="post">
-			<input for="inputNomeUsuario" type="text" placeholder="Procurar Usuario"
-				id="inputNomeUsuario" name="nomeUsuario">
+		<form action="buscaProduto" class="example" method="post">
+			<input type="text" placeholder="Procurar.." for="inputNome"
+				id="inputNome" name="nome">
 			<button type="submit" value="buscar">
 				<i class="fa fa-search"></i>
 			</button>
 		</form>
-
 
 		<!-- /.navbar-collapse -->
 	</div>
@@ -234,10 +234,65 @@ form.example::after {
 
 	<br>
 	<br>
+
+
+	<div align="center">
+
+		<div align="left" style="color: #6E6E6E; width: 70%;">
+
+			<c:if test="${msg ne null}">
+				<div class="alert alert-success" style="width: 100%;">
+					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+					${msg}
+				</div>
+			</c:if>
+
+			<div class="panel-group">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" href="#collapse1">Clique <strong>aqui</strong>
+								para exibir os campos de pesquisa de <strong>Produtos</strong></a>
+						</h4>
+					</div>
+					<div id="collapse1" class="panel-collapse collapse">
+						<div class="panel-body">
+							<form action="pesquisarProduto">
+								<div class="form-group" style="text-align: left;">
+									<label for="descricao">Descrição:</label> <input type="text"
+										class="form-control" id="descricao" name="descricao">
+								</div>
+
+								<div class="form-group" style="text-align: left;">
+									<label for="categoriaProduto">Categoria:</label> <br /> <select
+										id="categoriaProduto" name="categoriaProduto"
+										style="width: 200px; height: 30px; border: 1px solid #BDC7D8; color: #000000; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;">
+										<option value="">Selecione</option>
+										<c:forEach items="${listarCategoriaProduto}" var="obj">
+											<option value="${obj.id}"
+												<c:if test="${obj.id eq produto.categoriaProduto.id}">selected="selected"</c:if>>
+												${obj.descricao}</option>
+										</c:forEach>
+									</select>
+								</div>
+								<button type="reset" class="btn btn-default">&nbsp;
+									Limpar &nbsp;</button>
+								&nbsp;
+								<button type="submit" class="btn btn-primary">&nbsp;
+									Filtrar &nbsp;</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
 	<div class="container" align="center">
 		<br> <br>
 		<hr>
-		<h3>Listar Usuario</h3>
+		<h3>Listar Produto</h3>
 		<hr>
 	</div>
 
@@ -246,31 +301,39 @@ form.example::after {
 	<div class="container" align="center">
 		<table class="table">
 			<tr>
-				<td scope="col">E-mail</td>
-				<td scope="col">Nick</td>
-				<td scope="col">Nome do Usuario</td>
-				<td scope="col">CPF</td>
-				<td scope="col">Notificação</td>
+				<td scope="col">Codigo</td>
+				<td scope="col">Nome</td>
+				<td scope="col">Preço</td>
+				<td scope="col">Imagem</td>
+				<td scope="col">Categoria</td>
+				<td scope="col">Descrição</td>
+				<td style="float: right;"> <a href="exibirIncluirCategoriaProduto" class="btn btn-primary" role="button">Novo</a> </td>
 				<td scope="col">Opções</td>
 
 			</tr>
 
-			<c:forEach var="u" items="${listarUsuario}">
+			<c:forEach items="${listarProduto}" var="p">
 
 				<tr>
-					<th scope="row">${u.email}</th>
-					<th>${u.nick}</th>
-					<th>${u.nomeUsuario}</th>
-					<th>${u.cpf}</th>
-					<th>${u.notificacao}</th>
-					<th><a href="removerUsuario?id=${u.id}">Remover</a> <a
-						href="exibirAlterarUsuario?id=${u.id}">Alterar</a></th>
-
+					<th scope="row">${p.codigo}</th>
+					<th scope="row">${p.nome}</th>
+					<th scope="row">${p.preco}</th>
+					<th scope="row"><img src="view/img/${p.imagem}"></th>
+					<th scope="row">${p.categoriaProduto.descricao}</th>
+					<th>${p.descricao}</th>
+					<th><a href="removerProduto?id=${p.id}" onclick="myFunction()">Remover</a>
+						| <a href="exibirAlterarProduto?id=${p.id}">Alterar</a>
 				</tr>
 
 			</c:forEach>
 
 		</table>
 	</div>
+
+	<script>
+		function myFunction() {
+			alert("deseja deletar o produto?");
+		}
+	</script>
 </body>
 </html>

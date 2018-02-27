@@ -5,12 +5,25 @@ public class Produto {
 	
 	private int id;
 	private String codigo;
-	private String nome;
+	private CategoriaProduto categoriaProduto;
 	private GeneroProduto generoProduto;
+	private String nome;
 	private double preco;
 	private String imagem;
 	private String descricao;
 	
+	public GeneroProduto getGeneroProduto() {
+		return generoProduto;
+	}
+	public void setGeneroProduto(GeneroProduto generoProduto) {
+		this.generoProduto = generoProduto;
+	}
+	public CategoriaProduto getCategoriaProduto() {
+		return categoriaProduto;
+	}
+	public void setCategoriaProduto(CategoriaProduto categoriaProduto) {
+		this.categoriaProduto = categoriaProduto;
+	}
 	public String getCodigo() {
 		return codigo;
 	}
@@ -22,12 +35,6 @@ public class Produto {
 	}
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
-	}
-	public GeneroProduto getGeneroProduto() {
-		return generoProduto;
-	}
-	public void setGeneroProduto(GeneroProduto generoProduto) {
-		this.generoProduto = generoProduto;
 	}
 	public String getImagem() {
 		return imagem;
