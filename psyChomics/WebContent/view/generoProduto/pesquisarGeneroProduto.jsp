@@ -37,7 +37,7 @@
 			<p>
 				<table style="width: 100%">
 					<tr>
-						<td style="float: left; font-size: 24px;"> Listagem de <strong>Genero de Produto</strong> </td>
+						<td style="float: left; font-size: 24px;"> Listagem de <strong>Gênero de Produto</strong> </td>
 						<td style="float: right;"> <a href="exibirIncluirGeneroProduto" class="btn btn-primary" role="button">Novo</a> </td>
 					</tr>
 				</table>

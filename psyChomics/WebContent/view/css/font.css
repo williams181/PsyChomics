@@ -1,0 +1,11 @@
+@font-face {
+	font-family: 'BADABB';
+	src: url('./BADABB.eot');
+	src: local('BADABB'), url('./BADABB.woff') format('woff'), url('./BADABB.ttf') format('truetype');
+}
+/* use this class to attach this font to any element i.e. <p class="fontsforweb_fontid_305">Text with this font applied</p> */
+.fontsforweb_fontid_305 {
+	font-family: 'BADABB' !important;
+}
+
+/* Font downloaded from FontsForWeb.com */

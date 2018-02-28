@@ -39,7 +39,7 @@
 			<p>
 				<table style="width: 100%">
 					<tr>
-						<td style="float: left; font-size: 24px;">Alterar <strong>Genero de Produto</strong> </td>
+						<td style="float: left; font-size: 24px;">Alterar <strong>Gênero de Produto</strong> </td>
 						<td style="float: right; text-align: right;"> <img src="view/img/editar.jpg" style="width: 20%;">  </td>
 					</tr>
 				</table>

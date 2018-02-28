@@ -38,7 +38,7 @@
 			<p>
 				<table style="width: 100%">
 					<tr>
-						<td style="float: left; font-size: 24px;">Incluir <strong>Genero de Produto</strong> </td>
+						<td style="float: left; font-size: 24px;">Incluir <strong>Gênero de Produto</strong> </td>
 						<td style="float: right; text-align: right;"> <img src="view/img/salvar.jpg" style="width: 14%;">  </td>
 					</tr>
 				</table>
