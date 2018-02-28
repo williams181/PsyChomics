@@ -15,8 +15,8 @@
 </head>
 <body>
 
-	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
-		class="navbar-brand" href="exibirlistarProdutoIndex">PsyChomics</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
+		class="navbar-brand" href="listarProdutoIndex">PsyChomics</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarSupportedContent"
 		aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -27,7 +27,7 @@
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item active"><a class="nav-link"
-				href="exibirlistarProdutoIndex">Home <span class="sr-only">(current)</span>
+				href="listarProdutoIndex">Home <span class="sr-only">(current)</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="exibirQuemSomos">Quem
 					somos</a></li>
@@ -43,6 +43,14 @@
 					<a class="dropdown-item" href="exibirIncluirCategoriaProduto">Cadastro
 						de categorias</a> <a class="dropdown-item"
 						href="listarCategoriaProduto">Lista de categorias</a>
+						<a class="dropdown-item"
+						href="exibirIncluirGeneroProduto">Cadastro de Generos</a>
+						<a class="dropdown-item"
+						href="listarGeneroProduto">Lista de Generos</a>
+						<a class="dropdown-item"
+						href="exibirIncluirTipoProduto">Cadastro de Tipo</a>
+						<a class="dropdown-item"
+						href="listarTipoProduto">Lista de Tipos</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
@@ -66,7 +74,6 @@
 				type="submit">Search</button>
 		</form>
 	</div>
-
 
 	</nav>
 	<div id="carouselExampleIndicators" class="carousel slide"
@@ -111,7 +118,7 @@
 		<div class="form-row">
 			<div class="form-group col-md-6">
 				<label for="inputEmail">Email</label> <input type="text"
-					class="form-control" id="inputEmail" minlength="13"
+					class="form-control" id="inputEmail" name="email" minlength="13"
 					placeholder="E-mail" maxlength="50" required="required">
 			</div>
 			<div class="form-group col-md-6">

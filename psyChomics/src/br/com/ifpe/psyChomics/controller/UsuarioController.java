@@ -39,8 +39,8 @@ public class UsuarioController {
 		UsuarioDao dao = new UsuarioDao();
 		List<Usuario> listarUsuario = dao.listar();
 		model.addAttribute("listarUsuario", listarUsuario);
-		System.out.println("lista de produto");
-		return "usuario/buscaUsuario";
+		System.out.println("lista de usuario");
+		return "usuario/listarUsuario";
 	}
 
 	@RequestMapping("removerUsuario")

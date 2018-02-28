@@ -31,6 +31,7 @@
 	    <list>
 		  <bean class="br.com.ifpe.psyChomics.converter.CategoriaProdutoConverter" />
 		  <bean class="br.com.ifpe.psyChomics.converter.GeneroProdutoConverter" />
+		  <bean class="br.com.ifpe.psyChomics.converter.TipoProdutoConverter" />
 	    </list>
 	  </property>
 	</bean>

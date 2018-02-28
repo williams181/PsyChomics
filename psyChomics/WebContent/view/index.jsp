@@ -16,7 +16,7 @@
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
-		class="navbar-brand" href="exibirlistarProdutoIndex">PsyChomics</a>
+		class="navbar-brand" href="listarProdutoIndex">PsyChomics</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarSupportedContent"
 		aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -27,7 +27,7 @@
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item active"><a class="nav-link"
-				href="exibirlistarProdutoIndex">Home <span class="sr-only">(current)</span>
+				href="listarProdutoIndex">Home <span class="sr-only">(current)</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="exibirQuemSomos">Quem
 					somos</a></li>
@@ -44,9 +44,13 @@
 						de categorias</a> <a class="dropdown-item"
 						href="listarCategoriaProduto">Lista de categorias</a>
 						<a class="dropdown-item"
-						href="exibirIncluirGeneroProduto">Cadastro de Genero</a>
+						href="exibirIncluirGeneroProduto">Cadastro de Generos</a>
 						<a class="dropdown-item"
-						href="listarGeneroProduto">Lista de Genero</a>
+						href="listarGeneroProduto">Lista de Generos</a>
+						<a class="dropdown-item"
+						href="exibirIncluirTipoProduto">Cadastro de Tipo</a>
+						<a class="dropdown-item"
+						href="listarTipoProduto">Lista de Tipos</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
@@ -115,7 +119,7 @@
 						<h5 class="card-title">${p.nome}</h5>
 						<h6 class="card-title">${p.preco}</h6>
 						<p class="card-text">${p.descricao}</p>
-						<a href="exibirDescricaoProduto" class="btn btn-primary">detalhes</a>
+						<a href="exibirDescricaoProduto?id=${p.id}" class="btn btn-primary">detalhes</a>
 					</div>
 				</div>
 			</div>

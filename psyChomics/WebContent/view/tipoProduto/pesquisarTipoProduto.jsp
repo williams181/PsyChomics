@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Sistema de Controle de Usuário</title>
+<title>Sistema de Controle de Estoque</title>
 
 <link rel="stylesheet" type="text/css" href="view/css/estilo.css" />
 <link rel="stylesheet" type="text/css" href="view/bootstrap/css/bootstrap.min.css" />
@@ -37,8 +37,8 @@
 			<p>
 				<table style="width: 100%">
 					<tr>
-						<td style="float: left; font-size: 24px;"> Listagem de <strong>Usuário</strong> </td>
-						<td style="float: right;"> <a href="exibirCadastrarUsuario" class="btn btn-primary" role="button">Novo</a> </td>
+						<td style="float: left; font-size: 24px;"> Listagem de <strong>Tipo de Produto</strong> </td>
+						<td style="float: right;"> <a href="exibirIncluirGeneroProduto" class="btn btn-primary" role="button">Novo</a> </td>
 					</tr>
 				</table>
 			</p>
@@ -48,21 +48,18 @@
 			<table class="table table-striped table-bordered">
 				<thead>
 					<tr>
-						<th style="width: 20%; vertical-align: middle;">Email</th>
-						<th style="width: 20%; vertical-align: middle;">Nick</th>
-						<th style="width: 20%; vertical-align: middle;">Nome do Usuário</th>
-						<th style="width: 20%; vertical-align: middle;">CPF</th>
-						<th style="width: 20%; vertical-align: middle;">Ações</th>
+						<th style="width: 10%; vertical-align: middle; text-align: center;">Código</th>
+						<th style="width: 70%; vertical-align: middle;">Descrição</th>
+						<th style="width: 20%; vertical-align: middle; text-align: center;">Ações</th>
 					</tr>
 				</thead>
-				<c:forEach items="${listarUsuario}" var="c">
+				<c:forEach items="${listarTipoProduto}" var="c">
 					<tr>
-						<td style="vertical-align: middle;">${c.email}</td>
-						<td style="vertical-align: middle;">${c.nick}</td>
-						<td style="vertical-align: middle;">${c.nomeUsuario}</td>
-						<td style="vertical-align: middle;">${c.cpf}</td>				
-						<td style="vertical-align: middle;">
-							<a href="removerUsuario?id=${c.id}" class="btn btn-danger" role="button">Remover</a>
+						<td style="vertical-align: middle; text-align: center;">${c.codigo}</td>
+						<td style="vertical-align: middle;">${c.descricao}</td>
+						<td style="vertical-align: middle; text-align: center;">
+							<a href="exibirAlterarTipoProduto?id=${c.id}" class="btn btn-warning" role="button">E</a> &nbsp;
+							<a href="removerTipoProduto?id=${c.id}" class="btn btn-danger" role="button">R</a>
 						</td>
 					</tr>
 				</c:forEach>

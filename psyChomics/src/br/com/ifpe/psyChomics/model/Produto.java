@@ -7,11 +7,18 @@ public class Produto {
 	private String codigo;
 	private CategoriaProduto categoriaProduto;
 	private GeneroProduto generoProduto;
+	private TipoProduto tipoProduto;
 	private String nome;
 	private double preco;
 	private String imagem;
 	private String descricao;
 	
+	public TipoProduto getTipoProduto() {
+		return tipoProduto;
+	}
+	public void setTipoProduto(TipoProduto tipoProduto) {
+		this.tipoProduto = tipoProduto;
+	}
 	public GeneroProduto getGeneroProduto() {
 		return generoProduto;
 	}

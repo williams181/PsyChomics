@@ -16,7 +16,7 @@
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
-		class="navbar-brand" href="exibirlistarProdutoIndex">PsyChomics</a>
+		class="navbar-brand" href="listarProdutoIndex">PsyChomics</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarSupportedContent"
 		aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -27,7 +27,7 @@
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item active"><a class="nav-link"
-				href="exibirlistarProdutoIndex">Home <span class="sr-only">(current)</span>
+				href="listarProdutoIndex">Home <span class="sr-only">(current)</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="exibirQuemSomos">Quem
 					somos</a></li>
@@ -42,7 +42,12 @@
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="exibirIncluirCategoriaProduto">Cadastro
 						de categorias</a> <a class="dropdown-item"
-						href="listarCategoriaProduto">Lista de categorias</a>
+						href="listarCategoriaProduto">Lista de categorias</a> <a
+						class="dropdown-item" href="exibirIncluirGeneroProduto">Cadastro
+						de Generos</a> <a class="dropdown-item" href="listarGeneroProduto">Lista
+						de Generos</a> <a class="dropdown-item"
+						href="exibirIncluirTipoProduto">Cadastro de Tipo</a> <a
+						class="dropdown-item" href="listarTipoProduto">Lista de Tipos</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
@@ -59,6 +64,7 @@
 				href="exibirLoginUsuario">Login</a></li>
 		</ul>
 		<form class="form-inline my-2 my-lg-0" action="buscarProduto">
+
 			<input class="form-control mr-sm-2" type="text"
 				pplaceholder="Procurar.." id="inputNome" name="nome" for="inputNome"
 				aria-label="Search">
@@ -101,26 +107,9 @@
 		<div class="card-body">This is some text within a card body.</div>
 	</div>
 
-
-	<div class="card" style="width: 18rem;">
-		<c:forEach var="p" items="${listarDescricaoProduto}">
-			<img class="card-img-top" src="view/img/${p.imagem}"
-				alt="Card image cap">
-			<div class="card-body">
-				<h5 class="card-title">${p.nome}</h5>
-				<p class="card-text">${p.descricao}</p>
-			</div>
-			<ul class="list-group list-group-flush">
-				<li class="list-group-item">${p.preco}</li>
-				<li class="list-group-item">${p.categoriaProduto.descricao}</li>
-			</ul>
-			<div class="card-body">
-				<a href="#" class="card-link">Card link</a> <a href="#"
-					class="card-link">Another link</a>
-			</div>
-		</c:forEach>
-	</div>
-
+		<input type="hidden" name="id" value="${produto.id}" />
+		<input type="text" name="id" value="${produto.nome}" />
+		<input type="text" name="id" value="${produto.descricao}" />
 	<div class="card">
 		<div class="card-header">Featured</div>
 		<div class="card-body">

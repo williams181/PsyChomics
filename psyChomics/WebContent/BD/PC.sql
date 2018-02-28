@@ -32,13 +32,15 @@ CREATE TABLE produto (
 	id INT (6) AUTO_INCREMENT PRIMARY KEY,
 	categoria_id INT,
 	genero_id INT,
+	tipo_id INT,
 	codigo VARCHAR (5),
 	nome VARCHAR (50),
 	preco DECIMAL (10,2),
 	imagem VARCHAR (255),
 	descricao VARCHAR (255),
 	FOREIGN KEY (categoria_id) REFERENCES categoria_produto(id),
-	FOREIGN KEY (genero_id) REFERENCES genero_produto(id)
+	FOREIGN KEY (genero_id) REFERENCES genero_produto(id),
+	FOREIGN KEY (tipo_id) REFERENCES tipo_produto(id)
 );
 
 CREATE TABLE comentario_produto (
