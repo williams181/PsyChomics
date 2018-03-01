@@ -123,7 +123,7 @@
 			</div>
 			<div class="form-group col-md-6">
 				<label for="inputSenha">Senha</label> <input type="password"
-					class="form-control" id="inputSenha" name="senha" F
+					class="form-control" id="password" name="senha" F
 					placeholder="Senha" maxlength="16" minlength="8"
 					required="required">
 			</div>
