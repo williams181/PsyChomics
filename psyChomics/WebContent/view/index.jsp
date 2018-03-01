@@ -85,14 +85,22 @@
 		</ol>
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<img class="d-block w-100" src="view/imagens/bg2.png"
+				<img class="d-block w-100" src="view/imagens/bg3.png"
 					alt="First slide">
 			</div>
+			<div class="carousel-item">
+				<img class="d-block w-100" src="view/imagens/bg2.png"
+					alt="Second slide">
+			</div>
+		
 			<div class="carousel-item">
 				<img class="d-block w-100" src="view/imagens/bg3.png"
 					alt="Second slide">
 			</div>
+		
+		
 		</div>
+		
 		<a class="carousel-control-prev" href="#carouselExampleIndicators"
 			role="button" data-slide="prev"> <span
 			class="carousel-control-prev-icon" aria-hidden="true"></span> <span
@@ -111,7 +119,7 @@
 	<div align="right" style="color: #6E6E6E; margin-right: 2%;">Bem
 		vindo, ${usuarioLogado.nomeUsuario}</div>
 
-
+<center>
 	<div class="row">
 		<c:forEach var="p" items="${listaProdutoIndex}">
 			<div class="col">
@@ -129,7 +137,7 @@
 			</div>
 		</c:forEach>
 	</div>
-
+</center>
 	<div class="card">
 		<div class="card-header">Featured</div>
 		<div class="card-body">
