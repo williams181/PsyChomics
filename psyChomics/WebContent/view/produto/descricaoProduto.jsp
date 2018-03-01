@@ -107,9 +107,27 @@
 		<div class="card-body">This is some text within a card body.</div>
 	</div>
 
-		<input type="hidden" name="id" value="${produto.id}" />
-		<input type="text" name="id" value="${produto.nome}" />
-		<input type="text" name="id" value="${produto.descricao}" />
+	<input type="hidden" name="id" value="${produto.id}" />
+
+	<div class="card" style="width: 18rem;">
+		<img class="card-img-top" src="view/img/${produto.imagem}"
+			alt="Card image cap">
+		<div class="card-body">
+			<h5 class="card-title">${produto.nome}</h5>
+			<p class="card-text">${produto.descricao}</p>
+		</div>
+		<ul class="list-group list-group-flush">
+			<li class="list-group-item">${produto.preco}</li>
+			<li class="list-group-item">${produto.generoProduto.descricao}</li>
+			<li class="list-group-item">${produto.categoriaProduto.descricao}</li>
+			<li class="list-group-item">${produto.tipoProduto.descricao}</li>
+		</ul>
+		<div class="card-body">
+			<a href="#" class="card-link">Comprar</a> <a href="#"
+				class="card-link">?</a>
+		</div>
+	</div>
+
 	<div class="card">
 		<div class="card-header">Featured</div>
 		<div class="card-body">

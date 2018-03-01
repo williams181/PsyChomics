@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc
 						http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
@@ -12,28 +11,36 @@
 						http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
 	<context:component-scan base-package="br.com.ifpe.psyChomics" />
-   	<mvc:annotation-driven conversion-service="conversionService" />
-   	
-   	<!-- A linha abaixo é necessária para poder carregar nos JSP os arquivos CSS, imagens, JavaScript e etc -->
-	<mvc:default-servlet-handler/> 
+	<mvc:annotation-driven conversion-service="conversionService" />
 
-	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<!-- A linha abaixo é necessária para poder carregar nos JSP os arquivos 
+		CSS, imagens, JavaScript e etc -->
+	<mvc:default-servlet-handler />
+
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/view/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
-	
-	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<property name="maxUploadSize" value="100000000" />
 	</bean>
-	
-	<bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
-	  <property name="converters">
-	    <list>
-		  <bean class="br.com.ifpe.psyChomics.converter.CategoriaProdutoConverter" />
-		  <bean class="br.com.ifpe.psyChomics.converter.GeneroProdutoConverter" />
-		  <bean class="br.com.ifpe.psyChomics.converter.TipoProdutoConverter" />
-	    </list>
-	  </property>
+
+	<bean id="conversionService"
+		class="org.springframework.context.support.ConversionServiceFactoryBean">
+		<property name="converters">
+			<list>
+				<bean class="br.com.ifpe.psyChomics.converter.CategoriaProdutoConverter" />
+				<bean class="br.com.ifpe.psyChomics.converter.GeneroProdutoConverter" />
+				<bean class="br.com.ifpe.psyChomics.converter.TipoProdutoConverter" />
+			</list>
+		</property>
 	</bean>
+
+	<mvc:interceptors>
+		<bean class="br.com.ifpe.psyChomics.util.AutorizadorInterceptor" />
+	</mvc:interceptors>
 
 </beans>

@@ -42,15 +42,12 @@
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="exibirIncluirCategoriaProduto">Cadastro
 						de categorias</a> <a class="dropdown-item"
-						href="listarCategoriaProduto">Lista de categorias</a>
-						<a class="dropdown-item"
-						href="exibirIncluirGeneroProduto">Cadastro de Generos</a>
-						<a class="dropdown-item"
-						href="listarGeneroProduto">Lista de Generos</a>
-						<a class="dropdown-item"
-						href="exibirIncluirTipoProduto">Cadastro de Tipo</a>
-						<a class="dropdown-item"
-						href="listarTipoProduto">Lista de Tipos</a>
+						href="listarCategoriaProduto">Lista de categorias</a> <a
+						class="dropdown-item" href="exibirIncluirGeneroProduto">Cadastro
+						de Generos</a> <a class="dropdown-item" href="listarGeneroProduto">Lista
+						de Generos</a> <a class="dropdown-item"
+						href="exibirIncluirTipoProduto">Cadastro de Tipo</a> <a
+						class="dropdown-item" href="listarTipoProduto">Lista de Tipos</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
@@ -63,8 +60,10 @@
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="#">Something else here</a>
 				</div></li>
-			<li class="nav-item"><a class="nav-link" href="exibirLoginUsuario">Login</a>
-			</li>
+			<li class="nav-item"><a class="nav-link"
+				href="exibirLoginUsuario">Login</a></li>
+				<li class="nav-item"><a class="nav-link"
+				href="logout">Logout</a></li>
 		</ul>
 		<form class="form-inline my-2 my-lg-0" action="buscarProduto">
 			<input class="form-control mr-sm-2" type="text"
@@ -109,6 +108,10 @@
 		<div class="card-body">This is some text within a card body.</div>
 	</div>
 
+	<div align="right" style="color: #6E6E6E; margin-right: 2%;">Bem
+		vindo, ${usuarioLogado.nomeUsuario}</div>
+
+
 	<div class="row">
 		<c:forEach var="p" items="${listaProdutoIndex}">
 			<div class="col">
@@ -119,7 +122,8 @@
 						<h5 class="card-title">${p.nome}</h5>
 						<h6 class="card-title">${p.preco}</h6>
 						<p class="card-text">${p.descricao}</p>
-						<a href="exibirDescricaoProduto?id=${p.id}" class="btn btn-primary">detalhes</a>
+						<a href="exibirDescricaoProduto?id=${p.id}"
+							class="btn btn-primary">detalhes</a>
 					</div>
 				</div>
 			</div>

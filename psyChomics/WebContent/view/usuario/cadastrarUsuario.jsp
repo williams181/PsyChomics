@@ -15,7 +15,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
+	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
 		class="navbar-brand" href="listarProdutoIndex">PsyChomics</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarSupportedContent"
@@ -42,15 +42,12 @@
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="exibirIncluirCategoriaProduto">Cadastro
 						de categorias</a> <a class="dropdown-item"
-						href="listarCategoriaProduto">Lista de categorias</a>
-						<a class="dropdown-item"
-						href="exibirIncluirGeneroProduto">Cadastro de Generos</a>
-						<a class="dropdown-item"
-						href="listarGeneroProduto">Lista de Generos</a>
-						<a class="dropdown-item"
-						href="exibirIncluirTipoProduto">Cadastro de Tipo</a>
-						<a class="dropdown-item"
-						href="listarTipoProduto">Lista de Tipos</a>
+						href="listarCategoriaProduto">Lista de categorias</a> <a
+						class="dropdown-item" href="exibirIncluirGeneroProduto">Cadastro
+						de Generos</a> <a class="dropdown-item" href="listarGeneroProduto">Lista
+						de Generos</a> <a class="dropdown-item"
+						href="exibirIncluirTipoProduto">Cadastro de Tipo</a> <a
+						class="dropdown-item" href="listarTipoProduto">Lista de Tipos</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
@@ -63,8 +60,8 @@
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="#">Something else here</a>
 				</div></li>
-			<li class="nav-item"><a class="nav-link" href="exibirLoginUsuario">Login</a>
-			</li>
+			<li class="nav-item"><a class="nav-link"
+				href="exibirLoginUsuario">Login</a></li>
 		</ul>
 		<form class="form-inline my-2 my-lg-0" action="buscarProduto">
 			<input class="form-control mr-sm-2" type="text"
@@ -112,18 +109,21 @@
 	<div class="card">
 		<div class="card-body">${msg}</div>
 	</div>
+	<p>Bem vindo, ${usuarioLogado.email}</p>
 
 	<form action="cadastrarUsuario" method="post"
 		enctype="multipart/form-data">
 		<div class="form-row">
-			<div class="form-group col-md-6">
-				<label for="inputEmail">Email</label> <input type="text"
-					class="form-control" id="inputEmail" name="email" minlength="13"
-					placeholder="E-mail" maxlength="50" required="required">
+			<div class="form-group">
+				<label for="inputEmail">&nbsp; Email</label> <input type="email"
+					class="form-control" id="exampleInputEmail1" name="email"
+					aria-describedby="emailHelp" placeholder="Enter email"> <small
+					id="emailHelp" class="form-text text-muted">We'll never
+					share your email with anyone else.</small>
 			</div>
 			<div class="form-group col-md-6">
 				<label for="inputSenha">Senha</label> <input type="password"
-					class="form-control" id="inputSenha" name="senha"F
+					class="form-control" id="inputSenha" name="senha" F
 					placeholder="Senha" maxlength="16" minlength="8"
 					required="required">
 			</div>
@@ -137,7 +137,7 @@
 		<div class="form-group">
 			<label for="inputNick">Nick</label> <input type="text" id="inputNick"
 				class="form-control" name="Nick" placeholder="Nick do Usuário"
-				maxlength="30" minlength="5" required="required">
+				maxlength="15" minlength="5" required="required">
 		</div>
 		<div class="form-group">
 			<label for="inputNomeUsuario">Nome do Usuário</label> <input

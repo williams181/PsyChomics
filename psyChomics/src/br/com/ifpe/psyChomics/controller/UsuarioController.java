@@ -2,6 +2,8 @@ package br.com.ifpe.psyChomics.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,12 +13,31 @@ import br.com.ifpe.psyChomics.model.Usuario;
 
 @Controller
 public class UsuarioController {
-	
+
 	@RequestMapping("exibirLoginUsuario")
 	public String exibirLoginUsuario() {
 		System.out.println("Exibindo login do Usuario");
 		return "usuario/loginUsuario";
 	}
+
+	@RequestMapping("efetuarLogin")
+	public String efetuarLogin(Usuario usuario, HttpSession session, Model model) {
+	UsuarioDao dao = new UsuarioDao();
+	Usuario usuarioLogado = dao.buscarUsuario(usuario);
+	if (usuarioLogado != null) {
+	 session.setAttribute("usuarioLogado", usuarioLogado);
+	 return "index";
+	}
+	model.addAttribute("msg", "Não foi encontrado um usuário com o login e senha informados.");
+	 return "usuario/loginUsuario";
+	}
+	
+    @RequestMapping("logout")
+    public String logout(HttpSession session) {
+
+    	session.invalidate();
+    	return "index";
+    }
 
 	@RequestMapping("exibirCadastrarUsuario")
 	public String exibirCadastrarUsuario() {

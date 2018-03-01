@@ -26,7 +26,7 @@ public class UsuarioDao {
 		String sql = "INSERT INTO usuario (email, senha, nick, nome_usuario, cpf) VALUES (?,?,?,?,?)";
 		PreparedStatement stmt;
 		try {
-			stmt = connection.prepareStatement(sql);		
+			stmt = connection.prepareStatement(sql);
 			stmt.setString(1, usuario.getEmail());
 			stmt.setString(2, usuario.getSenha());
 			stmt.setString(3, usuario.getNick());
@@ -39,17 +39,17 @@ public class UsuarioDao {
 			throw new RuntimeException(e);
 		}
 	}
-	
+
 	public List<Usuario> listar() {
 		try {
 			List<Usuario> listarUsuario = new ArrayList<Usuario>();
 			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM usuario ORDER BY nome_usuario");
 			ResultSet rs = stmt.executeQuery();
-			while (rs.next()) {			
-				Usuario usuario = new Usuario();			
+			while (rs.next()) {
+				Usuario usuario = new Usuario();
 				usuario.setId(rs.getInt("id"));
 				usuario.setEmail(rs.getString("email"));
-				usuario.setSenha(rs.getString("senha"));				
+				usuario.setSenha(rs.getString("senha"));
 				usuario.setNick(rs.getString("nick"));
 				usuario.setNomeUsuario(rs.getString("nome_usuario"));
 				usuario.setCpf(rs.getString("cpf"));
@@ -75,7 +75,7 @@ public class UsuarioDao {
 			throw new RuntimeException(e);
 		}
 	}
-	
+
 	public Usuario buscarPorId(int id) {
 		try {
 			Usuario usuarioCompleto = new Usuario();
@@ -85,7 +85,7 @@ public class UsuarioDao {
 			while (rs.next()) {
 				usuarioCompleto.setId(rs.getInt("id"));
 				usuarioCompleto.setEmail(rs.getString("email"));
-				usuarioCompleto.setSenha(rs.getString("senha"));				
+				usuarioCompleto.setSenha(rs.getString("senha"));
 				usuarioCompleto.setNick(rs.getString("nick"));
 				usuarioCompleto.setNomeUsuario(rs.getString("nome_usuario"));
 				usuarioCompleto.setCpf(rs.getString("cpf"));
@@ -98,12 +98,13 @@ public class UsuarioDao {
 			throw new RuntimeException(e);
 		}
 	}
-	
+
 	public List<Usuario> buscar(Usuario usua) {
 		try {
 			List<Usuario> buscarUsuario = new ArrayList<Usuario>();
-			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM usuario WHERE nome_usuario like ?");
-			stmt.setString(1, "%"+usua.getNomeUsuario()+"%");
+			PreparedStatement stmt = this.connection
+					.prepareStatement("SELECT * FROM usuario WHERE nome_usuario like ?");
+			stmt.setString(1, "%" + usua.getNomeUsuario() + "%");
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
 				Usuario usuario = new Usuario();
@@ -124,6 +125,41 @@ public class UsuarioDao {
 		}
 	}
 
-}	
+	private Usuario montarObjeto(ResultSet rs) throws SQLException {
 
+		Usuario usuario = new Usuario();
 
+		usuario.setId(rs.getInt("id"));
+		usuario.setEmail(rs.getString("email"));
+		usuario.setSenha(rs.getString("senha"));
+		usuario.setNick(rs.getString("nick"));
+		usuario.setNomeUsuario(rs.getString("nome_usuario"));
+		usuario.setCpf(rs.getString("cpf"));
+
+		return usuario;
+	}
+
+	public Usuario buscarUsuario(Usuario usuario) {
+
+		try {
+
+			Usuario usuarioConsultado = null;
+			PreparedStatement stmt = this.connection.prepareStatement("select * from usuario where email = ? and senha = ?");
+			stmt.setString(1, usuario.getEmail());
+			stmt.setString(2, usuario.getSenha());
+			ResultSet rs = stmt.executeQuery();
+
+			if (rs.next()) {
+				usuarioConsultado = montarObjeto(rs);
+			}
+
+			rs.close();
+			stmt.close();
+
+			return usuarioConsultado;
+
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+}

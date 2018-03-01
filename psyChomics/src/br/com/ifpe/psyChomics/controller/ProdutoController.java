@@ -120,8 +120,8 @@ public class ProdutoController {
 	@RequestMapping("/buscarProduto")
 	public String buscarProduto(Produto produto, Model model) {
 		ProdutoDao dao = new ProdutoDao();
-		List<Produto> listarProduto = dao.buscar(produto);
-		model.addAttribute("listarProduto", listarProduto);
+		List<Produto> buscarProduto = dao.buscar(produto);
+		model.addAttribute("buscarProduto", buscarProduto);
 
 		// Código para popular o combo de categoria de produto
 		CategoriaProdutoDao dao2 = new CategoriaProdutoDao();

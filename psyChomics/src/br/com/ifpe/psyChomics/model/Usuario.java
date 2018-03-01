@@ -8,7 +8,7 @@ public class Usuario {
 	private String nick;
 	private String nomeUsuario;
 	private String cpf;
-	
+
 	public int getId() {
 		return id;
 	}

@@ -32,6 +32,38 @@
 				</div>
 			</c:if>
 			
+						<div class="panel-group">
+  				<div class="panel panel-default">
+    				<div class="panel-heading">
+      					<h4 class="panel-title">
+        					<a data-toggle="collapse" href="#collapse1">Clique <strong>aqui</strong> para exibir os campos de pesquisa de <strong>Produtos</strong></a>
+      					</h4>
+    				</div>
+    				<div id="collapse1" class="panel-collapse collapse">
+      					<div class="panel-body">
+      						<form action="buscarProduto">
+	      						<div class="form-group" style="text-align: left;">
+									<label for="descricao">Descrição:</label>
+					   				<input type="text" class="form-control" id="descricao" name="descricao">
+					 			</div>
+					
+								<div class="form-group" style="text-align: left;">
+					   				<label for="generoProduto">Genero:</label> <br />
+					   				<select id="generoProduto" name="generoProduto" style="width: 200px; height: 30px; border: 1px solid #BDC7D8; color: #000000; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;">
+										<option value=""> Selecione </option>
+										<c:forEach items="${listarGeneroProduto}" var="obj">
+											<option value="${obj.id}" <c:if test="${obj.id eq produto.generoProduto.id}">selected="selected"</c:if>> ${obj.descricao} </option>
+										</c:forEach> 
+									</select>
+								</div>
+				  				<button type="reset" class="btn btn-default"> &nbsp; Limpar &nbsp; </button> &nbsp;
+	  							<button type="submit" class="btn btn-primary"> &nbsp; Filtrar &nbsp; </button>
+  							</form>
+      					</div>
+    				</div>
+  				</div>
+			</div>
+			
 			<hr />
 			
 			<p>
@@ -57,7 +89,7 @@
 						<th style="width: 20%; vertical-align: middle;">Ações</th>
 					</tr>
 				</thead>
-				<c:forEach items="${listarProduto}" var="c">
+				<c:forEach items="${buscarProduto}" var="c">
 					<tr>
 						<td style="vertical-align: middle;">${c.categoriaProduto.descricao}</td>
 						<td style="vertical-align: middle;">${c.generoProduto.descricao}</td>
