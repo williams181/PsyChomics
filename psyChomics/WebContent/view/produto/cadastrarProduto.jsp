@@ -190,12 +190,12 @@ form.example::after {
 			<a class="navbar-brand" href="listarProdutoIndex">PsyChomics</a>
 			<div class="dropdown">
 				<button class="dropbtn">
-					Usuario <i class="fa fa-caret-down"></i>
+					Usuário <i class="fa fa-caret-down"></i>
 				</button>
 				<ul class="dropdown-content">
-					<li><a href="exibirLoginUsuario">Login Usuario</a></li>
-					<li><a href="exibirCadastroUsuario">Cadastro Usuario</a></li>
-					<li><a href="listarUsuario">Listagem Usuario</a></li>
+					<li><a href="exibirLoginUsuario">Login Usuário</a></li>
+					<li><a href="exibirCadastroUsuario">Cadastro Usuário</a></li>
+					<li><a href="listarUsuario">Listagem Usuário</a></li>
 				</ul>
 			</div>
 			<div class="dropdown">
@@ -212,9 +212,9 @@ form.example::after {
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li><a href="exibirLoginUsuario">Login Usuario</a></li>
-				<li><a href="exibirCadastroUsuario">Cadastro Usuario</a></li>
-				<li><a href="listarUsuario">Listagem Usuario</a></li>
+				<li><a href="exibirLoginUsuario">Login de Usuário</a></li>
+				<li><a href="exibirCadastroUsuario">Cadastro Usuário</a></li>
+				<li><a href="listarUsuario">Listagem Usuário</a></li>
 				<li><a href="exibirCadastroProduto">Cadastro Produto</a></li>
 				<li><a href="listarProduto">Listagem Produto</a></li>
 			</ul>
@@ -260,7 +260,7 @@ form.example::after {
 					maxlength="60" required="required" />
 			</div>
 			<div class="form-group">
-				<label for="inputPreco">Preço</label> <input type="text"
+				<label for="inputPreco">Preço</label> <input type="number" min="0.00" max="10000.00" step="0.01"
 					id="inputPreco" class="form-control" name="preco"
 					style="width: 500px;" placeholder="Preco" maxlength="16"
 					required="required" />
@@ -287,7 +287,7 @@ form.example::after {
 				</select>
 			</div>
 			<div class="form-group">
-				Genero: <br /> <select id="generoProduto"
+				Gênero: <br /> <select id="generoProduto"
 					name="generoProduto"
 					style="width: 200px; height: 30px; border: 1px solid #BDC7D8; color: #000000; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;">
 					<option value="">Selecione</option>

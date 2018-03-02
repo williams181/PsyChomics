@@ -190,12 +190,12 @@ form.example::after {
 			<a class="navbar-brand" href="listarProdutoIndex">PsyChomics</a>
 			<div class="dropdown">
 				<button class="dropbtn">
-					Usuario <i class="fa fa-caret-down"></i>
+					Usuário <i class="fa fa-caret-down"></i>
 				</button>
 				<ul class="dropdown-content">
-					<li><a href="exibirLoginUsuario">Login Usuario</a></li>
-					<li><a href="exibirCadastroUsuario">Cadastro Usuario</a></li>
-					<li><a href="listarUsuario">Listagem Usuario</a></li>
+					<li><a href="exibirLoginUsuario">Login Usuário</a></li>
+					<li><a href="exibirCadastroUsuario">Cadastro Usuário</a></li>
+					<li><a href="listarUsuario">Listagem Usuário</a></li>
 				</ul>
 			</div>
 			<div class="dropdown">
@@ -212,9 +212,9 @@ form.example::after {
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li><a href="exibirLoginUsuario">Login Usuario</a></li>
-				<li><a href="exibirCadastroUsuario">Cadastro Usuario</a></li>
-				<li><a href="listarUsuario">Listagem Usuario</a></li>
+				<li><a href="exibirLoginUsuario">Login de Usuário</a></li>
+				<li><a href="exibirCadastroUsuario">Cadastro Usuário</a></li>
+				<li><a href="listarUsuario">Listagem Usuário</a></li>
 				<li><a href="exibirCadastroProduto">Cadastro Produto</a></li>
 				<li><a href="listarProduto">Listagem Produto</a></li>
 			</ul>
@@ -228,8 +228,7 @@ form.example::after {
 			</button>
 		</form>
 
-		<!-- /.navbar-collapse -->
-	</div>
+</div>
 	<!-- /.container --> </nav>
 
 	<br>

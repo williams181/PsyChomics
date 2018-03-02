@@ -15,57 +15,59 @@
 </head>
 <body>
 
-	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
-		class="navbar-brand" href="exibirlistarProdutoIndex">PsyChomics</a>
-	<button class="navbar-toggler" type="button" data-toggle="collapse"
-		data-target="#navbarSupportedContent"
-		aria-controls="navbarSupportedContent" aria-expanded="false"
-		aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
+	<!-- Navigation -->
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="listarProdutoIndex">PsyChomics</a>
+			<div class="dropdown">
+				<button class="dropbtn">
+					Usuário <i class="fa fa-caret-down"></i>
+				</button>
+				<ul class="dropdown-content">
+					<li><a href="exibirLoginUsuario">Login Usuário</a></li>
+					<li><a href="exibirCadastroUsuario">Cadastro Usuário</a></li>
+					<li><a href="listarUsuario">Listagem Usuário</a></li>
+				</ul>
+			</div>
+			<div class="dropdown">
+				<button class="dropbtn">
+					Produto <i class="fa fa-caret-down"></i>
+				</button>
+				<ul class="dropdown-content">
+					<li><a href="exibirCadastroProduto">Cadastro Produto</a></li>
+					<li><a href="listarProduto">Listagem Produto</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse"
+			id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li><a href="exibirLoginUsuario">Login de Usuário</a></li>
+				<li><a href="exibirCadastroUsuario">Cadastro Usuário</a></li>
+				<li><a href="listarUsuario">Listagem Usuário</a></li>
+				<li><a href="exibirCadastroProduto">Cadastro Produto</a></li>
+				<li><a href="listarProduto">Listagem Produto</a></li>
+			</ul>
+		</div>
 
-	<div class="collapse navbar-collapse" id="navbarSupportedContent">
-		<ul class="navbar-nav mr-auto">
-			<li class="nav-item active"><a class="nav-link"
-				href="exibirlistarProdutoIndex">Home <span class="sr-only">(current)</span>
-			</a></li>
-			<li class="nav-item"><a class="nav-link" href="exibirQuemSomos">Quem
-					somos</a></li>
-			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false"> Produtos </a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="exibirCadastrarProduto">Cadastro
-						de produtos</a> <a class="dropdown-item" href="listarProduto">Lista
-						de Produtos</a>
-					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="exibirIncluirCategoriaProduto">Cadastro
-						de categorias</a> <a class="dropdown-item"
-						href="listarCategoriaProduto">Lista de categorias</a>
-				</div></li>
-			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false"> Usuarios </a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="exibirCadastrarUsuario">Cadastro
-						de Usuarios</a> <a class="dropdown-item" href="listarUsuario">Lista
-						de Usuarios</a>
-					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="#">Something else here</a>
-				</div></li>
-			<li class="nav-item"><a class="nav-link" href="exibirLoginUsuario">Login</a>
-			</li>
-		</ul>
-		<form class="form-inline my-2 my-lg-0" action="buscarProduto">
-			<input class="form-control mr-sm-2" type="text"
-				pplaceholder="Procurar.." id="inputNome" name="nome" for="inputNome"
-				aria-label="Search">
-			<button class="btn btn-outline-success my-2 my-sm-0" value="buscar"
-				type="submit">Search</button>
+		<form action="buscaProduto" class="example" method="post">
+			<input type="text" placeholder="Procurar.." for="inputNome"
+				id="inputNome" name="nome">
+			<button type="submit" value="buscar">
+				<i class="fa fa-search"></i>
+			</button>
 		</form>
-	</div>
+
+</div>
 
 
 	</nav>

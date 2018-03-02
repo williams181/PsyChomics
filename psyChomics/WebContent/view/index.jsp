@@ -14,7 +14,7 @@
 <title>Index</title>
 </head>
 <body>
-
+	<h1 class="fontsforweb_fontid_305"><img src="imagens\logo.png" width="9%">O Seu Site de Quadrinhos!</h1>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
 		class="navbar-brand" href="exibirlistarProdutoIndex">PsyChomics</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -37,25 +37,25 @@
 				aria-expanded="false"> Produtos </a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					<a class="dropdown-item" href="exibirCadastrarProduto">Cadastro
-						de produtos</a> <a class="dropdown-item" href="listarProduto">Lista
+						de Produtos</a> <a class="dropdown-item" href="listarProduto">Lista
 						de Produtos</a>
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="exibirIncluirCategoriaProduto">Cadastro
 						de categorias</a> <a class="dropdown-item"
 						href="listarCategoriaProduto">Lista de categorias</a>
 						<a class="dropdown-item"
-						href="exibirIncluirGeneroProduto">Cadastro de Genero</a>
+						href="exibirIncluirGeneroProduto">Cadastro de Gênero</a>
 						<a class="dropdown-item"
-						href="listarGeneroProduto">Lista de Genero</a>
+						href="listarGeneroProduto">Lista de Gênero</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false"> Usuarios </a>
+				aria-expanded="false"> Usuários </a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					<a class="dropdown-item" href="exibirCadastrarUsuario">Cadastro
-						de Usuarios</a> <a class="dropdown-item" href="listarUsuario">Lista
-						de Usuarios</a>
+						de Usuários</a> <a class="dropdown-item" href="listarUsuario">Lista
+						de Usuários</a>
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="#">Something else here</a>
 				</div></li>
@@ -97,7 +97,7 @@
 		</a> <a class="carousel-control-next" href="#carouselExampleIndicators"
 			role="button" data-slide="next"> <span
 			class="carousel-control-next-icon" aria-hidden="true"></span> <span
-			class="sr-only">Next</span>
+			class="sr-only">Próximot</span>
 		</a>
 	</div>
 
@@ -115,7 +115,7 @@
 						<h5 class="card-title">${p.nome}</h5>
 						<h6 class="card-title">${p.preco}</h6>
 						<p class="card-text">${p.descricao}</p>
-						<a href="exibirDescricaoProduto" class="btn btn-primary">detalhes</a>
+						<a href="exibirDescricaoProduto" class="btn btn-primary">Detalhes</a>
 					</div>
 				</div>
 			</div>
