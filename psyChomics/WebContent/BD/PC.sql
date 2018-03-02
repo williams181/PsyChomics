@@ -7,7 +7,8 @@ CREATE TABLE usuario (
 	senha VARCHAR (16),
 	nick VARCHAR (15),
 	nome_usuario VARCHAR (50),
-	cpf VARCHAR (11)
+	cpf VARCHAR (11),
+	notificacao VARCHAR (3)
 );
 
 CREATE TABLE genero_produto (

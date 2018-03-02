@@ -23,7 +23,7 @@ public class UsuarioDao {
 	}
 
 	public void cadastrar(Usuario usuario) {
-		String sql = "INSERT INTO usuario (email, senha, nick, nome_usuario, cpf) VALUES (?,?,?,?,?)";
+		String sql = "INSERT INTO usuario (email, senha, nick, nome_usuario, cpf, notificacao) VALUES (?,?,?,?,?,?)";
 		PreparedStatement stmt;
 		try {
 			stmt = connection.prepareStatement(sql);
@@ -32,6 +32,7 @@ public class UsuarioDao {
 			stmt.setString(3, usuario.getNick());
 			stmt.setString(4, usuario.getNomeUsuario());
 			stmt.setString(5, usuario.getCpf());
+			stmt.setString(6, usuario.getNotificacao());
 			stmt.execute();
 			stmt.close();
 			connection.close();
@@ -53,6 +54,7 @@ public class UsuarioDao {
 				usuario.setNick(rs.getString("nick"));
 				usuario.setNomeUsuario(rs.getString("nome_usuario"));
 				usuario.setCpf(rs.getString("cpf"));
+				usuario.setNotificacao(rs.getString("notificacao"));
 				listarUsuario.add(usuario);
 			}
 			stmt.execute();
@@ -89,6 +91,7 @@ public class UsuarioDao {
 				usuarioCompleto.setNick(rs.getString("nick"));
 				usuarioCompleto.setNomeUsuario(rs.getString("nome_usuario"));
 				usuarioCompleto.setCpf(rs.getString("cpf"));
+				usuarioCompleto.setNotificacao(rs.getString("notificacao"));
 			}
 			rs.close();
 			stmt.close();
@@ -102,8 +105,7 @@ public class UsuarioDao {
 	public List<Usuario> buscar(Usuario usua) {
 		try {
 			List<Usuario> buscarUsuario = new ArrayList<Usuario>();
-			PreparedStatement stmt = this.connection
-					.prepareStatement("SELECT * FROM usuario WHERE nome_usuario like ?");
+			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM usuario WHERE nome_usuario like ?");
 			stmt.setString(1, "%" + usua.getNomeUsuario() + "%");
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
@@ -114,6 +116,7 @@ public class UsuarioDao {
 				usuario.setNick(rs.getString("nick"));
 				usuario.setNomeUsuario(rs.getString("nome_usuario"));
 				usuario.setCpf(rs.getString("cpf"));
+				usuario.setNotificacao(rs.getString("notificacao"));
 				buscarUsuario.add(usuario);
 			}
 			rs.close();
@@ -135,7 +138,7 @@ public class UsuarioDao {
 		usuario.setNick(rs.getString("nick"));
 		usuario.setNomeUsuario(rs.getString("nome_usuario"));
 		usuario.setCpf(rs.getString("cpf"));
-
+		usuario.setNotificacao(rs.getString("notificacao"));
 		return usuario;
 	}
 
@@ -162,4 +165,5 @@ public class UsuarioDao {
 			throw new RuntimeException(e);
 		}
 	}
+	
 }

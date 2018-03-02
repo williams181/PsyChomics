@@ -50,6 +50,7 @@ public class UsuarioController {
 
 		UsuarioDao dao = new UsuarioDao();
 		dao.cadastrar(usuario);
+		
 		model.addAttribute("msg", "Usuario Incluido com Sucesso");
 		System.out.println("cadastro de Usuario");
 		return "usuario/cadastrarUsuario";
@@ -82,4 +83,11 @@ public class UsuarioController {
 		System.out.println("busca Usuario");
 		return "usuario/buscarUsuario";
 	}
+	
+	@RequestMapping("/exibirQuemSomos")
+	public String exibirQuemSomos() {
+		System.out.println("exibir quem somos");
+		return "psyChomics/quemSomos";
+	}
+	
 }

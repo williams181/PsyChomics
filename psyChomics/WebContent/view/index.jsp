@@ -56,14 +56,13 @@
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					<a class="dropdown-item" href="exibirCadastrarUsuario">Cadastro
 						de Usuarios</a> <a class="dropdown-item" href="listarUsuario">Lista
-						de Usuarios</a>
-					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="#">Something else here</a>
-				</div></li>
+						de Usuarios</a></li>
 			<li class="nav-item"><a class="nav-link"
 				href="exibirLoginUsuario">Login</a></li>
-				<li class="nav-item"><a class="nav-link"
-				href="logout">Logout</a></li>
+			<li class="nav-item"><a class="nav-link" href="logout">Logout</a></li>
+			<li class="nav-item"><a class="nav-link" href="logout">Bem
+					vindo, ${usuarioLogado.nomeUsuario}</a></li>
+
 		</ul>
 		<form class="form-inline my-2 my-lg-0" action="buscarProduto">
 			<input class="form-control mr-sm-2" type="text"
@@ -92,15 +91,15 @@
 				<img class="d-block w-100" src="view/imagens/bg2.png"
 					alt="Second slide">
 			</div>
-		
+
 			<div class="carousel-item">
 				<img class="d-block w-100" src="view/imagens/bg3.png"
 					alt="Second slide">
 			</div>
-		
-		
+
+
 		</div>
-		
+
 		<a class="carousel-control-prev" href="#carouselExampleIndicators"
 			role="button" data-slide="prev"> <span
 			class="carousel-control-prev-icon" aria-hidden="true"></span> <span
@@ -119,25 +118,25 @@
 	<div align="right" style="color: #6E6E6E; margin-right: 2%;">Bem
 		vindo, ${usuarioLogado.nomeUsuario}</div>
 
-<center>
-	<div class="row">
-		<c:forEach var="p" items="${listaProdutoIndex}">
-			<div class="col">
-				<div class="card" style="width: 18rem;">
-					<img class="card-img-top" src="view/img/${p.imagem}"
-						alt="Card image cap">
-					<div class="card-body">
-						<h5 class="card-title">${p.nome}</h5>
-						<h6 class="card-title">${p.preco}</h6>
-						<p class="card-text">${p.descricao}</p>
-						<a href="exibirDescricaoProduto?id=${p.id}"
-							class="btn btn-primary">detalhes</a>
+	<center>
+		<div class="row">
+			<c:forEach var="p" items="${listaProdutoIndex}">
+				<div class="col">
+					<div class="card" style="width: 18rem;">
+						<img class="card-img-top" src="view/img/${p.imagem}"
+							alt="Card image cap">
+						<div class="card-body">
+							<h5 class="card-title">${p.nome}</h5>
+							<h6 class="card-title">${p.preco}</h6>
+							<p class="card-text">${p.descricao}</p>
+							<a href="exibirDescricaoProduto?id=${p.id}"
+								class="btn btn-primary">detalhes</a>
+						</div>
 					</div>
 				</div>
-			</div>
-		</c:forEach>
-	</div>
-</center>
+			</c:forEach>
+		</div>
+	</center>
 	<div class="card">
 		<div class="card-header">Featured</div>
 		<div class="card-body">

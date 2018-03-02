@@ -111,10 +111,10 @@
 	</div>
 	<p>Bem vindo, ${usuarioLogado.email}</p>
 
-	<form action="cadastrarUsuario" method="post"
-		enctype="multipart/form-data">
-		<div class="form-row">
-			<div class="form-group">
+	<center>
+		<form action="cadastrarUsuario" method="post"
+			enctype="multipart/form-data">
+			<div class="form-group col-md-6">
 				<label for="inputEmail">&nbsp; Email</label> <input type="email"
 					class="form-control" id="exampleInputEmail1" name="email"
 					aria-describedby="emailHelp" placeholder="Enter email"> <small
@@ -133,19 +133,19 @@
 					class="form-control" maxlength="16" minlength="8"
 					required="required">
 			</div>
-		</div>
-		<div class="form-group">
-			<label for="inputNick">Nick</label> <input type="text" id="inputNick"
-				class="form-control" name="Nick" placeholder="Nick do Usuário"
-				maxlength="15" minlength="5" required="required">
-		</div>
-		<div class="form-group">
-			<label for="inputNomeUsuario">Nome do Usuário</label> <input
-				type="text" id="inputNomeUsuario" class="form-control"
-				name="NomeUsuario" placeholder="Nome do Usuário" maxlength="50"
-				minlength="10" required="required">
-		</div>
-		<div class="form-row">
+
+			<div class="form-group col-md-6">
+				<label for="inputNick">Nick</label> <input type="text"
+					id="inputNick" class="form-control" name="Nick"
+					placeholder="Nick do Usuário" maxlength="15" minlength="5"
+					required="required">
+			</div>
+			<div class="form-group col-md-6">
+				<label for="inputNomeUsuario">Nome do Usuário</label> <input
+					type="text" id="inputNomeUsuario" class="form-control"
+					name="NomeUsuario" placeholder="Nome do Usuário" maxlength="50"
+					minlength="10" required="required">
+			</div>
 			<div class="form-group col-md-6">
 				<label for="inputCpf">Cpf</label> <input type="text" id="inputCpf"
 					class="form-control cpf-mask" required="required" name="cpf"
@@ -153,9 +153,16 @@
 					placeholder="CPF:EX.: 000.000.000-00" maxlength="11"
 					required="required">
 			</div>
-		</div>
-		<button type="submit" class="btn btn-primary" value="cadastrar">Cadastrar</button>
-	</form>
+			<div class="form-group col-md-6">
+				<input type="checkbox" class="form-check-input" value="sim"
+					name="notificacao" for="notificacao" id="notificacao"> <label
+					class="form-check-label" value="sim" name="notificacao"
+					for="notificacao">Receber notificações</label>
+			</div>
+			<button type="submit" class="btn btn-primary" value="cadastrar">Cadastrar</button>
+		</form>
+
+	</center>
 
 	<div class="card">
 		<div class="card-header">Featured</div>

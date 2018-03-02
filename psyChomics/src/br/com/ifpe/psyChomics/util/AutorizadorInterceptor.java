@@ -13,9 +13,11 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 
 		String uri = request.getRequestURI();
 		if (uri.contains("bootstrap") || uri.contains("css") || uri.contains("imagens") || uri.contains("img")
-				|| uri.contains("js") || uri.endsWith("psyChomics/") || uri.endsWith("efetuarLogin")
-				|| uri.endsWith("cadastrarUsuario") || uri.endsWith("exibirCadastrarUsuario")
-				|| uri.endsWith("listarProdutoIndex") || uri.endsWith("exibirLoginUsuario")) {
+				|| uri.contains("fonts") || uri.contains("js") || uri.endsWith("/psyChomics")
+				|| uri.endsWith("psyChomics/") || uri.endsWith("efetuarLogin") || uri.endsWith("cadastrarUsuario")
+				|| uri.endsWith("exibirCadastrarUsuario") || uri.endsWith("listarProdutoIndex")
+				|| uri.endsWith("exibirLoginUsuario") || uri.endsWith("exibirDescricaoProduto")
+				|| uri.endsWith("exibirQuemSomos")) {
 
 			return true;
 		}

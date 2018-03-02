@@ -194,38 +194,13 @@ public class ProdutoDao {
 		}
 	}
 
-	public List<Produto> buscar(Produto p) {
+	public List<Produto> buscar(Produto prod) {
+
 		try {
-			List<Produto> listarProduto = new ArrayList<Produto>();
-			PreparedStatement stmt;
-			String sql;
-
-			if ((p.getDescricao() != null && !p.getDescricao().equals("")) && (p.getCategoriaProduto() == null)) {
-
-				sql = "SELECT * FROM produto WHERE descricao like ? ORDER BY descricao";
-				stmt = this.connection.prepareStatement(sql);
-				stmt.setString(1, "%" + p.getDescricao() + "%");
-
-			} else if ((p.getDescricao() == null || p.getDescricao().equals("")) && (p.getCategoriaProduto() != null)) {
-
-				sql = "SELECT * FROM produto WHERE categoria_id = ? ORDER BY descricao";
-				stmt = this.connection.prepareStatement(sql);
-				stmt.setInt(1, p.getCategoriaProduto().getId());
-
-			} else if ((p.getDescricao() != null && !p.getDescricao().equals(""))
-					&& (p.getCategoriaProduto() != null)) {
-
-				sql = "SELECT * FROM produto WHERE descricao like ? AND categoria_id = ? ORDER BY descricao";
-				stmt = this.connection.prepareStatement(sql);
-				stmt.setString(1, "%" + p.getDescricao() + "%");
-				stmt.setInt(2, p.getCategoriaProduto().getId());
-
-			} else {
-
-				sql = "SELECT * FROM produto ORDER BY descricao";
-				stmt = this.connection.prepareStatement(sql);
-			}
-
+			List<Produto> buscarProduto = new ArrayList<Produto>();
+			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM produto WHERE nome like ? and genero_id like ?");
+			stmt.setString(1, "%"+prod.getNome()+"%");
+			stmt.setString(2, "%"+prod.getGeneroProduto()+"%");//não retorna o produto filtrando com genero -_-
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {
@@ -254,12 +229,12 @@ public class ProdutoDao {
 				produto.setImagem(rs.getString("imagem"));
 				produto.setDescricao(rs.getString("descricao"));
 
-				listarProduto.add(produto);
+				buscarProduto.add(produto);
 			}
 			rs.close();
 			stmt.close();
 			connection.close();
-			return listarProduto;
+			return buscarProduto;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
@@ -268,7 +243,7 @@ public class ProdutoDao {
 	public List<Produto> listarIndex() {
 		try {
 			List<Produto> listarProdutoIndex = new ArrayList<Produto>();
-			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM produto ORDER BY nome");
+			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM produto ORDER BY nome limit 8");
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
 				Produto prouto = new Produto();

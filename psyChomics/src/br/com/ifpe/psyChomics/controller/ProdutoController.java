@@ -79,7 +79,7 @@ public class ProdutoController {
 		model.addAttribute("listarTipoProduto", listarTipoProduto);
 
 		System.out.println("lista de produto");
-		return "produto/buscarProduto";
+		return "produto/listarProduto";
 	}
 
 	@RequestMapping("removerProduto")

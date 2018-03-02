@@ -3,7 +3,7 @@
   <display-name>psyChomics</display-name>
   <welcome-file-list>
 
-    <welcome-file>view/psyChomics/index.jsp</welcome-file>
+    <welcome-file>view/index.jsp</welcome-file>
 
   </welcome-file-list>
   
