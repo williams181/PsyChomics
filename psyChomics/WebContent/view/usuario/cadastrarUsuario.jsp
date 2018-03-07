@@ -117,7 +117,7 @@
 			<div class="form-group col-md-6">
 				<label for="inputEmail">&nbsp; Email</label> <input type="email"
 					class="form-control" id="exampleInputEmail1" name="email"
-					aria-describedby="emailHelp" placeholder="Enter email"> <small
+					aria-describedby="emailHelp" maxlength="50" placeholder="Enter email"> <small
 					id="emailHelp" class="form-text text-muted">We'll never
 					share your email with anyone else.</small>
 			</div>

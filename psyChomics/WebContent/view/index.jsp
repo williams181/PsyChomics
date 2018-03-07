@@ -34,30 +34,10 @@
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false"> Produtos </a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="exibirCadastrarProduto">Cadastro
-						de produtos</a> <a class="dropdown-item" href="listarProduto">Lista
-						de Produtos</a>
-					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="exibirIncluirCategoriaProduto">Cadastro
-						de categorias</a> <a class="dropdown-item"
-						href="listarCategoriaProduto">Lista de categorias</a> <a
-						class="dropdown-item" href="exibirIncluirGeneroProduto">Cadastro
-						de Generos</a> <a class="dropdown-item" href="listarGeneroProduto">Lista
-						de Generos</a> <a class="dropdown-item"
-						href="exibirIncluirTipoProduto">Cadastro de Tipo</a> <a
-						class="dropdown-item" href="listarTipoProduto">Lista de Tipos</a>
-				</div></li>
-			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false"> Usuarios </a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="exibirCadastrarUsuario">Cadastro
-						de Usuarios</a> <a class="dropdown-item" href="listarUsuario">Lista
-						de Usuarios</a></li>
-			<li class="nav-item"><a class="nav-link"
+				aria-expanded="false"> Produtos </a> </li>
+
+			<li class="nav-item"><a class="nav-item"
+				href="exibirCadastrarUsuario">Cadastre-se</a><a class="nav-link"
 				href="exibirLoginUsuario">Login</a></li>
 			<li class="nav-item"><a class="nav-link" href="logout">Logout</a></li>
 			<li class="nav-item"><a class="nav-link" href="logout">Bem

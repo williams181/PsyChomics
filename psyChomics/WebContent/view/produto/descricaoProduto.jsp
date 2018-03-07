@@ -108,6 +108,8 @@
 	</div>
 
 	<input type="hidden" name="id" value="${produto.id}" />
+	<input type="hidden" name="id" value="${usuario.id}" />
+	<input type="hidden" name="id" value="${comentarioProduto.id}" />
 
 	<center>
 		<div class="card" style="width: 18rem;">
@@ -121,13 +123,40 @@
 				<li class="list-group-item">${produto.preco}</li>
 				<li class="list-group-item">${produto.generoProduto.descricao}</li>
 				<li class="list-group-item">${produto.categoriaProduto.descricao}</li>
-				<li class="list-group-item">${produto.tipoProduto.descricao}</li>
+
 			</ul>
 			<div class="card-body">
 				<a href="#" class="card-link">Comprar</a> <a href="#"
 					class="card-link">?</a>
 			</div>
 		</div>
+	</center>
+	<center>
+
+		<h1>Bem vindo, ${usuarioLogado.nomeUsuario}</h1>
+		<form action="CadastrarComentarioProduto" method="post"
+			enctype="multipart/form-data">
+			<div class="form-group">
+				<label for="inputComentario">Comentario</label> <input type="text"
+					id="inputComentario" class="form-control" name="comentario" />
+			</div>
+			<div class="form-group">
+				<label for="inputData">data</label> <input type="text"
+					id="inputData" class="form-control" name="data" />
+			</div>
+			<input type="hidden" name="id" value="${comentarioProduto.produto.id}" /> <input
+				type="hidden" name="id" value="${comentarioProduto.usuario.id}" /> 
+
+			<p>
+				<a href="exibirListarIndex" class="btn btn-danger" role="button">Cancelar</a>
+				&nbsp;
+				<button type="reset" class="btn btn-default">&nbsp; Limpar
+					&nbsp;</button>
+				&nbsp;
+				<button type="submit" value="cadastrar" class="btn btn-primary">&nbsp;
+					Cadastrar &nbsp;</button>
+			</p>
+		</form>
 	</center>
 
 	<div class="card">

@@ -55,7 +55,7 @@
   				
   				<div class="form-group" style="text-align: left;">
     				<label for="inputSenha">Senha</label>
-    				<input type="password" class="form-control" id="inputSenha" name="senha" value="${usuario.senha}" maxlength="20" required="required" tabindex="2">
+    				<input type="password" class="form-control" id="inputSenha" name="senha" value="${usuario.senha}" maxlength="16" required="required" tabindex="2">
   				</div>
   				
   				<br/>

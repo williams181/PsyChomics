@@ -29,10 +29,9 @@ public class TipoProdutoDao {
 
 	try {
 
-	    String sql = "INSERT INTO tipo_produto (codigo, descricao) VALUES (?,?)";
+	    String sql = "INSERT INTO tipo_produto (descricao) VALUES (?)";
 	    PreparedStatement stmt = connection.prepareStatement(sql);
-	    stmt.setString(1, tipoProduto.getCodigo());
-	    stmt.setString(2, tipoProduto.getDescricao());
+	    stmt.setString(1, tipoProduto.getDescricao());
 	    stmt.execute();
 	    stmt.close();
 	    connection.close();
@@ -102,14 +101,13 @@ public class TipoProdutoDao {
 
     public void alterar(TipoProduto tipoProduto) {
 
-	String sql = "UPDATE tipo_produto SET codigo = ? , descricao = ? WHERE id = ?";
+	String sql = "UPDATE tipo_produto SET descricao = ? WHERE id = ?";
 
 	try {
 
 	    PreparedStatement stmt = connection.prepareStatement(sql);
-	    stmt.setString(1, tipoProduto.getCodigo());
-	    stmt.setString(2, tipoProduto.getDescricao());
-	    stmt.setInt(3, tipoProduto.getId());
+	    stmt.setString(1, tipoProduto.getDescricao());
+	    stmt.setInt(2, tipoProduto.getId());
 	    stmt.execute();
 	    stmt.close();
 	    connection.close();
@@ -122,8 +120,6 @@ public class TipoProdutoDao {
     private TipoProduto montarObjeto(ResultSet rs) throws SQLException {
 
     	TipoProduto tipoProduto = new TipoProduto();
-    	tipoProduto.setId(rs.getInt("id"));
-    	tipoProduto.setCodigo(rs.getString("codigo"));
     	tipoProduto.setDescricao(rs.getString("descricao"));
 
 	return tipoProduto;

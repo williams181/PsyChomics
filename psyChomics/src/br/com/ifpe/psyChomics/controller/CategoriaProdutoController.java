@@ -24,12 +24,12 @@ public class CategoriaProdutoController {
 
 	CategoriaProdutoDao dao = new CategoriaProdutoDao();
 	dao.salvar(categoriaProduto);
-	model.addAttribute("msg", "A categoria " + categoriaProduto.getCodigo() + " foi Inserida com Sucesso !");
+	model.addAttribute("msg", "A categoria foi Inserida com Sucesso !");
 
 	return "forward:listarCategoriaProduto";
     }
 
-    @RequestMapping("/listarCategoriaProduto")
+    @RequestMapping("listarCategoriaProduto")
     public String listarCategoriaProduto(Model model) {
 
 	CategoriaProdutoDao dao = new CategoriaProdutoDao();
@@ -49,7 +49,7 @@ public class CategoriaProdutoController {
 	return "forward:listarCategoriaProduto";
     }
 
-    @RequestMapping("exibirAlterarCategoriaProduto")
+    @RequestMapping("/exibirAlterarCategoriaProduto")
     public String exibirAlterarCategoriaProduto(CategoriaProduto categoriaProduto, Model model) {
 
 	CategoriaProdutoDao dao = new CategoriaProdutoDao();

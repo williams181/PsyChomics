@@ -53,11 +53,11 @@
 			<form action="cadastrarProduto" method="post"
 				enctype="multipart/form-data">
 				<div class="form-group">
-					<label for="inputCodigo">Código</label> <input type="text"
-						class="form-control" id="inputCodigo" name="codigo"
-						style="width: 110px;" maxlength="5" required="required">
+					<label for="inputNacionalidade">nacionalidade</label> <input type="text"
+						id="inputNacionalidade" class="form-control" name="nacionalidade"
+						style="width: 500px;" placeholder="nacionalidade" minlength="3"
+						maxlength="60" />
 				</div>
-
 				<div class="form-group">
 					<label for="inputNome">Nome</label> <input type="text"
 						id="inputNome" class="form-control" name="nome"
@@ -87,8 +87,7 @@
 						style="width: 200px; height: 30px; border: 1px solid #BDC7D8; color: #000000; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;">
 						<option value="">Selecione</option>
 						<c:forEach items="${listarCategoriaProduto}" var="obj">
-							<option value="${obj.id}">${obj.codigo}-
-								${obj.descricao}</option>
+							<option value="${obj.id}">${obj.descricao}</option>
 						</c:forEach>
 					</select>
 				</div>
@@ -97,21 +96,11 @@
 						style="width: 200px; height: 30px; border: 1px solid #BDC7D8; color: #000000; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;">
 						<option value="">Selecione</option>
 						<c:forEach items="${listarGeneroProduto}" var="obj">
-							<option value="${obj.id}">${obj.codigo}-
-								${obj.descricao}</option>
+							<option value="${obj.id}">${obj.descricao}</option>
 						</c:forEach>
 					</select>
 				</div>
-				<div class="form-group">
-					Genero: <br /> <select id="tipoProduto" name="tipoProduto"
-						style="width: 200px; height: 30px; border: 1px solid #BDC7D8; color: #000000; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;">
-						<option value="">Selecione</option>
-						<c:forEach items="${listarTipoProduto}" var="obj">
-							<option value="${obj.id}">${obj.codigo}-
-								${obj.descricao}</option>
-						</c:forEach>
-					</select>
-				</div>
+
 				<p>
 					<a href="exibirListarIndex" class="btn btn-danger" role="button">Cancelar</a>
 					&nbsp;

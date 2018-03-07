@@ -23,23 +23,21 @@ public class ProdutoController {
 
 	@RequestMapping("/exibirCadastrarProduto")
 	public String exibirCadastrarProduto(Model model) {
-		// Código para popular o combo de categoria de produto
+		// Cria codigo para popular o combo de categoria de produto
 		CategoriaProdutoDao dao = new CategoriaProdutoDao();
 		List<CategoriaProduto> listarCategoriaProduto = dao.listar();
 
-		// Código para popular o combo de genero de produto
+		// Cria codigo para popular o combo de genero de produto
 		GeneroProdutoDao dao2 = new GeneroProdutoDao();
 		List<GeneroProduto> listarGeneroProduto = dao2.listar();
 
-		// Código para popular o combo de tipo de produto
+		// Cria codigo para popular o combo de tipo de produto
 		TipoProdutoDao dao3 = new TipoProdutoDao();
 		List<TipoProduto> listarTipoProduto = dao3.listar();
 
 		model.addAttribute("listarCategoriaProduto", listarCategoriaProduto);
 		model.addAttribute("listarGeneroProduto", listarGeneroProduto);
 		model.addAttribute("listarTipoProduto", listarTipoProduto);
-
-		System.out.println("Exibindo cadastrar Produto");
 		return "produto/cadastrarProduto";
 	}
 
@@ -48,37 +46,33 @@ public class ProdutoController {
 		if (Util.fazerUploadImagem(imagem)) {
 			produto.setImagem(Util.obterMomentoAtual() + " - " + imagem.getOriginalFilename());
 		}
-
 		ProdutoDao dao = new ProdutoDao();
 		dao.cadastrar(produto);
 		model.addAttribute("msg", "Produto Incluido com Sucesso");
-		System.out.println("cadastro de produto");
 		return "forward:listarProduto";
 	}
 
-	@RequestMapping("/listarProduto")
+	@RequestMapping("listarProduto")
 	public String listarProduto(Model model) {
 		ProdutoDao dao = new ProdutoDao();
 		List<Produto> listarProduto = dao.listar();
 		model.addAttribute("listarProduto", listarProduto);
 
-		// Código para popular o combo de categoria de produto
+		// Cria codigo para popular o combo de categoria de produto
 		CategoriaProdutoDao dao2 = new CategoriaProdutoDao();
 		List<CategoriaProduto> listarCategoriaProduto = dao2.listar();
 
-		// Código para popular o combo de genero de produto
+		// Cria codigo para popular o combo de genero de produto
 		GeneroProdutoDao dao3 = new GeneroProdutoDao();
 		List<GeneroProduto> listarGeneroProduto = dao3.listar();
 
-		// Código para popular o combo de tipo de produto
+		// Cria codigo para popular o combo de tipo de produto
 		TipoProdutoDao dao4 = new TipoProdutoDao();
 		List<TipoProduto> listarTipoProduto = dao4.listar();
 
 		model.addAttribute("listarCategoriaProduto", listarCategoriaProduto);
 		model.addAttribute("listarGeneroProduto", listarGeneroProduto);
 		model.addAttribute("listarTipoProduto", listarTipoProduto);
-
-		System.out.println("lista de produto");
 		return "produto/listarProduto";
 	}
 
@@ -87,7 +81,6 @@ public class ProdutoController {
 		ProdutoDao dao = new ProdutoDao();
 		dao.remover(produto);
 		model.addAttribute("msg", "Produto removido com sucesso!");
-		System.out.println("remover produto");
 		return "forward:listarProduto";
 	}
 
@@ -97,13 +90,6 @@ public class ProdutoController {
 		ProdutoDao dao = new ProdutoDao();
 		Produto produtoCompleto = dao.buscarPorId(produto.getId());
 		model.addAttribute("produto", produtoCompleto);
-
-		// Código para popular o combo de categoria de produto
-		CategoriaProdutoDao dao2 = new CategoriaProdutoDao();
-		List<CategoriaProduto> listarCategoriaProduto = dao2.listar();
-		model.addAttribute("listarCategoriaProduto", listarCategoriaProduto);
-
-		System.out.println("Exibindo alterar produto");
 		return "produto/alterarProduto";
 	}
 
@@ -113,43 +99,39 @@ public class ProdutoController {
 		ProdutoDao dao = new ProdutoDao();
 		dao.alterar(produto);
 		model.addAttribute("msg", "Produto Alterado com Sucesso!");
-		System.out.println("alterar produto");
 		return "forward:listarProduto";
 	}
 
-	@RequestMapping("/buscarProduto")
+	@RequestMapping("buscarProduto")
 	public String buscarProduto(Produto produto, Model model) {
 		ProdutoDao dao = new ProdutoDao();
 		List<Produto> buscarProduto = dao.buscar(produto);
 		model.addAttribute("buscarProduto", buscarProduto);
 
-		// Código para popular o combo de categoria de produto
+		// Cria codigo para popular o combo de categoria de produto
 		CategoriaProdutoDao dao2 = new CategoriaProdutoDao();
 		List<CategoriaProduto> listarCategoriaProduto = dao2.listar();
 
-		// Código para popular o combo de genero de produto
+		// Cria codigo para popular o combo de genero de produto
 		GeneroProdutoDao dao3 = new GeneroProdutoDao();
 		List<GeneroProduto> listarGeneroProduto = dao3.listar();
 
-		// Código para popular o combo de tipo de produto
+		// Cria codigo para popular o combo de tipo de produto
 		TipoProdutoDao dao4 = new TipoProdutoDao();
 		List<TipoProduto> listarTipoProduto = dao4.listar();
 
 		model.addAttribute("listarCategoriaProduto", listarCategoriaProduto);
 		model.addAttribute("listarGeneroProduto", listarGeneroProduto);
 		model.addAttribute("listarTipoProduto", listarTipoProduto);
-
-		System.out.println("busca produto");
 		return "produto/buscarProduto";
 
 	}
 
-	@RequestMapping("/listarProdutoIndex")
+	@RequestMapping("listarProdutoIndex")
 	public String listarProdutoIndex(Model model) {
 		ProdutoDao dao = new ProdutoDao();
 		List<Produto> listaProdutoIndex = dao.listarIndex();
 		model.addAttribute("listaProdutoIndex", listaProdutoIndex);
-		System.out.println("listagem de produto no index.");
 		return "index";
 	}
 
@@ -160,23 +142,19 @@ public class ProdutoController {
 		Produto produtoCompleto = dao.buscarPorId(produto.getId());
 		model.addAttribute("produto", produtoCompleto);
 
-		// Código para popular o combo de categoria de produto
+		// Cria codigo para popular o combo de categoria de produto
 		CategoriaProdutoDao dao2 = new CategoriaProdutoDao();
 		List<CategoriaProduto> listarCategoriaProduto = dao2.listar();
 
-		// Código para popular o combo de genero de produto
+		// Cria codigo para popular o combo de genero de produto
 		GeneroProdutoDao dao3 = new GeneroProdutoDao();
 		List<GeneroProduto> listarGeneroProduto = dao3.listar();
 
-		// Código para popular o combo de tipo de produto
-		TipoProdutoDao dao4 = new TipoProdutoDao();
-		List<TipoProduto> listarTipoProduto = dao4.listar();
+
 
 		model.addAttribute("listarCategoriaProduto", listarCategoriaProduto);
 		model.addAttribute("listarGeneroProduto", listarGeneroProduto);
-		model.addAttribute("listarTipoProduto", listarTipoProduto);
 
-		System.out.println("exibir listagem de descricao do produto");
 		return "produto/descricaoProduto";
 	}
 

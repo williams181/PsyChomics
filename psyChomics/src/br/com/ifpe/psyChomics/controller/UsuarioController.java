@@ -14,9 +14,8 @@ import br.com.ifpe.psyChomics.model.Usuario;
 @Controller
 public class UsuarioController {
 
-	@RequestMapping("exibirLoginUsuario")
+	@RequestMapping("/exibirLoginUsuario")
 	public String exibirLoginUsuario() {
-		System.out.println("Exibindo login do Usuario");
 		return "usuario/loginUsuario";
 	}
 
@@ -26,7 +25,7 @@ public class UsuarioController {
 	Usuario usuarioLogado = dao.buscarUsuario(usuario);
 	if (usuarioLogado != null) {
 	 session.setAttribute("usuarioLogado", usuarioLogado);
-	 return "index";
+	 return "psyChomics/quemSomos";
 	}
 	model.addAttribute("msg", "Não foi encontrado um usuário com o login e senha informados.");
 	 return "usuario/loginUsuario";
@@ -34,34 +33,28 @@ public class UsuarioController {
 	
     @RequestMapping("logout")
     public String logout(HttpSession session) {
-
     	session.invalidate();
-    	return "index";
+    	return "psyChomics/quemSomos";
     }
 
-	@RequestMapping("exibirCadastrarUsuario")
+	@RequestMapping("/exibirCadastrarUsuario")
 	public String exibirCadastrarUsuario() {
-		System.out.println("Exibindo cadastar Usuario");
 		return "usuario/cadastrarUsuario";
 	}
 
 	@RequestMapping("cadastrarUsuario")
 	public String cadastrarUsuario(Usuario usuario, Model model) {
-
 		UsuarioDao dao = new UsuarioDao();
 		dao.cadastrar(usuario);
-		
 		model.addAttribute("msg", "Usuario Incluido com Sucesso");
-		System.out.println("cadastro de Usuario");
-		return "usuario/cadastrarUsuario";
+		return "psyChomics/quemSomos";
 	}
 
-	@RequestMapping("/listarUsuario")
+	@RequestMapping("listarUsuario")
 	public String listarUsuario(Model model) {
 		UsuarioDao dao = new UsuarioDao();
 		List<Usuario> listarUsuario = dao.listar();
 		model.addAttribute("listarUsuario", listarUsuario);
-		System.out.println("lista de usuario");
 		return "usuario/listarUsuario";
 	}
 
@@ -74,19 +67,16 @@ public class UsuarioController {
 		return "forward:listarUsuario";
 	}
 
-	@RequestMapping("/buscarUsuario")
+	@RequestMapping("buscarUsuario")
 	public String buscarUsuario(Usuario usuario, Model model) {
 		UsuarioDao dao = new UsuarioDao();
 		List<Usuario> listarUsuario = dao.buscar(usuario);
 		model.addAttribute("listarUsuario", listarUsuario);
-
-		System.out.println("busca Usuario");
 		return "usuario/buscarUsuario";
 	}
 	
 	@RequestMapping("/exibirQuemSomos")
 	public String exibirQuemSomos() {
-		System.out.println("exibir quem somos");
 		return "psyChomics/quemSomos";
 	}
 	

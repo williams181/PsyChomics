@@ -48,14 +48,12 @@
 			<table class="table table-striped table-bordered">
 				<thead>
 					<tr>
-						<th style="width: 10%; vertical-align: middle; text-align: center;">Código</th>
 						<th style="width: 70%; vertical-align: middle;">Descrição</th>
 						<th style="width: 20%; vertical-align: middle; text-align: center;">Ações</th>
 					</tr>
 				</thead>
 				<c:forEach items="${listarCategoriaProduto}" var="c">
 					<tr>
-						<td style="vertical-align: middle; text-align: center;">${c.codigo}</td>
 						<td style="vertical-align: middle;">${c.descricao}</td>
 						<td style="vertical-align: middle; text-align: center;">
 							<a href="exibirAlterarCategoriaProduto?id=${c.id}" class="btn btn-warning" role="button">E</a> &nbsp;

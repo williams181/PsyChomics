@@ -3,7 +3,6 @@ package br.com.ifpe.psyChomics.model;
 public class CategoriaProduto {
 
     private int id;
-    private String codigo;
     private String descricao;
 
     public int getId() {
@@ -12,14 +11,6 @@ public class CategoriaProduto {
 
     public void setId(int id) {
 	this.id = id;
-    }
-
-    public String getCodigo() {
-	return codigo;
-    }
-
-    public void setCodigo(String codigo) {
-	this.codigo = codigo;
     }
 
     public String getDescricao() {

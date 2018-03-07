@@ -23,12 +23,12 @@ public class GeneroProdutoController {
 
 		GeneroProdutoDao dao = new GeneroProdutoDao();
 		dao.salvar(generoProduto);
-		model.addAttribute("msg", "O Genero " + generoProduto.getCodigo() + " foi Inserido com Sucesso !");
+		model.addAttribute("msg", "O Genero foi Inserido com Sucesso !");
 
 		return "forward:listarGeneroProduto";
 	}
 
-	@RequestMapping("/listarGeneroProduto")
+	@RequestMapping("listarGeneroProduto")
 	public String listarGeneroProduto(Model model) {
 
 		GeneroProdutoDao dao = new GeneroProdutoDao();
@@ -48,7 +48,7 @@ public class GeneroProdutoController {
 		return "forward:listarCategoriaProduto";
 	}
 
-	@RequestMapping("exibirAlterarGeneroProduto")
+	@RequestMapping("/exibirAlterarGeneroProduto")
 	public String exibirAlterarGeneroProduto(GeneroProduto generoProduto, Model model) {
 
 		GeneroProdutoDao dao = new GeneroProdutoDao();

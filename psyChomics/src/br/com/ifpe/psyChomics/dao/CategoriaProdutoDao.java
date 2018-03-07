@@ -29,10 +29,9 @@ public class CategoriaProdutoDao {
 
 	try {
 
-	    String sql = "INSERT INTO categoria_produto (codigo, descricao) VALUES (?,?)";
+	    String sql = "INSERT INTO categoria_produto (descricao) VALUES (?)";
 	    PreparedStatement stmt = connection.prepareStatement(sql);
-	    stmt.setString(1, categoriaProduto.getCodigo());
-	    stmt.setString(2, categoriaProduto.getDescricao());
+	    stmt.setString(1, categoriaProduto.getDescricao());
 	    stmt.execute();
 	    stmt.close();
 	    connection.close();
@@ -102,14 +101,13 @@ public class CategoriaProdutoDao {
 
     public void alterar(CategoriaProduto categoriaProduto) {
 
-	String sql = "UPDATE categoria_produto SET codigo = ? , descricao = ? WHERE id = ?";
+	String sql = "UPDATE categoria_produto SET descricao = ? WHERE id = ?";
 
 	try {
 
 	    PreparedStatement stmt = connection.prepareStatement(sql);
-	    stmt.setString(1, categoriaProduto.getCodigo());
-	    stmt.setString(2, categoriaProduto.getDescricao());
-	    stmt.setInt(3, categoriaProduto.getId());
+	    stmt.setString(1, categoriaProduto.getDescricao());
+	    stmt.setInt(2, categoriaProduto.getId());
 	    stmt.execute();
 	    stmt.close();
 	    connection.close();
@@ -123,7 +121,6 @@ public class CategoriaProdutoDao {
 
 	CategoriaProduto categoriaProduto = new CategoriaProduto();
 	categoriaProduto.setId(rs.getInt("id"));
-	categoriaProduto.setCodigo(rs.getString("codigo"));
 	categoriaProduto.setDescricao(rs.getString("descricao"));
 
 	return categoriaProduto;

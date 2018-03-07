@@ -77,8 +77,7 @@
 					<tr>
 						<th style="width: 20%; vertical-align: middle;">Categoria</th>
 						<th style="width: 20%; vertical-align: middle;">Genero</th>
-						<th style="width: 20%; vertical-align: middle;">Tipo</th>
-						<th style="width: 20%; vertical-align: middle;">Codigo</th>
+
 						<th style="width: 20%; vertical-align: middle;">Nome</th>
 						<th style="width: 20%; vertical-align: middle;">Preço</th>
 						<th style="width: 20%; vertical-align: middle;">Ações</th>
@@ -88,8 +87,7 @@
 					<tr>
 						<td style="vertical-align: middle;">${c.categoriaProduto.descricao}</td>
 						<td style="vertical-align: middle;">${c.generoProduto.descricao}</td>
-						<td style="vertical-align: middle;">${c.tipoProduto.descricao}</td>
-						<td style="vertical-align: middle;">${c.codigo}</td>
+
 						<td style="vertical-align: middle;">${c.nome}</td>
 						<td style="vertical-align: middle;">${c.preco}</td>
 						<td style="vertical-align: middle;"><a

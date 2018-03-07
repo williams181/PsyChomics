@@ -23,12 +23,12 @@ public class TipoProdutoController {
 
 		TipoProdutoDao dao = new TipoProdutoDao();
 		dao.salvar(tipoProduto);
-		model.addAttribute("msg", "O tipo " + tipoProduto.getCodigo() + " foi Inserido com Sucesso !");
+		model.addAttribute("msg", "O tipo foi Inserido com Sucesso !");
 
 		return "forward:listarTipoProduto";
 	}
 
-	@RequestMapping("/listarTipoProduto")
+	@RequestMapping("listarTipoProduto")
 	public String listarTipoProduto(Model model) {
 
 		TipoProdutoDao dao = new TipoProdutoDao();
@@ -48,7 +48,7 @@ public class TipoProdutoController {
 		return "forward:listarTipoProduto";
 	}
 
-	@RequestMapping("exibirAlterarTipoProduto")
+	@RequestMapping("/exibirAlterarTipoProduto")
 	public String exibirAlterarTipoProduto(TipoProduto tipoProduto, Model model) {
 
 		TipoProdutoDao dao = new TipoProdutoDao();

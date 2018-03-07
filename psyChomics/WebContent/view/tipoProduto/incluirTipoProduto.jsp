@@ -48,12 +48,6 @@
 			
 			<form action="incluirTipoProduto" method="post">
 				
-				<div class="form-group">
-    				<label for="inputCodigo">Código</label>
-    				<input type="text" class="form-control" id="inputCodigo" name="codigo" style="width: 110px;" maxlength="5" required="required" value="${categoriaProduto.codigo}"> &nbsp;
-    				<form:errors path="categoriaProduto.codigo" cssStyle="color:red" /> <br />
-  				</div>
-  				
   				<div class="form-group">
 					<label for="inputDescricao">Descrição</label>
 					<input type="text" id="inputDescricao" class="form-control" name="descricao" style="width: 500px;" maxlength="100" required="required" value="${categoriaProduto.descricao}" /> &nbsp;

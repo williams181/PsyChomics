@@ -10,7 +10,7 @@ import java.util.List;
 import br.com.ifpe.psyChomics.model.CategoriaProduto;
 import br.com.ifpe.psyChomics.model.GeneroProduto;
 import br.com.ifpe.psyChomics.model.Produto;
-import br.com.ifpe.psyChomics.model.TipoProduto;
+
 import br.com.ifpe.psyChomics.util.ConnectionFactory;
 
 public class ProdutoDao {
@@ -26,18 +26,17 @@ public class ProdutoDao {
 	}
 
 	public void cadastrar(Produto produto) {
-		String sql = "INSERT INTO produto (codigo, nome, preco, imagem, descricao, categoria_id, genero_id, tipo_id) VALUES (?,?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO produto (nome, preco, imagem, descricao, nacionalidade, categoria_id, genero_id) VALUES (?,?,?,?,?,?,?)";
 		PreparedStatement stmt;
 		try {
 			stmt = connection.prepareStatement(sql);
-			stmt.setString(1, produto.getCodigo());
-			stmt.setString(2, produto.getNome());
-			stmt.setDouble(3, produto.getPreco());
-			stmt.setString(4, produto.getImagem());
-			stmt.setString(5, produto.getDescricao());
+			stmt.setString(1, produto.getNome());
+			stmt.setDouble(2, produto.getPreco());
+			stmt.setString(3, produto.getImagem());
+			stmt.setString(4, produto.getDescricao());
+			stmt.setString(5, produto.getNacionalidade());
 			stmt.setInt(6, produto.getCategoriaProduto().getId());
 			stmt.setInt(7, produto.getGeneroProduto().getId());
-			stmt.setInt(8, produto.getTipoProduto().getId());
 			stmt.execute();
 			stmt.close();
 			connection.close();
@@ -54,7 +53,6 @@ public class ProdutoDao {
 			while (rs.next()) {
 				Produto produto = new Produto();
 				produto.setId(rs.getInt("id"));
-				produto.setCodigo(rs.getString("codigo"));
 
 				int idCategoria = rs.getInt("categoria_id");
 				CategoriaProdutoDao dao = new CategoriaProdutoDao();
@@ -66,15 +64,13 @@ public class ProdutoDao {
 				GeneroProduto cp2 = dao2.buscarPorId(idGenero);
 				produto.setGeneroProduto(cp2);
 
-				int idTipo = rs.getInt("tipo_id");
-				TipoProdutoDao dao3 = new TipoProdutoDao();
-				TipoProduto cp3 = dao3.buscarPorId(idTipo);
-				produto.setTipoProduto(cp3);
+
 
 				produto.setNome(rs.getString("nome"));
 				produto.setPreco(rs.getDouble("preco"));
 				produto.setImagem(rs.getString("imagem"));
 				produto.setDescricao(rs.getString("descricao"));
+				produto.setNacionalidade(rs.getString("nacionalidade"));
 				listarProduto.add(produto);
 			}
 			stmt.execute();
@@ -106,7 +102,6 @@ public class ProdutoDao {
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
 				produtoCompleto.setId(rs.getInt("id"));
-				produtoCompleto.setCodigo(rs.getString("codigo"));
 
 				int idCategoria = rs.getInt("categoria_id");
 				CategoriaProdutoDao dao = new CategoriaProdutoDao();
@@ -118,15 +113,12 @@ public class ProdutoDao {
 				GeneroProduto cp2 = dao2.buscarPorId(idGenero);
 				produtoCompleto.setGeneroProduto(cp2);
 
-				int idTipo = rs.getInt("tipo_id");
-				TipoProdutoDao dao3 = new TipoProdutoDao();
-				TipoProduto cp3 = dao3.buscarPorId(idTipo);
-				produtoCompleto.setTipoProduto(cp3);
-
+	
 				produtoCompleto.setNome(rs.getString("nome"));
 				produtoCompleto.setPreco(rs.getDouble("preco"));
 				produtoCompleto.setImagem(rs.getString("imagem"));
 				produtoCompleto.setDescricao(rs.getString("descricao"));
+				produtoCompleto.setNacionalidade(rs.getString("nacionalidade"));
 			}
 			rs.close();
 			stmt.close();
@@ -145,7 +137,6 @@ public class ProdutoDao {
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
 				produtoCompleto.setId(rs.getInt("id"));
-				produtoCompleto.setCodigo(rs.getString("codigo"));
 
 				int idCategoria = rs.getInt("categoria_id");
 				CategoriaProdutoDao dao = new CategoriaProdutoDao();
@@ -157,16 +148,12 @@ public class ProdutoDao {
 				GeneroProduto cp2 = dao2.buscarPorId(idGenero);
 				produtoCompleto.setGeneroProduto(cp2);
 
-				int idTipo = rs.getInt("tipo_id");
-				TipoProdutoDao dao3 = new TipoProdutoDao();
-				TipoProduto cp3 = dao3.buscarPorId(idTipo);
-				produtoCompleto.setTipoProduto(cp3);
-
 				produtoCompleto.setNome(rs.getString("nome"));
 				produtoCompleto.setPreco(rs.getDouble("preco"));
-				;
 				produtoCompleto.setImagem(rs.getString("imagem"));
 				produtoCompleto.setDescricao(rs.getString("descricao"));
+				produtoCompleto.setNacionalidade(rs.getString("nacionalidade"));
+
 			}
 			rs.close();
 			stmt.close();
@@ -178,15 +165,14 @@ public class ProdutoDao {
 	}
 
 	public void alterar(Produto produto) {
-		String sql = "UPDATE produto SET codigo = ?, nome = ?, preco = ?, descricao = ? WHERE id = ?";
+		String sql = "UPDATE produto SET nome = ?, preco = ?, descricao = ? WHERE id = ?";
 		PreparedStatement stmt;
 		try {
 			stmt = connection.prepareStatement(sql);
-			stmt.setString(1, produto.getCodigo());
-			stmt.setString(2, produto.getNome());
-			stmt.setDouble(3, produto.getPreco());
-			stmt.setString(4, produto.getDescricao());
-			stmt.setInt(5, produto.getId());
+			stmt.setString(1, produto.getNome());
+			stmt.setDouble(2, produto.getPreco());
+			stmt.setString(3, produto.getDescricao());
+			stmt.setInt(4, produto.getId());
 			stmt.execute();
 			connection.close();
 		} catch (SQLException e) {
@@ -198,16 +184,16 @@ public class ProdutoDao {
 
 		try {
 			List<Produto> buscarProduto = new ArrayList<Produto>();
-			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM produto WHERE nome like ? and genero_id like ?");
-			stmt.setString(1, "%"+prod.getNome()+"%");
-			stmt.setString(2, "%"+prod.getGeneroProduto()+"%");//não retorna o produto filtrando com genero -_-
+			PreparedStatement stmt = this.connection
+					.prepareStatement("SELECT * FROM produto WHERE nome like ? or genero_id like ?");
+			stmt.setString(1, "%" + prod.getNome() + "%");
+			stmt.setString(2, "%" + prod.getGeneroProduto() + "%");
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {
 
 				Produto produto = new Produto();
 				produto.setId(rs.getInt("id"));
-				produto.setCodigo(rs.getString("codigo"));
 
 				int idCategoria = rs.getInt("categoria_id");
 				CategoriaProdutoDao dao = new CategoriaProdutoDao();
@@ -219,10 +205,7 @@ public class ProdutoDao {
 				GeneroProduto cp2 = dao2.buscarPorId(idGenero);
 				produto.setGeneroProduto(cp2);
 
-				int idTipo = rs.getInt("tipo_id");
-				TipoProdutoDao dao3 = new TipoProdutoDao();
-				TipoProduto cp3 = dao3.buscarPorId(idTipo);
-				produto.setTipoProduto(cp3);
+		
 
 				produto.setNome(rs.getString("nome"));
 				produto.setPreco(rs.getDouble("preco"));
@@ -246,14 +229,14 @@ public class ProdutoDao {
 			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM produto ORDER BY nome limit 8");
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
-				Produto prouto = new Produto();
-				prouto.setCodigo(rs.getString("codigo"));
-				prouto.setId(rs.getInt("id"));
-				prouto.setNome(rs.getString("nome"));
-				prouto.setPreco(rs.getDouble("preco"));
-				prouto.setImagem(rs.getString("imagem"));
-				prouto.setDescricao(rs.getString("descricao"));
-				listarProdutoIndex.add(prouto);
+				Produto produto = new Produto();
+				produto.setId(rs.getInt("id"));
+				produto.setNome(rs.getString("nome"));
+				produto.setPreco(rs.getDouble("preco"));
+				produto.setImagem(rs.getString("imagem"));
+				produto.setDescricao(rs.getString("descricao"));
+				produto.setNacionalidade(rs.getString("nacionalidade"));
+				listarProdutoIndex.add(produto);
 			}
 			stmt.execute();
 			connection.close();
@@ -271,7 +254,6 @@ public class ProdutoDao {
 			while (rs.next()) {
 				Produto produto = new Produto();
 				produto.setId(rs.getInt("id"));
-				produto.setCodigo(rs.getString("codigo"));
 
 				int idCategoria = rs.getInt("categoria_id");
 				CategoriaProdutoDao dao = new CategoriaProdutoDao();
@@ -283,15 +265,12 @@ public class ProdutoDao {
 				GeneroProduto cp2 = dao2.buscarPorId(idGenero);
 				produto.setGeneroProduto(cp2);
 
-				int idTipo = rs.getInt("tipo_id");
-				TipoProdutoDao dao3 = new TipoProdutoDao();
-				TipoProduto cp3 = dao3.buscarPorId(idTipo);
-				produto.setTipoProduto(cp3);
 
 				produto.setNome(rs.getString("nome"));
 				produto.setPreco(rs.getDouble("preco"));
 				produto.setImagem(rs.getString("imagem"));
 				produto.setDescricao(rs.getString("descricao"));
+				produto.setNacionalidade(rs.getString("nacionalidade"));
 				listarDescricaoProduto.add(produto);
 			}
 			stmt.execute();

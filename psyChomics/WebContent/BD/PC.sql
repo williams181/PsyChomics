@@ -8,24 +8,22 @@ CREATE TABLE usuario (
 	nick VARCHAR (15),
 	nome_usuario VARCHAR (50),
 	cpf VARCHAR (11),
-	notificacao VARCHAR (3)
+	notificacao VARCHAR (3),
+	tipo_usuario VARCHAR(5)
 );
 
 CREATE TABLE genero_produto (
 	id INT (6) AUTO_INCREMENT PRIMARY KEY,
-	codigo VARCHAR (5),
 	descricao VARCHAR (30)
 );
 
 CREATE TABLE tipo_produto (
 	id INT(6) AUTO_INCREMENT PRIMARY KEY,
-	codigo VARCHAR (5),
 	descricao VARCHAR (30)
 );
 
 CREATE TABLE categoria_produto (
 	id INT(6) AUTO_INCREMENT PRIMARY KEY,
-	codigo VARCHAR (5),
 	descricao VARCHAR (30)
 );
 
@@ -34,11 +32,11 @@ CREATE TABLE produto (
 	categoria_id INT,
 	genero_id INT,
 	tipo_id INT,
-	codigo VARCHAR (5),
 	nome VARCHAR (50),
 	preco DECIMAL (10,2),
 	imagem VARCHAR (255),
 	descricao VARCHAR (255),
+	nacionalidade VARCHAR (20),
 	FOREIGN KEY (categoria_id) REFERENCES categoria_produto(id),
 	FOREIGN KEY (genero_id) REFERENCES genero_produto(id),
 	FOREIGN KEY (tipo_id) REFERENCES tipo_produto(id)
@@ -46,12 +44,12 @@ CREATE TABLE produto (
 
 CREATE TABLE comentario_produto (
 	id INT(6) AUTO_INCREMENT PRIMARY KEY,
-	idusuario INT (6),
-	idproduto INT (6),
+	usuario_id INT (6),
+	produto_id INT (6),
 	data date,
-	comentario VARCHAR(255),
-	FOREIGN KEY (idproduto) REFERENCES produto(id),	
-	FOREIGN KEY (idusuario) REFERENCES usuario(id)	
+	comentario TEXT,
+	FOREIGN KEY (produto_id) REFERENCES produto(id),	
+	FOREIGN KEY (usuario_id) REFERENCES usuario(id)	
 );
 
 CREATE TABLE carrinho (
@@ -73,7 +71,7 @@ CREATE TABLE item (
 CREATE TABLE pedido (
 	id INT(6) AUTO_INCREMENT PRIMARY KEY,
 	idusuario INT(6),
-	descricao VARCHAR(255),
+	mensagem TEXT,
 	FOREIGN KEY (idusuario) REFERENCES usuario(id)
 );
 
@@ -81,7 +79,7 @@ CREATE TABLE fale_conosco (
 	id INT(6) AUTO_INCREMENT PRIMARY KEY,
 	nome_usuario INT(6),
 	email VARCHAR(50),
-	mensagen VARCHAR(255)
+	mensagem TEXT
 );
 
 

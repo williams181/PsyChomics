@@ -27,10 +27,9 @@ public class GeneroProdutoDao {
 
 		try {
 
-			String sql = "INSERT INTO genero_produto (codigo, descricao) VALUES (?,?)";
+			String sql = "INSERT INTO genero_produto (descricao) VALUES (?)";
 			PreparedStatement stmt = connection.prepareStatement(sql);
-			stmt.setString(1, generoProduto.getCodigo());
-			stmt.setString(2, generoProduto.getDescricao());
+			stmt.setString(1, generoProduto.getDescricao());
 			stmt.execute();
 			stmt.close();
 			connection.close();
@@ -101,14 +100,13 @@ public class GeneroProdutoDao {
 
 	public void alterar(GeneroProduto generoProduto) {
 
-		String sql = "UPDATE genero_produto SET codigo = ? , descricao = ? WHERE id = ?";
+		String sql = "UPDATE genero_produto SET descricao = ? WHERE id = ?";
 
 		try {
 
 			PreparedStatement stmt = connection.prepareStatement(sql);
-			stmt.setString(1, generoProduto.getCodigo());
-			stmt.setString(2, generoProduto.getDescricao());
-			stmt.setInt(3, generoProduto.getId());
+			stmt.setString(1, generoProduto.getDescricao());
+			stmt.setInt(2, generoProduto.getId());
 			stmt.execute();
 			stmt.close();
 			connection.close();
@@ -122,7 +120,6 @@ public class GeneroProdutoDao {
 
 		GeneroProduto generoProduto = new GeneroProduto();
 		generoProduto.setId(rs.getInt("id"));
-		generoProduto.setCodigo(rs.getString("codigo"));
 		generoProduto.setDescricao(rs.getString("descricao"));
 
 		return generoProduto;
