@@ -16,7 +16,7 @@
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
-		class="navbar-brand" href="exibirlistarProdutoIndex">PsyChomics</a>
+		class="navbar-brand" href="exibirlistarProdutoIndex"><img src="\imagens\nav.png" width="50%"></a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarSupportedContent"
 		aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -34,28 +34,28 @@
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false"> Produtos </a>
+				aria-expanded="false"> Cadastrar </a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="exibirCadastrarProduto">Cadastro
-						de produtos</a> <a class="dropdown-item" href="listarProduto">Lista
-						de Produtos</a>
+					<a class="dropdown-item" href="exibirCadastrarProduto">Produtos</a>
+					<a class="dropdown-item" href="exibirCadastrarUsuario">Usuários</a> 
 					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="exibirIncluirCategoriaProduto">Cadastro
-						de categorias</a> <a class="dropdown-item"
-						href="listarCategoriaProduto">Lista de categorias</a>
+					<a class="dropdown-item" href="exibirIncluirCategoriaProduto">Categorias</a> 
+					<a class="dropdown-item" href="exibirIncluirGeneroProduto">Gênero</a>
+						
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false"> Usuarios </a>
+				aria-expanded="false"> Listar </a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="exibirCadastrarUsuario">Cadastro
-						de Usuarios</a> <a class="dropdown-item" href="listarUsuario">Lista
-						de Usuarios</a>
+					<a class="dropdown-item" href="listarGeneroProduto">Gênero</a>
+					<a class="dropdown-item" href="listarProduto">Produtos</a>
+					<a class="dropdown-item" href="listarUsuario">Usuários</a>
+					<a class="dropdown-item" href="listarCategoriaProduto">Categorias</a>
 					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="#">Something else here</a>
+					
 				</div></li>
-
+			<li class="nav-item"><a class="nav-link" href="exibirLoginUsuario">Login</a>
 			</li>
 		</ul>
 		<form class="form-inline my-2 my-lg-0" action="buscarProduto">
@@ -65,7 +65,10 @@
 			<button class="btn btn-outline-success my-2 my-sm-0" value="buscar"
 				type="submit">Search</button>
 		</form>
-	</div>
+
+
+</div>
+
 
 	</nav>
 	<div id="carouselExampleIndicators" class="carousel slide"

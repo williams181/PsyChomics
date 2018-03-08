@@ -12,19 +12,16 @@ CREATE TABLE usuario (
 
 CREATE TABLE genero_produto (
 	id INT (6) AUTO_INCREMENT PRIMARY KEY,
-	codigo VARCHAR (5),
 	descricao VARCHAR (30)
 );
 
 CREATE TABLE tipo_produto (
 	id INT(6) AUTO_INCREMENT PRIMARY KEY,
-	codigo VARCHAR (5),
 	descricao VARCHAR (30)
 );
 
 CREATE TABLE categoria_produto (
 	id INT(6) AUTO_INCREMENT PRIMARY KEY,
-	codigo VARCHAR (5),
 	descricao VARCHAR (30)
 );
 
