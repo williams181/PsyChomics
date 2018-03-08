@@ -11,19 +11,20 @@
 	crossorigin="anonymous">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Index</title>
+<title>Quem somos</title>
 </head>
 <body>
 
+
+
 	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
-		class="navbar-brand" href="listarProdutoIndex">PsyChomics</a>
+		class="navbar-brand" href="#">PsyChomics</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarSupportedContent"
 		aria-controls="navbarSupportedContent" aria-expanded="false"
 		aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
-
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item active"><a class="nav-link"
@@ -36,34 +37,25 @@
 				role="button" data-toggle="dropdown" aria-haspopup="true"
 				aria-expanded="false"> Produtos </a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="exibirCadastrarProduto">Cadastro
-						de produtos</a> <a class="dropdown-item" href="listarProduto">Lista
-						de Produtos</a>
+					<a class="dropdown-item" href="listarProduto">listar de
+						produtos</a>
 					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="exibirIncluirCategoriaProduto">Cadastro
-						de categorias</a> <a class="dropdown-item"
-						href="listarCategoriaProduto">Lista de categorias</a> <a
-						class="dropdown-item" href="exibirIncluirGeneroProduto">Cadastro
-						de Generos</a> <a class="dropdown-item" href="listarGeneroProduto">Lista
-						de Generos</a> <a class="dropdown-item"
-						href="exibirIncluirTipoProduto">Cadastro de Tipo</a> <a
-						class="dropdown-item" href="listarTipoProduto">Lista de Tipos</a>
+					<a class="dropdown-item" href="#">mais um link?</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 				role="button" data-toggle="dropdown" aria-haspopup="true"
 				aria-expanded="false"> Usuarios </a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="exibirCadastrarUsuario">Cadastro
-						de Usuarios</a> <a class="dropdown-item" href="listarUsuario">Lista
-						de Usuarios</a>
+					<a class="dropdown-item" href="listarUsuario">Lista de Usuarios</a>
 					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="#">Something else here</a>
+					<a class="dropdown-item" href="#">mais um link?</a>
 				</div></li>
 			<li class="nav-item"><a class="nav-link"
+				href="exibirCadastrarUsuario">Cadastre-se</a></li>
+			<li class="nav-item"><a class="nav-link"
 				href="exibirLoginUsuario">Login</a></li>
-				<li class="nav-item"><a class="nav-link"
-				href="logout">Logout</a></li>
+			<li class="nav-item"><a class="nav-link" href="logout">Logout</a></li>
 		</ul>
 		<form class="form-inline my-2 my-lg-0" action="buscarProduto">
 			<input class="form-control mr-sm-2" type="text"
@@ -73,8 +65,9 @@
 				type="submit">Search</button>
 		</form>
 	</div>
-
 	</nav>
+
+
 	<div id="carouselExampleIndicators" class="carousel slide"
 		data-ride="carousel">
 		<ol class="carousel-indicators">
@@ -82,15 +75,27 @@
 				class="active"></li>
 			<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
 			<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
 		</ol>
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<img class="d-block w-100" src="view/imagens/bg2.png"
-					alt="First slide">
+				<img class="d-block w-100" src="view/imagens/bg3.png"
+					alt="primeiro slide">
 			</div>
+
 			<div class="carousel-item">
 				<img class="d-block w-100" src="view/imagens/bg3.png"
-					alt="Second slide">
+					alt="segundo slide">
+			</div>
+
+			<div class="carousel-item">
+				<img class="d-block w-100" src="view/imagens/bg3.png"
+					alt="terceiro slide">
+			</div>
+
+			<div class="carousel-item">
+				<img class="d-block w-100" src="view/imagens/bg3.png"
+					alt="quarto slide">
 			</div>
 		</div>
 		<a class="carousel-control-prev" href="#carouselExampleIndicators"
@@ -100,27 +105,73 @@
 		</a> <a class="carousel-control-next" href="#carouselExampleIndicators"
 			role="button" data-slide="next"> <span
 			class="carousel-control-next-icon" aria-hidden="true"></span> <span
-			class="sr-only">Next</span>
+			class="sr-only">Proximo</span>
 		</a>
 	</div>
 
+
+
 	<div class="card">
-		<div class="card-body">This is some text within a card body.</div>
+		<div class="card-body">Nossa missão</div>
 	</div>
+
+
 
 	<div align="right" style="color: #6E6E6E; margin-right: 2%;">Bem
 		vindo, ${usuarioLogado.nomeUsuario}</div>
 
 
+
+	<div class="row">
+		<div class="text-left">Ela sorria com os olhos. E
+			quando sorria com a boca, tudo em volta parava. Eu sentia como se
+			aquele sorriso me beijasse a alma. Eu me lembro da sensação de frio
+			na barriga toda vez que eu chegava em frente à casa dela, e de me
+			olhar no espelho do retrovisor pra checar se tava tudo ok comigo. E
+			aí quando finalmente eu entrava, dava um beijo tímido no rosto, e o
+			abraço… O abraço que poderia me manter ali facilmente por longas
+			horas. Eu gostava de a olhar fazer tudo, pelo prazer de achar lindo
+			qualquer ato cotidiano vindo dela, e por ver sua pele ruborizar
+			quando notava meu olhar direcionado a ela. Era sempre o mesmo ritual:
+			ela notava, sorria sem graça, baixava a cabeça e a balançava
+			negativamente. Nesse ponto, ela já estava vermelha, e eu sorria.</div>
+	</div>
+
+
+
 	<div class="card">
-		<div class="card-header">Featured</div>
+		<div class="card-body">Nossa visão</div>
+	</div>
+
+
+
+	<div class="row">
+		<div class="text-left">Ela sorria com os olhos. E
+			quando sorria com a boca, tudo em volta parava. Eu sentia como se
+			aquele sorriso me beijasse a alma. Eu me lembro da sensação de frio
+			na barriga toda vez que eu chegava em frente à casa dela, e de me
+			olhar no espelho do retrovisor pra checar se tava tudo ok comigo. E
+			aí quando finalmente eu entrava, dava um beijo tímido no rosto, e o
+			abraço… O abraço que poderia me manter ali facilmente por longas
+			horas. Eu gostava de a olhar fazer tudo, pelo prazer de achar lindo
+			qualquer ato cotidiano vindo dela, e por ver sua pele ruborizar
+			quando notava meu olhar direcionado a ela. Era sempre o mesmo ritual:
+			ela notava, sorria sem graça, baixava a cabeça e a balançava
+			negativamente. Nesse ponto, ela já estava vermelha, e eu sorria.</div>
+	</div>
+
+
+
+	<div class="card">
+		<div class="card-header">olá</div>
 		<div class="card-body">
-			<h5 class="card-title">Special title treatment</h5>
-			<p class="card-text">With supporting text below as a natural
-				lead-in to additional content.</p>
-			<a href="#" class="btn btn-primary">Go somewhere</a>
+			<h5 class="card-title">saiba mais sobre nós</h5>
+			<p class="card-text">visite nossas redes sociais</p>
+			<a href="#" class="btn btn-primary">abrir</a>
 		</div>
 	</div>
+
+
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

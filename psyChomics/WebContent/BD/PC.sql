@@ -35,7 +35,7 @@ CREATE TABLE produto (
 	nome VARCHAR (50),
 	preco DECIMAL (10,2),
 	imagem VARCHAR (255),
-	descricao VARCHAR (255),
+	descricao TEXT,
 	nacionalidade VARCHAR (20),
 	FOREIGN KEY (categoria_id) REFERENCES categoria_produto(id),
 	FOREIGN KEY (genero_id) REFERENCES genero_produto(id),

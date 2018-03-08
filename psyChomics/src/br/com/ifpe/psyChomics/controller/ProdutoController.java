@@ -150,11 +150,13 @@ public class ProdutoController {
 		GeneroProdutoDao dao3 = new GeneroProdutoDao();
 		List<GeneroProduto> listarGeneroProduto = dao3.listar();
 
-
+		// Cria codigo para popular o combo de tipo de produto
+		TipoProdutoDao dao4 = new TipoProdutoDao();
+		List<TipoProduto> listarTipoProduto = dao4.listar();
 
 		model.addAttribute("listarCategoriaProduto", listarCategoriaProduto);
 		model.addAttribute("listarGeneroProduto", listarGeneroProduto);
-
+		model.addAttribute("listarTipoProduto", listarTipoProduto);
 		return "produto/descricaoProduto";
 	}
 

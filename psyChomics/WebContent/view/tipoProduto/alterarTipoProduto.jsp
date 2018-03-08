@@ -57,15 +57,6 @@
 				<input type="hidden" name="id" value="${tipoProduto.id}">
 
 				<div class="form-group">
-					<label for="inputCodigo">Código</label> <input type="text"
-						class="form-control" id="inputCodigo" name="codigo"
-						style="width: 110px;" maxlength="5" required="required"
-						value="${tipoProduto.codigo}"> &nbsp;
-					<form:errors path="tipoProduto.codigo" cssStyle="color:red" />
-					<br />
-				</div>
-
-				<div class="form-group">
 					<label for="inputDescricao">Descrição</label> <input type="text"
 						id="inputDescricao" class="form-control" name="descricao"
 						style="width: 500px;" maxlength="100" required="required"

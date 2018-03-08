@@ -53,16 +53,16 @@
 			<form action="cadastrarProduto" method="post"
 				enctype="multipart/form-data">
 				<div class="form-group">
-					<label for="inputNacionalidade">nacionalidade</label> <input type="text"
-						id="inputNacionalidade" class="form-control" name="nacionalidade"
-						style="width: 500px;" placeholder="nacionalidade" minlength="3"
-						maxlength="60" />
-				</div>
-				<div class="form-group">
 					<label for="inputNome">Nome</label> <input type="text"
 						id="inputNome" class="form-control" name="nome"
 						style="width: 500px;" placeholder="Nome" minlength="3"
 						maxlength="60" required="required" />
+				</div>
+				<div class="form-group">
+					<label for="inputNacionalidade">nacionalidade</label> <input
+						type="text" id="inputNacionalidade" class="form-control"
+						name="nacionalidade" style="width: 500px;"
+						placeholder="nacionalidade" minlength="3" maxlength="60" />
 				</div>
 				<div class="form-group">
 					<label for="inputPreco">Preço</label> <input type="text"
@@ -96,6 +96,15 @@
 						style="width: 200px; height: 30px; border: 1px solid #BDC7D8; color: #000000; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;">
 						<option value="">Selecione</option>
 						<c:forEach items="${listarGeneroProduto}" var="obj">
+							<option value="${obj.id}">${obj.descricao}</option>
+						</c:forEach>
+					</select>
+				</div>
+				<div class="form-group">
+					Tipo: <br /> <select id="tipoProduto" name="tipoProduto"
+						style="width: 200px; height: 30px; border: 1px solid #BDC7D8; color: #000000; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;">
+						<option value="">Selecione</option>
+						<c:forEach items="${listarTipoProduto}" var="obj">
 							<option value="${obj.id}">${obj.descricao}</option>
 						</c:forEach>
 					</select>

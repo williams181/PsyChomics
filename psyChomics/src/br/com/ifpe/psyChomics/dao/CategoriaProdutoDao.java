@@ -10,8 +10,6 @@ import java.util.List;
 import br.com.ifpe.psyChomics.model.CategoriaProduto;
 import br.com.ifpe.psyChomics.util.ConnectionFactory;
 
-
-
 public class CategoriaProdutoDao {
 
     private Connection connection;

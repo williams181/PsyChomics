@@ -53,14 +53,6 @@
 			<form action="alterarProduto" method="post"
 				enctype="multipart/form-data">
 				<div class="form-group">
-					<label for="inputCodigo">Código</label> <input type="text"
-						class="form-control" id="inputCodigo" value="${produto.codigo}"
-						name="codigo" style="width: 110px;" maxlength="5"
-						required="required">
-					<form:errors path="produto.codigo" cssStyle="color:red" />
-				</div>
-
-				<div class="form-group">
 					<label for="inputNome">Nome</label> <input type="text"
 						id="inputNome" class="form-control" name="nome"
 						value="${produto.nome}" style="width: 500px;" maxlength="50"
@@ -75,15 +67,14 @@
 					<form:errors path="produto.preco" cssStyle="color:red" />
 				</div>
 				<div class="form-group">
-					<label for="inputDescricao">teste</label> <input type="text"
-						id="inputDescricao" class="form-control" name="descricao"
-						value="${produto.descricao}" style="width: 500px;" maxlength="255"
-						required="required" />
-					<form:errors path="produto.descricao" cssStyle="color:red" />
+				<label for="inputDescricao">Descrição</label>
+					<textarea>
+					${produto.descricao}
+					</textarea>
 				</div>
 				<p>
-					<input type="hidden" name="id" value="${produto.id}" />
-					 <input	type="submit" class="btn btn-primary" value="alterar"> <a
+					<input type="hidden" name="id" value="${produto.id}" /> <input
+						type="submit" class="btn btn-primary" value="alterar"> <a
 						href="listarProdutoIndex" class="btn btn-danger" role="button">Cancelar</a>
 				</p>
 			</form>
