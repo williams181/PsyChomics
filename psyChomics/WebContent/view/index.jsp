@@ -18,7 +18,7 @@
 
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
-		class="navbar-brand" href="#">PsyChomics</a>
+		class="navbar-brand" href="listarProdutoIndex"><img src="\imagens\nav.png" width="50%"></a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarSupportedContent"
 		aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -28,29 +28,32 @@
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item active"><a class="nav-link"
-				href="listarProdutoIndex">Home <span class="sr-only">(current)</span>
+				href="listarProdutoIndex">Início<span class="sr-only">(current)</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="exibirQuemSomos">Quem
 					somos</a></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false"> Produtos </a>
+				aria-expanded="false">Cadastrar</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="listarProduto">listar de
-						produtos</a>
-					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="#">mais um link?</a>
+					<a class="dropdown-item" href="exibirCadastrarProduto">Produtos</a>
+ 					<a class="dropdown-item" href="exibirCadastrarUsuario">Usuários</a>
+ 					<a class="dropdown-item" href="incluirCategoriaProduto">Categoria</a>
+ 					<a class="dropdown-item" href="incluirGeneroProduto">Gênero</a> 
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false"> Usuarios </a>
+				aria-expanded="false">Listar</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="listarUsuario">Lista de Usuarios</a>
-					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="#">mais um link?</a>
+					<a class="dropdown-item" href="listarUsuario">Usuários</a>
+					<a class="dropdown-item" href="listarProduto">Produtos</a>
+					<a class="dropdown-item" href="listarCategoriaProduto">Categoria</a>
+					<a class="dropdown-item" href="listarGeneroProduto">Gênero</a>
 				</div></li>
+			<li class="nav-item"><a class="nav-link"
+				href="#">Perfil</a></li>	
 			<li class="nav-item"><a class="nav-link"
 				href="exibirCadastrarUsuario">Cadastre-se</a></li>
 			<li class="nav-item"><a class="nav-link"
@@ -62,11 +65,13 @@
 				pplaceholder="Procurar.." id="inputNome" name="nome" for="inputNome"
 				aria-label="Search">
 			<button class="btn btn-outline-success my-2 my-sm-0" value="buscar"
-				type="submit">Search</button>
+				type="submit">Buscar</button>
 		</form>
 	</div>
 	</nav>
 
+	<div align="left" style="color: #6E6E6E; margin-right: 2%;">Bem
+		vindo, ${usuarioLogado.nomeUsuario}</div>
 
 	<div id="carouselExampleIndicators" class="carousel slide"
 		data-ride="carousel">
@@ -84,43 +89,36 @@
 			</div>
 
 			<div class="carousel-item">
-				<img class="d-block w-100" src="view/imagens/bg3.png"
+				<img class="d-block w-100" src="view/imagens/bgcw.png"
 					alt="segundo slide">
 			</div>
 
 			<div class="carousel-item">
-				<img class="d-block w-100" src="view/imagens/bg3.png"
+				<img class="d-block w-100" src="view/imagens/bgcw2.png"
 					alt="terceiro slide">
 			</div>
 
 			<div class="carousel-item">
-				<img class="d-block w-100" src="view/imagens/bg3.png"
+				<img class="d-block w-100" src="view/imagens/bgoldlogan.png"
 					alt="quarto slide">
 			</div>
 		</div>
 		<a class="carousel-control-prev" href="#carouselExampleIndicators"
 			role="button" data-slide="prev"> <span
 			class="carousel-control-prev-icon" aria-hidden="true"></span> <span
-			class="sr-only">Previous</span>
+			class="sr-only">Anterior</span>
 		</a> <a class="carousel-control-next" href="#carouselExampleIndicators"
 			role="button" data-slide="next"> <span
 			class="carousel-control-next-icon" aria-hidden="true"></span> <span
-			class="sr-only">Proximo</span>
+			class="sr-only">Próximo</span>
 		</a>
 	</div>
 
 
 
 	<div class="card">
-		<div class="card-body" align="center">Produtos nacionais</div>
+		<div class="card-body" align="center">Produtos Nacionais</div>
 	</div>
-
-
-
-	<div align="right" style="color: blue; margin-right: 2%;">Bem
-		vindo, ${usuarioLogado.nomeUsuario}</div>
-
-
 
 	<center>
 		<div class="row">
@@ -145,7 +143,7 @@
 
 
 	<div class="card">
-		<div class="card-body" align="center">Produtos inportados</div>
+		<div class="card-body" align="center">Produtos Importados</div>
 	</div>
 
 
@@ -173,11 +171,11 @@
 
 
 	<div class="card">
-		<div class="card-header">olá</div>
+		<div class="card-header">Olá</div>
 		<div class="card-body">
-			<h5 class="card-title">saiba mais sobre nós</h5>
-			<p class="card-text">visite nossas redes sociais</p>
-			<a href="#" class="btn btn-primary">abrir</a>
+			<h5 class="card-title">Saiba mais sobre nós!</h5>
+			<p class="card-text">Visite nossas redes sociais</p>
+			<a href="#" class="btn btn-primary">Abrir</a>
 		</div>
 	</div>
 
