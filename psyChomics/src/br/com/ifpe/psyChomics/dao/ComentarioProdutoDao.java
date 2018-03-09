@@ -33,7 +33,7 @@ public class ComentarioProdutoDao {
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			stmt.setDate(1, new java.sql.Date(comentarioProduto.getData().getTime()));
 			stmt.setString(2, comentarioProduto.getComentario());
-			stmt.setInt(3, comentarioProduto.getUsuario().getId());
+			stmt.setInt(3, comentarioProduto.getUsuario().getId());	
 			stmt.setInt(4, comentarioProduto.getProduto().getId());
 			stmt.execute();
 			stmt.close();

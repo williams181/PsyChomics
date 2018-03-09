@@ -112,12 +112,12 @@
 
 
 	<div class="card">
-		<div class="card-body">produtos nacionais</div>
+		<div class="card-body" align="center">Produtos nacionais</div>
 	</div>
 
 
 
-	<div align="right" style="color: #6E6E6E; margin-right: 2%;">Bem
+	<div align="right" style="color: blue; margin-right: 2%;">Bem
 		vindo, ${usuarioLogado.nomeUsuario}</div>
 
 
@@ -145,7 +145,7 @@
 
 
 	<div class="card">
-		<div class="card-body">produtos inportados</div>
+		<div class="card-body" align="center">Produtos inportados</div>
 	</div>
 
 

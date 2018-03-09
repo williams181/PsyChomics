@@ -135,7 +135,7 @@
 				<li class="list-group-item">${produto.tipoProduto.descricao}</li>
 			</ul>
 			<div class="card-body">
-				<a href="#" class="card-link">Comprar</a> <a href="exibirCadastrarComentarioProduto"
+				<a href="#" class="card-link">Comprar</a> <a href="exibirCadastrarComentarioProduto?id=${produto.id}"
 					class="card-link">Comentarios</a>
 			</div>
 		</div>
