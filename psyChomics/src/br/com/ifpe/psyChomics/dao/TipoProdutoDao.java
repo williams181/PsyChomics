@@ -120,6 +120,7 @@ public class TipoProdutoDao {
     private TipoProduto montarObjeto(ResultSet rs) throws SQLException {
 
     	TipoProduto tipoProduto = new TipoProduto();
+    	tipoProduto.setId(rs.getInt("id"));
     	tipoProduto.setDescricao(rs.getString("descricao"));
 
 	return tipoProduto;

@@ -157,6 +157,7 @@ public class ProdutoController {
 		model.addAttribute("listarCategoriaProduto", listarCategoriaProduto);
 		model.addAttribute("listarGeneroProduto", listarGeneroProduto);
 		model.addAttribute("listarTipoProduto", listarTipoProduto);
+
 		return "produto/descricaoProduto";
 	}
 

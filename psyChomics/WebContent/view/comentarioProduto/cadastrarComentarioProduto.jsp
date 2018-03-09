@@ -135,14 +135,21 @@
 
 
 	<center>
-		<form action="cadastrarComentarioUsuario" method="post"
+		<form action="cadastrarComentarioProduto" method="post"
 			enctype="multipart/form-data">
 			<div class="form-group col-md-6">
 				<label for="inputComentario">Comentario</label> <input type="text"
 					id="inputComentario" class="form-control" name="comentario"
-					placeholder="comentario" maxlength="500"
-					required="required">
+					placeholder="comentario" maxlength="500" required="required">
 			</div>
+			<div class="form-group col-md-6">
+				<label for="inputData">Data</label> <input type="date"
+					id="inputData" class="form-control" name="data"
+					placeholder="01/01/2001" maxlength="10" required="required">
+			</div>
+			<input type="hidden" name="id"
+				value="${comentarioProduto.produto.id}" /> <input type="hidden"
+				name="id" value="${comentarioProduto.usuario.id}" />
 			<button type="submit" class="btn btn-primary" value="cadastrar">Cadastrar</button>
 		</form>
 	</center>
