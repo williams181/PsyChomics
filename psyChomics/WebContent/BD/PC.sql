@@ -35,7 +35,7 @@ CREATE TABLE produto (
 	nome VARCHAR (50),
 	preco DECIMAL (10,2),
 	imagem VARCHAR (255),
-	descricao TEXT,
+	descricao TEXT(600),
 	nacionalidade VARCHAR (20),
 	FOREIGN KEY (categoria_id) REFERENCES categoria_produto(id),
 	FOREIGN KEY (genero_id) REFERENCES genero_produto(id),
@@ -47,7 +47,7 @@ CREATE TABLE comentario_produto (
 	usuario_id INT (6),
 	produto_id INT (6),
 	data date,
-	comentario TEXT,
+	comentario TEXT(600),
 	FOREIGN KEY (produto_id) REFERENCES produto(id),	
 	FOREIGN KEY (usuario_id) REFERENCES usuario(id)	
 );
@@ -71,7 +71,7 @@ CREATE TABLE item (
 CREATE TABLE pedido (
 	id INT(6) AUTO_INCREMENT PRIMARY KEY,
 	idusuario INT(6),
-	mensagem TEXT,
+	mensagem TEXT(600),
 	FOREIGN KEY (idusuario) REFERENCES usuario(id)
 );
 
@@ -79,7 +79,7 @@ CREATE TABLE fale_conosco (
 	id INT(6) AUTO_INCREMENT PRIMARY KEY,
 	nome_usuario INT(6),
 	email VARCHAR(50),
-	mensagem TEXT
+	mensagem TEXT(600)
 );
 
 
