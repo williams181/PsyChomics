@@ -56,6 +56,7 @@ CREATE TABLE carrinho (
 	id INT (6) AUTO_INCREMENT PRIMARY KEY,
 	idusuario INT (6),
 	total DOUBLE,
+	data date,
 	FOREIGN KEY (idusuario) REFERENCES usuario(id)
 );
 
@@ -71,6 +72,7 @@ CREATE TABLE item (
 CREATE TABLE pedido (
 	id INT(6) AUTO_INCREMENT PRIMARY KEY,
 	idusuario INT(6),
+	data date,
 	mensagem TEXT(600),
 	FOREIGN KEY (idusuario) REFERENCES usuario(id)
 );
@@ -79,6 +81,7 @@ CREATE TABLE fale_conosco (
 	id INT(6) AUTO_INCREMENT PRIMARY KEY,
 	nome_usuario INT(6),
 	email VARCHAR(50),
+	data date,
 	mensagem TEXT(600)
 );
 

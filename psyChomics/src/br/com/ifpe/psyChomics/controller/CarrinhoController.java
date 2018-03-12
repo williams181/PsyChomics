@@ -29,6 +29,6 @@ public class CarrinhoController {
 		item.setQuantidade(1);
 		carrinho.getItens().add(item);
 
-		return "comentarioProduto/cadastrarComentarioProduto";
+		return "carrinho/IncluirProdutoCarrinho";
 	}
 }

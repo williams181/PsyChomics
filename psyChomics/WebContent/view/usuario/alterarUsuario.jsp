@@ -11,15 +11,13 @@
 	crossorigin="anonymous">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Busca de produtos</title>
+<title>alterar o Usuário</title>
 </head>
 <body>
 
-
-
 	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
 		class="navbar-brand" href="listarProdutoIndex"><img
-		src="view/imagens/nav.png" width="50%"></a>
+		src="\imagens\nav.png" width="50%"></a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarSupportedContent"
 		aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -40,9 +38,8 @@
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					<a class="dropdown-item" href="exibirCadastrarProduto">Produtos</a>
 					<a class="dropdown-item" href="exibirCadastrarUsuario">Usuários</a>
-					<a class="dropdown-item" href="exibirIncluirCategoriaProduto">Categoria</a>
-					<a class="dropdown-item" href="exibirIncluirGeneroProduto">Gênero</a>
-					<a class="dropdown-item" href="exibirIncluirTipoProduto">Tipo</a>
+					<a class="dropdown-item" href="incluirCategoriaProduto">Categoria</a>
+					<a class="dropdown-item" href="incluirGeneroProduto">Gênero</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
@@ -52,11 +49,9 @@
 					<a class="dropdown-item" href="listarUsuario">Usuários</a> <a
 						class="dropdown-item" href="listarProduto">Produtos</a> <a
 						class="dropdown-item" href="listarCategoriaProduto">Categoria</a>
-					<a class="dropdown-item" href="listarGeneroProduto">Gênero</a> <a
-						class="dropdown-item" href="listarTipoProduto">Tipo</a>
+					<a class="dropdown-item" href="listarGeneroProduto">Gênero</a>
 				</div></li>
-			<li class="nav-item"><a class="nav-link"
-				href="exibirPerfilUsuario">Perfil</a></li>
+			<li class="nav-item"><a class="nav-link" href="#">Perfil</a></li>
 			<li class="nav-item"><a class="nav-link"
 				href="exibirCadastrarUsuario">Cadastre-se</a></li>
 			<li class="nav-item"><a class="nav-link"
@@ -74,85 +69,66 @@
 	</nav>
 
 
-	<div id="carouselExampleIndicators" class="carousel slide"
-		data-ride="carousel">
-		<ol class="carousel-indicators">
-			<li data-target="#carouselExampleIndicators" data-slide-to="0"
-				class="active"></li>
-			<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-			<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-			<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-		</ol>
-		<div class="carousel-inner">
-			<div class="carousel-item active">
-				<img class="d-block w-100" src="view/imagens/bg3.png"
-					alt="primeiro slide">
-			</div>
 
-			<div class="carousel-item">
-				<img class="d-block w-100" src="view/imagens/bg3.png"
-					alt="segundo slide">
-			</div>
-
-			<div class="carousel-item">
-				<img class="d-block w-100" src="view/imagens/bg3.png"
-					alt="terceiro slide">
-			</div>
-
-			<div class="carousel-item">
-				<img class="d-block w-100" src="view/imagens/bg3.png"
-					alt="quarto slide">
-			</div>
-		</div>
-		<a class="carousel-control-prev" href="#carouselExampleIndicators"
-			role="button" data-slide="prev"> <span
-			class="carousel-control-prev-icon" aria-hidden="true"></span> <span
-			class="sr-only">Previous</span>
-		</a> <a class="carousel-control-next" href="#carouselExampleIndicators"
-			role="button" data-slide="next"> <span
-			class="carousel-control-next-icon" aria-hidden="true"></span> <span
-			class="sr-only">Proximo</span>
-		</a>
-	</div>
+	<hr>
+	<hr>
+	<hr>
 
 
 
 	<div class="card">
-		<div class="card-body">resultados encontrados</div>
+		<div class="card-body">Login do Usuário</div>
 	</div>
 
 
 
-	<div align="right" style="color: #6E6E6E; margin-right: 2%;">${usuarioLogado.nomeUsuario}</div>
-
-
-
-	<input type="hidden" name="id" value="${produto.id}" />
+	<hr>
+	<hr>
+	<hr>
 
 
 
 	<center>
-		<c:forEach var="produto" items="${buscarProduto}">
-			<div class="card" style="width: 18rem;">
-				<img class="card-img-top" src="view/img/${produto.imagem}"
-					alt="Card image cap">
-				<div class="card-body">
-					<h5 class="card-title">${produto.nome}</h5>
-					<p class="card-text">${produto.descricao}</p>
-				</div>
-				<ul class="list-group list-group-flush">
-					<li class="list-group-item">${produto.preco}</li>
-					<li class="list-group-item">${produto.generoProduto.descricao}</li>
-					<li class="list-group-item">${produto.categoriaProduto.descricao}</li>
-					<li class="list-group-item">${produto.tipoProduto.descricao}</li>
-				</ul>
-				<div class="card-body">
-					<a href="#" class="card-link">Comprar</a> <a href="#"
-						class="card-link">Comentários</a>
-				</div>
+		<form action="alterarUsuario" method="post"
+			enctype="multipart/form-data">
+
+			<div class="form-group col-md-6">
+				<label for="inputEmail">Email</label> <input type="text"
+					id="inputEmail" class="form-control" name="email"
+					value="${usuario.email}" maxlength="50" required="required" /> <input
+					type="hidden" name="id" value="${usuario.id}" />
 			</div>
-		</c:forEach>
+
+			<div class="form-group col-md-6">
+				<label for="inputSenha">Senha</label> <input type="password"
+					id="inputSenha" class="form-control" name="senha"
+					value="${usuario.senha}" maxlength="16" required="required" />
+			</div>
+
+			<div class="form-group col-md-6">
+				<label for="inputNick">Nick</label> <input type="text"
+					id="inputNick" class="form-control" name="nick"
+					value="${usuario.nick}" maxlength="15" required="required" />
+			</div>
+			<div class="form-group col-md-6">
+				<label for="inputNomeUsuario">Nome do usuário</label> <input
+					type="text" id="inputNomeUsuario" class="form-control"
+					name="nomeUsuario" value="${usuario.nomeUsuario}" maxlength="50"
+					required="required" />
+			</div>
+			<p>
+				<input type="submit" class="btn btn-primary" value="alterar">
+				<a href="listarProdutoIndex" class="btn btn-danger" role="button">Cancelar</a>
+			</p>
+		</form>
+
 	</center>
+
+
+
+	<hr>
+	<hr>
+	<hr>
 
 
 

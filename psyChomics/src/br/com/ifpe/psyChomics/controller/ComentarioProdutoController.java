@@ -48,7 +48,7 @@ public class ComentarioProdutoController {
 		List<ComentarioProduto> listarComentarioProduto = dao.listar();
 		model.addAttribute("listarComentarioProduto", listarComentarioProduto);
 
-		return "tipoProduto/pesquisarTipoProduto";
+		return "comentarioProduto/pesquisarComentarioProduto";
 	}
 
 	@RequestMapping("removerComentarioProduto")

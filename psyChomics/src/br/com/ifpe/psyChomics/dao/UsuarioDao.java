@@ -78,6 +78,27 @@ public class UsuarioDao {
 		}
 	}
 
+	public void alterar(Usuario usuario) {
+
+		String sql = "UPDATE usuario SET email = ?, senha = ?, nick = ?, nome_usuario = ?  WHERE id = ?";
+
+		try {
+
+			PreparedStatement stmt = connection.prepareStatement(sql);
+			stmt.setString(1, usuario.getEmail());
+			stmt.setString(2, usuario.getSenha());
+			stmt.setString(3, usuario.getNick());
+			stmt.setString(4, usuario.getNomeUsuario());
+			stmt.setInt(5, usuario.getId());
+			stmt.execute();
+			stmt.close();
+			connection.close();
+
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
 	public Usuario buscarPorId(int id) {
 		try {
 			Usuario usuarioCompleto = new Usuario();
@@ -105,7 +126,8 @@ public class UsuarioDao {
 	public List<Usuario> buscar(Usuario usua) {
 		try {
 			List<Usuario> buscarUsuario = new ArrayList<Usuario>();
-			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM usuario WHERE nome_usuario like ?");
+			PreparedStatement stmt = this.connection
+					.prepareStatement("SELECT * FROM usuario WHERE nome_usuario like ?");
 			stmt.setString(1, "%" + usua.getNomeUsuario() + "%");
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
@@ -147,7 +169,8 @@ public class UsuarioDao {
 		try {
 
 			Usuario usuarioConsultado = null;
-			PreparedStatement stmt = this.connection.prepareStatement("select * from usuario where email = ? and senha = ?");
+			PreparedStatement stmt = this.connection
+					.prepareStatement("select * from usuario where email = ? and senha = ?");
 			stmt.setString(1, usuario.getEmail());
 			stmt.setString(2, usuario.getSenha());
 			ResultSet rs = stmt.executeQuery();
@@ -165,5 +188,5 @@ public class UsuarioDao {
 			throw new RuntimeException(e);
 		}
 	}
-	
+
 }

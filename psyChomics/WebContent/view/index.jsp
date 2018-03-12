@@ -18,7 +18,7 @@
 
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
-		class="navbar-brand" href="listarProdutoIndex"><img src="\imagens\nav.png" width="50%"></a>
+		class="navbar-brand" href="listarProdutoIndex"><img src="view/imagens/nav.png" width="50%"></a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarSupportedContent"
 		aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -39,8 +39,9 @@
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					<a class="dropdown-item" href="exibirCadastrarProduto">Produtos</a>
  					<a class="dropdown-item" href="exibirCadastrarUsuario">Usuários</a>
- 					<a class="dropdown-item" href="incluirCategoriaProduto">Categoria</a>
- 					<a class="dropdown-item" href="incluirGeneroProduto">Gênero</a> 
+ 					<a class="dropdown-item" href="exibirIncluirCategoriaProduto">Categoria</a>
+ 					<a class="dropdown-item" href="exibirIncluirGeneroProduto">Gênero</a> 
+ 					<a class="dropdown-item" href="exibirIncluirTipoProduto">Tipo</a> 
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
@@ -51,9 +52,10 @@
 					<a class="dropdown-item" href="listarProduto">Produtos</a>
 					<a class="dropdown-item" href="listarCategoriaProduto">Categoria</a>
 					<a class="dropdown-item" href="listarGeneroProduto">Gênero</a>
+					<a class="dropdown-item" href="listarTipoProduto">Tipo</a>
 				</div></li>
 			<li class="nav-item"><a class="nav-link"
-				href="#">Perfil</a></li>	
+				href="exibirPerfilUsuario">Perfil</a></li>	
 			<li class="nav-item"><a class="nav-link"
 				href="exibirCadastrarUsuario">Cadastre-se</a></li>
 			<li class="nav-item"><a class="nav-link"
@@ -70,8 +72,7 @@
 	</div>
 	</nav>
 
-	<div align="left" style="color: #6E6E6E; margin-right: 2%;">Bem
-		vindo, ${usuarioLogado.nomeUsuario}</div>
+
 
 	<div id="carouselExampleIndicators" class="carousel slide"
 		data-ride="carousel">
@@ -130,7 +131,7 @@
 						<div class="card-body">
 							<h5 class="card-title">${p.nome}</h5>
 							<h6 class="card-title">${p.preco}</h6>
-							<p class="card-text">${p.descricao}</p>
+							<p class="card-text">${p.nacionalidade}</p>
 							<a href="exibirDescricaoProduto?id=${p.id}"
 								class="btn btn-primary">Descrição</a>
 						</div>
@@ -156,9 +157,9 @@
 						<img class="card-img-top" src="view/img/${p.imagem}"
 							alt="Card image cap">
 						<div class="card-body">
-							<h5 class="card-title">${p.nome}</h5>
+							<h5 class="card-title"><strong>${p.nome}</strong></h5>
 							<h6 class="card-title">${p.preco}</h6>
-							<p class="card-text">${p.descricao}</p>
+							<p class="card-text">${p.nacionalidade}</p>
 							<a href="exibirDescricaoProduto?id=${p.id}"
 								class="btn btn-primary">Descrição</a>
 						</div>
@@ -173,9 +174,9 @@
 	<div class="card">
 		<div class="card-header">Olá</div>
 		<div class="card-body">
-			<h5 class="card-title">Saiba mais sobre nós!</h5>
-			<p class="card-text">Visite nossas redes sociais</p>
-			<a href="#" class="btn btn-primary">Abrir</a>
+			<h5 class="card-title">Saiba mais sobre nossos produtos e sobre nós!</h5>
+			<p class="card-text">Visite nossa page no facebook</p>
+			<a href="https://www.facebook.com/" class="btn btn-primary">visitar</a>
 		</div>
 	</div>
 
