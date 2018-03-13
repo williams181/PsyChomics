@@ -1,27 +1,25 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-
-<!DOCTYPE html>
-
-<html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<title>Sistema de Controle de Estoque</title>
-
-<link rel="stylesheet" type="text/css" href="view/css/estilo.css" />
-<link rel="stylesheet" type="text/css" href="view/bootstrap/css/bootstrap.min.css" />
-  
-<script type="text/javascript" src="view/js/jquery-2.1.4.js"></script>
-<script type="text/javascript" src="view/bootstrap/js/bootstrap.min.js"></script>
-
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Pesquisar comeentario do produto</title>
 </head>
+<body>
 
-<body id="corpoPadrao">
 
-		<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
-		class="navbar-brand" href="listarProdutoIndex"><img src="\imagens\nav.png" width="50%"></a>
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
+		class="navbar-brand" href="listarProdutoIndex"><img
+		src="view/imagens/nav.png" width="50%"></a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarSupportedContent"
 		aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -41,22 +39,24 @@
 				aria-expanded="false">Cadastrar</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					<a class="dropdown-item" href="exibirCadastrarProduto">Produtos</a>
- 					<a class="dropdown-item" href="exibirCadastrarUsuario">Usuários</a>
- 					<a class="dropdown-item" href="incluirCategoriaProduto">Categoria</a>
- 					<a class="dropdown-item" href="incluirGeneroProduto">Gênero</a> 
+					<a class="dropdown-item" href="exibirCadastrarUsuario">Usuários</a>
+					<a class="dropdown-item" href="exibirIncluirCategoriaProduto">Categoria</a>
+					<a class="dropdown-item" href="exibirIncluirGeneroProduto">Gênero</a>
+					<a class="dropdown-item" href="exibirIncluirTipoProduto">Tipo</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 				role="button" data-toggle="dropdown" aria-haspopup="true"
 				aria-expanded="false">Listar</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="listarUsuario">Usuários</a>
-					<a class="dropdown-item" href="listarProduto">Produtos</a>
-					<a class="dropdown-item" href="listarCategoriaProduto">Categoria</a>
-					<a class="dropdown-item" href="listarGeneroProduto">Gênero</a>
+					<a class="dropdown-item" href="listarUsuario">Usuários</a> <a
+						class="dropdown-item" href="listarProduto">Produtos</a> <a
+						class="dropdown-item" href="listarCategoriaProduto">Categoria</a>
+					<a class="dropdown-item" href="listarGeneroProduto">Gênero</a> <a
+						class="dropdown-item" href="listarTipoProduto">Tipo</a>
 				</div></li>
 			<li class="nav-item"><a class="nav-link"
-				href="#">Perfil</a></li>	
+				href="exibirPerfilUsuario">Perfil</a></li>
 			<li class="nav-item"><a class="nav-link"
 				href="exibirCadastrarUsuario">Cadastre-se</a></li>
 			<li class="nav-item"><a class="nav-link"
@@ -73,54 +73,103 @@
 	</div>
 	</nav>
 
-	<div align="center">
-	
-		<div align="left" style="color: #6E6E6E; width: 70%;">
-		
-			<c:if test="${msg ne null}">
-				<div class="alert alert-success" style="width: 100%;">
-					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-					${msg}
-				</div>
-			</c:if>
-			
-			<hr />
-			
-			<p>
-				<table style="width: 100%">
-					<tr>
-						<td style="float: left; font-size: 24px;"> Listagem de <strong>Genero de Produto</strong> </td>
-						<td style="float: right;"> <a href="exibirIncluirGeneroProduto" class="btn btn-primary" role="button">Novo</a> </td>
-					</tr>
-				</table>
-			</p>
-			
-			<hr />
-			
-			<table class="table table-striped table-bordered">
-				<thead>
-					<tr>
-						<th style="width: 70%; vertical-align: middle;">Descrição</th>
-						<th style="width: 20%; vertical-align: middle; text-align: center;">Ações</th>
-					</tr>
-				</thead>
-				<c:forEach items="${listarGeneroProduto}" var="c">
-					<tr>
-						<td style="vertical-align: middle;">${c.descricao}</td>
-						<td style="vertical-align: middle; text-align: center;">
-							<a href="exibirAlterarGeneroProduto?id=${c.id}" class="btn btn-warning" role="button">E</a> &nbsp;
-							<a href="removerGeneroProduto?id=${c.id}" class="btn btn-danger" role="button">R</a>
-						</td>
-					</tr>
-				</c:forEach>
-			</table>
+
+
+	<div id="carouselExampleIndicators" class="carousel slide"
+		data-ride="carousel">
+		<ol class="carousel-indicators">
+			<li data-target="#carouselExampleIndicators" data-slide-to="0"
+				class="active"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+		</ol>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img class="d-block w-100" src="view/imagens/bg3.png"
+					alt="primeiro slide">
+			</div>
+
+			<div class="carousel-item">
+				<img class="d-block w-100" src="view/imagens/bgcw.png"
+					alt="segundo slide">
+			</div>
+
+			<div class="carousel-item">
+				<img class="d-block w-100" src="view/imagens/bgcw2.png"
+					alt="terceiro slide">
+			</div>
+
+			<div class="carousel-item">
+				<img class="d-block w-100" src="view/imagens/bgoldlogan.png"
+					alt="quarto slide">
+			</div>
 		</div>
-			
+		<a class="carousel-control-prev" href="#carouselExampleIndicators"
+			role="button" data-slide="prev"> <span
+			class="carousel-control-prev-icon" aria-hidden="true"></span> <span
+			class="sr-only">Anterior</span>
+		</a> <a class="carousel-control-next" href="#carouselExampleIndicators"
+			role="button" data-slide="next"> <span
+			class="carousel-control-next-icon" aria-hidden="true"></span> <span
+			class="sr-only">Próximo</span>
+		</a>
 	</div>
-	
-	<br />
-	
-	<hr class="linhaSeparador">
-	
+
+
+
+	<hr>
+	<hr>
+
+
+
+	<center>
+		<div class="card" style="width: 18rem;">
+			<c:forEach var="cp" items="${listarComentarioProduto}">
+				<div class="card-header">
+					<h4>${usuarioLogado.nomeUsuario}</h4>
+				</div>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item">${cp.data}</li>
+					<li class="list-group-item">${cp.comentario}</li>
+					<li class="list-group-item"><a
+						href="exibirAlterarComentarioProduto?id=${cp.id}"class="btn btn-danger"
+						role="button">A</a></li>
+				</ul>
+			</c:forEach>
+		</div>
+	</center>
+
+
+
+	<hr>
+	<hr>
+
+
+
+	<div class="card">
+		<div class="card-header">Olá</div>
+		<div class="card-body">
+			<h5 class="card-title">Saiba mais sobre nossos produtos e sobre
+				nós!</h5>
+			<p class="card-text">Visite nossa page no facebook</p>
+			<a href="https://www.facebook.com/" class="btn btn-primary">visitar</a>
+		</div>
+	</div>
+
+
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
 </body>
+
 </html>

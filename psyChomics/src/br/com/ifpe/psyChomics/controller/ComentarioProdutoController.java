@@ -1,6 +1,5 @@
 package br.com.ifpe.psyChomics.controller;
 
-
 import java.util.Date;
 import java.util.List;
 
@@ -21,24 +20,12 @@ public class ComentarioProdutoController {
 
 	@RequestMapping("/exibirCadastrarComentarioProduto")
 	public String exibirCadastrarComentarioProduto(Integer id, Model model) {
-		
+
 		ProdutoDao dao = new ProdutoDao();
 		Produto produtoPreenchido = dao.buscarPorId(id);
 		model.addAttribute("produto", produtoPreenchido);
 
 		return "comentarioProduto/cadastrarComentarioProduto";
-	}
-
-	@RequestMapping("cadastrarComentarioProduto")
-	public String cadastrarComentarioProduto(ComentarioProduto comentarioProduto,HttpSession session, Model model) {
-		comentarioProduto.setData(new Date());
-		ComentarioProdutoDao dao = new ComentarioProdutoDao();
-		Usuario usuario = (Usuario) session.getAttribute("usuarioLogado");
-		comentarioProduto.setUsuario(usuario);
-		dao.salvar(comentarioProduto);
-		model.addAttribute("msg", "O comentario do produto foi Inserido com Sucesso !");
-
-		return "psyChomics/quemSomos";
 	}
 
 	@RequestMapping("listarComentarioProduto")
@@ -49,6 +36,18 @@ public class ComentarioProdutoController {
 		model.addAttribute("listarComentarioProduto", listarComentarioProduto);
 
 		return "comentarioProduto/pesquisarComentarioProduto";
+	}
+
+	@RequestMapping("cadastrarComentarioProduto")
+	public String cadastrarComentarioProduto(ComentarioProduto comentarioProduto, HttpSession session, Model model) {
+		comentarioProduto.setData(new Date());
+		ComentarioProdutoDao dao = new ComentarioProdutoDao();
+		Usuario usuario = (Usuario) session.getAttribute("usuarioLogado");
+		comentarioProduto.setUsuario(usuario);
+		dao.salvar(comentarioProduto);
+		model.addAttribute("msg", "O comentario do produto foi Inserido com Sucesso !");
+
+		return "forward:listarComentarioProduto";
 	}
 
 	@RequestMapping("removerComentarioProduto")

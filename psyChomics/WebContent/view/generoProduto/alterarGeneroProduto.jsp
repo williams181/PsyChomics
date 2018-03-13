@@ -92,8 +92,12 @@
 			<p>
 				<table style="width: 100%">
 					<tr>
-						<td style="float: left; font-size: 24px;">Alterar <strong>Genero de Produto</strong> </td>
-						<td style="float: right; text-align: right;"> <img src="view/img/editar.jpg" style="width: 20%;">  </td>
+						<td style="float: left; font-size: 24px;"> Listagem de <strong>Genero de Produto</strong> </td>
+						<td style="float: right;"> <a href="exibirListarIndex" class="btn btn-primary" role="button">Home</a> </td>
+						<td style="float: right;"> <a href="listarGeneroProduto" class="btn btn-primary" role="button">Novo Genero</a> </td>
+						<td style="float: right;"> <a href="listarCategoriaProduto" class="btn btn-primary" role="button">Nova Categoria</a> </td>
+						<td style="float: right;"> <a href="listarTipoProduto" class="btn btn-primary" role="button">Novo Tipo</a> </td>
+						<td style="float: right;"> <a href="listarProduto" class="btn btn-primary" role="button">Novo Produto</a> </td>
 					</tr>
 				</table>
 			</p>

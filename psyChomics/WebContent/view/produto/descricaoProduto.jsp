@@ -15,8 +15,11 @@
 </head>
 <body>
 
+
+
 	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
-		class="navbar-brand" href="listarProdutoIndex"><img src="\imagens\nav.png" width="50%"></a>
+		class="navbar-brand" href="listarProdutoIndex"><img
+		src="view/imagens/nav.png" width="50%"></a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarSupportedContent"
 		aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -36,22 +39,24 @@
 				aria-expanded="false">Cadastrar</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					<a class="dropdown-item" href="exibirCadastrarProduto">Produtos</a>
- 					<a class="dropdown-item" href="exibirCadastrarUsuario">Usuários</a>
- 					<a class="dropdown-item" href="incluirCategoriaProduto">Categoria</a>
- 					<a class="dropdown-item" href="incluirGeneroProduto">Gênero</a> 
+					<a class="dropdown-item" href="exibirCadastrarUsuario">Usuários</a>
+					<a class="dropdown-item" href="exibirIncluirCategoriaProduto">Categoria</a>
+					<a class="dropdown-item" href="exibirIncluirGeneroProduto">Gênero</a>
+					<a class="dropdown-item" href="exibirIncluirTipoProduto">Tipo</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 				role="button" data-toggle="dropdown" aria-haspopup="true"
 				aria-expanded="false">Listar</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="listarUsuario">Usuários</a>
-					<a class="dropdown-item" href="listarProduto">Produtos</a>
-					<a class="dropdown-item" href="listarCategoriaProduto">Categoria</a>
-					<a class="dropdown-item" href="listarGeneroProduto">Gênero</a>
+					<a class="dropdown-item" href="listarUsuario">Usuários</a> <a
+						class="dropdown-item" href="listarProduto">Produtos</a> <a
+						class="dropdown-item" href="listarCategoriaProduto">Categoria</a>
+					<a class="dropdown-item" href="listarGeneroProduto">Gênero</a> <a
+						class="dropdown-item" href="listarTipoProduto">Tipo</a>
 				</div></li>
 			<li class="nav-item"><a class="nav-link"
-				href="#">Perfil</a></li>	
+				href="exibirPerfilUsuario">Perfil</a></li>
 			<li class="nav-item"><a class="nav-link"
 				href="exibirCadastrarUsuario">Cadastre-se</a></li>
 			<li class="nav-item"><a class="nav-link"
@@ -69,6 +74,7 @@
 	</nav>
 
 
+
 	<div id="carouselExampleIndicators" class="carousel slide"
 		data-ride="carousel">
 		<ol class="carousel-indicators">
@@ -76,7 +82,7 @@
 				class="active"></li>
 			<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
 			<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-			<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
 		</ol>
 		<div class="carousel-inner">
 			<div class="carousel-item active">
@@ -85,40 +91,49 @@
 			</div>
 
 			<div class="carousel-item">
-				<img class="d-block w-100" src="view/imagens/bg3.png"
+				<img class="d-block w-100" src="view/imagens/bgcw.png"
 					alt="segundo slide">
 			</div>
 
 			<div class="carousel-item">
-				<img class="d-block w-100" src="view/imagens/bg3.png"
+				<img class="d-block w-100" src="view/imagens/bgcw2.png"
 					alt="terceiro slide">
 			</div>
 
 			<div class="carousel-item">
-				<img class="d-block w-100" src="view/imagens/bg3.png"
+				<img class="d-block w-100" src="view/imagens/bgoldlogan.png"
 					alt="quarto slide">
 			</div>
 		</div>
 		<a class="carousel-control-prev" href="#carouselExampleIndicators"
 			role="button" data-slide="prev"> <span
 			class="carousel-control-prev-icon" aria-hidden="true"></span> <span
-			class="sr-only">Previous</span>
+			class="sr-only">Anterior</span>
 		</a> <a class="carousel-control-next" href="#carouselExampleIndicators"
 			role="button" data-slide="next"> <span
 			class="carousel-control-next-icon" aria-hidden="true"></span> <span
-			class="sr-only">Proximo</span>
+			class="sr-only">Próximo</span>
 		</a>
 	</div>
-	
-	
-	
-	<div class="card">
-		<div class="card-body">Descricão do Produto</div>
-	</div>
+
+
+
+	<center>
+		<div class="card">
+			<div class="card-body">
+				<h4>Descricão do Produto</h4>
+			</div>
+		</div>
+	</center>
 
 
 
 	<input type="hidden" name="id" value="${produto.id}" />
+
+
+
+	<hr>
+	<hr>
 
 
 
@@ -137,11 +152,17 @@
 				<li class="list-group-item">${produto.tipoProduto.descricao}</li>
 			</ul>
 			<div class="card-body">
-				<a href="#" class="card-link">Comprar</a> <a href="exibirCadastrarComentarioProduto?id=${produto.id}"
+				<a href="#" class="card-link">Comprar</a> <a
+					href="exibirCadastrarComentarioProduto?id=${produto.id}"
 					class="card-link">Comentarios</a>
 			</div>
 		</div>
 	</center>
+
+
+
+	<hr>
+	<hr>
 
 
 
@@ -153,8 +174,8 @@
 			<a href="#" class="btn btn-primary">abrir</a>
 		</div>
 	</div>
-	
-	
+
+
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

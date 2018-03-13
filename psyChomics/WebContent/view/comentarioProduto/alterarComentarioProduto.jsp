@@ -1,29 +1,24 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-
-<!DOCTYPE html>
-
-<html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<title>Sistema de Controle de Estoque</title>
-
-<link rel="stylesheet" type="text/css" href="view/css/estilo.css" />
-<link rel="stylesheet" type="text/css" href="view/bootstrap/css/bootstrap.min.css" />
-  
-<script type="text/javascript" src="view/js/jquery-2.1.4.js"></script>
-<script type="text/javascript" src="view/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="view/js/maskedinput.js"></script>
-
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>alterar Comentarios dos produtos</title>
 </head>
+<body>
 
-<body id="corpoPadrao">
 
-		<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
-		class="navbar-brand" href="listarProdutoIndex"><img src="\imagens\nav.png" width="50%"></a>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
+		class="navbar-brand" href="listarProdutoIndex"><img
+		src="view/imagens/nav.png" width="50%"></a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarSupportedContent"
 		aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -43,22 +38,24 @@
 				aria-expanded="false">Cadastrar</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					<a class="dropdown-item" href="exibirCadastrarProduto">Produtos</a>
- 					<a class="dropdown-item" href="exibirCadastrarUsuario">Usuários</a>
- 					<a class="dropdown-item" href="incluirCategoriaProduto">Categoria</a>
- 					<a class="dropdown-item" href="incluirGeneroProduto">Gênero</a> 
+					<a class="dropdown-item" href="exibirCadastrarUsuario">Usuários</a>
+					<a class="dropdown-item" href="exibirIncluirCategoriaProduto">Categoria</a>
+					<a class="dropdown-item" href="exibirIncluirGeneroProduto">Gênero</a>
+					<a class="dropdown-item" href="exibirIncluirTipoProduto">Tipo</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 				role="button" data-toggle="dropdown" aria-haspopup="true"
 				aria-expanded="false">Listar</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="listarUsuario">Usuários</a>
-					<a class="dropdown-item" href="listarProduto">Produtos</a>
-					<a class="dropdown-item" href="listarCategoriaProduto">Categoria</a>
-					<a class="dropdown-item" href="listarGeneroProduto">Gênero</a>
+					<a class="dropdown-item" href="listarUsuario">Usuários</a> <a
+						class="dropdown-item" href="listarProduto">Produtos</a> <a
+						class="dropdown-item" href="listarCategoriaProduto">Categoria</a>
+					<a class="dropdown-item" href="listarGeneroProduto">Gênero</a> <a
+						class="dropdown-item" href="listarTipoProduto">Tipo</a>
 				</div></li>
 			<li class="nav-item"><a class="nav-link"
-				href="#">Perfil</a></li>	
+				href="exibirPerfilUsuario">Perfil</a></li>
 			<li class="nav-item"><a class="nav-link"
 				href="exibirCadastrarUsuario">Cadastre-se</a></li>
 			<li class="nav-item"><a class="nav-link"
@@ -74,59 +71,97 @@
 		</form>
 	</div>
 	</nav>
-	<div align="left" style="color: #6E6E6E; margin-right: 2%;">Bem
-		vindo, ${usuarioLogado.nomeUsuario}</div>
 
 
-	<div align="center">
-	
-		<div align="left" style="color: #6E6E6E; width: 70%; margin-top: 4%;">
 
-			<c:if test="${msg ne null}">
-				<div class="alert alert-error" style="width: 70%;">
-					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-					${msg}
-				</div>
-			</c:if>
-
-			<hr />
-			
-			<p>
-				<table style="width: 100%">
-					<tr>
-						<td style="float: left; font-size: 24px;">Alterar <strong>Genero de Produto</strong> </td>
-						<td style="float: right; text-align: right;"> <img src="view/img/editar.jpg" style="width: 20%;">  </td>
-					</tr>
-				</table>
-			</p>
-			
-			<hr />
-			
-			<form action="alterarGeneroProduto" method="post">
-			
-				<input type="hidden" name="id" value="${generoProduto.id}">
-			
-  				<div class="form-group">
-					<label for="inputDescricao">Descrição</label>
-					<input type="text" id="inputDescricao" class="form-control" name="descricao" style="width: 500px;" maxlength="100" required="required" value="${generoProduto.descricao}" /> &nbsp;
-					<form:errors path="categoriaProduto.descricao" cssStyle="color:red" />
-				</div>
-
-				<br />
-  				
-  				<a href="listarGeneroProduto" class="btn btn-danger" role="button">Cancelar</a> &nbsp;
-  				<button type="reset" class="btn btn-default"> &nbsp; Limpar &nbsp; </button> &nbsp;
-  				<button type="submit" class="btn btn-warning"> &nbsp; Alterar &nbsp; </button>
-  				
-			</form>
+	<center>
+		<div class="card">
+			<div class="card-body">
+				<h4>altere seu Comentário</h4>
+			</div>
 		</div>
-			
-	</div>
-	
-	<br />
-	
-	<hr class="linhaSeparador">
-	
+	</center>
 
+
+
+	<input type="hidden" name="id" value="${produto.id}" />
+
+
+
+	<hr>
+	<hr>
+
+
+
+	<center>
+		<div class="card" style="width: 18rem;">
+			<img class="card-img-top" src="view/img/${produto.imagem}"
+				alt="Card image cap">
+			<div class="card-body">
+				<h5 class="card-title">${produto.nome}</h5>
+				<p class="card-text">${produto.preco}</p>
+			</div>
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item">${produto.tipoProduto.descricao}</li>
+				<li class="list-group-item">${produto.generoProduto.descricao}</li>
+				<li class="list-group-item">${produto.categoriaProduto.descricao}</li>
+				<li class="list-group-item">${produto.descricao}</li>
+			</ul>
+		</div>
+	</center>
+
+
+
+	<hr>
+	<hr>
+	<hr>
+
+
+
+	<center>
+		<form action="alterarComentarioProduto" method="post"
+			enctype="multipart/form-data">
+			<div class="form-group col-md-6">
+				<label for="inputComentario"><h4>Digite aqui seu
+						Comentário do produto</h4></label>
+				<textarea>${produto.comentario}</textarea>
+			</div>
+			<input type="hidden" name="produto.id" value="${produto.id}" />
+			<button type="submit" class="btn btn-primary" value="cadastrar">Cadastrar
+				Comentário</button>
+		</form>
+		<br>
+	</center>
+
+
+
+	<hr>
+	<hr>
+
+
+
+	<div class="card">
+		<div class="card-header">Olá</div>
+		<div class="card-body">
+			<h5 class="card-title">Saiba mais sobre nós!</h5>
+			<p class="card-text">Visite nossas redes sociais</p>
+			<a href="#" class="btn btn-primary">Abrir</a>
+		</div>
+	</div>
+
+
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
 </body>
+
 </html>

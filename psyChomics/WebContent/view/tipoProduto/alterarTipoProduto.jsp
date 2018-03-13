@@ -24,58 +24,6 @@
 
 <body id="corpoPadrao">
 
-	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
-		class="navbar-brand" href="listarProdutoIndex"><img src="\imagens\nav.png" width="50%"></a>
-	<button class="navbar-toggler" type="button" data-toggle="collapse"
-		data-target="#navbarSupportedContent"
-		aria-controls="navbarSupportedContent" aria-expanded="false"
-		aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-	<div class="collapse navbar-collapse" id="navbarSupportedContent">
-		<ul class="navbar-nav mr-auto">
-			<li class="nav-item active"><a class="nav-link"
-				href="listarProdutoIndex">Início<span class="sr-only">(current)</span>
-			</a></li>
-			<li class="nav-item"><a class="nav-link" href="exibirQuemSomos">Quem
-					somos</a></li>
-			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false">Cadastrar</a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="exibirCadastrarProduto">Produtos</a>
- 					<a class="dropdown-item" href="exibirCadastrarUsuario">Usuários</a>
- 					<a class="dropdown-item" href="incluirCategoriaProduto">Categoria</a>
- 					<a class="dropdown-item" href="incluirGeneroProduto">Gênero</a> 
-				</div></li>
-			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false">Listar</a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="listarUsuario">Usuários</a>
-					<a class="dropdown-item" href="listarProduto">Produtos</a>
-					<a class="dropdown-item" href="listarCategoriaProduto">Categoria</a>
-					<a class="dropdown-item" href="listarGeneroProduto">Gênero</a>
-				</div></li>
-			<li class="nav-item"><a class="nav-link"
-				href="#">Perfil</a></li>	
-			<li class="nav-item"><a class="nav-link"
-				href="exibirCadastrarUsuario">Cadastre-se</a></li>
-			<li class="nav-item"><a class="nav-link"
-				href="exibirLoginUsuario">Login</a></li>
-			<li class="nav-item"><a class="nav-link" href="logout">Logout</a></li>
-		</ul>
-		<form class="form-inline my-2 my-lg-0" action="buscarProduto">
-			<input class="form-control mr-sm-2" type="text"
-				pplaceholder="Procurar.." id="inputNome" name="nome" for="inputNome"
-				aria-label="Search">
-			<button class="btn btn-outline-success my-2 my-sm-0" value="buscar"
-				type="submit">Buscar</button>
-		</form>
-	</div>
-	</nav>
 
 
 	<div align="center">
@@ -92,15 +40,16 @@
 			<hr />
 
 			<p>
-			<table style="width: 100%">
-				<tr>
-					<td style="float: left; font-size: 24px;">Alterar <strong>Tipo
-							de Produto</strong>
-					</td>
-					<td style="float: right; text-align: right;"><img
-						src="view/img/editar.jpg" style="width: 20%;"></td>
-				</tr>
-			</table>
+				<table style="width: 100%">
+					<tr>
+						<td style="float: left; font-size: 24px;"> Listagem de <strong>Genero de Produto</strong> </td>
+						<td style="float: right;"> <a href="exibirListarIndex" class="btn btn-primary" role="button">Home</a> </td>
+						<td style="float: right;"> <a href="listarGeneroProduto" class="btn btn-primary" role="button">Novo Genero</a> </td>
+						<td style="float: right;"> <a href="listarCategoriaProduto" class="btn btn-primary" role="button">Nova Categoria</a> </td>
+						<td style="float: right;"> <a href="listarTipoProduto" class="btn btn-primary" role="button">Novo Tipo</a> </td>
+						<td style="float: right;"> <a href="listarProduto" class="btn btn-primary" role="button">Novo Produto</a> </td>
+					</tr>
+				</table>
 			</p>
 
 			<hr />

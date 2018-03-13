@@ -15,8 +15,9 @@
 </head>
 <body>
 
-		<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
-		class="navbar-brand" href="listarProdutoIndex"><img src="\imagens\nav.png" width="50%"></a>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
+		class="navbar-brand" href="listarProdutoIndex"><img
+		src="view/imagens/nav.png" width="50%"></a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarSupportedContent"
 		aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -36,22 +37,24 @@
 				aria-expanded="false">Cadastrar</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					<a class="dropdown-item" href="exibirCadastrarProduto">Produtos</a>
- 					<a class="dropdown-item" href="exibirCadastrarUsuario">Usuários</a>
- 					<a class="dropdown-item" href="incluirCategoriaProduto">Categoria</a>
- 					<a class="dropdown-item" href="incluirGeneroProduto">Gênero</a> 
+					<a class="dropdown-item" href="exibirCadastrarUsuario">Usuários</a>
+					<a class="dropdown-item" href="exibirIncluirCategoriaProduto">Categoria</a>
+					<a class="dropdown-item" href="exibirIncluirGeneroProduto">Gênero</a>
+					<a class="dropdown-item" href="exibirIncluirTipoProduto">Tipo</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 				role="button" data-toggle="dropdown" aria-haspopup="true"
 				aria-expanded="false">Listar</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="listarUsuario">Usuários</a>
-					<a class="dropdown-item" href="listarProduto">Produtos</a>
-					<a class="dropdown-item" href="listarCategoriaProduto">Categoria</a>
-					<a class="dropdown-item" href="listarGeneroProduto">Gênero</a>
+					<a class="dropdown-item" href="listarUsuario">Usuários</a> <a
+						class="dropdown-item" href="listarProduto">Produtos</a> <a
+						class="dropdown-item" href="listarCategoriaProduto">Categoria</a>
+					<a class="dropdown-item" href="listarGeneroProduto">Gênero</a> <a
+						class="dropdown-item" href="listarTipoProduto">Tipo</a>
 				</div></li>
 			<li class="nav-item"><a class="nav-link"
-				href="#">Perfil</a></li>	
+				href="exibirPerfilUsuario">Perfil</a></li>
 			<li class="nav-item"><a class="nav-link"
 				href="exibirCadastrarUsuario">Cadastre-se</a></li>
 			<li class="nav-item"><a class="nav-link"
@@ -68,8 +71,7 @@
 	</div>
 	</nav>
 
-	<div align="left" style="color: #6E6E6E; margin-right: 2%;">Bem
-		vindo, ${usuarioLogado.nomeUsuario}</div>
+
 
 	<div id="carouselExampleIndicators" class="carousel slide"
 		data-ride="carousel">
@@ -112,37 +114,70 @@
 		</a>
 	</div>
 
-<center>
-	<div class="card">
-		<div class="card-body">Quem Somos?</div>
-	</div>
-</center>
 
-	<div>
-		<div>
-		<center>
-		 Somos um site especializado em quadrinhos e mangás, buscamos sempre levar para nossos clientes
-		  o maior e mais atualizado acervo de revistas em quadrinhos do Brasil de forma profissional
-		   e competitiva.
-		</center>
+
+	<center>
+		<div class="card">
+			<div class="card-body">
+				<h4>Quem Somos?</h4>
+			</div>
 		</div>
-	</div>
-
-
-<center>
-	<div class="card">
-		<div class="card-body">Nosso Objetivo: </div>
-	</div>
+	</center>
 
 
 
-	<div>
-		<div>é – pensar sempre no consumidor – fomentar o mercado 
-		e aproximar cada vez mais o público do maravilhoso universo das histórias em
-		 quadrinhos. Disponibilizando sempre uma equipe treinada, com muito carisma, potencial
-		  e conhecimento para propor ao cliente a devida atenção e atendimento.</div>
-	</div>
-</center>
+	<hr>
+	<hr>
+
+
+
+	<center>
+		<p>
+			<stromg><h6>Somos um site especializado em quadrinhos e mangás</h6></stromg>
+			, buscamos sempre levar para nossos clientes o maior e mais
+			atualizado acervo de revistas em quadrinhos do Brasil de forma
+			profissional e competitiva.
+		</p>
+	</center>
+
+
+
+<hr>
+<hr>
+
+
+
+	<center>
+		<div class="card">
+			<div class="card-body">
+				<h4>Nosso Objetivo!</h4>
+			</div>
+		</div>
+	</center>
+
+
+
+	<hr>
+	<hr>
+
+
+
+	<center>
+		<p>
+			<stromg><h6>é pensar sempre no consumidor</h6>, fomentar o mercado
+			e aproximar cada vez mais o público do maravilhoso universo das
+			histórias em quadrinhos.</stromg>
+			Disponibilizando sempre uma equipe treinada, com muito carisma,
+			potencial e conhecimento para propor ao cliente a devida atenção e
+			atendimento.
+		</p>
+	</center>
+
+
+
+	<hr>
+	<hr>
+
 
 
 	<div class="card">

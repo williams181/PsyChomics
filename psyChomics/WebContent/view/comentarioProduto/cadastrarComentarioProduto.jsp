@@ -16,8 +16,9 @@
 <body>
 
 
-		<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
-		class="navbar-brand" href="listarProdutoIndex"><img src="\imagens\nav.png" width="50%"></a>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
+		class="navbar-brand" href="listarProdutoIndex"><img
+		src="view/imagens/nav.png" width="50%"></a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarSupportedContent"
 		aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -37,22 +38,24 @@
 				aria-expanded="false">Cadastrar</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					<a class="dropdown-item" href="exibirCadastrarProduto">Produtos</a>
- 					<a class="dropdown-item" href="exibirCadastrarUsuario">Usuários</a>
- 					<a class="dropdown-item" href="incluirCategoriaProduto">Categoria</a>
- 					<a class="dropdown-item" href="incluirGeneroProduto">Gênero</a> 
+					<a class="dropdown-item" href="exibirCadastrarUsuario">Usuários</a>
+					<a class="dropdown-item" href="exibirIncluirCategoriaProduto">Categoria</a>
+					<a class="dropdown-item" href="exibirIncluirGeneroProduto">Gênero</a>
+					<a class="dropdown-item" href="exibirIncluirTipoProduto">Tipo</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 				role="button" data-toggle="dropdown" aria-haspopup="true"
 				aria-expanded="false">Listar</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="listarUsuario">Usuários</a>
-					<a class="dropdown-item" href="listarProduto">Produtos</a>
-					<a class="dropdown-item" href="listarCategoriaProduto">Categoria</a>
-					<a class="dropdown-item" href="listarGeneroProduto">Gênero</a>
+					<a class="dropdown-item" href="listarUsuario">Usuários</a> <a
+						class="dropdown-item" href="listarProduto">Produtos</a> <a
+						class="dropdown-item" href="listarCategoriaProduto">Categoria</a>
+					<a class="dropdown-item" href="listarGeneroProduto">Gênero</a> <a
+						class="dropdown-item" href="listarTipoProduto">Tipo</a>
 				</div></li>
 			<li class="nav-item"><a class="nav-link"
-				href="#">Perfil</a></li>	
+				href="exibirPerfilUsuario">Perfil</a></li>
 			<li class="nav-item"><a class="nav-link"
 				href="exibirCadastrarUsuario">Cadastre-se</a></li>
 			<li class="nav-item"><a class="nav-link"
@@ -68,22 +71,50 @@
 		</form>
 	</div>
 	</nav>
-	<div align="left" style="color: #6E6E6E; margin-right: 2%;">Bem
-		vindo, ${usuarioLogado.nomeUsuario}</div>
-
-	<div class="card">
-		<div class="card-body">Cadastre seu Comentário</div>
-	</div>
-
-	<div class="card">
-		<div class="card-body">${msg}</div>
-	</div>
 
 
 
 	<center>
-		<h3>${usuarioLogado.email}</h3>
+		<div class="card">
+			<div class="card-body">
+				<h4>Cadastre seu Comentário</h4>
+			</div>
+		</div>
 	</center>
+
+
+
+	<input type="hidden" name="id" value="${produto.id}" />
+
+
+
+	<hr>
+	<hr>
+
+
+
+	<center>
+		<div class="card" style="width: 18rem;">
+			<img class="card-img-top" src="view/img/${produto.imagem}"
+				alt="Card image cap">
+			<div class="card-body">
+				<h5 class="card-title">${produto.nome}</h5>
+				<p class="card-text">${produto.preco}</p>
+			</div>
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item">${produto.tipoProduto.descricao}</li>
+				<li class="list-group-item">${produto.generoProduto.descricao}</li>
+				<li class="list-group-item">${produto.categoriaProduto.descricao}</li>
+				<li class="list-group-item">${produto.descricao}</li>
+			</ul>
+		</div>
+	</center>
+
+
+
+	<hr>
+	<hr>
+	<hr>
 
 
 
@@ -91,14 +122,23 @@
 		<form action="cadastrarComentarioProduto" method="post"
 			enctype="multipart/form-data">
 			<div class="form-group col-md-6">
-				<label for="inputComentario">Comentário</label> <input type="text"
-					id="inputComentario" class="form-control" name="comentario"
-					placeholder="comentario" maxlength="500" required="required">
+				<label for="inputComentario"><h4>Digite aqui seu
+						Comentário do produto</h4></label>
+				<textarea type="text" id="inputComentario" class="form-control"
+					name="comentario" placeholder="comentario" maxlength="600"
+					required="required" style="width: 600px;"></textarea>
 			</div>
 			<input type="hidden" name="produto.id" value="${produto.id}" />
-			<button type="submit" class="btn btn-primary" value="cadastrar">Cadastrar</button>
+			<button type="submit" class="btn btn-primary" value="cadastrar">Cadastrar
+				Comentário</button>
 		</form>
+		<br>
 	</center>
+	
+
+
+	<hr>
+	<hr>
 
 
 

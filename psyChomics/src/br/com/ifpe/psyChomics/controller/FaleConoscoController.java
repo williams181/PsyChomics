@@ -1,5 +1,6 @@
 package br.com.ifpe.psyChomics.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.ui.Model;
@@ -18,10 +19,10 @@ public class FaleConoscoController {
 
 	@RequestMapping("cadastrarMensagemFaleConosco")
 	public String cadastrarMensagemFaleConosco(FaleConosco faleConosco, Model model) {
-
+		faleConosco.setData(new Date());
 		FaleConoscoDao dao = new FaleConoscoDao();
 		dao.salvar(faleConosco);
-		model.addAttribute("msg", "A mensagem foi Inserido com Sucesso !");
+		model.addAttribute("msg", "A mensagem foi Inserida com Sucesso !");
 
 		return "forward:listarMensagemFaleConosco";
 	}
@@ -33,7 +34,7 @@ public class FaleConoscoController {
 		List<FaleConosco> listarFaleConosco = dao.listar();
 		model.addAttribute("listarFaleConosco", listarFaleConosco);
 
-		return "faleConosco/pesquisarMensagemFaleConoscoProduto";
+		return "faleConosco/pesquisarMensagemFaleConosco";
 	}
 
 	@RequestMapping("removerMensagemFaleConosco")
