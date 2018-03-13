@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -9,7 +10,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Sistema de Controle de Estoque</title>
+<title>Sistema de Controle de dsdsds</title>
 
 <link rel="stylesheet" type="text/css" href="view/css/estilo.css" />
 <link rel="stylesheet" type="text/css"
@@ -62,23 +63,23 @@
 			<p>
 			<table style="width: 100%">
 				<tr>
-					<td style="float: left; font-size: 24px;">Listagem de <strong>Genero
+					<td style="float: left; font-size: 24px;">Listagem<strong>
 							de Produto</strong>
 					</td>
-					<td style="float: right;"><a href="exibirListarIndex"
+					<td style="float: right;"><a href="ListarProdutoIndex"
 						class="btn btn-primary" role="button">Home</a></td>
-					<td style="float: right;"><a href="listarGeneroProduto"
+					<td style="float: right;"><a href="exibirIncluirGeneroProduto"
 						class="btn btn-primary" role="button">Novo Genero</a></td>
-					<td style="float: right;"><a href="listarCategoriaProduto"
-						class="btn btn-primary" role="button">Nova Categoria</a></td>
-					<td style="float: right;"><a href="listarTipoProduto"
+					<td style="float: right;"><a
+						href="exibirIncluirCategoriaProduto" class="btn btn-primary"
+						role="button">Nova Categoria</a></td>
+					<td style="float: right;"><a href="exibirIncluirTipoProduto"
 						class="btn btn-primary" role="button">Novo Tipo</a></td>
-					<td style="float: right;"><a href="listarProduto"
+					<td style="float: right;"><a href="exibirCadastrarProduto"
 						class="btn btn-primary" role="button">Novo Produto</a></td>
 				</tr>
 			</table>
 			</p>
-
 			<hr />
 
 			<table class="table table-striped table-bordered">

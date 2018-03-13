@@ -79,7 +79,7 @@ CREATE TABLE pedido (
 
 CREATE TABLE fale_conosco (
 	id INT(6) AUTO_INCREMENT PRIMARY KEY,
-	nome_usuario INT(6),
+	nome_usuario VARCHAR(50),
 	email VARCHAR(50),
 	data date,
 	mensagem TEXT(600)

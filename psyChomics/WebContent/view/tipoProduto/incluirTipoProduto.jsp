@@ -39,7 +39,7 @@
 			<p>
 				<table style="width: 100%">
 					<tr>
-						<td style="float: left; font-size: 24px;"> Listagem de <strong>Genero de Produto</strong> </td>
+						<td style="float: left; font-size: 24px;"> inclusão de <strong>Genero de Produto</strong> </td>
 						<td style="float: right;"> <a href="exibirListarIndex" class="btn btn-primary" role="button">Home</a> </td>
 						<td style="float: right;"> <a href="listarGeneroProduto" class="btn btn-primary" role="button">Novo Genero</a> </td>
 						<td style="float: right;"> <a href="listarCategoriaProduto" class="btn btn-primary" role="button">Nova Categoria</a> </td>

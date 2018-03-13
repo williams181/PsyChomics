@@ -3,12 +3,13 @@ package br.com.ifpe.psyChomics.controller;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.ifpe.psyChomics.dao.FaleConoscoDao;
 import br.com.ifpe.psyChomics.model.FaleConosco;
-
+@Controller
 public class FaleConoscoController {
 	
 	@RequestMapping("/exibirFaleConosco")

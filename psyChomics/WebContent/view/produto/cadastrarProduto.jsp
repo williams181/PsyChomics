@@ -39,7 +39,7 @@
 			<p>
 				<table style="width: 100%">
 					<tr>
-						<td style="float: left; font-size: 24px;"> Listagem de <strong>Genero de Produto</strong> </td>
+						<td style="float: left; font-size: 24px;"> inclusão de <strong>Produto</strong> </td>
 						<td style="float: right;"> <a href="exibirListarIndex" class="btn btn-primary" role="button">Home</a> </td>
 						<td style="float: right;"> <a href="listarGeneroProduto" class="btn btn-primary" role="button">Novo Genero</a> </td>
 						<td style="float: right;"> <a href="listarCategoriaProduto" class="btn btn-primary" role="button">Nova Categoria</a> </td>
@@ -48,6 +48,8 @@
 					</tr>
 				</table>
 			</p>
+			
+			
 
 			<hr />
 
@@ -80,7 +82,7 @@
 					<label for="inputDescricao">Descrição</label>
 					<textarea for="inputDescricao" id="inputDescricao"
 						class="form-control" name="descricao" style="width: 500px;"
-						maxlength="255"></textarea>
+						maxlength="600"></textarea>
 				</div>
 				<div class="form-group">
 					Categoria: <br /> <select id="categoriaProduto"

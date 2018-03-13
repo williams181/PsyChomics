@@ -82,7 +82,7 @@ public class FaleConoscoDao {
 	public FaleConosco buscarPorId(int id) {
 		try {
 			FaleConosco faleConoscoCompleto = new FaleConosco();
-			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM comentario_produto WHERE id =  ?");
+			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM fale_conosco WHERE id =  ?");
 			stmt.setInt(1, id);
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
@@ -112,9 +112,8 @@ public class FaleConoscoDao {
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			stmt.setString(1, faleConosco.getNomeUsuario());	
 			stmt.setString(2, faleConosco.getEmail());	
-			stmt.setDate(3, new java.sql.Date(faleConosco.getData().getTime()));
-			stmt.setString(4, faleConosco.getMensagem());
-			stmt.setInt(5, faleConosco.getId());
+			stmt.setString(3, faleConosco.getMensagem());
+			stmt.setInt(4, faleConosco.getId());
 			stmt.execute();
 			stmt.close();
 			connection.close();
