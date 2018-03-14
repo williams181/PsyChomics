@@ -71,10 +71,10 @@ CREATE TABLE item (
 
 CREATE TABLE pedido (
 	id INT(6) AUTO_INCREMENT PRIMARY KEY,
-	idusuario INT(6),
+	usuario_id INT(6),
 	data date,
 	mensagem TEXT(600),
-	FOREIGN KEY (idusuario) REFERENCES usuario(id)
+	FOREIGN KEY (usuario_id) REFERENCES usuario(id)
 );
 
 CREATE TABLE fale_conosco (

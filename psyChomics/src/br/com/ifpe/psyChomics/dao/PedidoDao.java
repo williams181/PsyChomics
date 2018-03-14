@@ -47,7 +47,7 @@ public class PedidoDao {
 		try {
 			List<Pedido> listarPedido = new ArrayList<Pedido>();
 			PreparedStatement stmt = this.connection
-					.prepareStatement("SELECT * FROM pedido ORDER BY comentario");
+					.prepareStatement("SELECT * FROM pedido ORDER BY mensagem");
 
 			ResultSet rs = stmt.executeQuery();
 
