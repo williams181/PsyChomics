@@ -17,7 +17,8 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 				|| uri.endsWith("psyChomics/") || uri.endsWith("efetuarLogin") || uri.endsWith("cadastrarUsuario")
 				|| uri.endsWith("exibirCadastrarUsuario") || uri.endsWith("listarProdutoIndex")
 				|| uri.endsWith("exibirLoginUsuario") || uri.endsWith("exibirDescricaoProduto")
-				|| uri.endsWith("exibirQuemSomos")) {
+				|| uri.endsWith("exibirFaleConosco") || uri.endsWith("exibirQuemSomos")
+				|| uri.endsWith("cadastrarMensagemFaleConosco")) {
 
 			return true;
 		}
