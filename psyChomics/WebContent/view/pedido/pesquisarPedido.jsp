@@ -21,33 +21,67 @@
 
 <body id="corpoPadrao">
 
+	<nav id="divMenu" class="navbar navbar-inverse">
+		<div class="container-fluid">
+
+			<div>
+				<ul class="nav navbar-nav">
+
+					<li><a href="listarProdutoIndex">Home</a></li>
+
+					<li><a>|</a></li>
+
+					<li><a href="listarProduto">Produto</a></li>
+
+					<li><a>|</a></li>
+
+					<li><a href="listarCategoriaProduto">Categoria</a></li>
+
+					<li><a>|</a></li>
+
+					<li><a href="listarGeneroProduto">Genero</a></li>
+
+					<li><a>|</a></li>
+
+					<li><a href="listarTipoProduto">Tipo</a></li>
+
+					<li><a>|</a></li>
+
+					<li><a href="logout">Sair</a></li>
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
 
 
 	<div align="center">
 
-		<div align="left" style="color: #6E6E6E; width: 70%;">
+		<div align="left" style="color: #6E6E6E; width: 70%; margin-top: 4%;">
 
 			<c:if test="${msg ne null}">
-				<div class="alert alert-success" style="width: 100%;">
+				<div class="alert alert-error" style="width: 70%;">
 					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 					${msg}
 				</div>
 			</c:if>
 
 			<hr />
-
 			<p>
 			<table style="width: 100%">
 				<tr>
-					<td style="float: left; font-size: 24px;">Listagem de <strong>Usuário</strong>
+					<td style="float: left; font-size: 24px;">Lista de <strong>Pedido
+							de Produto</strong>
 					</td>
-					<td style="float: right;"><a href="exibirCadastrarUsuario"
-						class="btn btn-primary" role="button">Novo</a></td>
+					<td style="float: right;"><a href="exibirPedido"
+						class="btn btn-primary" role="button">Inclusão de Pedido</a></td>
 				</tr>
 			</table>
 			</p>
 
 			<hr />
+
 
 			<table class="table table-striped table-bordered">
 				<thead>

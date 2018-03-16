@@ -17,7 +17,7 @@
 
 
 
-	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
+<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
 		class="navbar-brand" href="listarProdutoIndex"><img
 		src="view/imagens/nav.png" width="50%"></a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -55,8 +55,6 @@
 					<a class="dropdown-item" href="listarGeneroProduto">Gênero</a> <a
 						class="dropdown-item" href="listarTipoProduto">Tipo</a>
 				</div></li>
-			<li class="nav-item"><a class="nav-link"
-				href="exibirFaleConosco">FaleConosco</a></li>
 			<li class="nav-item"><a class="nav-link"
 				href="exibirPerfilUsuario">Perfil</a></li>
 			<li class="nav-item"><a class="nav-link"
@@ -123,6 +121,8 @@
 	<div class="card">
 		<div class="card-body" align="center">Produtos Nacionais</div>
 	</div>
+
+
 
 	<center>
 		<div class="row">

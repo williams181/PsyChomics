@@ -151,10 +151,11 @@
 					<li class="list-group-item">${produto.categoriaProduto.descricao}</li>
 					<li class="list-group-item">${produto.tipoProduto.descricao}</li>
 				</ul>
-				<div class="card-body">
-					<a href="#" class="card-link">Comprar</a> <a href="#"
-						class="card-link">Comentários</a>
-				</div>
+			<div class="card-body">
+				<a href="exibirAdicionarCarrinho?id=${produto.id}" class="card-link">Comprar</a> <a
+					href="exibirCadastrarComentarioProduto?id=${produto.id}"
+					class="card-link">Comentarios</a>
+			</div>
 			</div>
 		</c:forEach>
 	</center>

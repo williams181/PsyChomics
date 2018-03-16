@@ -23,6 +23,43 @@
 
 <body id="corpoPadrao">
 
+<body id="corpoPadrao">
+
+	<nav id="divMenu" class="navbar navbar-inverse">
+		<div class="container-fluid">
+
+			<div>
+				<ul class="nav navbar-nav">
+
+					<li><a href="listarProdutoIndex">Home</a></li>
+
+					<li><a>|</a></li>
+
+					<li><a href="listarProduto">Produto</a></li>
+
+					<li><a>|</a></li>
+
+					<li><a href="listarCategoriaProduto">Categoria</a></li>
+
+					<li><a>|</a></li>
+
+					<li><a href="listarGeneroProduto">Genero</a></li>
+
+					<li><a>|</a></li>
+
+					<li><a href="listarTipoProduto">Tipo</a></li>
+
+					<li><a>|</a></li>
+
+					<li><a href="logout">Sair</a></li>
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+
 	<div align="center">
 
 		<div align="left" style="color: #6E6E6E; width: 70%; margin-top: 4%;">
@@ -35,21 +72,16 @@
 			</c:if>
 
 			<hr />
-
 			<p>
-				<table style="width: 100%">
-					<tr>
-						<td style="float: left; font-size: 24px;"> inclusão de <strong>Produto</strong> </td>
-						<td style="float: right;"> <a href="exibirListarIndex" class="btn btn-primary" role="button">Home</a> </td>
-						<td style="float: right;"> <a href="listarGeneroProduto" class="btn btn-primary" role="button">Novo Genero</a> </td>
-						<td style="float: right;"> <a href="listarCategoriaProduto" class="btn btn-primary" role="button">Nova Categoria</a> </td>
-						<td style="float: right;"> <a href="listarTipoProduto" class="btn btn-primary" role="button">Novo Tipo</a> </td>
-						<td style="float: right;"> <a href="listarProduto" class="btn btn-primary" role="button">Novo Produto</a> </td>
-					</tr>
-				</table>
+			<table style="width: 100%">
+				<tr>
+					<td style="float: left; font-size: 24px;">Inclusão de <strong>de Produto</strong>
+					</td>
+					<td style="float: right;"><a href="listarProduto"
+						class="btn btn-primary" role="button">Lista de Produto</a></td>
+				</tr>
+			</table>
 			</p>
-			
-			
 
 			<hr />
 

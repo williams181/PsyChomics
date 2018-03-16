@@ -28,7 +28,7 @@ public class UsuarioController {
 	 return "psyChomics/quemSomos";
 	}
 	model.addAttribute("msg", "Não foi encontrado um usuário com o login e senha informados.");
-	 return "usuario/loginUsuario";
+	 return "forward:listarProdutoIndex";
 	}
 	
     @RequestMapping("logout")
@@ -47,7 +47,7 @@ public class UsuarioController {
 		UsuarioDao dao = new UsuarioDao();
 		dao.cadastrar(usuario);
 		model.addAttribute("msg", "Usuario Incluido com Sucesso");
-		return "psyChomics/quemSomos";
+		 return "forward:listarProdutoIndex";
 	}
 
 	@RequestMapping("listarUsuario")

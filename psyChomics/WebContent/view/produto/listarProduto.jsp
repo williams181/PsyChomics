@@ -23,63 +23,88 @@
 
 <body id="corpoPadrao">
 
+	<nav id="divMenu" class="navbar navbar-inverse">
+		<div class="container-fluid">
+
+			<div>
+				<ul class="nav navbar-nav">
+
+					<li><a href="listarProdutoIndex">Home</a></li>
+
+					<li><a>|</a></li>
+
+					<li><a href="listarProduto">Produto</a></li>
+
+					<li><a>|</a></li>
+
+					<li><a href="listarCategoriaProduto">Categoria</a></li>
+
+					<li><a>|</a></li>
+
+					<li><a href="listarGeneroProduto">Genero</a></li>
+
+					<li><a>|</a></li>
+
+					<li><a href="listarTipoProduto">Tipo</a></li>
+
+					<li><a>|</a></li>
+
+					<li><a href="logout">Sair</a></li>
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<form class="form-group" action="buscarProduto" method="post">
+		<input class="form-control mr-sm-2" type="text"
+			pplaceholder="Procurar.." id="inputNome" name="nome" for="inputNome"
+			aria-label="Search">
+		<div class="form-group">
+			<label for="generoProduto">Genero:</label> <br /> <select
+				id="generoProduto" name="generoProduto"
+				style="width: 200px; height: 30px; border: 1px solid #BDC7D8; color: #000000; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;">
+				<option value="">Selecione</option>
+				<c:forEach items="${listarGeneroProduto}" var="obj">
+					<option value="${obj.id}"
+						<c:if test="${obj.id eq produto.generoProduto.id}">selected="selected"</c:if>>
+						${obj.descricao}</option>
+				</c:forEach>
+			</select>
+		</div>
+		<button type="reset" class="btn btn-default">&nbsp; Limpar
+			&nbsp;</button>
+		&nbsp;
+		<button type="submit" class="btn btn-primary">&nbsp; Filtrar
+			&nbsp;</button>
+	</form>
+
+
 
 	<div align="center">
 
-		<div align="left" style="color: #6E6E6E; width: 70%;">
+		<div align="left" style="color: #6E6E6E; width: 70%; margin-top: 4%;">
 
 			<c:if test="${msg ne null}">
-				<div class="alert alert-success" style="width: 100%;">
+				<div class="alert alert-error" style="width: 70%;">
 					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 					${msg}
 				</div>
 			</c:if>
 
-			<form class="form-group" action="buscarProduto" method="post">
-				<input class="form-control mr-sm-2" type="text"
-					pplaceholder="Procurar.." id="inputNome" name="nome"
-					for="inputNome" aria-label="Search">
-				<div class="form-group">
-					<label for="generoProduto">Genero:</label> <br /> <select
-						id="generoProduto" name="generoProduto"
-						style="width: 200px; height: 30px; border: 1px solid #BDC7D8; color: #000000; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;">
-						<option value="">Selecione</option>
-						<c:forEach items="${listarGeneroProduto}" var="obj">
-							<option value="${obj.id}"
-								<c:if test="${obj.id eq produto.generoProduto.id}">selected="selected"</c:if>>
-								${obj.descricao}</option>
-						</c:forEach>
-					</select>
-				</div>
-				<button type="reset" class="btn btn-default">&nbsp; Limpar
-					&nbsp;</button>
-				&nbsp;
-				<button type="submit" class="btn btn-primary">&nbsp;
-					Filtrar &nbsp;</button>
-			</form>
-
 			<hr />
-
 			<p>
 			<table style="width: 100%">
 				<tr>
-					<td style="float: left; font-size: 24px;">Listagem<strong>
-							de Produto</strong>
+					<td style="float: left; font-size: 24px;">Lista de <strong>de
+							Produto</strong>
 					</td>
-					<td style="float: right;"><a href="ListarProdutoIndex"
-						class="btn btn-primary" role="button">Home</a></td>
-					<td style="float: right;"><a href="exibirIncluirGeneroProduto"
-						class="btn btn-primary" role="button">Novo Genero</a></td>
-					<td style="float: right;"><a
-						href="exibirIncluirCategoriaProduto" class="btn btn-primary"
-						role="button">Nova Categoria</a></td>
-					<td style="float: right;"><a href="exibirIncluirTipoProduto"
-						class="btn btn-primary" role="button">Novo Tipo</a></td>
 					<td style="float: right;"><a href="exibirCadastrarProduto"
-						class="btn btn-primary" role="button">Novo Produto</a></td>
+						class="btn btn-primary" role="button">Inclusão de Produto</a></td>
 				</tr>
 			</table>
 			</p>
+
 			<hr />
 
 			<table class="table table-striped table-bordered">
@@ -102,11 +127,10 @@
 						<td style="vertical-align: middle;">${c.preco}</td>
 						<td style="vertical-align: middle;"><a
 							href="exibirAlterarProduto?id=${c.id}" class="btn btn-warning"
-							role="button">Alterar</a> &nbsp; <a
-							href="removerProduto?id=${c.id}" class="btn btn-danger"
-							role="button">Remover</a> <a
+							role="button">A</a><a href="removerProduto?id=${c.id}"
+							class="btn btn-danger" role="button">R</a><a
 							href="exibirDescricaoProduto?id=${c.id}" class="btn btn-warning"
-							role="button">Mais</a></td>
+							role="button">M</a></td>
 					</tr>
 				</c:forEach>
 			</table>
@@ -117,6 +141,5 @@
 	<br />
 
 	<hr class="linhaSeparador">
-
 </body>
 </html>
