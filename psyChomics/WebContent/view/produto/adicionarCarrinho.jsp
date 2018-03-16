@@ -138,25 +138,37 @@
 
 
 	<center>
-		<div class="card" style="width: 18rem;">
-			<img class="card-img-top" src="view/img/${produto.imagem}"
-				alt="Card image cap">
-			<div class="card-body">
-				<h5 class="card-title">${produto.nome}</h5>
-				<p class="card-text">${produto.descricao}</p>
+
+		<form action="adicionarAoCarrinho" method="post">
+			<div class="form-group">
+				<input type="hidden" name="id" value="${p.id}">
+				<div class="card" style="width: 18rem;">
+
+					<img class="card-img-top" src="view/img/${p.imagem}"
+						alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">${p.nome}</h5>
+					</div>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">${p.preco}</li>
+						<li class="list-group-item"><div class="form-group col-md-6">
+								<label for="inputQuantidade">Quantidade</label> <input
+									type="text" id="inputQuantidade" class="form-control"
+									name="quantidade" style="width: 40px;" required="required" />
+							</div></li>
+					</ul>
+					<div class="card-body">
+						<a href="listarProduto" class="btn btn-danger" role="button">Cancelar</a>
+						&nbsp;
+						<button type="reset" class="btn btn-default">&nbsp;
+							Limpar &nbsp;</button>
+						&nbsp;
+						<button type="submit" class="btn btn-info">&nbsp;
+							Adicionar &nbsp;</button>
+					</div>
+				</div>
 			</div>
-			<ul class="list-group list-group-flush">
-				<li class="list-group-item">${produto.preco}</li>
-				<li class="list-group-item">${produto.generoProduto.descricao}</li>
-				<li class="list-group-item">${produto.categoriaProduto.descricao}</li>
-				<li class="list-group-item">${produto.tipoProduto.descricao}</li>
-			</ul>
-			<div class="card-body">
-				<a href="exibirAdicionarCarrinho?id=${produto.id}" class="card-link">Comprar</a> <a
-					href="exibirCadastrarComentarioProduto?id=${produto.id}"
-					class="card-link">Comentarios</a>
-			</div>
-		</div>
+		</form>
 	</center>
 
 

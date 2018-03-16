@@ -127,36 +127,32 @@
 	</center>
 
 
-
-	<input type="hidden" name="id" value="${produto.id}" />
-
-
-
 	<hr>
 	<hr>
 
 
 
 	<center>
-		<div class="card" style="width: 18rem;">
-			<img class="card-img-top" src="view/img/${produto.imagem}"
-				alt="Card image cap">
-			<div class="card-body">
-				<h5 class="card-title">${produto.nome}</h5>
-				<p class="card-text">${produto.descricao}</p>
-			</div>
-			<ul class="list-group list-group-flush">
-				<li class="list-group-item">${produto.preco}</li>
-				<li class="list-group-item">${produto.generoProduto.descricao}</li>
-				<li class="list-group-item">${produto.categoriaProduto.descricao}</li>
-				<li class="list-group-item">${produto.tipoProduto.descricao}</li>
-			</ul>
-			<div class="card-body">
-				<a href="exibirAdicionarCarrinho?id=${produto.id}" class="card-link">Comprar</a> <a
-					href="exibirCadastrarComentarioProduto?id=${produto.id}"
-					class="card-link">Comentarios</a>
-			</div>
-		</div>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th scope="col">Produto</th>
+					<th scope="col">Preço</th>
+					<th scope="col">Quantidade</th>
+					<th scope="col">Valor total</th>
+				</tr>
+			</thead>
+			<c:forEach items="${listaCarrinho}" var="item">
+				<tbody>
+					<tr>
+						<th scope="row">${item.produto.nome}</th>
+						<td>${item.produto.preco}</td>
+						<td>${item.quantidade}</td>
+						<td>${item.produto.preco * item.quantidade}</td>
+					</tr>
+				</tbody>
+			</c:forEach>
+		</table>
 	</center>
 
 

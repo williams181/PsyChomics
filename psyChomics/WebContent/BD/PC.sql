@@ -52,21 +52,22 @@ CREATE TABLE comentario_produto (
 	FOREIGN KEY (usuario_id) REFERENCES usuario(id)	
 );
 
-CREATE TABLE carrinho (
-	id INT (6) AUTO_INCREMENT PRIMARY KEY,
-	idusuario INT (6),
-	total DOUBLE,
-	data date,
-	FOREIGN KEY (idusuario) REFERENCES usuario(id)
-);
-
-CREATE TABLE item (
+CREATE TABLE venda (
 	id INT(6) AUTO_INCREMENT PRIMARY KEY,
-	idproduto INT(6),
-	idcarrinho INT(6),
-	quantidade INT(6),
-	FOREIGN KEY (idproduto) REFERENCES produto(id),
-	FOREIGN KEY (idcarrinho) REFERENCES carrinho(id)
+	usuario_id INT (6),
+	data_venda date,
+	valor_total double,
+	FOREIGN KEY (usuario_id) REFERENCES usuario(id)	
+);	
+
+CREATE TABLE item_venda (
+	id INT(6) AUTO_INCREMENT PRIMARY KEY,
+	venda_id INT (6),
+	produto_id INT (6),
+	quantidade INT (6),
+	valor double,
+	FOREIGN KEY (venda_id) REFERENCES venda(id),
+	FOREIGN KEY (produto_id) REFERENCES produto(id)		
 );
 
 CREATE TABLE pedido (
