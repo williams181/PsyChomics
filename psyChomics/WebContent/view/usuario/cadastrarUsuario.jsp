@@ -189,14 +189,21 @@
 
 
 
+	
+<!-- Rodapé -->
 	<div class="card">
-		<div class="card-header">olá</div>
+		<center>
+		<div class="card-header">Nos siga no Facebook e fique por dentro das novidades!</div>
 		<div class="card-body">
-			<h5 class="card-title">saiba mais sobre nós</h5>
-			<p class="card-text">visite nossas redes sociais</p>
-			<a href="#" class="btn btn-primary">abrir</a>
+		
+			<h5 class="card-title">Visite nossa página no Facebook</h5>
+			<p class="card-text"></p>
+			<a href="https://www.facebook.com/" class="btn btn-primary">Visitar</a>
+		</center>
 		</div>
 	</div>
+
+
 
 
 
