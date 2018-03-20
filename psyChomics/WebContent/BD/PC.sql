@@ -35,7 +35,7 @@ CREATE TABLE produto (
 	nome VARCHAR (50),
 	preco DECIMAL (10,2),
 	imagem VARCHAR (255),
-	descricao TEXT(600),
+	descricao TEXT,
 	nacionalidade VARCHAR (20),
 	FOREIGN KEY (categoria_id) REFERENCES categoria_produto(id),
 	FOREIGN KEY (genero_id) REFERENCES genero_produto(id),
@@ -47,45 +47,54 @@ CREATE TABLE comentario_produto (
 	usuario_id INT (6),
 	produto_id INT (6),
 	data date,
-	comentario TEXT(600),
+	comentario TEXT,
 	FOREIGN KEY (produto_id) REFERENCES produto(id),	
 	FOREIGN KEY (usuario_id) REFERENCES usuario(id)	
 );
 
-CREATE TABLE venda (
-	id INT(6) AUTO_INCREMENT PRIMARY KEY,
-	usuario_id INT (6),
-	data_venda date,
-	valor_total double,
-	FOREIGN KEY (usuario_id) REFERENCES usuario(id)	
-);	
+CREATE TABLE carrinho (
+	id INT (6) AUTO_INCREMENT PRIMARY KEY,
+	idusuario INT (6),
+	total DOUBLE,
+	FOREIGN KEY (idusuario) REFERENCES usuario(id)
+);
 
-CREATE TABLE item_venda (
+CREATE TABLE item (
 	id INT(6) AUTO_INCREMENT PRIMARY KEY,
-	venda_id INT (6),
-	produto_id INT (6),
-	quantidade INT (6),
-	valor double,
-	FOREIGN KEY (venda_id) REFERENCES venda(id),
-	FOREIGN KEY (produto_id) REFERENCES produto(id)		
+	idproduto INT(6),
+	idcarrinho INT(6),
+	quantidade INT(6),
+	FOREIGN KEY (idproduto) REFERENCES produto(id),
+	FOREIGN KEY (idcarrinho) REFERENCES carrinho(id)
 );
 
 CREATE TABLE pedido (
 	id INT(6) AUTO_INCREMENT PRIMARY KEY,
-	usuario_id INT(6),
-	data date,
-	mensagem TEXT(600),
-	FOREIGN KEY (usuario_id) REFERENCES usuario(id)
+	idusuario INT(6),
+	mensagem TEXT,
+	FOREIGN KEY (idusuario) REFERENCES usuario(id)
 );
 
 CREATE TABLE fale_conosco (
 	id INT(6) AUTO_INCREMENT PRIMARY KEY,
-	nome_usuario VARCHAR(50),
+	nome_usuario INT(6),
 	email VARCHAR(50),
-	data date,
-	mensagem TEXT(600)
+	mensagem TEXT
 );
 
+INSERT into PRODUTO (categoria_id, genero_id, tipo_id, nome, preco, imagem, descricao, nacionalidade)
+values (1,1,1,"Your Name - Volume 1",15.00, , "", "NACIONAL")
+;
 
-
-
+id INT (6) AUTO_INCREMENT PRIMARY KEY,
+	categoria_id INT,
+	genero_id INT,
+	tipo_id INT,
+	nome VARCHAR (50),
+	preco DECIMAL (10,2),
+	imagem VARCHAR (255),
+	descricao TEXT,
+	nacionalidade VARCHAR (20),
+	FOREIGN KEY (categoria_id) REFERENCES categoria_produto(id),
+	FOREIGN KEY (genero_id) REFERENCES genero_produto(id),
+	FOREIGN KEY (tipo_id) REFERENCES tipo_produto(id)
