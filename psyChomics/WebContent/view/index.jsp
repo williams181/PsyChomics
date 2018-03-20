@@ -11,7 +11,7 @@
 	crossorigin="anonymous">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Index</title>
+<title>PsyChomics</title>
 </head>
 <body>
 
@@ -178,10 +178,10 @@
 <!-- Rodapé -->
 	<div class="card">
 		<center>
-		<div class="card-header">Nos siga no Facebook e fique por dentro das novidades!</div>
+		<div class="card-header">
 		<div class="card-body">
-		
-			<h5 class="card-title">Visite nossa página no Facebook</h5>
+		<img src="view/imagens/bgcw3.png">
+			</div>
 			<p class="card-text"></p>
 			<a href="https://www.facebook.com/" class="btn btn-primary">Visitar</a>
 		</center>
