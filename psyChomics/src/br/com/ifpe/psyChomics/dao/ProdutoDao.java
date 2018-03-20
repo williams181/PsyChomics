@@ -121,7 +121,7 @@ public class ProdutoDao {
 				TipoProdutoDao dao3 = new TipoProdutoDao();
 				TipoProduto cp3 = dao3.buscarPorId(idTipo);
 				produtoCompleto.setTipoProduto(cp3);
-				
+
 				produtoCompleto.setNome(rs.getString("nome"));
 				produtoCompleto.setPreco(rs.getDouble("preco"));
 				produtoCompleto.setImagem(rs.getString("imagem"));
@@ -155,7 +155,7 @@ public class ProdutoDao {
 				GeneroProdutoDao dao2 = new GeneroProdutoDao();
 				GeneroProduto cp2 = dao2.buscarPorId(idGenero);
 				produtoCompleto.setGeneroProduto(cp2);
-				
+
 				int idTipo = rs.getInt("tipo_id");
 				TipoProdutoDao dao3 = new TipoProdutoDao();
 				TipoProduto cp3 = dao3.buscarPorId(idTipo);
@@ -197,10 +197,11 @@ public class ProdutoDao {
 
 		try {
 			List<Produto> buscarProduto = new ArrayList<Produto>();
-			PreparedStatement stmt = this.connection
-					.prepareStatement("SELECT * FROM produto WHERE nome like ? or genero_id like ?");
+			PreparedStatement stmt = this.connection.prepareStatement(
+					"SELECT * FROM produto WHERE nome like ? or genero_id like ? or nacionalidade like ?");
 			stmt.setString(1, "%" + prod.getNome() + "%");
 			stmt.setString(2, "%" + prod.getGeneroProduto() + "%");
+			stmt.setString(3, "%" + prod.getNacionalidade() + "%");
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {
@@ -242,7 +243,32 @@ public class ProdutoDao {
 	public List<Produto> listarIndex() {
 		try {
 			List<Produto> listarProdutoIndex = new ArrayList<Produto>();
-			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM produto ORDER BY nome limit 8");
+			PreparedStatement stmt = this.connection.prepareStatement(
+					"SELECT * FROM produto where nacionalidade like '%nacional%' ORDER BY nome limit 4");
+			ResultSet rs = stmt.executeQuery();
+			while (rs.next()) {
+				Produto produto = new Produto();
+				produto.setId(rs.getInt("id"));
+				produto.setNome(rs.getString("nome"));
+				produto.setPreco(rs.getDouble("preco"));
+				produto.setImagem(rs.getString("imagem"));
+				produto.setDescricao(rs.getString("descricao"));
+				produto.setNacionalidade(rs.getString("nacionalidade"));
+				listarProdutoIndex.add(produto);
+			}
+			stmt.execute();
+			connection.close();
+			return listarProdutoIndex;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	public List<Produto> listarIndex2() {
+		try {
+			List<Produto> listarProdutoIndex = new ArrayList<Produto>();
+			PreparedStatement stmt = this.connection.prepareStatement(
+					"SELECT * FROM produto where nacionalidade like '%importado%' ORDER BY nome limit 4");
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
 				Produto produto = new Produto();
@@ -285,7 +311,7 @@ public class ProdutoDao {
 				TipoProdutoDao dao3 = new TipoProdutoDao();
 				TipoProduto cp3 = dao3.buscarPorId(idTipo);
 				produto.setTipoProduto(cp3);
-				
+
 				produto.setNome(rs.getString("nome"));
 				produto.setPreco(rs.getDouble("preco"));
 				produto.setImagem(rs.getString("imagem"));

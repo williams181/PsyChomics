@@ -93,51 +93,69 @@
 
 
 
-	<center>
-		<div class="card" style="width: 18rem;">
-			<img class="card-img-top" src="view/img/${produto.imagem}"
-				alt="Card image cap">
-			<div class="card-body">
-				<h5 class="card-title">${produto.nome}</h5>
-				<p class="card-text">${produto.preco}</p>
-			</div>
-			<ul class="list-group list-group-flush">
-				<li class="list-group-item">${produto.tipoProduto.descricao}</li>
-				<li class="list-group-item">${produto.generoProduto.descricao}</li>
-				<li class="list-group-item">${produto.categoriaProduto.descricao}</li>
-				<li class="list-group-item">${produto.descricao}</li>
-			</ul>
+
+
+	<div class="d-flex flex-row">
+		<div class="p-2">
+			<center>
+				<div class="card" style="width: 18rem;">
+					<img class="card-img-top" src="view/img/${produto.imagem}"
+						alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">${produto.nome}</h5>
+						<p class="card-text">${produto.preco}</p>
+					</div>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">${produto.tipoProduto.descricao}</li>
+						<li class="list-group-item">${produto.generoProduto.descricao}</li>
+						<li class="list-group-item">${produto.categoriaProduto.descricao}</li>
+						<li class="list-group-item">${produto.descricao}</li>
+					</ul>
+				</div>
+			</center>
 		</div>
-	</center>
+		<div class="p-2">
+
+			<form action="cadastrarComentarioProduto" method="post"
+				enctype="multipart/form-data">
+				<div class="form-group shadow-textarea">
+					<label for="inputComentario"><h1>
+							<span class="badge badge-secondary">New Comentario</span>
+						</h1></label>
+					<textarea type="text" id="inputComentario" class="form-control"
+						name="comentario" placeholder="comentario" maxlength="600"
+						rows="4" required="required" class="form-control z-depth-1"></textarea>
+				</div>
+				<input type="hidden" name="produto.id" value="${produto.id}" /><center>
+				<button type="submit" class="btn btn-primary" value="cadastrar">Cadastrar
+					Comentário</button></center>
+				<br>
+
+				<div class="row">
+
+					<div class="col-sm-6">
+						<c:forEach var="cp" items="${listarComentarioProduto}">
+							<div class="card">
+								<div class="card-body">
+									<h5 class="card-title">${cp.usuario.nomeUsuario}</h5>
+									<h6 class="card-title">${cp.data}</h6>
+									<p class="card-text">${cp.comentario}</p>
+									<a href="#" class="btn btn-primary">Go somewhere</a>
+								</div>
+							</div>
+						</c:forEach>
+					</div>
+
+				</div>
+
+			</form>
+
+		</div>
+
+	</div>
 
 
 
-	<hr>
-	<hr>
-	<hr>
-
-
-
-	<center>
-		<form action="cadastrarComentarioProduto" method="post"
-			enctype="multipart/form-data">
-			<div class="form-group col-md-6">
-				<label for="inputComentario"><h4>Digite aqui seu
-						Comentário do produto</h4></label>
-				<textarea type="text" id="inputComentario" class="form-control"
-					name="comentario" placeholder="comentario" maxlength="600"
-					required="required" style="width: 600px;"></textarea>
-			</div>
-			<input type="hidden" name="produto.id" value="${produto.id}" />
-			<button type="submit" class="btn btn-primary" value="cadastrar">Cadastrar
-				Comentário</button>
-		</form>
-		<br>
-	</center>
-	
-
-
-	<hr>
 	<hr>
 
 

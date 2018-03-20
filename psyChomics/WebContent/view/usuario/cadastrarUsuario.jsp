@@ -117,8 +117,6 @@
 	</div>
 
 
-
-
 	<center>
 		<div class="card">
 			<div class="card-body">
@@ -152,7 +150,8 @@
 				<label>Confirmar Senha</label> <input type="password"
 					placeholder="Confirme Senha" id="confirm_password"
 					class="form-control" maxlength="16" minlength="8"
-					required="required">
+					required="required"> <input type="hidden"
+					name="tipoUsuario" value="usuario" />
 			</div>
 
 			<div class="form-group col-md-6">
@@ -165,7 +164,7 @@
 				<label for="inputNomeUsuario">Nome do Usuário</label> <input
 					type="text" id="inputNomeUsuario" class="form-control"
 					name="NomeUsuario" placeholder="Nome do Usuário" maxlength="50"
-					minlength="10" required="required">
+					minlength="5" required="required">
 			</div>
 			<div class="form-group col-md-6">
 				<label for="inputCpf">Cpf</label> <input type="text" id="inputCpf"
