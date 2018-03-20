@@ -164,7 +164,7 @@
 				<label for="inputNomeUsuario">Nome do Usuário</label> <input
 					type="text" id="inputNomeUsuario" class="form-control"
 					name="NomeUsuario" placeholder="Nome do Usuário" maxlength="50"
-					minlength="10" required="required">
+					minlength="5" required="required">
 			</div>
 			<div class="form-group col-md-6">
 				<label for="inputCpf">Cpf</label> <input type="text" id="inputCpf"

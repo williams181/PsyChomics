@@ -133,8 +133,10 @@
 					<li class="list-group-item">${cp.data}</li>
 					<li class="list-group-item">${cp.comentario}</li>
 					<li class="list-group-item"><a
-						href="exibirAlterarComentarioProduto?id=${cp.id}"class="btn btn-danger"
-						role="button">A</a></li>
+						href="exibirAlterarComentarioProduto?id=${cp.id}"
+						class="btn btn-danger" role="button">A</a> <a
+						href="removerComentarioProduto?id=${cp.id}"
+						class="btn btn-danger" role="button">A</a> </li>
 				</ul>
 			</c:forEach>
 		</div>

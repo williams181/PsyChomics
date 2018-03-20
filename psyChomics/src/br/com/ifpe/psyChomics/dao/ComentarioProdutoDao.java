@@ -167,6 +167,10 @@ public class ComentarioProdutoDao {
 		comentarioProduto.setId(rs.getInt("id"));
 		comentarioProduto.setData(rs.getDate("data"));
 		comentarioProduto.setComentario(rs.getString("comentario"));
+		int idUsuario = rs.getInt("usuario_id");
+		UsuarioDao dao2 = new UsuarioDao();
+		Usuario cp2 = dao2.buscarPorId(idUsuario);
+		comentarioProduto.setUsuario(cp2);
 		return comentarioProduto;
 	}
 }
