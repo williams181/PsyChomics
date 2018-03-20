@@ -17,7 +17,7 @@
 
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
+	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
 		class="navbar-brand" href="listarProdutoIndex"><img
 		src="view/imagens/nav.png" width="50%"></a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -143,7 +143,8 @@
 			</c:forEach>
 		</div>
 	</center>
-
+	
+	
 
 
 	<div class="card">
@@ -154,7 +155,7 @@
 
 	<center>
 		<div class="row">
-			<c:forEach var="p" items="${listaProdutoIndex}">
+			<c:forEach var="p" items="${listaProdutoIndex2}">
 				<div class="col">
 					<div class="card" style="width: 18rem;">
 						<img class="card-img-top" src="view/img/${p.imagem}"

@@ -242,7 +242,30 @@ public class ProdutoDao {
 	public List<Produto> listarIndex() {
 		try {
 			List<Produto> listarProdutoIndex = new ArrayList<Produto>();
-			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM produto ORDER BY nome limit 8");
+			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM produto where nacionalidade like '%nacional%' ORDER BY nome limit 4");
+			ResultSet rs = stmt.executeQuery();
+			while (rs.next()) {
+				Produto produto = new Produto();
+				produto.setId(rs.getInt("id"));
+				produto.setNome(rs.getString("nome"));
+				produto.setPreco(rs.getDouble("preco"));
+				produto.setImagem(rs.getString("imagem"));
+				produto.setDescricao(rs.getString("descricao"));
+				produto.setNacionalidade(rs.getString("nacionalidade"));
+				listarProdutoIndex.add(produto);
+			}
+			stmt.execute();
+			connection.close();
+			return listarProdutoIndex;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+	
+	public List<Produto> listarIndex2() {
+		try {
+			List<Produto> listarProdutoIndex = new ArrayList<Produto>();
+			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM produto where nacionalidade like '%importado%' ORDER BY nome limit 4");
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
 				Produto produto = new Produto();

@@ -23,7 +23,7 @@ public class UsuarioDao {
 	}
 
 	public void cadastrar(Usuario usuario) {
-		String sql = "INSERT INTO usuario (email, senha, nick, nome_usuario, cpf, notificacao) VALUES (?,?,?,?,?,?)";
+		String sql = "INSERT INTO usuario (email, senha, nick, nome_usuario, cpf, notificacao, tipo_usuario) VALUES (?,?,?,?,?,?,?)";
 		PreparedStatement stmt;
 		try {
 			stmt = connection.prepareStatement(sql);
@@ -33,6 +33,8 @@ public class UsuarioDao {
 			stmt.setString(4, usuario.getNomeUsuario());
 			stmt.setString(5, usuario.getCpf());
 			stmt.setString(6, usuario.getNotificacao());
+			stmt.setString(7, usuario.getTipoUsuario());
+
 			stmt.execute();
 			stmt.close();
 			connection.close();

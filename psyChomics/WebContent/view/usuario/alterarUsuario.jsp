@@ -116,6 +116,18 @@
 					name="nomeUsuario" value="${usuario.nomeUsuario}" maxlength="50"
 					required="required" />
 			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="tipoUsuario"
+					id="inputTipoUsuario" value="${usuario.tipoUsuario}" checked>
+				<label class="form-check-label" value="usuario"
+					for="inputTipoUsuario"> Usuário</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="tipoUsuario"
+					id="inputTipoUsuario" value="${usuario.tipoUsuario}"> <label
+					class="form-check-label" value="administrador"
+					for="inputTipoUsuario"> Administrador</label>
+			</div>
 			<p>
 				<input type="submit" class="btn btn-primary" value="alterar">
 				<a href="listarProdutoIndex" class="btn btn-danger" role="button">Cancelar</a>

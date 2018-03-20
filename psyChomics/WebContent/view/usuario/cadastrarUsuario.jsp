@@ -150,7 +150,8 @@
 				<label>Confirmar Senha</label> <input type="password"
 					placeholder="Confirme Senha" id="confirm_password"
 					class="form-control" maxlength="16" minlength="8"
-					required="required">
+					required="required"> <input type="hidden"
+					name="tipoUsuario" value="usuario" />
 			</div>
 
 			<div class="form-group col-md-6">

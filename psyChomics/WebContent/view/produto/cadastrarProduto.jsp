@@ -22,7 +22,6 @@
 </head>
 
 <body id="corpoPadrao">
-
 <body id="corpoPadrao">
 
 	<nav id="divMenu" class="navbar navbar-inverse">
@@ -75,7 +74,8 @@
 			<p>
 			<table style="width: 100%">
 				<tr>
-					<td style="float: left; font-size: 24px;">Inclusão de <strong>de Produto</strong>
+					<td style="float: left; font-size: 24px;">Inclusão de <strong>de
+							Produto</strong>
 					</td>
 					<td style="float: right;"><a href="listarProduto"
 						class="btn btn-primary" role="button">Lista de Produto</a></td>
@@ -94,16 +94,10 @@
 						maxlength="60" required="required" />
 				</div>
 				<div class="form-group">
-					<label for="inputNacionalidade">Nacionalidade</label> <input
-						type="text" id="inputNacionalidade" class="form-control"
-						name="nacionalidade" style="width: 500px;"
-						placeholder="nacionalidade" minlength="3" maxlength="60" />
-				</div>
-				<div class="form-group">
-					<label for="inputPreco">Preço</label> <input type="number" min="0.00" max="10000.00" step="0.01"
-						id="inputPreco" class="form-control" name="preco"
-						style="width: 500px;" placeholder="Preco" maxlength="16"
-						required="required" />
+					<label for="inputPreco">Preço</label> <input type="number"
+						min="0.00" max="10000.00" step="0.01" id="inputPreco"
+						class="form-control" name="preco" style="width: 500px;"
+						placeholder="Preco" maxlength="16" required="required" />
 				</div>
 				<div class="form-group">
 					<label for="inputImagem">Imagem</label> <input type="file"
@@ -144,7 +138,18 @@
 						</c:forEach>
 					</select>
 				</div>
-
+				<div class="form-check">
+					<input class="form-check-input" type="radio" name="nacionalidade"
+						id="inputNacionalidade" value="nacional" checked> <label
+						class="form-check-label" value="nacional" for="inputNacionalidade">
+						Nacional</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="radio" name="nacionalidade"
+						id="inputNacionalidade" value="importado"> <label
+						class="form-check-label" value="importado"
+						for="inputNacionalidade"> Importado</label>
+				</div>
 				<p>
 					<a href="exibirListarIndex" class="btn btn-danger" role="button">Cancelar</a>
 					&nbsp;

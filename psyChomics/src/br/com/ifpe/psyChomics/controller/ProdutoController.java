@@ -132,6 +132,10 @@ public class ProdutoController {
 		ProdutoDao dao = new ProdutoDao();
 		List<Produto> listaProdutoIndex = dao.listarIndex();
 		model.addAttribute("listaProdutoIndex", listaProdutoIndex);
+
+		ProdutoDao dao2 = new ProdutoDao();
+		List<Produto> listaProdutoIndex2 = dao2.listarIndex2();
+		model.addAttribute("listaProdutoIndex2", listaProdutoIndex2);
 		return "index";
 	}
 

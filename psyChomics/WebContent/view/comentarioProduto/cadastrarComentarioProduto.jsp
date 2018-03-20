@@ -113,9 +113,6 @@
 
 
 	<hr>
-	<hr>
-	<hr>
-
 
 
 	<center>
@@ -134,7 +131,6 @@
 		</form>
 		<br>
 	</center>
-	
 
 
 	<hr>

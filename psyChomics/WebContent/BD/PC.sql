@@ -9,7 +9,7 @@ CREATE TABLE usuario (
 	nome_usuario VARCHAR (50),
 	cpf VARCHAR (11),
 	notificacao VARCHAR (3),
-	tipo_usuario VARCHAR(5)
+	tipo_usuario VARCHAR(15)
 );
 
 CREATE TABLE genero_produto (
@@ -54,18 +54,18 @@ CREATE TABLE comentario_produto (
 
 CREATE TABLE venda (
 	id INT(6) AUTO_INCREMENT PRIMARY KEY,
-	usuario_id INT (6),
+	usuario_id int,
 	data_venda date,
-	valor_total double,
+	valor_total numeric,
 	FOREIGN KEY (usuario_id) REFERENCES usuario(id)	
 );	
 
 CREATE TABLE item_venda (
 	id INT(6) AUTO_INCREMENT PRIMARY KEY,
-	venda_id INT (6),
-	produto_id INT (6),
-	quantidade INT (6),
-	valor double,
+	venda_id int,
+	produto_id int,
+	quantidade int,
+	valor numeric,
 	FOREIGN KEY (venda_id) REFERENCES venda(id),
 	FOREIGN KEY (produto_id) REFERENCES produto(id)		
 );
