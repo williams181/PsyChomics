@@ -61,7 +61,6 @@
 			pplaceholder="Procurar.." id="inputNome" name="nome" for="inputNome"
 			aria-label="Search">
 		<div class="form-group">
-
 			<label for="generoProduto">Genero:</label> <br /> <select
 				id="generoProduto" name="generoProduto"
 				style="width: 200px; height: 30px; border: 1px solid #BDC7D8; color: #000000; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;">
@@ -72,18 +71,6 @@
 						${obj.descricao}</option>
 				</c:forEach>
 			</select>
-		</div>
-		<div class="form-check">
-			<input class="form-check-input" type="radio" name="nacionalidade"
-				id="inputNacionalidade" value="nacional" checked> <label
-				class="form-check-label" value="nacional" for="inputNacionalidade">
-				Nacional</label>
-		</div>
-		<div class="form-check">
-			<input class="form-check-input" type="radio" name="nacionalidade"
-				id="inputNacionalidade" value="importado"> <label
-				class="form-check-label" value="importado" for="inputNacionalidade">
-				Importado</label>
 		</div>
 		<button type="reset" class="btn btn-default">&nbsp; Limpar
 			&nbsp;</button>

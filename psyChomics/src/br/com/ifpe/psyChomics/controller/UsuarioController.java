@@ -21,24 +21,25 @@ public class UsuarioController {
 
 	@RequestMapping("efetuarLogin")
 	public String efetuarLogin(Usuario usuario, HttpSession session, Model model) {
-	UsuarioDao dao = new UsuarioDao();
-	Usuario usuarioLogado = dao.buscarUsuario(usuario);
-	if (usuarioLogado != null) {
-	 session.setAttribute("usuarioLogado", usuarioLogado);
-	 return "psyChomics/quemSomos";
+		UsuarioDao dao = new UsuarioDao();
+		Usuario usuarioLogado = dao.buscarUsuario(usuario);
+		if (usuarioLogado != null) {
+			session.setAttribute("usuarioLogado", usuarioLogado);
+			return "psyChomics/quemSomos";
+		}
+		model.addAttribute("msg", "Nï¿½o foi encontrado um usuï¿½rio com o login e senha informados.");
+		return "forward:listarProdutoIndex";
 	}
-	model.addAttribute("msg", "Não foi encontrado um usuário com o login e senha informados.");
-	 return "forward:listarProdutoIndex";
+
+	@RequestMapping("logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "forward:listarProdutoIndex";
 	}
-	
-    @RequestMapping("logout")
-    public String logout(HttpSession session) {
-    	session.invalidate();
-    	 return "forward:listarProdutoIndex";
-    }
 
 	@RequestMapping("/exibirCadastrarUsuario")
-	public String exibirCadastrarUsuario() {
+	public String exibirCadastrarUsuario(Model model) {
+		model.addAttribute("msg", "Usuario Incluido com Sucesso");
 		return "usuario/cadastrarUsuario";
 	}
 
@@ -47,7 +48,7 @@ public class UsuarioController {
 		UsuarioDao dao = new UsuarioDao();
 		dao.cadastrar(usuario);
 		model.addAttribute("msg", "Usuario Incluido com Sucesso");
-		 return "forward:listarProdutoIndex";
+		return "forward:exibirCadastrarUsuario";
 	}
 
 	@RequestMapping("listarUsuario")
@@ -62,7 +63,7 @@ public class UsuarioController {
 	public String removerUsuario(Usuario usuario, Model model) {
 		UsuarioDao dao = new UsuarioDao();
 		dao.remover(usuario);
-		model.addAttribute("msg", "Usuário removido com sucesso!");
+		model.addAttribute("msg", "Usuï¿½rio removido com sucesso!");
 		System.out.println("remover usuario");
 		return "forward:listarUsuario";
 	}
@@ -86,7 +87,7 @@ public class UsuarioController {
 
 		return "forward:listarUsuario";
 	}
-	
+
 	@RequestMapping("buscarUsuario")
 	public String buscarUsuario(Usuario usuario, Model model) {
 		UsuarioDao dao = new UsuarioDao();
@@ -94,10 +95,10 @@ public class UsuarioController {
 		model.addAttribute("listarUsuario", listarUsuario);
 		return "usuario/buscarUsuario";
 	}
-	
+
 	@RequestMapping("/exibirQuemSomos")
 	public String exibirQuemSomos() {
 		return "psyChomics/quemSomos";
 	}
-	
+
 }

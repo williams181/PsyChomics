@@ -33,7 +33,7 @@ public class ComentarioProdutoDao {
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			stmt.setDate(1, new java.sql.Date(comentarioProduto.getData().getTime()));
 			stmt.setString(2, comentarioProduto.getComentario());
-			stmt.setInt(3, comentarioProduto.getUsuario().getId());
+			stmt.setInt(3, comentarioProduto.getUsuario().getId());	
 			stmt.setInt(4, comentarioProduto.getProduto().getId());
 			stmt.execute();
 			stmt.close();
@@ -84,7 +84,7 @@ public class ComentarioProdutoDao {
 	public ComentarioProduto buscarPorId(int id) {
 		try {
 			ComentarioProduto comentarioProdutoCompleto = new ComentarioProduto();
-			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM comentario_produto WHERE id = ?");
+			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM comentario_produto WHERE id =  ?");
 			stmt.setInt(1, id);
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
@@ -112,36 +112,6 @@ public class ComentarioProdutoDao {
 		}
 	}
 
-	public ComentarioProduto buscarPorProduto(int id) {
-		try {
-			ComentarioProduto comentarioProdutoCompleto = new ComentarioProduto();
-			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM comentario_produto WHERE produto_id = ?");
-			stmt.setInt(1, id);
-			ResultSet rs = stmt.executeQuery();
-			while (rs.next()) {
-				comentarioProdutoCompleto.setId(rs.getInt("id"));
-				comentarioProdutoCompleto.setData(rs.getDate("data"));
-				comentarioProdutoCompleto.setComentario(rs.getString("comentario"));
-
-				int idProduto = rs.getInt("produto_id");
-				ProdutoDao dao = new ProdutoDao();
-				Produto cp = dao.buscarPorId(idProduto);
-				comentarioProdutoCompleto.setProduto(cp);
-
-				int idUsuario = rs.getInt("usuario_id");
-				UsuarioDao dao2 = new UsuarioDao();
-				Usuario cp2 = dao2.buscarPorId(idUsuario);
-				comentarioProdutoCompleto.setUsuario(cp2);
-
-			}
-			rs.close();
-			stmt.close();
-			connection.close();
-			return comentarioProdutoCompleto;
-		} catch (SQLException e) {
-			throw new RuntimeException(e);
-		}
-	}
 
 	public void alterar(ComentarioProduto comentarioProduto) {
 
@@ -167,10 +137,6 @@ public class ComentarioProdutoDao {
 		comentarioProduto.setId(rs.getInt("id"));
 		comentarioProduto.setData(rs.getDate("data"));
 		comentarioProduto.setComentario(rs.getString("comentario"));
-		int idUsuario = rs.getInt("usuario_id");
-		UsuarioDao dao2 = new UsuarioDao();
-		Usuario cp2 = dao2.buscarPorId(idUsuario);
-		comentarioProduto.setUsuario(cp2);
 		return comentarioProduto;
 	}
 }

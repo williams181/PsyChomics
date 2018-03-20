@@ -116,25 +116,6 @@
 					name="nomeUsuario" value="${usuario.nomeUsuario}" maxlength="50"
 					required="required" />
 			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="radio" name="tipoUsuario"
-					id="inputTipoUsuario" value="usuario" value="${usuario.tipoUsuario}" checked>
-				<label class="form-check-label" value="usuario"
-					for="inputTipoUsuario"> Usuário</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="radio" name="tipoUsuario"
-					id="inputTipoUsuario" value="administrador" value="${usuario.tipoUsuario}"> <label
-					class="form-check-label" value="administrador"
-					for="inputTipoUsuario"> Administrador</label>
-			</div>
-			
-			<div class="form-group col-md-6">
-				<input type="checkbox" class="form-check-input" value="sim"
-					name="notificacao" for="notificacao" id="notificacao"> <label
-					class="form-check-label" value="sim" value="${usuario.notificacao} name="notificacao"
-					for="notificacao">Deseja Receber notificações ?</label>
-			</div>
 			<p>
 				<input type="submit" class="btn btn-primary" value="alterar">
 				<a href="listarProdutoIndex" class="btn btn-danger" role="button">Cancelar</a>

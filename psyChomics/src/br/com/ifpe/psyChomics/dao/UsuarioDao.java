@@ -23,7 +23,7 @@ public class UsuarioDao {
 	}
 
 	public void cadastrar(Usuario usuario) {
-		String sql = "INSERT INTO usuario (email, senha, nick, nome_usuario, cpf, notificacao, tipo_usuario) VALUES (?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO usuario (email, senha, nick, nome_usuario, cpf, notificacao) VALUES (?,?,?,?,?,?)";
 		PreparedStatement stmt;
 		try {
 			stmt = connection.prepareStatement(sql);
@@ -33,8 +33,6 @@ public class UsuarioDao {
 			stmt.setString(4, usuario.getNomeUsuario());
 			stmt.setString(5, usuario.getCpf());
 			stmt.setString(6, usuario.getNotificacao());
-			stmt.setString(7, usuario.getTipoUsuario());
-
 			stmt.execute();
 			stmt.close();
 			connection.close();
@@ -82,7 +80,7 @@ public class UsuarioDao {
 
 	public void alterar(Usuario usuario) {
 
-		String sql = "UPDATE usuario SET email = ?, senha = ?, nick = ?, nome_usuario = ?, notificacao = ?, tipo_usuario = ?  WHERE id = ?";
+		String sql = "UPDATE usuario SET email = ?, senha = ?, nick = ?, nome_usuario = ?  WHERE id = ?";
 
 		try {
 
@@ -91,9 +89,7 @@ public class UsuarioDao {
 			stmt.setString(2, usuario.getSenha());
 			stmt.setString(3, usuario.getNick());
 			stmt.setString(4, usuario.getNomeUsuario());
-			stmt.setString(5, usuario.getNotificacao());
-			stmt.setString(6, usuario.getTipoUsuario());
-			stmt.setInt(7, usuario.getId());
+			stmt.setInt(5, usuario.getId());
 			stmt.execute();
 			stmt.close();
 			connection.close();

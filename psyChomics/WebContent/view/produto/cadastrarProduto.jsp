@@ -91,38 +91,45 @@
 					<label for="inputNome">Nome</label> <input type="text"
 						id="inputNome" class="form-control" name="nome"
 						style="width: 500px;" placeholder="Nome" minlength="3"
-						maxlength="50" required="required" />
+						maxlength="60" required="required" />
+				</div>
+				<div class="form-group">
+					<label for="inputNacionalidade">Nacionalidade</label> <input
+						type="text" id="inputNacionalidade" class="form-control"
+						name="nacionalidade" style="width: 500px;"
+						placeholder="nacionalidade" minlength="3" maxlength="60"
+						required="required" />
 				</div>
 				<div class="form-group">
 					<label for="inputPreco">Preço</label> <input type="number"
-						min="0.00" max="10000.00" step="0.01" id="inputPreco"
+						min="0.00" max="1000.00" step="0.01" id="inputPreco"
 						class="form-control" name="preco" style="width: 500px;"
-						placeholder="Preço" maxlength="9" required="required" />
+						placeholder="Preco" maxlength="16" required="required" />
 				</div>
 				<div class="form-group">
 					<label for="inputImagem">Imagem</label> <input type="file"
 						id="inputImagem" class="form-control" name="file"
-						style="width: 500px;" required="required" maxlength="255" />
+						style="width: 500px;" maxlength="100" required="required" />
 				</div>
 				<div class="form-group">
 					<label for="inputDescricao">Descrição</label>
 					<textarea for="inputDescricao" id="inputDescricao"
-						class="form-control" placeholder="Descrição" name="descricao"
-						style="width: 500px;" maxlength="600" required="required"></textarea>
+						class="form-control" name="descricao" style="width: 500px;"
+						maxlength="600" required="required"></textarea>
 				</div>
 				<div class="form-group">
 					Categoria: <br /> <select id="categoriaProduto"
 						required="required" name="categoriaProduto"
 						style="width: 200px; height: 30px; border: 1px solid #BDC7D8; color: #000000; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;">
-						<option value="" required="required">Selecione</option>
+						<option value="">Selecione</option>
 						<c:forEach items="${listarCategoriaProduto}" var="obj">
 							<option value="${obj.id}">${obj.descricao}</option>
 						</c:forEach>
 					</select>
 				</div>
 				<div class="form-group">
-					Genero: <br /> <select required="required" id="generoProduto"
-						name="generoProduto"
+					Genero: <br /> <select id="generoProduto" name="generoProduto"
+						required="required"
 						style="width: 200px; height: 30px; border: 1px solid #BDC7D8; color: #000000; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;">
 						<option value="">Selecione</option>
 						<c:forEach items="${listarGeneroProduto}" var="obj">
@@ -131,8 +138,8 @@
 					</select>
 				</div>
 				<div class="form-group">
-					Tipo: <br /> <select id="tipoProduto" required="required"
-						name="tipoProduto"
+					Tipo: <br /> <select id="tipoProduto" name="tipoProduto"
+						required="required"
 						style="width: 200px; height: 30px; border: 1px solid #BDC7D8; color: #000000; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;">
 						<option value="">Selecione</option>
 						<c:forEach items="${listarTipoProduto}" var="obj">
@@ -140,18 +147,7 @@
 						</c:forEach>
 					</select>
 				</div>
-				<div class="form-check">
-					<input class="form-check-input" type="radio" name="nacionalidade"
-						id="inputNacionalidade" value="nacional" checked> <label
-						class="form-check-label" value="nacional" for="inputNacionalidade">
-						Nacional</label>
-				</div>
-				<div class="form-check">
-					<input class="form-check-input" type="radio" name="nacionalidade"
-						id="inputNacionalidade" value="importado"> <label
-						class="form-check-label" value="importado"
-						for="inputNacionalidade"> Importado</label>
-				</div>
+
 				<p>
 					<a href="exibirListarIndex" class="btn btn-danger" role="button">Cancelar</a>
 					&nbsp;

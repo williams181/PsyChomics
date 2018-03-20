@@ -23,6 +23,7 @@
 </head>
 
 <body id="corpoPadrao">
+
 <body id="corpoPadrao">
 
 	<nav id="divMenu" class="navbar navbar-inverse">
@@ -75,8 +76,7 @@
 			<p>
 			<table style="width: 100%">
 				<tr>
-					<td style="float: left; font-size: 24px;">Alteração de <strong>de
-							Produto</strong>
+					<td style="float: left; font-size: 24px;">Alteração de <strong>de Produto</strong>
 					</td>
 					<td style="float: right;"><a href="listarProduto"
 						class="btn btn-primary" role="button">lista de Produto</a></td>
@@ -102,24 +102,10 @@
 					<form:errors path="produto.preco" cssStyle="color:red" />
 				</div>
 				<div class="form-group">
-					<label for="inputDescricao">Descrição</label>
-					<textarea class="form-control">
-					${produto.descricao} 
+				<label for="inputDescricao">Descrição</label>
+					<textarea>
+					${produto.descricao}
 					</textarea>
-				</div>
-				<div class="form-check">
-					<input class="form-check-input" type="radio" name="nacionalidade"
-						id="inputNacionalidade" value="nacional"
-						value="${produto.nacionalidade}" checked> <label
-						class="form-check-label" value="nacional" for="inputNacionalidade">
-						Nacional</label>
-				</div>
-				<div class="form-check">
-					<input class="form-check-input" type="radio" name="nacionalidade"
-						id="inputNacionalidade" value="importado"
-						value="${produto.nacionalidade}"> <label
-						class="form-check-label" value="importado"
-						for="inputNacionalidade"> Importado</label>
 				</div>
 				<p>
 					<input type="hidden" name="id" value="${produto.id}" /> <input
