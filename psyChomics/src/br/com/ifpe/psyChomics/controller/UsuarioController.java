@@ -25,10 +25,11 @@ public class UsuarioController {
 	Usuario usuarioLogado = dao.buscarUsuario(usuario);
 	if (usuarioLogado != null) {
 	 session.setAttribute("usuarioLogado", usuarioLogado);
-	 return "psyChomics/quemSomos";
+	 model.addAttribute("msg", "Login efetuado com sucesso.");
+	 return "usuario/loginUsuario";
 	}
 	model.addAttribute("msg", "Não foi encontrado um usuário com o login e senha informados.");
-	 return "forward:listarProdutoIndex";
+	 return "usuario/loginUsuario";
 	}
 	
     @RequestMapping("logout")

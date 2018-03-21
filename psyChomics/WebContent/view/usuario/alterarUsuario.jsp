@@ -17,7 +17,7 @@
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
 		class="navbar-brand" href="listarProdutoIndex"><img
-		src="\imagens\nav.png" width="50%"></a>
+		src="view/imagens/nav.png" width="50%"></a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarSupportedContent"
 		aria-controls="navbarSupportedContent" aria-expanded="false"

@@ -33,58 +33,37 @@
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="exibirQuemSomos">Quem
 					somos</a></li>
-			<c:choose>
-				<c:when test="${usuarioLogado.tipoUsuario == 'administrador'}">
-					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-						role="button" data-toggle="dropdown" aria-haspopup="true"
-						aria-expanded="false">Cadastrar</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="exibirCadastrarProduto">Produtos</a>
-							<a class="dropdown-item" href="exibirCadastrarUsuario">Usuários</a>
-							<a class="dropdown-item" href="exibirIncluirCategoriaProduto">Categoria</a>
-							<a class="dropdown-item" href="exibirIncluirGeneroProduto">Gênero</a>
-							<a class="dropdown-item" href="exibirIncluirTipoProduto">Tipo</a>
-						</div></li>
-					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-						role="button" data-toggle="dropdown" aria-haspopup="true"
-						aria-expanded="false">Listar</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="listarUsuario">Usuários</a> <a
-								class="dropdown-item" href="listarProduto">Produtos</a> <a
-								class="dropdown-item" href="listarCategoriaProduto">Categoria</a>
-							<a class="dropdown-item" href="listarGeneroProduto">Gênero</a> <a
-								class="dropdown-item" href="listarTipoProduto">Tipo</a>
-						</div></li>
-
-				</c:when>
-				<c:otherwise>
-					<li class="nav-item"><a class="nav-link" href="listarProduto">Produtos</a></li>
-				</c:otherwise>
-			</c:choose>
-
-			<c:choose>
-				<c:when test="${not empty usuarioLogado.email}">
-					<li class="nav-item"><a class="nav-link"
-						href="exibirPerfilUsuario">Perfil</a></li>
-
-					<li class="nav-item"><a class="nav-link" href="logout">Logout</a></li>
-				</c:when>
-				<c:otherwise>
-					<li class="nav-item"><a class="nav-link"
-						href="exibirCadastrarUsuario">Cadastre-se</a></li>
-					<li class="nav-item"><a class="nav-link"
-						href="exibirLoginUsuario">Login</a></li>
-				</c:otherwise>
-			</c:choose>
-
-
+			<li class="nav-item dropdown"><a
+				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+				role="button" data-toggle="dropdown" aria-haspopup="true"
+				aria-expanded="false">Cadastrar</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="exibirCadastrarProduto">Produtos</a>
+					<a class="dropdown-item" href="exibirCadastrarUsuario">Usuários</a>
+					<a class="dropdown-item" href="incluirCategoriaProduto">Categoria</a>
+					<a class="dropdown-item" href="incluirGeneroProduto">Gênero</a>
+				</div></li>
+			<li class="nav-item dropdown"><a
+				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+				role="button" data-toggle="dropdown" aria-haspopup="true"
+				aria-expanded="false">Listar</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="listarUsuario">Usuários</a> <a
+						class="dropdown-item" href="listarProduto">Produtos</a> <a
+						class="dropdown-item" href="listarCategoriaProduto">Categoria</a>
+					<a class="dropdown-item" href="listarGeneroProduto">Gênero</a>
+				</div></li>
+			<li class="nav-item"><a class="nav-link" href="#">Perfil</a></li>
+			<li class="nav-item"><a class="nav-link"
+				href="exibirCadastrarUsuario">Cadastre-se</a></li>
+			<li class="nav-item"><a class="nav-link"
+				href="exibirLoginUsuario">Login</a></li>
+			<li class="nav-item"><a class="nav-link" href="logout">Logout</a></li>
 		</ul>
 		<form class="form-inline my-2 my-lg-0" action="buscarProduto">
 			<input class="form-control mr-sm-2" type="text"
 				pplaceholder="Procurar.." id="inputNome" name="nome" for="inputNome"
-				id="inputGenero" name="genero" for="inputGenero" aria-label="Search">
+				aria-label="Search">
 			<button class="btn btn-outline-success my-2 my-sm-0" value="buscar"
 				type="submit">Buscar</button>
 		</form>

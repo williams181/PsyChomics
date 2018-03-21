@@ -73,48 +73,57 @@
 
 
 
-	<hr>
-	<hr>
+	<br>
+
 
 
 	<center>
-		<div class="card">
-			<div class="card-body">
-				<h4>Login do Usuário</h4>
-			</div>
+		<div class="alert alert-dark" role="alert">
+			<h4 class="text-uppercase">Login do Usuário</h4>
 		</div>
 	</center>
 
 
+	<c:if test="${msg ne null}">
+		<center>
+			<div class="alert alert-success" role="alert">${msg}</div>
+		</center>
+	</c:if>
 
-	<hr>
-	<hr>
+
+
+	<br>
 
 
 
 	<center>
-		<form action="efetuarLogin" method="post">
-			<div class="form-group col-md-6">
-				<labelfor="inputEmail">Email</label> <input type="text"
-					class="form-control" id="inputEmail" name="email"
-					value="${usuario.email}" maxlength="50" placeholder="email"
-					required="required" aria-describedby="emailHelp"> <small
-					class="form-text text-muted">bem vindo</small>
-			</div>
-			<div class="form-group col-md-6">
-				<label for="inputSenha">Senha</label> <input type="password"
-					class="form-control" id="inputSenha" name="senha"
-					value="${usuario.senha}" maxlength="16" required="required"
-					placeholder="senha">
-			</div>
-			<button type="submit" class="btn btn-primary">ENTRAR</button>
-		</form>
+		<span class="border border-white">
+
+			<form action="efetuarLogin" method="post">
+			<div class="form-group">
+				<div class="form-group col-md-6">
+					<label for="inputEmail"><p>E-mail</p> </label> <input type="text"
+						class="form-control" id="inputEmail" name="email"
+						value="${usuario.email}" maxlength="50" placeholder="E-mail"
+						required="required" aria-describedby="emailHelp"> <small
+						class="form-text text-muted">bem vindo</small>
+				</div>
+				<div class="form-group col-md-6">
+					<label for="inputSenha">
+						<p>Senha</p>
+					</label> <input type="password" class="form-control" id="inputSenha"
+						name="senha" value="${usuario.senha}" maxlength="16"
+						required="required" placeholder="senha">
+				</div>
+				<button type="submit" class="btn btn-primary">ENTRAR</button>
+				</div>
+			</form>
+		</span>
 	</center>
 
 
 
-	<hr>
-	<hr>
+	<br>
 
 
 

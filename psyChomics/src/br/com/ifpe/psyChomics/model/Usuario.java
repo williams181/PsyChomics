@@ -1,14 +1,30 @@
+
 package br.com.ifpe.psyChomics.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "usuario")
 public class Usuario {
 
+	@Id
 	private int id;
+	@Column
 	private String email;
+	@Column
 	private String senha;
+	@Column
 	private String nick;
+	@Column
 	private String nomeUsuario;
+	@Column
 	private String cpf;
+	@Column
 	private String notificacao;
+	@Column
 	private String tipoUsuario;
 
 	public String getTipoUsuario() {
