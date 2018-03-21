@@ -50,6 +50,18 @@
 
 					<li><a>|</a></li>
 
+					<li><a href="listarMensagemFaleConosco">FaleConosco</a></li>
+
+					<li><a>|</a></li>
+					
+					<li><a href="listarComentarioProduto">ComentarioProduto</a></li>
+
+					<li><a>|</a></li>
+					
+					<li><a href="listarTipoProduto">Tipo</a></li>
+
+					<li><a>|</a></li>
+
 					<li><a href="logout">Sair</a></li>
 
 				</ul>

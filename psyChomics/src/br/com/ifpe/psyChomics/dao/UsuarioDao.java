@@ -165,6 +165,8 @@ public class UsuarioDao {
 		usuario.setNomeUsuario(rs.getString("nome_usuario"));
 		usuario.setCpf(rs.getString("cpf"));
 		usuario.setNotificacao(rs.getString("notificacao"));
+		usuario.setTipoUsuario(rs.getString("tipo_usuario"));
+		
 		return usuario;
 	}
 

@@ -97,8 +97,7 @@ public class CarrinhoController {
 			List<ItemVenda> itensVenda = new ArrayList<ItemVenda>();
 			for (ItemCarrinho itemCarrinho : listaCarrinho) {
 
-				venda.setValorTotal(
-						venda.getValorTotal() + (itemCarrinho.getProduto().getPreco() * itemCarrinho.getQuantidade()));
+				venda.setValorTotal(venda.getValorTotal() + (itemCarrinho.getProduto().getPreco() * itemCarrinho.getQuantidade()));
 
 				ItemVenda itemVenda = new ItemVenda();
 				itemVenda.setProduto(itemCarrinho.getProduto());
@@ -113,6 +112,8 @@ public class CarrinhoController {
 			VendaHibernateDao dao = new VendaHibernateDao();
 			dao.inserir(venda);
 			model.addAttribute("msg", "Compra realizada com sucesso!");
+			
+			
 
 		} else {
 

@@ -155,7 +155,8 @@
 		</table>
 	</center>
 
-
+	<a href="concluirVenda" class="btn btn-info" role="button">Concluir
+		Venda</a> &nbsp;
 
 	<hr>
 	<hr>

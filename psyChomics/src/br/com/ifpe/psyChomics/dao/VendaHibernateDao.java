@@ -9,7 +9,7 @@ import br.com.ifpe.psyChomics.model.Venda;
 
 public class VendaHibernateDao {
 
-    private static final String PERSISTENCE_UNIT = "PC";
+    private static final String PERSISTENCE_UNIT = "psyChomics";
 
     public void inserir(Venda venda) {
 
