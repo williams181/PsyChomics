@@ -34,8 +34,8 @@ public class Util {
 	    try {
 		
 		// Criando o diretório para armazenar o arquivo
-		String workspaceProjeto = "C:\\Users\\casa\\workspace\\PsyChomics\\psyChomics";
-		File dir = new File(workspaceProjeto + "\\WebContent\\view\\img");
+		String workspaceProjeto = "/home/aluno/projeto/PsyChomics/psyChomics";
+		File dir = new File(workspaceProjeto + "/WebContent/view/img");
 		if (!dir.exists()) {
 		    dir.mkdirs();
 		}

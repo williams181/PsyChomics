@@ -9,7 +9,7 @@ import br.com.ifpe.psyChomics.model.Venda;
 
 public class VendaHibernateDao {
 
-	private static final String PERSISTENCE_UNIT = "PC";
+	private static final String PERSISTENCE_UNIT = "psyChomics";
 
 	public void inserir(Venda venda) {
 
@@ -17,10 +17,11 @@ public class VendaHibernateDao {
 		EntityManager manager = factory.createEntityManager();
 
 		manager.getTransaction().begin();
+		manager.persist(venda);
 
-		for (ItemVenda item : venda.getListaItens()) {
-			manager.persist(item);
-		}
+//		for (ItemVenda item : venda.getListaItens()) {
+//			manager.persist(item);
+//		}
 
 		manager.getTransaction().commit();
 

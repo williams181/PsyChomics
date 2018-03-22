@@ -112,32 +112,24 @@ public class ComentarioProdutoDao {
 		}
 	}
 
-	public ComentarioProduto buscarPorProduto(int id) {
+	public List<ComentarioProduto> listarPorId(int id) {
+
 		try {
-			ComentarioProduto comentarioProdutoCompleto = new ComentarioProduto();
+			List<ComentarioProduto> listarComentarioProduto = new ArrayList<ComentarioProduto>();
 			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM comentario_produto WHERE produto_id = ?");
-			stmt.setInt(1, id);
+
 			ResultSet rs = stmt.executeQuery();
+
 			while (rs.next()) {
-				comentarioProdutoCompleto.setId(rs.getInt("id"));
-				comentarioProdutoCompleto.setData(rs.getDate("data"));
-				comentarioProdutoCompleto.setComentario(rs.getString("comentario"));
-
-				int idProduto = rs.getInt("produto_id");
-				ProdutoDao dao = new ProdutoDao();
-				Produto cp = dao.buscarPorId(idProduto);
-				comentarioProdutoCompleto.setProduto(cp);
-
-				int idUsuario = rs.getInt("usuario_id");
-				UsuarioDao dao2 = new UsuarioDao();
-				Usuario cp2 = dao2.buscarPorId(idUsuario);
-				comentarioProdutoCompleto.setUsuario(cp2);
-
+				listarComentarioProduto.add(montarObjeto(rs));
 			}
+
 			rs.close();
 			stmt.close();
 			connection.close();
-			return comentarioProdutoCompleto;
+
+			return listarComentarioProduto;
+
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}

@@ -1,7 +1,7 @@
 package br.com.ifpe.psyChomics.controller;
 
 import java.util.Date;
-import java.util.List;
+
 
 import javax.servlet.http.HttpSession;
 
@@ -29,11 +29,11 @@ public class ComentarioProdutoController {
 	}
 
 	@RequestMapping("listarComentarioProduto")
-	public String listarComentarioProduto(Model model) {
+	public String listarComentarioProduto(Integer id, Model model) {
 
-		ComentarioProdutoDao dao = new ComentarioProdutoDao();
-		List<ComentarioProduto> listarComentarioProduto = dao.listar();
-		model.addAttribute("listarComentarioProduto", listarComentarioProduto);
+		//ComentarioProdutoDao dao = new ComentarioProdutoDao();
+		//List<ComentarioProduto> listarComentarioProduto = dao.listarPorId();
+		//model.addAttribute("listarComentarioProduto", listarComentarioProduto);
 
 		return "comentarioProduto/cadastrarComentarioProduto";
 	}

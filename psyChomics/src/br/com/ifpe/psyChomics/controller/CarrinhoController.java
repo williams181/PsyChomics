@@ -97,8 +97,7 @@ public class CarrinhoController {
 			List<ItemVenda> itensVenda = new ArrayList<ItemVenda>();
 			for (ItemCarrinho itemCarrinho : listaCarrinho) {
 
-				venda.setValorTotal(
-						venda.getValorTotal() + (itemCarrinho.getProduto().getPreco() * itemCarrinho.getQuantidade()));
+				venda.setValorTotal(venda.getValorTotal() + (itemCarrinho.getProduto().getPreco() * itemCarrinho.getQuantidade()));
 
 				ItemVenda itemVenda = new ItemVenda();
 				itemVenda.setProduto(itemCarrinho.getProduto());
@@ -116,7 +115,7 @@ public class CarrinhoController {
 
 		} else {
 
-			model.addAttribute("msg", "Não há itens adicionados ao carrinho");
+			model.addAttribute("msg", "Nï¿½o hï¿½ itens adicionados ao carrinho");
 		}
 
 		return "forward:listarProduto";
