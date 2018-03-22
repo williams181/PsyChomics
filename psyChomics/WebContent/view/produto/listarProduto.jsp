@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Sistema de Controle de dsdsds</title>
+<title>Listar Produto</title>
 
 <link rel="stylesheet" type="text/css" href="view/css/estilo.css" />
 <link rel="stylesheet" type="text/css"

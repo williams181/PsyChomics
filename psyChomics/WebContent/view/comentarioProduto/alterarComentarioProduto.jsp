@@ -140,14 +140,31 @@
 
 
 
+<!-- Rodapé -->
 	<div class="card">
-		<div class="card-header">Olá</div>
+		<center>
+		<div class="card-header">
 		<div class="card-body">
-			<h5 class="card-title">Saiba mais sobre nós!</h5>
-			<p class="card-text">Visite nossas redes sociais</p>
-			<a href="#" class="btn btn-primary">Abrir</a>
+		<img src="view/imagens/bgcw3.png" height=50% width=50%>
+			</div>
+			<p class="card-text"></p>
+			<a href="https://www.facebook.com/" class="btn btn-primary">Visitar</a>
+		</center>
 		</div>
 	</div>
+ 
+ <footer>
+ <div class="card-header">
+ <center>
+  <div class="card-header">PsyChomics</div>
+  <div class="card-body">
+ <a href="listarProdutoIndex">Início</a><br>
+ <a	href="exibirCadastrarUsuario">Cadastre-se</a><br>
+ <a href="exibirLoginUsuario">Login</a>
+ </center>					
+ </div>
+ </footer>
+
 
 
 

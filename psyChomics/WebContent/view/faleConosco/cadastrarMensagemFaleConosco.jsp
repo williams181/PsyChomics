@@ -11,13 +11,11 @@
 	crossorigin="anonymous">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Cadastro de Usuário</title>
+<title>Fale Conosco</title>
 </head>
 <body>
 
-
-
-	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
+<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
 		class="navbar-brand" href="listarProdutoIndex"><img
 		src="view/imagens/nav.png" width="50%"></a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -33,6 +31,7 @@
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="exibirQuemSomos">Quem
 					somos</a></li>
+			<li class="nav-item"><a class="nav-link" href="#">FAQ</a></li>	
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 				role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -72,7 +71,6 @@
 		</form>
 	</div>
 	</nav>
-
 
 
 	<div id="carouselExampleIndicators" class="carousel slide"
@@ -120,17 +118,19 @@
 	<center>
 		<div class="card">
 			<div class="card-body">
-				<h4>Cadastre-se</h4>
+				<h4>Fale Conosco</h4>
 			</div>
 		</div>
 	</center>
 
 
-
-	<hr>
-	<hr>
-
-
+<center>
+		<p>
+			<stromg><h6>Projeto do Curso de Informática para Web, Terceiro Período, da Disciplina de Projeto e Prática II do IFPE Campus Jaboatão,<br>o PsyChomics é um site especializado em quadrinhos e mangás, buscamos sempre levar para nossos clientes<br>o maior e mais
+			atualizado acervo de revistas em quadrinhos do Brasil de forma
+			profissional e competitiva.</h6></stromg>
+		</p>
+	</center>
 
 	<center>
 		<form action="cadastrarMensagemFaleConosco" method="post"
@@ -164,16 +164,30 @@
 
 
 
+<!-- Rodapé -->
 	<div class="card">
-		<div class="card-header">olá</div>
+		<center>
+		<div class="card-header">
 		<div class="card-body">
-			<h5 class="card-title">saiba mais sobre nós</h5>
-			<p class="card-text">visite nossas redes sociais</p>
-			<a href="#" class="btn btn-primary">abrir</a>
+		<img src="view/imagens/bgcw3.png" height=50% width=50%>
+			</div>
+			<p class="card-text"></p>
+			<a href="https://www.facebook.com/" class="btn btn-primary">Visitar</a>
+		</center>
 		</div>
 	</div>
-
-
+ 
+ <footer>
+ <div class="card-header">
+ <center>
+  <div class="card-header">PsyChomics</div>
+  <div class="card-body">
+ <a href="listarProdutoIndex">Início</a><br>
+ <a	href="exibirCadastrarUsuario">Cadastre-se</a><br>
+ <a href="exibirLoginUsuario">Login</a>
+ </center>					
+ </div>
+ </footer>
 
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

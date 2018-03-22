@@ -19,8 +19,9 @@
 
 <body id="corpoPadrao">
 
-	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
-		class="navbar-brand" href="listarProdutoIndex"><img src="\imagens\nav.png" width="50%"></a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
+		class="navbar-brand" href="listarProdutoIndex"><img
+		src="view/imagens/nav.png" width="50%"></a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarSupportedContent"
 		aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -34,28 +35,31 @@
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="exibirQuemSomos">Quem
 					somos</a></li>
+			<li class="nav-item"><a class="nav-link" href="#">FAQ</a></li>	
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 				role="button" data-toggle="dropdown" aria-haspopup="true"
 				aria-expanded="false">Cadastrar</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					<a class="dropdown-item" href="exibirCadastrarProduto">Produtos</a>
- 					<a class="dropdown-item" href="exibirCadastrarUsuario">Usuários</a>
- 					<a class="dropdown-item" href="incluirCategoriaProduto">Categoria</a>
- 					<a class="dropdown-item" href="incluirGeneroProduto">Gênero</a> 
+					<a class="dropdown-item" href="exibirCadastrarUsuario">Usuários</a>
+					<a class="dropdown-item" href="exibirIncluirCategoriaProduto">Categoria</a>
+					<a class="dropdown-item" href="exibirIncluirGeneroProduto">Gênero</a>
+					<a class="dropdown-item" href="exibirIncluirTipoProduto">Tipo</a>
 				</div></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 				role="button" data-toggle="dropdown" aria-haspopup="true"
 				aria-expanded="false">Listar</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="listarUsuario">Usuários</a>
-					<a class="dropdown-item" href="listarProduto">Produtos</a>
-					<a class="dropdown-item" href="listarCategoriaProduto">Categoria</a>
-					<a class="dropdown-item" href="listarGeneroProduto">Gênero</a>
+					<a class="dropdown-item" href="listarUsuario">Usuários</a> <a
+						class="dropdown-item" href="listarProduto">Produtos</a> <a
+						class="dropdown-item" href="listarCategoriaProduto">Categoria</a>
+					<a class="dropdown-item" href="listarGeneroProduto">Gênero</a> <a
+						class="dropdown-item" href="listarTipoProduto">Tipo</a>
 				</div></li>
 			<li class="nav-item"><a class="nav-link"
-				href="#">Perfil</a></li>	
+				href="exibirPerfilUsuario">Perfil</a></li>
 			<li class="nav-item"><a class="nav-link"
 				href="exibirCadastrarUsuario">Cadastre-se</a></li>
 			<li class="nav-item"><a class="nav-link"
@@ -126,6 +130,33 @@
 	<br />
 	
 	<hr class="linhaSeparador">
+	
+	
+	
+	<!-- Rodapé -->
+	<div class="card">
+		<center>
+		<div class="card-header">
+		<div class="card-body">
+		<img src="view/imagens/bgcw3.png" height=50% width=50%>
+			</div>
+			<p class="card-text"></p>
+			<a href="https://www.facebook.com/" class="btn btn-primary">Visitar</a>
+		</center>
+		</div>
+	</div>
+ 
+ <footer>
+ <div class="card-header">
+ <center>
+  <div class="card-header">PsyChomics</div>
+  <div class="card-body">
+ <a href="listarProdutoIndex">Início</a><br>
+ <a	href="exibirCadastrarUsuario">Cadastre-se</a><br>
+ <a href="exibirLoginUsuario">Login</a>
+ </center>					
+ </div>
+ </footer>
 	
 </body>
 </html>

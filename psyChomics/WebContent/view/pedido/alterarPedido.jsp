@@ -15,8 +15,7 @@
 </head>
 <body>
 
-
-	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
+<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
 		class="navbar-brand" href="listarProdutoIndex"><img
 		src="view/imagens/nav.png" width="50%"></a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -32,6 +31,7 @@
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="exibirQuemSomos">Quem
 					somos</a></li>
+			<li class="nav-item"><a class="nav-link" href="#">FAQ</a></li>	
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 				role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -73,7 +73,6 @@
 	</nav>
 
 
-
 	<center>
 		<div class="card">
 			<div class="card-body">
@@ -113,14 +112,32 @@
 
 
 
+<!-- Rodapé -->
 	<div class="card">
-		<div class="card-header">Olá</div>
+		<center>
+		<div class="card-header">
 		<div class="card-body">
-			<h5 class="card-title">Saiba mais sobre nós!</h5>
-			<p class="card-text">Visite nossas redes sociais</p>
-			<a href="#" class="btn btn-primary">Abrir</a>
+		<img src="view/imagens/bgcw3.png" height=50% width=50%>
+			</div>
+			<p class="card-text"></p>
+			<a href="https://www.facebook.com/" class="btn btn-primary">Visitar</a>
+		</center>
 		</div>
 	</div>
+ 
+ <footer>
+ <div class="card-header">
+ <center>
+  <div class="card-header">PsyChomics</div>
+  <div class="card-body">
+ <a href="listarProdutoIndex">Início</a><br>
+ <a	href="exibirCadastrarUsuario">Cadastre-se</a><br>
+ <a href="exibirLoginUsuario">Login</a><br>
+ <a href="#">FAQ</a>
+ </center>					
+ </div>
+ </footer>
+
 
 
 

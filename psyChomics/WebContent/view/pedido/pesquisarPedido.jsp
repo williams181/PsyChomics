@@ -116,4 +116,23 @@
 	<hr class="linhaSeparador">
 
 </body>
+
+
+
+
+
+ 
+ <footer>
+ <div class="card-header">
+ <center>
+  <div class="card-header">PsyChomics</div>
+  <div class="card-body">
+ <a href="listarProdutoIndex">Início</a><br>
+ <a	href="exibirCadastrarUsuario">Cadastre-se</a><br>
+ <a href="exibirLoginUsuario">Login</a>
+ </center>					
+ </div>
+ </footer>
+
+
 </html>

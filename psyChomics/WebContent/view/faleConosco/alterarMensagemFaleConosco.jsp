@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>alterar Mensagem (faleConosco)</title>
+<title>Alterar Mensagem (Fale Conosco)</title>
 
 <link rel="stylesheet" type="text/css" href="view/css/estilo.css" />
 <link rel="stylesheet" type="text/css"
@@ -40,7 +40,7 @@
 			<p>
 			<table style="width: 100%">
 				<tr>
-					<td style="float: left; font-size: 24px;">alteração de <strong>Categoria
+					<td style="float: left; font-size: 24px;">Alteração de <strong>Categoria
 							de Produto</strong>
 					</td>
 					<td style="float: right;"><a href="ListarProdutoIndex"

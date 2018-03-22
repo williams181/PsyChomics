@@ -31,6 +31,7 @@
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="exibirQuemSomos">Quem
 					somos</a></li>
+			<li class="nav-item"><a class="nav-link" href="#">FAQ</a></li>				
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 				role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -133,10 +134,9 @@
 
 	<center>
 		<p>
-			<stromg><h6>Somos um site especializado em quadrinhos e mangás</h6></stromg>
-			, buscamos sempre levar para nossos clientes o maior e mais
+			<stromg><h6>Projeto do Curso de Informática para Web, Terceiro Período, da Disciplina de Projeto e Prática II do IFPE Campus Jaboatão,<br>o PsyChomics é um site especializado em quadrinhos e mangás, buscamos sempre levar para nossos clientes<br>o maior e mais
 			atualizado acervo de revistas em quadrinhos do Brasil de forma
-			profissional e competitiva.
+			profissional e competitiva.</h6></stromg>
 		</p>
 	</center>
 
@@ -158,18 +158,19 @@
 
 
 	<hr>
+	<img src="view/imagens/thumb-1920-8387.jpg">
 	<hr>
 
 
 
 	<center>
 		<p>
-			<stromg><h6>é pensar sempre no consumidor</h6>, fomentar o mercado
+			<stromg><h6>É pensar sempre no consumidor, fomentar o mercado
 			e aproximar cada vez mais o público do maravilhoso universo das
-			histórias em quadrinhos.</stromg>
+			histórias em quadrinhos.
 			Disponibilizando sempre uma equipe treinada, com muito carisma,
 			potencial e conhecimento para propor ao cliente a devida atenção e
-			atendimento.
+			atendimento.</h6></stromg>
 		</p>
 	</center>
 
@@ -180,14 +181,31 @@
 
 
 
+<!-- Rodapé -->
 	<div class="card">
-		<div class="card-header"></div>
+		<center>
+		<div class="card-header">
 		<div class="card-body">
-			<h5 class="card-title">Saiba mais sobre nós</h5>
-			<p class="card-text">Visite nossas redes sociais.</p>
-			<a href="#" class="btn btn-primary">Abrir</a>
+		<img src="view/imagens/bgcw3.png" height=50% width=50%>
+			</div>
+			<p class="card-text"></p>
+			<a href="https://www.facebook.com/" class="btn btn-primary">Visitar</a>
+		</center>
 		</div>
 	</div>
+ 
+ <footer>
+ <div class="card-header">
+ <center>
+  <div class="card-header">PsyChomics</div>
+  <div class="card-body">
+ <a href="listarProdutoIndex">Início</a><br>
+ <a	href="exibirCadastrarUsuario">Cadastre-se</a><br>
+ <a href="exibirLoginUsuario">Login</a>
+ </center>					
+ </div>
+ </footer>
+
 
 
 

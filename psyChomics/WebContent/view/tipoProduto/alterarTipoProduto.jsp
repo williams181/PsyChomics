@@ -116,18 +116,18 @@
 
 	<hr class="linhaSeparador">
 
-<!-- Rodapé -->
-	<div class="card">
-		<center>
-		<div class="card-header">Nos siga no Facebook e fique por dentro das novidades!</div>
-		<div class="card-body">
-		
-			<h5 class="card-title">Visite nossa página no Facebook</h5>
-			<p class="card-text"></p>
-			<a href="https://www.facebook.com/" class="btn btn-primary">Visitar</a>
-		</center>
-		</div>
-	</div>
+<footer>
+ <div class="card-header">
+ <center>
+  <div class="card-header">PsyChomics</div>
+  <div class="card-body">
+ <a href="listarProdutoIndex">Início</a><br>
+ <a	href="exibirCadastrarUsuario">Cadastre-se</a><br>
+ <a href="exibirLoginUsuario">Login</a>
+ </center>					
+ </div>
+ </footer>
+
 
 
 
