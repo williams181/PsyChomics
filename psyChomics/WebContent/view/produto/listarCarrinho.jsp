@@ -15,65 +15,9 @@
 </head>
 <body>
 
+	<c:import url="/view/comum/menuUsuario.jsp" />
 
-
-	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
-		class="navbar-brand" href="listarProdutoIndex"><img
-		src="view/imagens/nav.png" width="50%"></a>
-	<button class="navbar-toggler" type="button" data-toggle="collapse"
-		data-target="#navbarSupportedContent"
-		aria-controls="navbarSupportedContent" aria-expanded="false"
-		aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-	<div class="collapse navbar-collapse" id="navbarSupportedContent">
-		<ul class="navbar-nav mr-auto">
-			<li class="nav-item active"><a class="nav-link"
-				href="listarProdutoIndex">Início<span class="sr-only">(current)</span>
-			</a></li>
-			<li class="nav-item"><a class="nav-link" href="exibirQuemSomos">Quem
-					somos</a></li>
-			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false">Cadastrar</a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="exibirCadastrarProduto">Produtos</a>
-					<a class="dropdown-item" href="exibirCadastrarUsuario">Usuários</a>
-					<a class="dropdown-item" href="exibirIncluirCategoriaProduto">Categoria</a>
-					<a class="dropdown-item" href="exibirIncluirGeneroProduto">Gênero</a>
-					<a class="dropdown-item" href="exibirIncluirTipoProduto">Tipo</a>
-				</div></li>
-			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false">Listar</a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="listarUsuario">Usuários</a> <a
-						class="dropdown-item" href="listarProduto">Produtos</a> <a
-						class="dropdown-item" href="listarCategoriaProduto">Categoria</a>
-					<a class="dropdown-item" href="listarGeneroProduto">Gênero</a> <a
-						class="dropdown-item" href="listarTipoProduto">Tipo</a>
-				</div></li>
-			<li class="nav-item"><a class="nav-link"
-				href="exibirPerfilUsuario">Perfil</a></li>
-			<li class="nav-item"><a class="nav-link"
-				href="exibirCadastrarUsuario">Cadastre-se</a></li>
-			<li class="nav-item"><a class="nav-link"
-				href="exibirLoginUsuario">Login</a></li>
-			<li class="nav-item"><a class="nav-link" href="logout">Logout</a></li>
-		</ul>
-		<form class="form-inline my-2 my-lg-0" action="buscarProduto">
-			<input class="form-control mr-sm-2" type="text"
-				pplaceholder="Procurar.." id="inputNome" name="nome" for="inputNome"
-				aria-label="Search">
-			<button class="btn btn-outline-success my-2 my-sm-0" value="buscar"
-				type="submit">Buscar</button>
-		</form>
-	</div>
-	</nav>
-
-
+<br>
 
 	<div id="carouselExampleIndicators" class="carousel slide"
 		data-ride="carousel">
@@ -116,23 +60,15 @@
 		</a>
 	</div>
 
+<br>
 
+	<div class="alert alert-dark" role="alert">
+		<h4 class="text-uppercase">Carrrinho</h4>
+	</div>
 
-	<center>
-		<div class="card">
-			<div class="card-body">
-				<h4>Descricão do Produto</h4>
-			</div>
-		</div>
-	</center>
+<br>
 
-
-	<hr>
-	<hr>
-
-
-
-	<center>
+	<div class="container">
 		<table class="table table-hover">
 			<thead>
 				<tr>
@@ -153,14 +89,12 @@
 				</tbody>
 			</c:forEach>
 		</table>
-	</center>
+	</div>
 
 	<a href="concluirVenda" class="btn btn-info" role="button">Concluir
 		Venda</a> &nbsp;
 
-	<hr>
-	<hr>
-
+	<br>
 
 
 	<div class="card">
@@ -171,8 +105,6 @@
 			<a href="#" class="btn btn-primary">abrir</a>
 		</div>
 	</div>
-
-
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

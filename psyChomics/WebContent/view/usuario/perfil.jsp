@@ -15,64 +15,9 @@
 </head>
 <body>
 
+	<c:import url="/view/comum/menuUsuario.jsp" />
 
-
-	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
-		class="navbar-brand" href="listarProdutoIndex"><img
-		src="view/imagens/nav.png" width="50%"></a>
-	<button class="navbar-toggler" type="button" data-toggle="collapse"
-		data-target="#navbarSupportedContent"
-		aria-controls="navbarSupportedContent" aria-expanded="false"
-		aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-	<div class="collapse navbar-collapse" id="navbarSupportedContent">
-		<ul class="navbar-nav mr-auto">
-			<li class="nav-item active"><a class="nav-link"
-				href="listarProdutoIndex">Início<span class="sr-only">(current)</span>
-			</a></li>
-			<li class="nav-item"><a class="nav-link" href="exibirQuemSomos">Quem
-					somos</a></li>
-			<c:choose>
-				<c:when test="${usuarioLogado.tipoUsuario == 'administrador'}">
-					<li class="nav-item"><a class="nav-link"
-						href="exibirControleEstoque">administrador</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Perfil</a></li>
-					<li class="nav-item"><a class="nav-link" href="logout">Logout</a></li>
-				</c:when>
-				<c:otherwise>
-				</c:otherwise>
-			</c:choose>
-			<c:choose>
-				<c:when test="${usuarioLogado.tipoUsuario == 'usuario'}">
-					<li class="nav-item"><a class="nav-link" href="listarProduto">Produtos</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Perfil</a></li>
-					<li class="nav-item"><a class="nav-link" href="logout">Logout</a></li>
-				</c:when>
-				<c:otherwise>
-				</c:otherwise>
-			</c:choose>
-			<c:if test="${usuarioLogado.tipoUsuario eq null}">
-				<li class="nav-item"><a class="nav-link" href="listarProduto">Produtos</a></li>
-				<li class="nav-item"><a class="nav-link"
-					href="exibirCadastrarUsuario">Cadastre-se</a></li>
-				<li class="nav-item"><a class="nav-link"
-					href="exibirLoginUsuario">Login</a></li>
-			</c:if>
-
-
-		</ul>
-		<form class="form-inline my-2 my-lg-0" action="buscarProduto">
-			<input class="form-control mr-sm-2" type="text"
-				pplaceholder="Procurar.." id="inputNome" name="nome" for="inputNome"
-				aria-label="Search">
-			<button class="btn btn-outline-success my-2 my-sm-0" value="buscar"
-				type="submit">Buscar</button>
-		</form>
-	</div>
-	</nav>
-
-
+	<br>
 
 	<div id="carouselExampleIndicators" class="carousel slide"
 		data-ride="carousel">
@@ -115,9 +60,28 @@
 		</a>
 	</div>
 
+	<br>
 
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6">
+				<c:forEach var="u" items="${listarUsuario}">
+					<div class="list-group">
+						<p class="list-group-item list-group-item-action">${u.email}</p>
+						<p class="list-group-item list-group-item-action">${u.senha}</p>
+						<p class="list-group-item list-group-item-action">${u.nick}</p>
+						<p class="list-group-item list-group-item-action">${u.nomeUsuario}</p>
+						<p class="list-group-item list-group-item-action">${u.tipoUsuario}</p>
+						<p class="list-group-item list-group-item-action">${u.notificacao}</p>
+					</div>
+				</c:forEach>
+			</div>
+		</div>
+	</div>
 
-	<center>
+	<br>
+
+	<div class="container">
 		<form action="alterarUsuario" method="post"
 			enctype="multipart/form-data">
 
@@ -147,30 +111,34 @@
 			</div>
 			<div class="form-check">
 				<input class="form-check-input" type="radio" name="tipoUsuario"
-					id="inputTipoUsuario" value="usuario" value="${usuario.tipoUsuario}" checked>
-				<label class="form-check-label" value="usuario"
-					for="inputTipoUsuario"> Usuário</label>
+					id="inputTipoUsuario" value="usuario"
+					value="${usuario.tipoUsuario}" checked> <label
+					class="form-check-label" value="usuario" for="inputTipoUsuario">
+					Usuário</label>
 			</div>
 			<div class="form-check">
 				<input class="form-check-input" type="radio" name="tipoUsuario"
-					id="inputTipoUsuario" value="administrador" value="${usuario.tipoUsuario}"> <label
+					id="inputTipoUsuario" value="administrador"
+					value="${usuario.tipoUsuario}"> <label
 					class="form-check-label" value="administrador"
 					for="inputTipoUsuario"> Administrador</label>
 			</div>
-			
+
 			<div class="form-group col-md-6">
 				<input type="checkbox" class="form-check-input" value="sim"
 					name="notificacao" for="notificacao" id="notificacao"> <label
-					class="form-check-label" value="sim" value="${usuario.notificacao} name="notificacao"
-					for="notificacao">Deseja Receber notificações ?</label>
+					class="form-check-label" value="sim"
+					value="${usuario.notificacao} name="
+					notificacao"
+					for="notificacao">Deseja Receber
+					notificações ?</label>
 			</div>
 			<p>
 				<input type="submit" class="btn btn-primary" value="alterar">
 				<a href="listarProdutoIndex" class="btn btn-danger" role="button">Cancelar</a>
 			</p>
 		</form>
-
-	</center>
+	</div>
 
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

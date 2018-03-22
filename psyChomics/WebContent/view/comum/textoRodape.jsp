@@ -1,1 +1,1 @@
-&copy; 2016 - IFPE Campus Jaboatão - Todos os direitos reservados - v.1.0
+&copy; 2018 - IFPE Campus Jaboatão - Não existe Propriedade intelectual - v.1.0

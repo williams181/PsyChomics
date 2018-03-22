@@ -15,65 +15,7 @@
 </head>
 <body>
 
-
-
-	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
-		class="navbar-brand" href="listarProdutoIndex"><img
-		src="view/imagens/nav.png" width="50%"></a>
-	<button class="navbar-toggler" type="button" data-toggle="collapse"
-		data-target="#navbarSupportedContent"
-		aria-controls="navbarSupportedContent" aria-expanded="false"
-		aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-	<div class="collapse navbar-collapse" id="navbarSupportedContent">
-		<ul class="navbar-nav mr-auto">
-			<li class="nav-item active"><a class="nav-link"
-				href="listarProdutoIndex">Início<span class="sr-only">(current)</span>
-			</a></li>
-			<li class="nav-item"><a class="nav-link" href="exibirQuemSomos">Quem
-					somos</a></li>
-			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false">Cadastrar</a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="exibirCadastrarProduto">Produtos</a>
-					<a class="dropdown-item" href="exibirCadastrarUsuario">Usuários</a>
-					<a class="dropdown-item" href="exibirIncluirCategoriaProduto">Categoria</a>
-					<a class="dropdown-item" href="exibirIncluirGeneroProduto">Gênero</a>
-					<a class="dropdown-item" href="exibirIncluirTipoProduto">Tipo</a>
-				</div></li>
-			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false">Listar</a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="listarUsuario">Usuários</a> <a
-						class="dropdown-item" href="listarProduto">Produtos</a> <a
-						class="dropdown-item" href="listarCategoriaProduto">Categoria</a>
-					<a class="dropdown-item" href="listarGeneroProduto">Gênero</a> <a
-						class="dropdown-item" href="listarTipoProduto">Tipo</a>
-				</div></li>
-			<li class="nav-item"><a class="nav-link"
-				href="exibirPerfilUsuario">Perfil</a></li>
-			<li class="nav-item"><a class="nav-link"
-				href="exibirCadastrarUsuario">Cadastre-se</a></li>
-			<li class="nav-item"><a class="nav-link"
-				href="exibirLoginUsuario">Login</a></li>
-			<li class="nav-item"><a class="nav-link" href="logout">Logout</a></li>
-		</ul>
-		<form class="form-inline my-2 my-lg-0" action="buscarProduto">
-			<input class="form-control mr-sm-2" type="text"
-				pplaceholder="Procurar.." id="inputNome" name="nome" for="inputNome"
-				aria-label="Search">
-			<button class="btn btn-outline-success my-2 my-sm-0" value="buscar"
-				type="submit">Buscar</button>
-		</form>
-	</div>
-	</nav>
-
-
+	<c:import url="/view/comum/menuUsuario.jsp" />
 
 	<div id="carouselExampleIndicators" class="carousel slide"
 		data-ride="carousel">
@@ -116,28 +58,19 @@
 		</a>
 	</div>
 
+	<br>
 
+	<div class="alert alert-dark" role="alert">
+		<h4 class="text-uppercase">Descrição do produto</h4>
+	</div>
 
-	<center>
-		<div class="card">
-			<div class="card-body">
-				<h4>Descricão do Produto</h4>
-			</div>
-		</div>
-	</center>
-
-
+	<br>
 
 	<input type="hidden" name="id" value="${produto.id}" />
 
+	<br>
 
-
-	<hr>
-	<hr>
-
-
-
-	<center>
+	<div class="container">
 		<div class="card" style="width: 18rem;">
 			<img class="card-img-top" src="view/img/${produto.imagem}"
 				alt="Card image cap">
@@ -152,19 +85,14 @@
 				<li class="list-group-item">${produto.tipoProduto.descricao}</li>
 			</ul>
 			<div class="card-body">
-				<a href="exibirAdicionarCarrinho?id=${produto.id}" class="card-link">Comprar</a> <a
-					href="exibirCadastrarComentarioProduto?id=${produto.id}"
+				<a href="exibirAdicionarCarrinho?id=${produto.id}" class="card-link">Comprar</a>
+				<a href="exibirCadastrarComentarioProduto?id=${produto.id}"
 					class="card-link">Comentarios</a>
 			</div>
 		</div>
-	</center>
+	</div>
 
-
-
-	<hr>
-	<hr>
-
-
+	<br>
 
 	<div class="card">
 		<div class="card-header">olá</div>
@@ -175,16 +103,12 @@
 		</div>
 	</div>
 
-
-
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-		crossorigin="anonymous"></script>
-	<script
+		crossorigin="anonymous"></script> <script
 		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
 		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-		crossorigin="anonymous"></script>
-	<script
+		crossorigin="anonymous"></script> <script
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
 		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 		crossorigin="anonymous"></script>

@@ -21,7 +21,7 @@
 
 <body id="corpoPadrao">
 
-
+<c:import url="/view/comum/menu.jsp" />
 
 	<div align="center">
 
@@ -79,6 +79,9 @@
 	<br />
 
 	<hr class="linhaSeparador">
+	<div class="textoRodape">
+		<p><c:import url="/view/comum/textoRodape.jsp" /></p>
+	</div>
 
 </body>
 </html>

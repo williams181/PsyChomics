@@ -23,38 +23,7 @@
 
 <body id="corpoPadrao">
 
-	<nav id="divMenu" class="navbar navbar-inverse">
-		<div class="container-fluid">
-
-			<div>
-				<ul class="nav navbar-nav">
-
-					<li><a href="listarProdutoIndex">Home</a></li>
-
-					<li><a>|</a></li>
-
-					<li><a href="listarProduto">Produto</a></li>
-
-					<li><a>|</a></li>
-
-					<li><a href="listarCategoriaProduto">Categoria</a></li>
-
-					<li><a>|</a></li>
-
-					<li><a href="listarGeneroProduto">Genero</a></li>
-
-					<li><a>|</a></li>
-
-					<li><a href="listarTipoProduto">Tipo</a></li>
-
-					<li><a>|</a></li>
-
-					<li><a href="logout">Sair</a></li>
-
-				</ul>
-			</div>
-		</div>
-	</nav>
+	<c:import url="/view/comum/menu.jsp" />
 
 	<form class="form-group" action="buscarProduto" method="post">
 		<input class="form-control mr-sm-2" type="text"
@@ -154,5 +123,9 @@
 	<br />
 
 	<hr class="linhaSeparador">
+	
+	<div class="textoRodape">
+		<p><c:import url="/view/comum/textoRodape.jsp" /></p>
+	</div>
 </body>
 </html>

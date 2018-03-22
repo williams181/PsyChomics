@@ -80,6 +80,9 @@
 	<br />
 
 	<hr class="linhaSeparador">
+	<div class="textoRodape">
+		<p><c:import url="/view/comum/textoRodape.jsp" /></p>
+	</div>
 
 </body>
 </html>

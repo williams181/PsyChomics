@@ -24,6 +24,8 @@
 
 <body id="corpoPadrao">
 
+<c:import url="/view/comum/menu.jsp" />
+
 	<div align="center">
 
 		<div align="left" style="color: #6E6E6E; width: 70%; margin-top: 4%;">
