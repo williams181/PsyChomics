@@ -19,24 +19,29 @@ public class UsuarioController {
 		return "usuario/loginUsuario";
 	}
 
+	@RequestMapping("/exibirControleEstoque")
+	public String exibirControleEstoque() {
+		return "administrador/home";
+	}
+
 	@RequestMapping("efetuarLogin")
 	public String efetuarLogin(Usuario usuario, HttpSession session, Model model) {
-	UsuarioDao dao = new UsuarioDao();
-	Usuario usuarioLogado = dao.buscarUsuario(usuario);
-	if (usuarioLogado != null) {
-	 session.setAttribute("usuarioLogado", usuarioLogado);
-	 model.addAttribute("msg", "Login efetuado com sucesso.");
-	 return "usuario/loginUsuario";
+		UsuarioDao dao = new UsuarioDao();
+		Usuario usuarioLogado = dao.buscarUsuario(usuario);
+		if (usuarioLogado != null) {
+			session.setAttribute("usuarioLogado", usuarioLogado);
+			model.addAttribute("msg", "Login efetuado com sucesso.");
+			return "usuario/loginUsuario";
+		}
+		model.addAttribute("msg", "Não foi encontrado um usuário com o login e senha informados.");
+		return "usuario/loginUsuario";
 	}
-	model.addAttribute("msg", "Não foi encontrado um usuário com o login e senha informados.");
-	 return "usuario/loginUsuario";
+
+	@RequestMapping("logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "forward:listarProdutoIndex";
 	}
-	
-    @RequestMapping("logout")
-    public String logout(HttpSession session) {
-    	session.invalidate();
-    	 return "forward:listarProdutoIndex";
-    }
 
 	@RequestMapping("/exibirCadastrarUsuario")
 	public String exibirCadastrarUsuario() {
@@ -48,7 +53,7 @@ public class UsuarioController {
 		UsuarioDao dao = new UsuarioDao();
 		dao.cadastrar(usuario);
 		model.addAttribute("msg", "Usuario Incluido com Sucesso");
-		 return "forward:listarProdutoIndex";
+		return "forward:listarProdutoIndex";
 	}
 
 	@RequestMapping("listarUsuario")
@@ -87,7 +92,7 @@ public class UsuarioController {
 
 		return "forward:listarUsuario";
 	}
-	
+
 	@RequestMapping("buscarUsuario")
 	public String buscarUsuario(Usuario usuario, Model model) {
 		UsuarioDao dao = new UsuarioDao();
@@ -95,10 +100,14 @@ public class UsuarioController {
 		model.addAttribute("listarUsuario", listarUsuario);
 		return "usuario/buscarUsuario";
 	}
-	
+
 	@RequestMapping("/exibirQuemSomos")
 	public String exibirQuemSomos() {
 		return "psyChomics/quemSomos";
 	}
-	
+
+	@RequestMapping("/exibirPerfil")
+	public String exibirPerfil() {
+		return "usuario/perfil";
+	}
 }

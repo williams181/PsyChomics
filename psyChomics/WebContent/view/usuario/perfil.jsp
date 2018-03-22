@@ -11,9 +11,11 @@
 	crossorigin="anonymous">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>alterar o Usuário</title>
+<title>Index</title>
 </head>
 <body>
+
+
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
 		class="navbar-brand" href="listarProdutoIndex"><img
@@ -72,21 +74,46 @@
 
 
 
-	<hr>
-	<hr>
-	<hr>
+	<div id="carouselExampleIndicators" class="carousel slide"
+		data-ride="carousel">
+		<ol class="carousel-indicators">
+			<li data-target="#carouselExampleIndicators" data-slide-to="0"
+				class="active"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+		</ol>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img class="d-block w-100" src="view/imagens/bg3.png"
+					alt="primeiro slide">
+			</div>
 
+			<div class="carousel-item">
+				<img class="d-block w-100" src="view/imagens/bgcw.png"
+					alt="segundo slide">
+			</div>
 
+			<div class="carousel-item">
+				<img class="d-block w-100" src="view/imagens/bgcw2.png"
+					alt="terceiro slide">
+			</div>
 
-	<div class="card">
-		<div class="card-body">Login do Usuário</div>
+			<div class="carousel-item">
+				<img class="d-block w-100" src="view/imagens/bgoldlogan.png"
+					alt="quarto slide">
+			</div>
+		</div>
+		<a class="carousel-control-prev" href="#carouselExampleIndicators"
+			role="button" data-slide="prev"> <span
+			class="carousel-control-prev-icon" aria-hidden="true"></span> <span
+			class="sr-only">Anterior</span>
+		</a> <a class="carousel-control-next" href="#carouselExampleIndicators"
+			role="button" data-slide="next"> <span
+			class="carousel-control-next-icon" aria-hidden="true"></span> <span
+			class="sr-only">Próximo</span>
+		</a>
 	</div>
-
-
-
-	<hr>
-	<hr>
-	<hr>
 
 
 
@@ -144,25 +171,6 @@
 		</form>
 
 	</center>
-
-
-
-	<hr>
-	<hr>
-	<hr>
-
-
-
-	<div class="card">
-		<div class="card-header">Olá</div>
-		<div class="card-body">
-			<h5 class="card-title">Saiba mais sobre nossos produtos e sobre
-				nós!</h5>
-			<p class="card-text">Visite nossa page no facebook</p>
-			<a href="https://www.facebook.com/" class="btn btn-primary">visitar</a>
-		</div>
-	</div>
-
 
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

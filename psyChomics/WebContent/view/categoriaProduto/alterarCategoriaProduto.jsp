@@ -58,7 +58,7 @@
 
 					<li><a>|</a></li>
 					
-					<li><a href="listarTipoProduto">Tipo</a></li>
+					<li><a href="listarPedido">Pedido</a></li>
 
 					<li><a>|</a></li>
 
