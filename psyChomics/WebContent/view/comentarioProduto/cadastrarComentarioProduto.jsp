@@ -11,7 +11,7 @@
 	crossorigin="anonymous">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Cadastro de Comentarios</title>
+<title>PsyChomics</title>
 </head>
 <body>
 
@@ -19,11 +19,17 @@
 
 	<br>
 
+	<c:import url="/view/comum/carousel.jsp" />
+
+	<br>
+
 	<input type="hidden" name="id" value="${produto.id}" />
 
-	<div class="alert alert-dark" role="alert">
-		<h4 class="text-uppercase">Comentarios dos produtos</h4>
-	</div>
+	<center>
+		<div class="alert alert-dark" role="alert">
+			<h4 class="text-uppercase">Comentarios dos produtos</h4>
+		</div>
+	</center>
 
 	<br>
 
@@ -31,9 +37,9 @@
 		<form action="cadastrarComentarioProduto" method="post"
 			enctype="multipart/form-data">
 			<div class="form-group shadow-textarea">
-				<label for="inputComentario">New Comentario</label>
+				<label for="inputComentario">Novo Comentario</label>
 				<textarea type="text" id="inputComentario" class="form-control"
-					name="comentario" placeholder="comentario" maxlength="600" rows="4"
+					name="comentario" placeholder="comentario" maxlength="600" rows="5"
 					required="required" class="form-control z-depth-1"></textarea>
 			</div>
 			<input type="hidden" name="produto.id" value="${produto.id}" />
@@ -51,8 +57,6 @@
 					<div class="list-group">
 						<p class="list-group-item list-group-item-action">${cp.usuario.nomeUsuario}</p>
 						<p class="list-group-item list-group-item-action">${cp.comentario}</p>
-						<p class="list-group-item list-group-item-action" href="removerComentarioProduto?id=${cp.id}">Remover</p>
-						<p class="list-group-item list-group-item-action" href="exibirAlterarComentarioProduto?id=${cp.id}">Remover</p>
 					</div>
 				</c:forEach>
 			</div>
@@ -61,14 +65,7 @@
 
 	<br>
 
-	<div class="card">
-		<div class="card-header">Olá</div>
-		<div class="card-body">
-			<h5 class="card-title">Saiba mais sobre nós!</h5>
-			<p class="card-text">Visite nossas redes sociais</p>
-			<a href="#" class="btn btn-primary">Abrir</a>
-		</div>
-	</div>
+	<c:import url="/view/comum/rodape.jsp" />
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

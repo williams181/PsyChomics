@@ -11,64 +11,25 @@
 	crossorigin="anonymous">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Descrição do Produto</title>
+<title>PsyChomics</title>
 </head>
 <body>
 
 	<c:import url="/view/comum/menuUsuario.jsp" />
 
-<br>
+	<br>
 
-	<div id="carouselExampleIndicators" class="carousel slide"
-		data-ride="carousel">
-		<ol class="carousel-indicators">
-			<li data-target="#carouselExampleIndicators" data-slide-to="0"
-				class="active"></li>
-			<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-			<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-			<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-		</ol>
-		<div class="carousel-inner">
-			<div class="carousel-item active">
-				<img class="d-block w-100" src="view/imagens/bg3.png"
-					alt="primeiro slide">
-			</div>
+	<c:import url="/view/comum/carousel.jsp" />
 
-			<div class="carousel-item">
-				<img class="d-block w-100" src="view/imagens/bgcw.png"
-					alt="segundo slide">
-			</div>
-
-			<div class="carousel-item">
-				<img class="d-block w-100" src="view/imagens/bgcw2.png"
-					alt="terceiro slide">
-			</div>
-
-			<div class="carousel-item">
-				<img class="d-block w-100" src="view/imagens/bgoldlogan.png"
-					alt="quarto slide">
-			</div>
-		</div>
-		<a class="carousel-control-prev" href="#carouselExampleIndicators"
-			role="button" data-slide="prev"> <span
-			class="carousel-control-prev-icon" aria-hidden="true"></span> <span
-			class="sr-only">Anterior</span>
-		</a> <a class="carousel-control-next" href="#carouselExampleIndicators"
-			role="button" data-slide="next"> <span
-			class="carousel-control-next-icon" aria-hidden="true"></span> <span
-			class="sr-only">Próximo</span>
-		</a>
-	</div>
-
-<br>
+	<br>
 
 	<div class="alert alert-dark" role="alert">
-		<h4 class="text-uppercase">Carrrinho</h4>
+		<h4 class="text-uppercase">Carrrinho de Compras</h4>
 	</div>
 
-<br>
+	<br>
 
-	<div class="container">
+	<center>
 		<table class="table table-hover">
 			<thead>
 				<tr>
@@ -89,22 +50,13 @@
 				</tbody>
 			</c:forEach>
 		</table>
-	</div>
+	</center>
 
-	<a href="concluirVenda" class="btn btn-info" role="button">Concluir
-		Venda</a> &nbsp;
+	<a href="concluirVenda" class="btn btn-info" role="button">CONCLUIR COMPRA</a> &nbsp;
 
 	<br>
 
-
-	<div class="card">
-		<div class="card-header">olá</div>
-		<div class="card-body">
-			<h5 class="card-title">saiba mais sobre nós</h5>
-			<p class="card-text">visite nossas redes sociais</p>
-			<a href="#" class="btn btn-primary">abrir</a>
-		</div>
-	</div>
+	<c:import url="/view/comum/rodape.jsp" />
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

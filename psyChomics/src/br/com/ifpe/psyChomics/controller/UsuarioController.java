@@ -106,8 +106,9 @@ public class UsuarioController {
 		return "psyChomics/quemSomos";
 	}
 
-	@RequestMapping("/exibirPerfil")
-	public String exibirPerfil() {
-		return "usuario/perfil";
+	@RequestMapping("/exibirFaq")
+	public String exibirFaq() {
+		return "psyChomics/faq";
 	}
+
 }

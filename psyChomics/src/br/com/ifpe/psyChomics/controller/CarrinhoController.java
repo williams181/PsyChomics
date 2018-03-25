@@ -118,6 +118,6 @@ public class CarrinhoController {
 			model.addAttribute("msg", "N�o h� itens adicionados ao carrinho");
 		}
 
-		return "forward:listarProduto";
+		return "produto/venda";
 	}
 }

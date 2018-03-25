@@ -11,7 +11,7 @@
 	crossorigin="anonymous">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Pesquisar comeentario do produto</title>
+<title>PsyChomics</title>
 </head>
 <body>
 
@@ -19,53 +19,16 @@
 
 	<br>
 
-	<div id="carouselExampleIndicators" class="carousel slide"
-		data-ride="carousel">
-		<ol class="carousel-indicators">
-			<li data-target="#carouselExampleIndicators" data-slide-to="0"
-				class="active"></li>
-			<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-			<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-			<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-		</ol>
-		<div class="carousel-inner">
-			<div class="carousel-item active">
-				<img class="d-block w-100" src="view/imagens/bg3.png"
-					alt="primeiro slide">
-			</div>
-
-			<div class="carousel-item">
-				<img class="d-block w-100" src="view/imagens/bgcw.png"
-					alt="segundo slide">
-			</div>
-
-			<div class="carousel-item">
-				<img class="d-block w-100" src="view/imagens/bgcw2.png"
-					alt="terceiro slide">
-			</div>
-
-			<div class="carousel-item">
-				<img class="d-block w-100" src="view/imagens/bgoldlogan.png"
-					alt="quarto slide">
-			</div>
-		</div>
-		<a class="carousel-control-prev" href="#carouselExampleIndicators"
-			role="button" data-slide="prev"> <span
-			class="carousel-control-prev-icon" aria-hidden="true"></span> <span
-			class="sr-only">Anterior</span>
-		</a> <a class="carousel-control-next" href="#carouselExampleIndicators"
-			role="button" data-slide="next"> <span
-			class="carousel-control-next-icon" aria-hidden="true"></span> <span
-			class="sr-only">Próximo</span>
-		</a>
-	</div>
+	<c:import url="/view/comum/carousel.jsp" />
 
 	<br>
-	
-	<div class="alert alert-dark" role="alert">
-		<h4 class="text-uppercase">Lista de comentarios</h4>
-	</div>
-	
+
+	<center>
+		<div class="alert alert-dark" role="alert">
+			<h4 class="text-uppercase">Lista de comentários</h4>
+		</div>
+	</center>
+
 	<br>
 
 	<div class="container">
@@ -84,15 +47,7 @@
 
 	<br>
 
-	<div class="card">
-		<div class="card-header">Olá</div>
-		<div class="card-body">
-			<h5 class="card-title">Saiba mais sobre nossos produtos e sobre
-				nós!</h5>
-			<p class="card-text">Visite nossa page no facebook</p>
-			<a href="https://www.facebook.com/" class="btn btn-primary">visitar</a>
-		</div>
-	</div>
+	<c:import url="/view/comum/rodape.jsp" />
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

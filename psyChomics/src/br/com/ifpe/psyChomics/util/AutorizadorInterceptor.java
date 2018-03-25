@@ -13,17 +13,7 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 
 		String uri = request.getRequestURI();
 		if (uri.contains("bootstrap") || uri.contains("css") || uri.contains("imagens") || uri.contains("img")
-				|| uri.contains("fonts") || uri.contains("js") || uri.endsWith("psyChomics/")
-				|| uri.endsWith("exibirFaleConosco") || uri.endsWith("cadastrarMensagemFaleConosco")
-				|| uri.endsWith("removerMensagemFaleConosco") || uri.endsWith("exibirAlterarMensagemFaleConosco")
-				|| uri.endsWith("alterarMensagemFaleConosco") || uri.endsWith("exibirPedido")
-				|| uri.endsWith("cadastrarPedido") || uri.endsWith("removerPedido")
-				|| uri.endsWith("exibirAlterarPedido") || uri.endsWith("alterarPedido") || uri.endsWith("buscarProduto")
-				|| uri.endsWith("listarProdutoIndex") || uri.endsWith("exibirDescricaoProduto")
-				|| uri.endsWith("exibirLoginUsuario") || uri.endsWith("efetuarLogin") || uri.endsWith("logout")
-				|| uri.endsWith("exibirCadastrarUsuario") || uri.endsWith("cadastrarUsuario")
-				|| uri.endsWith("exibirAlterarUsuario") || uri.endsWith("alterarUsuario")
-				|| uri.endsWith("exibirQuemSomos")) {
+				|| uri.contains("fonts") || uri.contains("js") || uri.endsWith("/psyChomics")) {
 
 			return true;
 		}

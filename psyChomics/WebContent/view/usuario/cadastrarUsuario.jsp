@@ -11,30 +11,31 @@
 	crossorigin="anonymous">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Cadastro de Usuário</title>
+<title>PsyChomics</title>
 </head>
 <body>
 
-<c:import url="/view/comum/menuUsuario.jsp" />
+	<c:import url="/view/comum/menuUsuario.jsp" />
 
-<br>
+	<br>
 
 	<center>
 		<div class="alert alert-dark" role="alert">
-			<h4 class="text-uppercase">Cadastre-se</h4>
+			<h4 class="text-uppercase">Cadastro do Usuário</h4>
 		</div>
 	</center>
 
-<br>
+	<br>
 
-	<div class="container">
+	<center>
 		<form action="cadastrarUsuario" method="post"
 			enctype="multipart/form-data">
 			<div class="form-group col-md-6">
 				<label for="inputEmail">&nbsp; Email</label> <input type="email"
 					class="form-control" id="exampleInputEmail1" name="email"
 					aria-describedby="emailHelp" maxlength="50" placeholder="email">
-				<small id="emailHelp" class="form-text text-muted">bem vindo</small>
+				<small id="emailHelp" class="form-text text-muted">bem vindo
+					ao PsyChomics</small>
 			</div>
 			<div class="form-group col-md-6">
 				<label for="inputSenha">Senha</label> <input type="password"
@@ -76,18 +77,11 @@
 			</div>
 			<button type="submit" class="btn btn-primary" value="cadastrar">Cadastrar</button>
 		</form>
-	</div>
+	</center>
 
 	<br>
 
-	<div class="card">
-		<div class="card-header">olá</div>
-		<div class="card-body">
-			<h5 class="card-title">saiba mais sobre nós</h5>
-			<p class="card-text">visite nossas redes sociais</p>
-			<a href="#" class="btn btn-primary">abrir</a>
-		</div>
-	</div>
+	<c:import url="/view/comum/rodape.jsp" />
 
 	<script>
 		var password = document.getElementById("password"), confirm_password = document

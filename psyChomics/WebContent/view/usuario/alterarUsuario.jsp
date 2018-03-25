@@ -1,110 +1,126 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="pt-br">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
+<!DOCTYPE html>
+
+<html>
 <head>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-	crossorigin="anonymous">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>alterar o Usuário</title>
+<meta charset="UTF-8">
+<title>PsyChomics</title>
+
+<link rel="stylesheet" type="text/css" href="view/css/estilo.css" />
+<link rel="stylesheet" type="text/css"
+	href="view/bootstrap/css/bootstrap.min.css" />
+
+<script type="text/javascript" src="view/js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="view/bootstrap/js/bootstrap.min.js"></script>
+
 </head>
-<body>
 
-	<c:import url="/view/comum/menuUsuario.jsp" />
+<body id="corpoPadrao">
 
-	<br>
+	<c:import url="/view/comum/menu.jsp" />
 
-	<center>
-		<div class="alert alert-dark" role="alert">
-			<h4 class="text-uppercase">Alteração de Usuário</h4>
-		</div>
-	</center>
+	<div align="center">
 
-	<br>
+		<div align="left" style="color: #6E6E6E; width: 70%;">
 
-	<div class="container">
-		<form action="alterarUsuario" method="post"
-			enctype="multipart/form-data">
+			<c:if test="${msg ne null}">
+				<div class="alert alert-success" style="width: 100%;">
+					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+					${msg}
+				</div>
+			</c:if>
 
-			<div class="form-group col-md-6">
-				<label for="inputEmail">Email</label> <input type="text"
-					id="inputEmail" class="form-control" name="email"
-					value="${usuario.email}" maxlength="50" required="required" /> <input
-					type="hidden" name="id" value="${usuario.id}" />
-			</div>
+			<hr />
 
-			<div class="form-group col-md-6">
-				<label for="inputSenha">Senha</label> <input type="password"
-					id="inputSenha" class="form-control" name="senha"
-					value="${usuario.senha}" maxlength="16" required="required" />
-			</div>
-
-			<div class="form-group col-md-6">
-				<label for="inputNick">Nick</label> <input type="text"
-					id="inputNick" class="form-control" name="nick"
-					value="${usuario.nick}" maxlength="15" required="required" />
-			</div>
-			<div class="form-group col-md-6">
-				<label for="inputNomeUsuario">Nome do usuário</label> <input
-					type="text" id="inputNomeUsuario" class="form-control"
-					name="nomeUsuario" value="${usuario.nomeUsuario}" maxlength="50"
-					required="required" />
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="radio" name="tipoUsuario"
-					id="inputTipoUsuario" value="usuario" value="${usuario.tipoUsuario}" checked>
-				<label class="form-check-label" value="usuario"
-					for="inputTipoUsuario"> Usuário</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="radio" name="tipoUsuario"
-					id="inputTipoUsuario" value="administrador" value="${usuario.tipoUsuario}"> <label
-					class="form-check-label" value="administrador"
-					for="inputTipoUsuario"> Administrador</label>
-			</div>
-			
-			<div class="form-group col-md-6">
-				<input type="checkbox" class="form-check-input" value="sim"
-					name="notificacao" for="notificacao" id="notificacao"> <label
-					class="form-check-label" value="sim" value="${usuario.notificacao} name="notificacao"
-					for="notificacao">Deseja Receber notificações ?</label>
-			</div>
 			<p>
-				<input type="submit" class="btn btn-primary" value="alterar">
-				<a href="listarProdutoIndex" class="btn btn-danger" role="button">Cancelar</a>
+			<table style="width: 100%">
+				<tr>
+					<td style="float: left; font-size: 24px;">Listagem de <strong>Usuário</strong>
+					</td>
+					<td style="float: right;"><a href="exibirCadastrarUsuario"
+						class="btn btn-primary" role="button">Novo</a></td>
+				</tr>
+			</table>
 			</p>
-		</form>
 
-	</div>
+			<hr />
 
-<br>
 
-	<div class="card">
-		<div class="card-header">Olá</div>
-		<div class="card-body">
-			<h5 class="card-title">Saiba mais sobre nossos produtos e sobre
-				nós!</h5>
-			<p class="card-text">Visite nossa page no facebook</p>
-			<a href="https://www.facebook.com/" class="btn btn-primary">visitar</a>
+			<form action="alterarUsuario" method="post"
+				enctype="multipart/form-data">
+
+				<div class="form-group col-md-6">
+					<label for="inputEmail">Email</label> <input type="text"
+						id="inputEmail" class="form-control" name="email"
+						value="${usuario.email}" maxlength="50" required="required" /> <input
+						type="hidden" name="id" value="${usuario.id}" />
+				</div>
+
+				<div class="form-group col-md-6">
+					<label for="inputSenha">Senha</label> <input type="password"
+						id="inputSenha" class="form-control" name="senha"
+						value="${usuario.senha}" maxlength="16" required="required" />
+				</div>
+
+				<div class="form-group col-md-6">
+					<label for="inputNick">Nick</label> <input type="text"
+						id="inputNick" class="form-control" name="nick"
+						value="${usuario.nick}" maxlength="15" required="required" />
+				</div>
+				<div class="form-group col-md-6">
+					<label for="inputNomeUsuario">Nome do usuário</label> <input
+						type="text" id="inputNomeUsuario" class="form-control"
+						name="nomeUsuario" value="${usuario.nomeUsuario}" maxlength="50"
+						required="required" />
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="radio" name="tipoUsuario"
+						id="inputTipoUsuario" value="usuario"
+						value="${usuario.tipoUsuario}" checked> <label
+						class="form-check-label" value="usuario" for="inputTipoUsuario">
+						Usuário</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="radio" name="tipoUsuario"
+						id="inputTipoUsuario" value="administrador"
+						value="${usuario.tipoUsuario}"> <label
+						class="form-check-label" value="administrador"
+						for="inputTipoUsuario"> Administrador</label>
+				</div>
+
+				<div class="form-group col-md-6">
+					<input type="checkbox" class="form-check-input" value="sim"
+						name="notificacao" for="notificacao" id="notificacao"> <label
+						class="form-check-label" value="sim"
+						value="${usuario.notificacao} name="
+						notificacao"
+					for="notificacao">Deseja Receber
+						notificações ?</label>
+				</div>
+				<p>
+					<input type="submit" class="btn btn-primary" value="alterar">
+					<a href="listarProdutoIndex" class="btn btn-danger" role="button">Cancelar</a>
+				</p>
+			</form>
 		</div>
+
 	</div>
 
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-		crossorigin="anonymous"></script>
-</body>
+	<br />
 
+	<hr class="linhaSeparador">
+	<div class="textoRodape">
+		<p>
+			<c:import url="/view/comum/textoRodape.jsp" />
+		</p>
+	</div>
+</body>
 </html>
+
+
+
+

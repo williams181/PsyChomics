@@ -11,75 +11,25 @@
 	crossorigin="anonymous">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Quem somos?</title>
+<title>PsyChomics</title>
 </head>
 <body>
 
 	<c:import url="/view/comum/menuUsuario.jsp" />
-	
-<br>
 
-	<div id="carouselExampleIndicators" class="carousel slide"
-		data-ride="carousel">
-		<ol class="carousel-indicators">
-			<li data-target="#carouselExampleIndicators" data-slide-to="0"
-				class="active"></li>
-			<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-			<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-			<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-		</ol>
-		<div class="carousel-inner">
-			<div class="carousel-item active">
-				<img class="d-block w-100" src="view/imagens/bg3.png"
-					alt="primeiro slide">
-			</div>
+	<br>
 
-			<div class="carousel-item">
-				<img class="d-block w-100" src="view/imagens/bgcw.png"
-					alt="segundo slide">
-			</div>
+	<c:import url="/view/comum/carousel.jsp" />
 
-			<div class="carousel-item">
-				<img class="d-block w-100" src="view/imagens/bgcw2.png"
-					alt="terceiro slide">
-			</div>
-
-			<div class="carousel-item">
-				<img class="d-block w-100" src="view/imagens/bgoldlogan.png"
-					alt="quarto slide">
-			</div>
-		</div>
-		<a class="carousel-control-prev" href="#carouselExampleIndicators"
-			role="button" data-slide="prev"> <span
-			class="carousel-control-prev-icon" aria-hidden="true"></span> <span
-			class="sr-only">Anterior</span>
-		</a> <a class="carousel-control-next" href="#carouselExampleIndicators"
-			role="button" data-slide="next"> <span
-			class="carousel-control-next-icon" aria-hidden="true"></span> <span
-			class="sr-only">Próximo</span>
-		</a>
-	</div>
-
-<br>
+	<br>
 
 	<center>
 		<div class="alert alert-dark" role="alert">
-			<h4 class="text-uppercase">Qume somos</h4>
+			<h4 class="text-uppercase">Quem somos</h4>
 		</div>
 	</center>
 
-<br>
-
-	<div class="container">
-		<p>
-			<stromg><h6>Somos um site especializado em quadrinhos e mangás</h6></stromg>
-			, buscamos sempre levar para nossos clientes o maior e mais
-			atualizado acervo de revistas em quadrinhos do Brasil de forma
-			profissional e competitiva.
-		</p>
-	</div>
-
-<br>
+	<br>
 
 	<div class="container">
 		<div class="card">
@@ -89,29 +39,64 @@
 		</div>
 	</div>
 
-<br>
+	<br>
+
+	<center>
+		<p>
+			<stromg>
+			<h6>Somos um site especializado em quadrinhos e mangás</h6>
+			</stromg>
+			Buscamos sempre levar para nossos clientes o maior e mais atualizado
+			acervo de revistas em quadrinhos do Brasil de forma profissional e
+			competitiva.
+		</p>
+	</center>
+
+	<br>
 
 	<div class="container">
-		<p>
-			<stromg><h6>é pensar sempre no consumidor</h6>, fomentar o mercado
-			e aproximar cada vez mais o público do maravilhoso universo das
-			histórias em quadrinhos.</stromg>
-			Disponibilizando sempre uma equipe treinada, com muito carisma,
-			potencial e conhecimento para propor ao cliente a devida atenção e
-			atendimento.
-		</p>
-	</div>
-
-<br>
-
-	<div class="card">
-		<div class="card-header"></div>
-		<div class="card-body">
-			<h5 class="card-title">Saiba mais sobre nós</h5>
-			<p class="card-text">Visite nossas redes sociais.</p>
-			<a href="#" class="btn btn-primary">Abrir</a>
+		<div class="card">
+			<div class="card-body">
+				<h4>Valóres</h4>
+			</div>
 		</div>
 	</div>
+
+	<br>
+
+	<center>
+		<p>
+			<stromg>
+			<h6>é pensar sempre no consumidor</h6>
+			Fomentar o mercado e aproximar cada vez mais o público do maravilhoso
+			universo das histórias em quadrinhos.</stromg>
+			Disponibilizando sempre uma equipe treinada.
+		</p>
+	</center>
+
+	<br>
+
+	<div class="container">
+		<div class="card">
+			<div class="card-body">
+				<h4>Equipe</h4>
+			</div>
+		</div>
+	</div>
+
+	<br>
+
+	<center>
+		<p>
+			<stromg>
+			<h6>Formado por gabriel e william</h6>
+			O projeto teve inicio a muito tempo e não sei se esta bom para
+			apresentação</stromg>
+		</p>
+	</center>
+
+	<br>
+	<c:import url="/view/comum/rodape.jsp" />
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

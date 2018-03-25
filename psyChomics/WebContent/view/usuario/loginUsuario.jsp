@@ -11,14 +11,14 @@
 	crossorigin="anonymous">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Login do Usuário</title>
+<title>PsyChomics</title>
 </head>
 <body>
 
 	<c:import url="/view/comum/menuUsuario.jsp" />
 
 	<br>
-	
+
 	<center>
 		<div class="alert alert-dark" role="alert">
 			<h4 class="text-uppercase">Login do Usuário</h4>
@@ -33,7 +33,7 @@
 
 	<br>
 
-	<div class="container">
+	<center>
 		<form action="efetuarLogin" method="post">
 			<div class="form-group">
 				<div class="form-group col-md-6">
@@ -41,7 +41,7 @@
 						class="form-control" id="inputEmail" name="email"
 						value="${usuario.email}" maxlength="50" placeholder="E-mail"
 						required="required" aria-describedby="emailHelp"> <small
-						class="form-text text-muted">bem vindo</small>
+						class="form-text text-muted">bem vindo ao PsyChomics</small>
 				</div>
 				<div class="form-group col-md-6">
 					<label for="inputSenha">
@@ -53,19 +53,11 @@
 				<button type="submit" class="btn btn-primary">ENTRAR</button>
 			</div>
 		</form>
-	</div>
+	</center>
 
 	<br>
 
-	<div class="card">
-		<div class="card-header">Olá</div>
-		<div class="card-body">
-			<h5 class="card-title">Saiba mais sobre nossos produtos e sobre
-				nós!</h5>
-			<p class="card-text">Visite nossa page no facebook</p>
-			<a href="https://www.facebook.com/" class="btn btn-primary">visitar</a>
-		</div>
-	</div>
+	<c:import url="/view/comum/rodape.jsp" />
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

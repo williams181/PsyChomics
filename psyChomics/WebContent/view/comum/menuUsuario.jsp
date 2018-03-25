@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a
-		class="navbar-brand" href="listarProdutoIndex"><img
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a class="navbar-brand" href="listarProdutoIndex"><img
 		src="view/imagens/nav.png" width="50%"></a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarSupportedContent"
@@ -14,13 +14,14 @@
 			<li class="nav-item active"><a class="nav-link"
 				href="listarProdutoIndex">Início<span class="sr-only">(current)</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="exibirQuemSomos">Quem
-					somos</a></li>
+			<c:if test="${usuarioLogado.tipoUsuario != 'administrador'}">
+				<li class="nav-item"><a class="nav-link" href="exibirQuemSomos">Quem
+						somos</a></li>
+			</c:if>
 			<c:choose>
 				<c:when test="${usuarioLogado.tipoUsuario == 'administrador'}">
 					<li class="nav-item"><a class="nav-link"
 						href="exibirControleEstoque">administrador</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Perfil</a></li>
 					<li class="nav-item"><a class="nav-link" href="logout">Logout</a></li>
 					<li class="nav-item"><a data-toggle="tooltip"
 						data-placement="right" title="Carrinho de Compras"
@@ -32,8 +33,8 @@
 			</c:choose>
 			<c:choose>
 				<c:when test="${usuarioLogado.tipoUsuario == 'usuario'}">
-					<li class="nav-item"><a class="nav-link" href="listarProduto">Produtos</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Perfil</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="listarProdutoUsuario">Principais Produtos</a></li>
 					<li class="nav-item"><a class="nav-link" href="logout">Logout</a></li>
 					<li class="nav-item"><a data-toggle="tooltip"
 						data-placement="right" title="Carrinho de Compras"
@@ -44,15 +45,12 @@
 				</c:otherwise>
 			</c:choose>
 			<c:if test="${usuarioLogado.tipoUsuario eq null}">
-				<li class="nav-item"><a class="nav-link" href="listarProduto">Produtos</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="listarProdutoUsuario">Principais Produtos</a></li>
 				<li class="nav-item"><a class="nav-link"
 					href="exibirCadastrarUsuario">Cadastre-se</a></li>
 				<li class="nav-item"><a class="nav-link"
 					href="exibirLoginUsuario">Login</a></li>
-				<li class="nav-item"><a data-toggle="tooltip"
-					data-placement="right" title="Carrinho de Compras"
-					href="exibirCarrinho"><img src="view/imagens/carrinho.png"
-						alt="carrinho" class="rounded-circle"></a></li>
 			</c:if>
 
 
@@ -65,4 +63,4 @@
 				type="submit">Buscar</button>
 		</form>
 	</div>
-	</nav>
+</nav>

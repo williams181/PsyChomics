@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Sistema de Controle de Usuário</title>
+<title>PsyChomics</title>
 
 <link rel="stylesheet" type="text/css" href="view/css/estilo.css" />
 <link rel="stylesheet" type="text/css"

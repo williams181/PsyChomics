@@ -11,7 +11,7 @@
 	crossorigin="anonymous">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>FAQ</title>
+<title>PsyChomics</title>
 </head>
 <body>
 
@@ -62,9 +62,11 @@
 
 	<br>
 
-	<div class="alert alert-dark" role="alert">
-		<h4 class="text-uppercase">FAQ - PERGUNTAS FREQUENTES</h4>
-	</div>
+	<center>
+		<div class="alert alert-dark" role="alert">
+			<h4 class="text-uppercase">FAQ - PERGUNTAS FREQUENTES</h4>
+		</div>
+	</center>
 
 	<br>
 
@@ -74,7 +76,7 @@
 			<h6>
 				Veja abaixo se sua dúvida já não está respondida.<br> Caso você
 				não encontre a resposta para a sua pergunta, entre em contato
-				através do <a href="">Fale Conosco.</a>
+				através do <a href="exibirFaleConosco">Fale Conosco.</a>
 			</h6>
 			</stromg>
 		</p>
@@ -101,7 +103,7 @@
 				Aura, entre outros) utilizando exclusivamente<br>o sistema do
 				Pagseguro. Para os pedidos internacionais, o pagamento pode ser
 				feito pelo PayPal.
-			</h6>
+			</h6>	
 			</stromg>
 		</p>
 	</center>
@@ -187,15 +189,7 @@
 
 	<br>
 
-	<div class="card">
-		<div class="card-header">Olá</div>
-		<div class="card-body">
-			<h5 class="card-title">Saiba mais sobre nossos produtos e sobre
-				nós!</h5>
-			<p class="card-text">Visite nossa page no facebook</p>
-			<a href="https://www.facebook.com/" class="btn btn-primary">visitar</a>
-		</div>
-	</div>
+	<c:import url="/view/comum/rodape.jsp" />
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

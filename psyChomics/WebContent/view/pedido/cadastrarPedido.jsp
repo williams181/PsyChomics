@@ -11,7 +11,7 @@
 	crossorigin="anonymous">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Cadastro de pedido</title>
+<title>PsyChomics</title>
 </head>
 <body>
 
@@ -19,37 +19,36 @@
 
 	<br>
 
-	<div class="alert alert-dark" role="alert">
-		<h4 class="text-uppercase">Cadastre aqui seu produto desejado</h4>
-	</div>
+	<c:import url="/view/comum/carousel.jsp" />
 
 	<br>
 
-	<div class="container">
+	<center>
+		<div class="alert alert-dark" role="alert">
+			<h4 class="text-uppercase">Pedido de Produto</h4>
+		</div>
+	</center>
+
+	<br>
+
+	<center>
 		<form action="cadastrarPedido" method="post"
 			enctype="multipart/form-data">
 			<div class="form-group col-md-6">
-				<label for="inputMensagem"><h4>Digite um titúlo se
-						possível e uma breve descrição do produto desejado</h4></label>
+				<label for="inputMensagem"><h4>Produto Desejado</h4></label>
 				<textarea type="text" id="inputMensagem" class="form-control"
 					name="mensagem" placeholder="mensagem" maxlength="600"
-					required="required" style="width: 600px;"></textarea>
+					required="required" rows="5" style="width: 600px;"></textarea>
 			</div>
+			<input type="hidden" name="usuario.id" value="${usuarioLogado.id}" />
 			<button type="submit" class="btn btn-primary" value="cadastrar">Cadastrar</button>
 		</form>
 		<br>
-	</div>
+	</center>
 
 	<br>
 
-	<div class="card">
-		<div class="card-header">Olá</div>
-		<div class="card-body">
-			<h5 class="card-title">Saiba mais sobre nós!</h5>
-			<p class="card-text">Visite nossas redes sociais</p>
-			<a href="#" class="btn btn-primary">Abrir</a>
-		</div>
-	</div>
+	<c:import url="/view/comum/rodape.jsp" />
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

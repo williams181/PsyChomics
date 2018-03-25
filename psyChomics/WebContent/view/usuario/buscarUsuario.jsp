@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Sistema de Controle de Usuário</title>
+<title>PsyChomics</title>
 
 <link rel="stylesheet" type="text/css" href="view/css/estilo.css" />
 <link rel="stylesheet" type="text/css"
@@ -79,8 +79,10 @@
 	<br />
 
 	<hr class="linhaSeparador">
-<div class="textoRodape">
-		<p><c:import url="/view/comum/textoRodape.jsp" /></p>
+	<div class="textoRodape">
+		<p>
+			<c:import url="/view/comum/textoRodape.jsp" />
+		</p>
 	</div>
 </body>
 </html>

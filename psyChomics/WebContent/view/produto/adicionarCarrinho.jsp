@@ -19,52 +19,16 @@
 
 	<br>
 
-	<div id="carouselExampleIndicators" class="carousel slide"
-		data-ride="carousel">
-		<ol class="carousel-indicators">
-			<li data-target="#carouselExampleIndicators" data-slide-to="0"
-				class="active"></li>
-			<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-			<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-			<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-		</ol>
-		<div class="carousel-inner">
-			<div class="carousel-item active">
-				<img class="d-block w-100" src="view/imagens/bg3.png"
-					alt="primeiro slide">
-			</div>
-
-			<div class="carousel-item">
-				<img class="d-block w-100" src="view/imagens/bgcw.png"
-					alt="segundo slide">
-			</div>
-
-			<div class="carousel-item">
-				<img class="d-block w-100" src="view/imagens/bgcw2.png"
-					alt="terceiro slide">
-			</div>
-
-			<div class="carousel-item">
-				<img class="d-block w-100" src="view/imagens/bgoldlogan.png"
-					alt="quarto slide">
-			</div>
-		</div>
-		<a class="carousel-control-prev" href="#carouselExampleIndicators"
-			role="button" data-slide="prev"> <span
-			class="carousel-control-prev-icon" aria-hidden="true"></span> <span
-			class="sr-only">Anterior</span>
-		</a> <a class="carousel-control-next" href="#carouselExampleIndicators"
-			role="button" data-slide="next"> <span
-			class="carousel-control-next-icon" aria-hidden="true"></span> <span
-			class="sr-only">Próximo</span>
-		</a>
-	</div>
+	<c:import url="/view/comum/carousel.jsp" />
 
 	<br>
 
-	<div class="alert alert-dark" role="alert">
-		<h4 class="text-uppercase">Adcionar Produto ou carrinho</h4>
-	</div>
+	<center>
+		<div class="alert alert-dark" role="alert">
+			<h4 class="text-uppercase">Adcionar Produto ou carrinho</h4>
+		</div>
+
+	</center>
 
 	<br>
 
@@ -85,20 +49,18 @@
 					</div>
 					<ul class="list-group list-group-flush">
 						<li class="list-group-item">${p.preco}</li>
+						<li class="list-group-item">${p.generoProduto.descricao}</li>
+						<li class="list-group-item">${p.categoriaProduto.descricao}</li>
+						<li class="list-group-item">${p.tipoProduto.descricao}</li>
 						<li class="list-group-item"><div class="form-group col-md-6">
-								<label for="inputQuantidade">Quantidade</label> <input
-									type="text" id="inputQuantidade" class="form-control"
-									name="quantidade" style="width: 40px;" required="required" />
+								<label for="inputQuantidade"><strong>Quantidade</strong></label>
+								<input type="text" id="inputQuantidade" class="form-control"
+									name="quantidade" style="width: 85px;" required="required" />
 							</div></li>
 					</ul>
 					<div class="card-body">
-						<a href="listarProduto" class="btn btn-danger" role="button">Cancelar</a>
-						&nbsp;
-						<button type="reset" class="btn btn-default">&nbsp;
-							Limpar &nbsp;</button>
-						&nbsp;
-						<button type="submit" class="btn btn-info">&nbsp;
-							Adicionar &nbsp;</button>
+						<button type="reset" class="btn btn-default">Limpar</button>
+						<button type="submit" class="btn btn-info">Adicionar</button>
 					</div>
 				</div>
 			</div>
@@ -107,14 +69,7 @@
 
 	<br>
 
-	<div class="card">
-		<div class="card-header">olá</div>
-		<div class="card-body">
-			<h5 class="card-title">saiba mais sobre nós</h5>
-			<p class="card-text">visite nossas redes sociais</p>
-			<a href="#" class="btn btn-primary">abrir</a>
-		</div>
-	</div>
+	<c:import url="/view/comum/rodape.jsp" />
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
