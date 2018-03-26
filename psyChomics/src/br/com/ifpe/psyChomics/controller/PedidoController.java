@@ -32,9 +32,9 @@ public class PedidoController {
 		Usuario usuario = (Usuario) session.getAttribute("usuarioLogado");
 		pedido.setUsuario(usuario);
 		dao.salvar(pedido);
-		model.addAttribute("msg", "O Pedido do produto foi Inserido com Sucesso !");
+		model.addAttribute("msg", "O Pedido do produto foi Inserido com Sucesso!");
 
-		return "forward:listarPedido";
+		return "pedido/cadastrarPedido";
 	}
 
 	@RequestMapping("listarPedido")

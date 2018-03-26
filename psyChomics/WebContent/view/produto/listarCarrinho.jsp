@@ -23,9 +23,11 @@
 
 	<br>
 
-	<div class="alert alert-dark" role="alert">
-		<h4 class="text-uppercase">Carrrinho de Compras</h4>
-	</div>
+	<center>
+		<div class="alert alert-dark" role="alert">
+			<h4 class="text-uppercase">Carrrinho de Compras</h4>
+		</div>
+	</center>
 
 	<br>
 
@@ -52,7 +54,39 @@
 		</table>
 	</center>
 
-	<a href="concluirVenda" class="btn btn-info" role="button">CONCLUIR COMPRA</a> &nbsp;
+	<br>
+
+	<center>
+		<div class="form-check form-check-inline">
+			<input class="form-check-input" type="radio"
+				name="inlineRadioOptions" id="inlineRadio1" value="option1">
+			<label class="form-check-label" for="inlineRadio1"><img
+				src="view/imagens/p.png"></label>
+		</div>
+		<div class="form-check form-check-inline">
+			<input class="form-check-input" type="radio"
+				name="inlineRadioOptions" id="inlineRadio2" value="option2">
+			<label class="form-check-label" for="inlineRadio2"><img
+				src="view/imagens/v.png"></label>
+		</div>
+		<div class="form-check form-check-inline">
+			<input class="form-check-input" type="radio"
+				name="inlineRadioOptions" id="inlineRadio1" value="option1">
+			<label class="form-check-label" for="inlineRadio1"><img
+				src="view/imagens/m.png"></label>
+		</div>
+		<div class="form-check form-check-inline">
+			<input class="form-check-input" type="radio"
+				name="inlineRadioOptions" id="inlineRadio2" value="option2">
+			<label class="form-check-label" for="inlineRadio2"><img
+				src="view/imagens/b.png"></label>
+		</div>
+	</center>
+
+	<br>
+
+	<a href="concluirVenda" class="btn btn-info" role="button">CONCLUIR
+		COMPRA</a> &nbsp;
 
 	<br>
 

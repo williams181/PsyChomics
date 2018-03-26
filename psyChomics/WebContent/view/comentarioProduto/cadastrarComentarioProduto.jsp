@@ -31,6 +31,12 @@
 		</div>
 	</center>
 
+	<c:if test="${msg ne null}">
+		<center>
+			<div class="alert alert-light" role="alert">${msg}</div>
+		</center>
+	</c:if>
+
 	<br>
 
 	<div class="container">

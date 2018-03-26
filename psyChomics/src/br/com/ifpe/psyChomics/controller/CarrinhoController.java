@@ -115,7 +115,7 @@ public class CarrinhoController {
 
 		} else {
 
-			model.addAttribute("msg", "Nï¿½o hï¿½ itens adicionados ao carrinho");
+			model.addAttribute("msg", "Os itens não foram adicionados ao carrinho");
 		}
 
 		return "produto/venda";

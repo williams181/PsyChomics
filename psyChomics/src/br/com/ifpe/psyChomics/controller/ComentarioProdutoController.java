@@ -45,9 +45,9 @@ public class ComentarioProdutoController {
 		Usuario usuario = (Usuario) session.getAttribute("usuarioLogado");
 		comentarioProduto.setUsuario(usuario);
 		dao.salvar(comentarioProduto);
-		model.addAttribute("msg", "O comentario do produto foi Inserido com Sucesso !");
+		model.addAttribute("msg", "O comentario do produto foi Cadastrado com Sucesso!");
 
-		return "forward:listarComentarioProduto";
+		return "comentarioProduto/cadastrarComentarioProduto";
 	}
 
 	@RequestMapping("removerComentarioProduto")

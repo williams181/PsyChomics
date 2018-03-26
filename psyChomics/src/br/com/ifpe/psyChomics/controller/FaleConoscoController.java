@@ -23,9 +23,9 @@ public class FaleConoscoController {
 		faleConosco.setData(new Date());
 		FaleConoscoDao dao = new FaleConoscoDao();
 		dao.salvar(faleConosco);
-		model.addAttribute("msg", "A mensagem foi Inserida com Sucesso !");
+		model.addAttribute("msg", "A mensagem foi Inserida com Sucesso!");
 
-		return "forward:listarMensagemFaleConosco";
+		return "faleConosco/cadastrarMensagemFaleConosco";
 	}
 
 	@RequestMapping("listarMensagemFaleConosco")
