@@ -41,7 +41,7 @@
 						class="form-control" id="inputEmail" name="email"
 						value="${usuario.email}" maxlength="50" placeholder="E-mail"
 						required="required" aria-describedby="emailHelp"> <small
-						class="form-text text-muted">bem vindo ao PsyChomics</small>
+						class="form-text text-muted">Bem Vindo ao PsyChomics</small>
 				</div>
 				<div class="form-group col-md-6">
 					<label for="inputSenha">

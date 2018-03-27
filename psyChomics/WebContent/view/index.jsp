@@ -25,9 +25,9 @@
 
 	<div class="alert alert-success" role="alert">
 		<h4 class="alert-heading">Bem vindo!</h4>
-		<p>Este é o PsyChomics! A Sua loja de quadrinhos!</p>
+		<p>Este é o PsyChomics! A Sua loja de Quadrinhos!</p>
 		<hr>
-		<p class="mb-0">"Vida longa e própera"</p>
+		<p class="mb-0"><i>"Vida longa e próspera."</i></p>
 	</div>
 
 	<br>
