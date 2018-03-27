@@ -18,8 +18,7 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 				|| uri.endsWith("buscarProduto") || uri.endsWith("listarProdutoIndex")
 				|| uri.endsWith("exibirDescricaoProduto") || uri.endsWith("exibirLoginUsuario")
 				|| uri.endsWith("efetuarLogin") || uri.endsWith("logout") || uri.endsWith("exibirCadastrarUsuario")
-				|| uri.endsWith("cadastrarUsuario") || uri.endsWith("exibirAlterarUsuario")
-				|| uri.endsWith("alterarUsuario") || uri.endsWith("exibirQuemSomos") || uri.endsWith("exibirFaq")
+				|| uri.endsWith("cadastrarUsuario") || uri.endsWith("exibirQuemSomos") || uri.endsWith("exibirFaq")
 				|| uri.endsWith("listarProdutoUsuario")) {
 
 			return true;
@@ -30,7 +29,7 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 			return true;
 		}
 
-		response.sendRedirect("/psyChomics");
+		response.sendRedirect("listarProdutoIndex");
 		return false;
 	}
 }

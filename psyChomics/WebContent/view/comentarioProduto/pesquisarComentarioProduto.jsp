@@ -36,8 +36,10 @@
 			<div class="col-sm-6">
 				<c:forEach var="cp" items="${listarComentarioProduto}">
 					<div class="list-group">
-						<p class="list-group-item list-group-item-action">${cp.usuario.nomeUsuario}</p>
-						<p class="list-group-item list-group-item-action">${cp.comentario}</p>
+						<p class="list-group-item list-group-item-action">
+							<strong>${cp.usuario.nomeUsuario}</strong>
+						</p>
+						<p style="width: 33em; word-wrap: break-word;" class="list-group-item list-group-item-action">${cp.comentario}</p>
 						<p class="list-group-item list-group-item-action">${cp.data}</p>
 					</div>
 				</c:forEach>

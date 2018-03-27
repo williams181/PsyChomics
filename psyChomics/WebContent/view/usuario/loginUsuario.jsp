@@ -37,7 +37,7 @@
 		<form action="efetuarLogin" method="post">
 			<div class="form-group">
 				<div class="form-group col-md-6">
-					<label for="inputEmail"><p>E-mail</p> </label> <input type="text"
+					<label for="inputEmail"><p><strong>E-mail</strong></p> </label> <input type="text"
 						class="form-control" id="inputEmail" name="email"
 						value="${usuario.email}" maxlength="50" placeholder="E-mail"
 						required="required" aria-describedby="emailHelp"> <small
@@ -45,10 +45,10 @@
 				</div>
 				<div class="form-group col-md-6">
 					<label for="inputSenha">
-						<p>Senha</p>
+						<p><strong>Senha</strong></p>
 					</label> <input type="password" class="form-control" id="inputSenha"
 						name="senha" value="${usuario.senha}" maxlength="16"
-						required="required" placeholder="senha">
+						required="required" placeholder="Senha">
 				</div>
 				<button type="submit" class="btn btn-primary">ENTRAR</button>
 			</div>

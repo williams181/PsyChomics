@@ -41,7 +41,7 @@
 		<form action="cadastrarPedido" method="post"
 			enctype="multipart/form-data">
 			<div class="form-group col-md-6">
-				<label for="inputMensagem"><h4>Produto Desejado</h4></label>
+				<label for="inputMensagem"><h4><strong>Produto Desejado</strong></h4></label>
 				<textarea type="text" id="inputMensagem" class="form-control"
 					name="mensagem" placeholder="mensagem" maxlength="600"
 					required="required" rows="5" style="width: 600px;"></textarea>

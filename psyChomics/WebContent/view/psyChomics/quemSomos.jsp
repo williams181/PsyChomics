@@ -67,7 +67,7 @@
 	<center>
 		<p>
 			<stromg>
-			<h6>é pensar sempre no consumidor</h6>
+			<h6>Pensar sempre no consumidor</h6>
 			Fomentar o mercado e aproximar cada vez mais o público do maravilhoso
 			universo das histórias em quadrinhos.</stromg>
 			Disponibilizando sempre uma equipe treinada.
@@ -89,9 +89,13 @@
 	<center>
 		<p>
 			<stromg>
-			<h6>Formado por gabriel e william</h6>
-			O projeto teve inicio a muito tempo e não sei se esta bom para
-			apresentação</stromg>
+			<h6>Formada por Gabriel Philipe e Willliam roberto</h6>
+			O Sistema foi desenvolvido ao longo do semestre, tendo-se início em
+			novembro de 2017. A cada semana eram realizadas reuniões para
+			identificar problemas e verificar o rendimento do projeto. Logo após,
+			era definida uma Sprint contendo todas funcionalidades a serem
+			implementadas naquela semana, testes para realizar e erros que
+			deveriam ser corrigidos.</stromg>
 		</p>
 	</center>
 

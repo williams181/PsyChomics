@@ -27,7 +27,7 @@
 
 	<center>
 		<div class="alert alert-dark" role="alert">
-			<h4 class="text-uppercase">Comentarios dos produtos</h4>
+			<h4 class="text-uppercase">Comentários dos produtos</h4>
 		</div>
 	</center>
 
@@ -39,34 +39,26 @@
 
 	<br>
 
+	<div align="right">
+		<a href="listarComentarioProduto" class="btn btn-info" role="button">COMENTÁRIOS
+			ANTERIORES</a> &nbsp;
+	</div>
+
+	<br>
+
 	<div class="container">
 		<form action="cadastrarComentarioProduto" method="post"
 			enctype="multipart/form-data">
 			<div class="form-group shadow-textarea">
-				<label for="inputComentario">Novo Comentario</label>
+				<label for="inputComentario"><strong>Novo Comentário</strong></label>
 				<textarea type="text" id="inputComentario" class="form-control"
-					name="comentario" placeholder="comentario" maxlength="600" rows="5"
+					name="comentario" placeholder="comentário" maxlength="600" rows="5"
 					required="required" class="form-control z-depth-1"></textarea>
 			</div>
 			<input type="hidden" name="produto.id" value="${produto.id}" />
 			<button type="submit" class="btn btn-primary" value="cadastrar">Cadastrar
 				Comentário</button>
 		</form>
-	</div>
-
-	<br>
-
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-6">
-				<c:forEach var="cp" items="${listarComentarioProduto}">
-					<div class="list-group">
-						<p class="list-group-item list-group-item-action">${cp.usuario.nomeUsuario}</p>
-						<p class="list-group-item list-group-item-action">${cp.comentario}</p>
-					</div>
-				</c:forEach>
-			</div>
-		</div>
 	</div>
 
 	<br>

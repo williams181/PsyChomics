@@ -37,19 +37,19 @@
 		<form action="cadastrarUsuario" method="post"
 			enctype="multipart/form-data">
 			<div class="form-group col-md-6">
-				<label for="inputEmail">&nbsp; Email</label> <input type="email"
+				<label for="inputEmail">&nbsp;<strong> Email</strong></label> <input type="email"
 					class="form-control" id="exampleInputEmail1" name="email"
-					aria-describedby="emailHelp" maxlength="50" placeholder="email">
+					aria-describedby="emailHelp" maxlength="50" placeholder="Email">
 				<small id="emailHelp" class="form-text text-muted">bem vindo
 					ao PsyChomics</small>
 			</div>
 			<div class="form-group col-md-6">
-				<label for="inputSenha">Senha</label> <input type="password"
+				<label for="inputSenha"><strong>Senha</strong></label> <input type="password"
 					class="form-control" id="password" name="senha" placeholder="Senha"
 					maxlength="16" minlength="8" required="required">
 			</div>
 			<div class="form-group col-md-6">
-				<label>Confirmar Senha</label> <input type="password"
+				<label><strong>Confirmar Senha</strong></label> <input type="password"
 					placeholder="Confirme Senha" id="confirm_password"
 					class="form-control" maxlength="16" minlength="8"
 					required="required"> <input type="hidden"
@@ -57,19 +57,19 @@
 			</div>
 
 			<div class="form-group col-md-6">
-				<label for="inputNick">Nick</label> <input type="text"
+				<label for="inputNick"><strong>Nick</strong></label> <input type="text"
 					id="inputNick" class="form-control" name="Nick"
 					placeholder="Nick do Usuário" maxlength="15" minlength="5"
 					required="required">
 			</div>
 			<div class="form-group col-md-6">
-				<label for="inputNomeUsuario">Nome do Usuário</label> <input
+				<label for="inputNomeUsuario"><strong>Nome do Usuário</strong></label> <input
 					type="text" id="inputNomeUsuario" class="form-control"
 					name="NomeUsuario" placeholder="Nome do Usuário" maxlength="50"
 					minlength="5" required="required">
 			</div>
 			<div class="form-group col-md-6">
-				<label for="inputCpf">Cpf</label> <input type="text" id="inputCpf"
+				<label for="inputCpf"><strong>Cpf</strong></label> <input type="text" id="inputCpf"
 					class="form-control cpf-mask" required="required" name="cpf"
 					style="width: 500px;" minlength="9"
 					placeholder="CPF:EX.: 000.000.000-00" maxlength="11"
@@ -79,9 +79,9 @@
 				<input type="checkbox" class="form-check-input" value="sim"
 					name="notificacao" for="notificacao" id="notificacao"> <label
 					class="form-check-label" value="sim" name="notificacao"
-					for="notificacao">Deseja Receber notificações ?</label>
+					for="notificacao"><strong>Deseja Receber notificações ?</strong></label>
 			</div>
-			<button type="submit" class="btn btn-primary" value="cadastrar">Cadastrar</button>
+			<button type="submit" class="btn btn-primary" value="cadastrar">CADASTRAR</button>
 		</form>
 	</center>
 
