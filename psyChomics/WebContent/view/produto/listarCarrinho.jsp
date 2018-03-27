@@ -57,6 +57,12 @@
 	<br>
 
 	<center>
+		<div class="alert alert-light" role="alert">
+			<h5>Formas de Pagamento</h5>
+		</div>
+	</center>
+
+	<center>
 		<div class="form-check form-check-inline">
 			<input class="form-check-input" type="radio"
 				name="inlineRadioOptions" id="inlineRadio1" value="option1">
@@ -84,10 +90,12 @@
 	</center>
 
 	<br>
-
-	<a href="concluirVenda" class="btn btn-info" role="button">CONCLUIR
-		COMPRA</a> &nbsp;
-
+	
+	<center>
+		<a href="concluirVenda" class="btn btn-info" role="button">CONCLUIR
+			COMPRA</a> &nbsp;<br>
+	</center>
+	
 	<br>
 
 	<c:import url="/view/comum/rodape.jsp" />

@@ -43,13 +43,6 @@
 					<a type="button" class="btn btn-default" href="exibirFaq">FAQ</a>
 				</div>
 			</c:if>
-			<c:if test="${usuarioLogado.tipoUsuario != null}">
-				<div class="p-2">
-					<a type="button" class="btn btn-default"
-						href="exibirCadastrarComentarioProduto">comentários dos
-						Produtos</a>
-				</div>
-			</c:if>
 			<div class="p-2">
 				<a type="button" class="btn btn-default"
 					href="https://www.facebook.com/">facebook</a>

@@ -24,9 +24,8 @@
 				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Administração <span class="caret"></span></a>
 				<ul class="dropdown-menu">
 					<li><a href="listarUsuario">Usuários</a></li>
-					<li><a href="listarFaleConosco">FaleConosco</a></li>
-					<li><a href="listarUsuario">Pedido dos Usuários</a></li>
-					<li><a href="listarUsuario">Comentarios dos Produtos</a></li>
+					<li><a href="exibirFaleConosco">FaleConosco</a></li>
+					<li><a href="exibirPedido">Pedido dos Usuários</a></li>
 				</ul>
 				</li>
 				

@@ -41,8 +41,8 @@
 		</property>
 	</bean>
 
-	<!--<mvc:interceptors>
+	<mvc:interceptors>
 		<bean class="br.com.ifpe.psyChomics.util.AutorizadorInterceptor" />
-	</mvc:interceptors>-->
+	</mvc:interceptors>
 
 </beans>
